@@ -23,12 +23,14 @@ public class RageCommand extends Command {
         add("I plan to");
         add("Gonna fucking");
         add("Seriously,");
+        add("Why don't I just");
+        add("Even my girlfriend says to");
     }
     };
 
-    private String[] openers = {"fuck", "murder", "motherfucking sue", "choke-slam", "drop-kick", "kill", "shoot", "stab", "punch", "murderize", "drop-kick"};
+    private String[] openers = {"fuck", "roundhouse kick", "murder", "motherfucking sue", "choke-slam", "drop-kick", "kill", "shoot", "stab", "punch", "murderize", "drop-kick"};
 
-    private String[] exclamations = {"shit", "everlasting fucksmack", "fuck", "ass", "piss", "dildo", "dick", "balls"};
+    private String[] exclamations = {"shit", "everlasting fucksmack", "fuck", "ass", "piss", "dick", "balls"};
 
     private String[] targets = {"Ethan Couch", "Richard Spencer", "Nate", "Gaijin", "the Russians", "you fucking idiots", "Sean Hannity", "Seamus", "these kids"};
 
@@ -38,6 +40,9 @@ public class RageCommand extends Command {
         add("How is that shit allowed to happen");
         add("I am not fucking around");
         add("No one can fucking stop me");
+        add("The system is fucking rigged.");
+        add("We all know it's bullshit.");
+        add("I'm so done with this game's bullshit.");
     }};
 
     @Getter
@@ -51,22 +56,32 @@ public class RageCommand extends Command {
             add("I am so fucking done with this");
             add("This is why we need genocide");
             add("Like, god fucking damn it");
-        }
-    };
+            add("We all know it's bullshit.");
+            add("I'm so done with this game's bullshit.");
+            add("Fucking nobody can be okay with this.");
+            add("Like, who fucking though this was a good idea");
+            add("Seriously, where the fuck were you when that happened");
+            add("How is that shit allowed to happen");
+            add("I am not fucking around");
+            add("No one can fucking stop me");
+            add("The system is fucking rigged.");
+            add("We all know it's bullshit.");
+            add("I'm so done with this game's bullshit.");
+    }};
 
     public RageCommand() {
         this.name = "rage";
-        this.aliases = new String[]{"sup", "rant", "reconsider"};
+        this.aliases = new String[]{"rant.", "rage."};
         this.help = "Kyle will say something in anger";
     }
 
     @Override
     protected void execute(CommandEvent event) {
         event.reply(String.format("%s %s the %s out of %s",
-                this.getIntents().get(randy.nextInt(intents.size() - 1)),
-                openers[randy.nextInt(openers.length - 1)],
-                exclamations[randy.nextInt(exclamations.length - 1)],
-                targets[randy.nextInt(targets.length - 1)]));
-        event.reply(this.getClosers().get(randy.nextInt(closers.size() - 1)));
+                this.getIntents().get(randy.nextInt(intents.size())),
+                openers[randy.nextInt(openers.length)],
+                exclamations[randy.nextInt(exclamations.length)],
+                targets[randy.nextInt(targets.length)]));
+        event.reply(this.getClosers().get(randy.nextInt(closers.size())));
     }
 }

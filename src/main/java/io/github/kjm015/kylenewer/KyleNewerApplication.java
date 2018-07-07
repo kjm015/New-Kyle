@@ -2,6 +2,7 @@ package io.github.kjm015.kylenewer;
 
 import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
+import io.github.kjm015.kylenewer.commands.AdviceCommand;
 import io.github.kjm015.kylenewer.commands.RageCommand;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.core.AccountType;
@@ -35,6 +36,7 @@ public class KyleNewerApplication {
 		CommandClientBuilder builder = new CommandClientBuilder();
 		builder.setPrefix("Hey Kyle, ");
 		builder.addCommand(new RageCommand());
+		builder.addCommand(new AdviceCommand());
 		builder.setOwnerId(owner);
 
 		CommandClient client = builder.build();
