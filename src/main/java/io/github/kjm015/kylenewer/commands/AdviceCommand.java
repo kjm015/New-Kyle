@@ -35,6 +35,9 @@ public class AdviceCommand extends Command {
        add("So don't look, but");
        add("I know you just started, but");
        add("My advisers are all saying that");
+       add("My game is glitching, and");
+       add("My problem is that");
+       add("Don't ask why, but");
     }};
 
     private static final List<String> tips = new ArrayList<String>() {{
@@ -42,7 +45,7 @@ public class AdviceCommand extends Command {
         add("realistic battles are the best and you know it.");
         add("what happened in Katrina was some rough shit.");
         add("I'm tired, been at lacrosse practice all fucking day.");
-        add("there's an explanation for that. I wouldn't know!");
+        add("I may not have an explanation for that. Don't look at me.");
         add("Gaijin is the worst fucking company. Fuck the Russians.");
         add("tanks are better than planes, obviously.");
         add("that's what we call \"no bueno\"");

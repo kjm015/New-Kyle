@@ -8,33 +8,75 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+@Getter
 public class RageCommand extends Command {
 
     private Random randy = new Random();
 
-    @Getter
-    private final List<String> intents = new ArrayList<String>() {{
+    private static final List<String> intents = new ArrayList<String>() {{
         add("I want to");
         add("Someone should seriously");
         add("I should totally");
         add("Just saying, I'll");
         add("I am going to");
         add("Like, I will");
+        add("I'm considering calling someone to");
         add("I plan to");
         add("Gonna fucking");
+        add("I should get my dad to");
         add("Seriously,");
         add("Why don't I just");
         add("Even my girlfriend says to");
-    }
-    };
+        add("I know some guys that would");
+    }};
 
-    private String[] openers = {"fuck", "roundhouse kick", "murder", "motherfucking sue", "choke-slam", "drop-kick", "kill", "shoot", "stab", "punch", "murderize", "drop-kick"};
+    private static final List<String> open = new ArrayList<String>() {{
+       add("fuck");
+       add("invade");
+       add("roundhouse kick");
+       add("shoot");
+       add("motherfucking sue");
+       add("curb stomp");
+       add("choke slam");
+       add("drop kick");
+       add("kill");
+       add("murder");
+       add("dick punch");
+       add("stab");
+       add("hack");
+       add("exterminate");
+       add("gas");
+       add("protest");
+       add("run over");
+       add("sue");
+       add("vandalize");
+    }};
+
+    private static final List<String> target = new ArrayList<String>() {{
+        add("Ethan Couch");
+        add("Mike Pence");
+        add("Trump");
+        add("Nate");
+        add("Gaijin");
+        add("the Russians");
+        add("these Chinese hackers");
+        add("you fucking idiots");
+        add("Richard Spencer");
+        add("these kids");
+        add("the alt-right");
+        add("my boss");
+        add("the police");
+        add("that guy Seamus");
+        add("the Mamluks");
+        add("the Pope");
+        add("Hitler");
+        add("Nazis");
+        add("stupid people");
+    }};
 
     private String[] exclamations = {"shit", "everlasting fucksmack", "fuck", "ass", "piss", "dick", "balls"};
 
-    private String[] targets = {"Ethan Couch", "Richard Spencer", "Nate", "Gaijin", "the Russians", "you fucking idiots", "Sean Hannity", "Seamus", "these kids"};
-
-    private final List<String> adjuncts =  new ArrayList<String>() {{
+    private static final List<String> adjuncts =  new ArrayList<String>() {{
         add("Like, who fucking though this was a good idea");
         add("Seriously, where the fuck were you when that happened");
         add("How is that shit allowed to happen");
@@ -43,10 +85,10 @@ public class RageCommand extends Command {
         add("The system is fucking rigged.");
         add("We all know it's bullshit.");
         add("I'm so done with this game's bullshit.");
+        add("Like, I can't fucking stand this shit anymore.");
     }};
 
-    @Getter
-    private final List<String> closers = new ArrayList<String>() {{
+    private static final List<String> closers = new ArrayList<String>() {{
             add("Not having any of this");
             add("This is so fucking stupid");
             add("You guys are fucking stupid");
@@ -78,10 +120,11 @@ public class RageCommand extends Command {
     @Override
     protected void execute(CommandEvent event) {
         event.reply(String.format("%s %s the %s out of %s",
-                this.getIntents().get(randy.nextInt(intents.size())),
-                openers[randy.nextInt(openers.length)],
+                intents.get(randy.nextInt(intents.size())),
+                open.get(randy.nextInt(open.size())),
                 exclamations[randy.nextInt(exclamations.length)],
-                targets[randy.nextInt(targets.length)]));
-        event.reply(this.getClosers().get(randy.nextInt(closers.size())));
+                target.get(randy.nextInt(target.size())))
+        );
+        event.reply(closers.get(randy.nextInt(closers.size())));
     }
 }
