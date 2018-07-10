@@ -5,7 +5,6 @@ import com.jagrosh.jdautilities.command.CommandEvent;
 import lombok.Getter;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.entities.User;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Random;
@@ -13,8 +12,7 @@ import java.util.Random;
 @Getter
 public class FetchCommand extends Command {
 
-    @Autowired
-    private Random randy;
+    private Random randy = new Random();
 
     public FetchCommand() {
         this.name = "fetch";

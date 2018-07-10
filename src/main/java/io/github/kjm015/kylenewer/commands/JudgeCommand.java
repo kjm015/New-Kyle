@@ -43,15 +43,22 @@ public class JudgeCommand extends Command {
            }
        }
 
+       // Set the user to the sender if they want judgement passed on themselves
+       if (("me").equalsIgnoreCase(event.getArgs())) {
+            foundUser = true;
+            target = event.getAuthor();
+            event.reply("If you insist...");
+       }
+
        // If the command sender tried to judge a person that could not be found
-       if(!foundUser && !event.getArgs().equals(null)) {
+       if (!foundUser && !event.getArgs().isEmpty()) {
             event.reply("I'm not sure who you're referring to, but...");
        }
 
        // Pass final judgement
         if (target.equals(event.getSelfUser())) {
             event.reply("I'm not saying I'm the best person ever, but...");
-        } else if (target.getName().equalsIgnoreCase("kjm015")) {
+        } else if (target.getName().contains("kjm015")) {
             event.reply(target.getAsMention() + " is pretty good at that coding nonsense");
             event.reply("...but I'm probably still the best. Just saying.");
         } else {
