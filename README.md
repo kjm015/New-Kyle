@@ -1,3 +1,4 @@
 # Kyle-Newer
-This app is an attempt at a replacement for Kyle
-Also Adam stop hacking my fucking bot
+This is a Discord bot that will emulate as closely as possible the reactions and quirks that our friend had when he was still in the server.
+
+More updates will be posted when more functionality is added to this application.
