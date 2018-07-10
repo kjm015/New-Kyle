@@ -29,13 +29,14 @@ public class JudgeCommand extends Command {
     protected void execute(CommandEvent event) {
         boolean foundUser = false;
         List<User> users = event.getJDA().getUsers();
+        String arg = event.getArgs();
 
        // Default to a random user in the server
         User target = users.get(randy.nextInt(users.size()));
 
        // Try to get the user that the command sender mentioned, if there is one
         for (User user: users) {
-           if (event.getArgs().contains(user.getName()) || event.getArgs().contains(user.getDiscriminator())) {
+           if (arg.contains(user.getName()) || arg.contains(user.getDiscriminator())) {
                target = user;
                log.debug("User " + user.getName() + " has discriminator of " + user.getDiscriminator());
                foundUser = true;
@@ -43,21 +44,26 @@ public class JudgeCommand extends Command {
            }
        }
 
-       // Set the user to the sender if they want judgement passed on themselves
-       if (("me").equalsIgnoreCase(event.getArgs())) {
+       // Set the user to the sender if they want judgement passed on themselves of the bot
+       if (("me").equalsIgnoreCase(arg)) {
             foundUser = true;
             target = event.getAuthor();
             event.reply("If you insist...");
+       } else if (arg.contains("yourself")) {
+            foundUser = true;
+            target = event.getSelfUser();
+            event.reply("That's an easy one.");
        }
 
        // If the command sender tried to judge a person that could not be found
-       if (!foundUser && !event.getArgs().isEmpty()) {
-            event.reply("I'm not sure who you're referring to, but...");
+       if (!foundUser && !arg.isEmpty()) {
+            event.reply("I'm not sure who you're referring to when you say" + arg + ", but...");
        }
 
        // Pass final judgement
         if (target.equals(event.getSelfUser())) {
             event.reply("I'm not saying I'm the best person ever, but...");
+            event.reply("I totally am.");
         } else if (target.getName().contains("kjm015")) {
             event.reply(target.getAsMention() + " is pretty good at that coding nonsense");
             event.reply("...but I'm probably still the best. Just saying.");
