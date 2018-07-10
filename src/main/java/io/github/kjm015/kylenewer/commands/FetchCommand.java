@@ -20,7 +20,7 @@ public class FetchCommand extends Command {
         this.name = "fetch";
         this.aliases = new String[] {"retrieve", "get", "return"};
         this.help = "Kyle will fetch some server value";
-        this.arguments = "the thing to fetch";
+        this.arguments = "<value>";
     }
 
     @Override
