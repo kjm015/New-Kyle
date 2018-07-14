@@ -77,15 +77,34 @@ public class JudgeCommand extends Command {
 
     private String generateJudgement(User target) {
         List<String> funList = new ArrayList<String>() {{
-
-            add(String.format("%s",
+            add(String.format("Nothing says %s like %s.",
+                    target.getAsMention(),
                     MessageGenerator.derogatoryNoun()
             ));
+            add(String.format("%s loves nothing more than %s.",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("There's nothing that %s cherishes more than %s.",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("%s is great, but there's nothing better than %s.",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("I always knew that %s was really just %s in disguise.",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("%s, %s, and %s: the perfect Friday for %s",
+                    MessageGenerator.derogatoryNoun(),
+                    MessageGenerator.derogatoryNoun(),
+                    MessageGenerator.derogatoryNoun(),
+                    target.getAsMention()
 
-
+            ));
         }};
-
-
 
         return funList.get(randy.nextInt(funList.size()));
     }
