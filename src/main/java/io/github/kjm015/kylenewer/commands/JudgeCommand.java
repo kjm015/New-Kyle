@@ -140,11 +140,16 @@ public class JudgeCommand extends Command {
                     target.getAsMention(),
                     MessageGenerator.derogatoryNoun()
             ));
+            add(String.format("It is wildly debated if %s or %s was the downfall of %s.",
+                    MessageGenerator.derogatoryNoun(),
+                    MessageGenerator.derogatoryNoun(),
+                    target.getAsMention()
+            ));
             add(String.format("You might suck %s, but at least you are an expert in %s.",
                     target.getAsMention(),
                     MessageGenerator.derogatoryNoun()
             ));
-            add(String.format("Taking solace in %s is sadly the only thing that %s has left.",
+            add(String.format("Taking comfort in %s is sadly the only thing that %s has left.",
                     MessageGenerator.derogatoryNoun(),
                     target.getAsMention()
             ));
@@ -178,6 +183,25 @@ public class JudgeCommand extends Command {
             add(String.format("%s could never live alone, not without %s",
                     target.getAsMention(),
                     MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("I despise %s, but I hate %s more.",
+                    MessageGenerator.derogatoryNoun(),
+                    target.getAsMention()
+            ));
+            add(String.format("Legalizing %s will only encourage %s to embrace %s.",
+                    MessageGenerator.derogatoryNoun(),
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("Leave it to %s to ruin the fine American pasttimes of %s and %s.",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("Combining %s and %s gives you %s. What a world.",
+                    MessageGenerator.derogatoryNoun(),
+                    MessageGenerator.derogatoryNoun(),
+                    target.getAsMention()
             ));
         }};
 
