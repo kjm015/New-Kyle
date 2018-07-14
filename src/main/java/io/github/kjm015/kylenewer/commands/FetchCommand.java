@@ -12,12 +12,13 @@ import java.util.Random;
 @Getter
 public class FetchCommand extends Command {
 
-    private static final Random randy = new Random();
+    private Random randy = new Random();
 
     public FetchCommand() {
         this.name = "fetch";
         this.aliases = new String[] {"retrieve", "get", "return"};
         this.help = "Kyle will fetch some server value";
+        this.arguments = "<value>";
     }
 
     @Override

@@ -11,7 +11,7 @@ import java.util.Random;
 @Getter
 public class AdviceCommand extends Command {
 
-    private final Random randy = new Random();
+    private Random randy = new Random();
 
     private static final List<String> openings = new ArrayList<String>() {{
        add("Well, you see");
@@ -72,8 +72,8 @@ public class AdviceCommand extends Command {
 
     @Override
     protected void execute(CommandEvent event) {
-        String reply = String.format("@%s: %s %s",
-                event.getMember().getNickname(),
+        String reply = String.format("%s: %s %s",
+                event.getMember().getAsMention(),
                 openings.get(randy.nextInt(openings.size())),
                 tips.get(randy.nextInt(tips.size()))
         );

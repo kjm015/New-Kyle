@@ -4,6 +4,7 @@ import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import io.github.kjm015.kylenewer.commands.AdviceCommand;
 import io.github.kjm015.kylenewer.commands.FetchCommand;
+import io.github.kjm015.kylenewer.commands.JudgeCommand;
 import io.github.kjm015.kylenewer.commands.RageCommand;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.core.AccountType;
@@ -25,20 +26,20 @@ public class KyleNewerApplication {
 	public static void main(String[] args) throws IOException, LoginException, IllegalArgumentException, RateLimitedException {
 
 		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfiguration.class);
-
 		DiscordSettings settings = applicationContext.getBean(DiscordSettings.class);
 
 		String token = settings.getOauth();
-
 		String game = settings.getGame();
-
 		String owner = settings.getOwner();
 
 		CommandClientBuilder builder = new CommandClientBuilder();
 		builder.setPrefix("Hey Kyle, ");
+
 		builder.addCommand(new RageCommand());
 		builder.addCommand(new AdviceCommand());
 		builder.addCommand(new FetchCommand());
+		builder.addCommand(new JudgeCommand());
+
 		builder.setOwnerId(owner);
 
 		CommandClient client = builder.build();
