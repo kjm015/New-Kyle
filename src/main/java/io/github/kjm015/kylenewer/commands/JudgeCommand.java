@@ -2,10 +2,12 @@ package io.github.kjm015.kylenewer.commands;
 
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
+import io.github.kjm015.kylenewer.message.MessageGenerator;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.core.entities.User;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -13,7 +15,7 @@ import java.util.Random;
 @Slf4j
 public class JudgeCommand extends Command {
 
-    private Random randy = new Random();
+    private static final Random randy = new Random();
 
     public JudgeCommand() {
         this.name = "judge";
@@ -69,7 +71,22 @@ public class JudgeCommand extends Command {
             event.reply("...but I'm probably still the best. Just saying.");
         } else {
            // TODO: make this more in-depth
-           event.reply(target.getAsMention() + " sucks.");
+           event.reply(generateJudgement(target));
        }
+    }
+
+    private String generateJudgement(User target) {
+        List<String> funList = new ArrayList<String>() {{
+
+            add(String.format("%s",
+                    MessageGenerator.derogatoryNoun()
+            ));
+
+
+        }};
+
+
+
+        return funList.get(randy.nextInt(funList.size()));
     }
 }

@@ -1,4 +1,4 @@
-package io.github.kjm015.kylenewer.commands;
+package io.github.kjm015.kylenewer.message;
 
 import lombok.Data;
 
