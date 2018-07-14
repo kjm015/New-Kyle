@@ -24,7 +24,7 @@ public class JudgeCommand extends Command {
         this.arguments = "<user>";
 
         // how long after this command gets called before it can be called again
-        this.cooldown = 60;
+        this.cooldown = 20;
     }
 
     @Override
@@ -58,8 +58,8 @@ public class JudgeCommand extends Command {
        }
 
        // If the command sender tried to judge a person that could not be found
-       if (!foundUser && !arg.isEmpty()) {
-            event.reply("I'm not sure who you're referring to when you say" + arg + ", but...");
+       if (!foundUser && !arg.isEmpty() && !arg.contains("someone") && !arg.contains("somebody")) {
+            event.reply("I'm not sure who you're referring to when you say \"" + arg + ",\" but...");
        }
 
        // Pass final judgement
@@ -97,12 +97,87 @@ public class JudgeCommand extends Command {
                     target.getAsMention(),
                     MessageGenerator.derogatoryNoun()
             ));
+            add(String.format("%s practically wrote the book on %s.",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("The only class that %s didn't flunk was %s 101.",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("%s is just a sad combination of %s and %s.",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("Some say %s is a cross between %s and %s",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("It is a fact that %s identifies with %s",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("Some people have spirit animals. %s has %s.",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("If %s had a million dollars, all of it would go towards %s and %s.",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun(),
+                    MessageGenerator.derogatoryNoun()
+            ));
             add(String.format("%s, %s, and %s: the perfect Friday for %s",
                     MessageGenerator.derogatoryNoun(),
                     MessageGenerator.derogatoryNoun(),
                     MessageGenerator.derogatoryNoun(),
                     target.getAsMention()
 
+            ));
+            add(String.format("It was %s that inspired %s to found the cult of %s.",
+                    MessageGenerator.derogatoryNoun(),
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("You might suck %s, but at least you are an expert in %s.",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("Taking solace in %s is sadly the only thing that %s has left.",
+                    MessageGenerator.derogatoryNoun(),
+                    target.getAsMention()
+            ));
+            add(String.format("Kids, learn from %s: %s is not a valid contraceptive.",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("%s is a valuable lesson in why we learn from schools, and not from %s.",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("%s is proof that %s and %s do not go together.",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("I'm sorry %s, but %s is not a marketable skill.",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("All hail %s, master of %s!",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("Breakfast? No, %s starts the morning off right with %s, %s, and %s.",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun(),
+                    MessageGenerator.derogatoryNoun(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("%s could never live alone, not without %s",
+                    target.getAsMention(),
+                    MessageGenerator.derogatoryNoun()
             ));
         }};
 
