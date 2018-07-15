@@ -2,10 +2,7 @@ package io.github.kjm015.kylenewer;
 
 import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
-import io.github.kjm015.kylenewer.commands.AdviceCommand;
-import io.github.kjm015.kylenewer.commands.FetchCommand;
-import io.github.kjm015.kylenewer.commands.JudgeCommand;
-import io.github.kjm015.kylenewer.commands.RageCommand;
+import io.github.kjm015.kylenewer.commands.*;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDABuilder;
@@ -39,6 +36,7 @@ public class KyleNewerApplication {
 		builder.addCommand(new AdviceCommand());
 		builder.addCommand(new FetchCommand());
 		builder.addCommand(new JudgeCommand());
+		builder.addCommand(new SuckCommand());
 
 		builder.setOwnerId(owner);
 

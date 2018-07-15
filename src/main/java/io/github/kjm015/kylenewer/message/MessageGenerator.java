@@ -225,5 +225,13 @@ public class MessageGenerator {
         return nouns.get(randy.nextInt(nouns.size()));
     }
 
+    public static String location() {
+        List<String> locations = new ArrayList<String>() {{
+
+        }};
+
+        return locations.get(randy.nextInt(locations.size()));
+    }
+
 
 }
