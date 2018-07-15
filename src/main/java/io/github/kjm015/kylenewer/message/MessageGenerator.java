@@ -220,6 +220,25 @@ public class MessageGenerator {
             add("hoarding graphics cards for profit");
             add("Battlefield: Hardline");
             add("receiving multiple VAC bans");
+
+            add("deceased hip-hop artists from the 1990's");
+            add("deeply-rooted ignorance");
+            add("smoking blunts while playing Fortnite");
+            add("medically inaccurate sex education");
+            add("the Insane Clown Posse");
+            add("fucking magnets");
+            add("binders full of women");
+            add("shutting the whole thing down after a legitimate rape");
+            add("owning the libs");
+            add("calling someone a cuck snowflake");
+            add("furry porn");
+            add("claiming to be Japanese after watching anime");
+            add("a pirated CrunchyRoll subscription");
+            add("eating fresh™");
+            add("asking for sex from minors");
+            add("being the mascot for a sandwich chain");
+            add("concentration camps");
+            add("tender-age facilities");
         }};
 
         return nouns.get(randy.nextInt(nouns.size()));
@@ -234,6 +253,7 @@ public class MessageGenerator {
             add("the local garbage dump");
             add("hell");
             add("Constantinople");
+            add("the cold floor of a county jail");
             add("a ska-themed bar mitzvah");
             add("a run-down public restroom");
             add("some white trash trailer park in Kentucky");
