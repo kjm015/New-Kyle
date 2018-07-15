@@ -16,7 +16,7 @@ public class SuckCommand extends Command {
 
     public SuckCommand() {
         this.name = "suck";
-        this.aliases = new String[] {"lick", "kiss"};
+        this.aliases = new String[] {"lick", "kiss", "fondle"};
         this.help = "Tell Kyle to suck something";
         this.arguments = "<what to suck>";
     }
@@ -31,6 +31,14 @@ public class SuckCommand extends Command {
             add(String.format("Yeah, well you can take your %s and %s on over to %s.",
                     MessageGenerator.removeArticles(event.getArgs()),
                     MessageGenerator.motionVerb(),
+                    MessageGenerator.location()
+            ));
+            add(String.format("Sorry, I don't touch the %s of someone who dabbles with %s.",
+                    MessageGenerator.removeArticles(event.getArgs()),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("Nice one, I'm sure talking about %s will lead to a promising career at %s.",
+                    MessageGenerator.removeArticles(event.getArgs()),
                     MessageGenerator.location()
             ));
         }};

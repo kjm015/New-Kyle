@@ -230,10 +230,22 @@ public class MessageGenerator {
             add("the shattered remains of Detroit");
             add("my neighbor's lawn");
             add("my ex-girlfriends crack den");
+            add("Lauren Southern's racism-raft");
             add("the local garbage dump");
             add("hell");
             add("Constantinople");
-            add("");
+            add("a ska-themed bar mitzvah");
+            add("a run-down public restroom");
+            add("some white trash trailer park in Kentucky");
+
+            add("GoDaddy.com");
+            add("BlackPeopleMeet.com");
+            add("FarmersOnly.com");
+            add("my Patreon page");
+            add("my GoFuncMe page");
+
+            add("r/the_donald");
+            add("r/incels");
         }};
 
         return locations.get(randy.nextInt(locations.size()));
@@ -242,10 +254,11 @@ public class MessageGenerator {
     public static String removeArticles(String string) {
         String temp = new String(string);
 
-        if (temp.startsWith("my ") || temp.startsWith("the ") || temp.startsWith("a ")) {
+        if (temp.startsWith("my ") || temp.startsWith("the ") || temp.startsWith("a ") || temp.startsWith("an ")) {
             temp = temp.replace("my ", "");
             temp = temp.replace("the ", "");
             temp = temp.replace("a ", "");
+            temp = temp.replace("an ", "");
         }
 
         return temp;
