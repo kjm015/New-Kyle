@@ -23,7 +23,11 @@ public class SuckCommand extends Command {
 
     @Override
     protected void execute(CommandEvent event) {
-        event.reply(event.getAuthor().getAsMention() + " " + this.getRetort(event));
+        if (event.getArgs().isEmpty() || event.getArgs().contains("it ")) {
+            event.reply("I can't something you don't have, dude.");
+        } else {
+            event.reply(event.getAuthor().getAsMention() + " " + this.getRetort(event));
+        }
     }
 
     private String getRetort(CommandEvent event) {
@@ -37,7 +41,7 @@ public class SuckCommand extends Command {
                     MessageGenerator.removeArticles(event.getArgs()),
                     MessageGenerator.derogatoryNoun()
             ));
-            add(String.format("Nice one, I'm sure talking about %s will lead to a promising career at %s.",
+            add(String.format("Nice one, I'm sure talking about %s will lead to a promising career with %s.",
                     MessageGenerator.removeArticles(event.getArgs()),
                     MessageGenerator.location()
             ));
