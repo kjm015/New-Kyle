@@ -23,8 +23,8 @@ public class SuckCommand extends Command {
 
     @Override
     protected void execute(CommandEvent event) {
-        if (event.getArgs().isEmpty() || event.getArgs().contains("it ")) {
-            event.reply("I can't something you don't have, dude.");
+        if (event.getArgs().isEmpty() || event.getArgs().contains(" it")) {
+            event.reply("I can't do something with a thing that you don't have, dude.");
         } else {
             event.reply(event.getAuthor().getAsMention() + " " + this.getRetort(event));
         }
