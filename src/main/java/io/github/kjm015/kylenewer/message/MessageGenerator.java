@@ -8,34 +8,34 @@ public class MessageGenerator {
 
     private static final Random randy = new Random();
 
-    public static String motionVerbPast() {
+    public static String motionVerb() {
         List<String> verbs = new ArrayList<String>() {{
-            add("strolled");
-            add("moseyed");
-            add("ambled");
-            add("waltzed");
-            add("paraded");
-            add("sauntered");
-            add("cruised");
-            add("drove");
-            add("skated");
-            add("flew");
-            add("skied");
-            add("snowboarded");
-            add("sailed");
-            add("biked");
-            add("rolled");
-            add("traveled");
-            add("hiked");
-            add("stumbled");
-            add("traipsed");
-            add("skipped");
-            add("galloped");
-            add("drifted");
-            add("glided");
-            add("surfed");
-            add("paddled");
-            add("rode");
+            add("stroll");
+            add("mosey");
+            add("amble");
+            add("waltz");
+            add("parade");
+            add("saunter");
+            add("cruise");
+            add("drive");
+            add("skate");
+            add("fly");
+            add("ski");
+            add("snowboard");
+            add("sail");
+            add("bike");
+            add("roll");
+            add("travel");
+            add("hike");
+            add("stumble");
+            add("traipse");
+            add("skip");
+            add("gallop");
+            add("drift");
+            add("glide");
+            add("surf");
+            add("paddle");
+            add("ride");
         }};
         return verbs.get(randy.nextInt(verbs.size()));
     }
@@ -227,10 +227,28 @@ public class MessageGenerator {
 
     public static String location() {
         List<String> locations = new ArrayList<String>() {{
-
+            add("the shattered remains of Detroit");
+            add("my neighbor's lawn");
+            add("my ex-girlfriends crack den");
+            add("the local garbage dump");
+            add("hell");
+            add("Constantinople");
+            add("");
         }};
 
         return locations.get(randy.nextInt(locations.size()));
+    }
+
+    public static String removeArticles(String string) {
+        String temp = new String(string);
+
+        if (temp.startsWith("my ") || temp.startsWith("the ") || temp.startsWith("a ")) {
+            temp = temp.replace("my ", "");
+            temp = temp.replace("the ", "");
+            temp = temp.replace("a ", "");
+        }
+
+        return temp;
     }
 
 

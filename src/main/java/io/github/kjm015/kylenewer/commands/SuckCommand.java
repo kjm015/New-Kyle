@@ -2,6 +2,7 @@ package io.github.kjm015.kylenewer.commands;
 
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
+import io.github.kjm015.kylenewer.message.MessageGenerator;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -22,12 +23,16 @@ public class SuckCommand extends Command {
 
     @Override
     protected void execute(CommandEvent event) {
-
+        event.reply(event.getAuthor().getAsMention() + " " + this.getRetort(event));
     }
 
-    private String getRetort() {
+    private String getRetort(CommandEvent event) {
         List<String> locations = new ArrayList<String>() {{
-
+            add(String.format("Yeah, well you can take your %s and %s on over to %s.",
+                    MessageGenerator.removeArticles(event.getArgs()),
+                    MessageGenerator.motionVerb(),
+                    MessageGenerator.location()
+            ));
         }};
 
         return locations.get(randy.nextInt(locations.size()));
