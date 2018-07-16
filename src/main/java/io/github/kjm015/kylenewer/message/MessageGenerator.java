@@ -8,34 +8,34 @@ public class MessageGenerator {
 
     private static final Random randy = new Random();
 
-    public static String motionVerbPast() {
+    public static String motionVerb() {
         List<String> verbs = new ArrayList<String>() {{
-            add("strolled");
-            add("moseyed");
-            add("ambled");
-            add("waltzed");
-            add("paraded");
-            add("sauntered");
-            add("cruised");
-            add("drove");
-            add("skated");
-            add("flew");
-            add("skied");
-            add("snowboarded");
-            add("sailed");
-            add("biked");
-            add("rolled");
-            add("traveled");
-            add("hiked");
-            add("stumbled");
-            add("traipsed");
-            add("skipped");
-            add("galloped");
-            add("drifted");
-            add("glided");
-            add("surfed");
-            add("paddled");
-            add("rode");
+            add("stroll");
+            add("mosey");
+            add("amble");
+            add("waltz");
+            add("parade");
+            add("saunter");
+            add("cruise");
+            add("drive");
+            add("skate");
+            add("fly");
+            add("ski");
+            add("snowboard");
+            add("sail");
+            add("bike");
+            add("roll");
+            add("travel");
+            add("hike");
+            add("stumble");
+            add("traipse");
+            add("skip");
+            add("gallop");
+            add("drift");
+            add("glide");
+            add("surf");
+            add("paddle");
+            add("ride");
         }};
         return verbs.get(randy.nextInt(verbs.size()));
     }
@@ -220,9 +220,68 @@ public class MessageGenerator {
             add("hoarding graphics cards for profit");
             add("Battlefield: Hardline");
             add("receiving multiple VAC bans");
+
+            add("deceased hip-hop artists from the 1990's");
+            add("deeply-rooted ignorance");
+            add("smoking blunts while playing Fortnite");
+            add("medically inaccurate sex education");
+            add("the Insane Clown Posse");
+            add("fucking magnets");
+            add("binders full of women");
+            add("shutting the whole thing down after a legitimate rape");
+            add("owning the libs");
+            add("calling someone a cuck snowflake");
+            add("furry porn");
+            add("claiming to be Japanese after watching anime");
+            add("a pirated CrunchyRoll subscription");
+            add("eating fresh™");
+            add("asking for sex from minors");
+            add("being the mascot for a sandwich chain");
+            add("concentration camps");
+            add("tender-age facilities");
         }};
 
         return nouns.get(randy.nextInt(nouns.size()));
+    }
+
+    public static String location() {
+        List<String> locations = new ArrayList<String>() {{
+            add("the shattered remains of Detroit");
+            add("my neighbor's lawn");
+            add("my ex-girlfriends crack den");
+            add("Lauren Southern's racism-raft");
+            add("the local garbage dump");
+            add("hell");
+            add("Constantinople");
+            add("the cold floor of a county jail");
+            add("a ska-themed bar mitzvah");
+            add("a run-down public restroom");
+            add("some white trash trailer park in Kentucky");
+
+            add("GoDaddy.com");
+            add("BlackPeopleMeet.com");
+            add("FarmersOnly.com");
+            add("my Patreon page");
+            add("my GoFuncMe page");
+
+            add("r/the_donald");
+            add("r/incels");
+        }};
+
+        return locations.get(randy.nextInt(locations.size()));
+    }
+
+    public static String removeArticles(String string) {
+        String temp = new String(string);
+
+        if (temp.startsWith("my ") || temp.startsWith("the ") || temp.startsWith("a ") || temp.startsWith("an ")) {
+            temp = temp.replace("my ", "");
+            temp = temp.replace("the ", "");
+            temp = temp.replace("a ", "");
+            temp = temp.replace("an ", "");
+        }
+
+        return temp;
     }
 
 
