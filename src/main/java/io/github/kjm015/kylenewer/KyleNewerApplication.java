@@ -37,6 +37,7 @@ public class KyleNewerApplication {
 		builder.addCommand(new FetchCommand());
 		builder.addCommand(new JudgeCommand());
 		builder.addCommand(new SuckCommand());
+		builder.addCommand(new RambleCommand());
 
 		builder.setOwnerId(owner);
 
