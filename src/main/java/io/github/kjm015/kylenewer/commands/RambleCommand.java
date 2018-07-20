@@ -46,7 +46,7 @@ public class RambleCommand extends Command {
                     MessageGenerator.derogatoryNoun(),
                     MessageGenerator.location()
             ));
-            add(String.format("Let's all %s on down to %s so we can see %s!",
+            add(String.format("Let's all %s on down to %s so we can see what %s is like!",
                     MessageGenerator.motionVerb(),
                     MessageGenerator.location(),
                     MessageGenerator.derogatoryNoun()
@@ -72,6 +72,10 @@ public class RambleCommand extends Command {
                     MessageGenerator.derogatoryNoun()
             ));
             add(String.format("Some times we just need %s.",
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("The best advice comes from guys who are %s. They speak the true-true.",
+                    MessageGenerator.derogatoryNoun(),
                     MessageGenerator.derogatoryNoun()
             ));
         }};

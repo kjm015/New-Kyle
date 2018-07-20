@@ -283,6 +283,13 @@ public class MessageGenerator {
             add("Pyongyang");
             add("post-Katrina New Orleans");
             add("the Hard Rock Cafe");
+            add("O'Hare airport");
+            add("Chicago");
+            add("San Francisco");
+            add("Ferguson, Missouri");
+            add("the Pacific Ocean");
+            add("the slums of Bangladesh");
+            add("the dumpster behind my apartment");
 
             add("GoDaddy.com");
             add("BlackPeopleMeet.com");
