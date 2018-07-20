@@ -24,19 +24,17 @@ public class RambleCommand extends Command {
 
     @Override
     protected void execute(CommandEvent event) {
-        for (int i = 0; i < RANDY.nextInt(UPPER_BOUND); i++){
-            event.reply(this.generateRambling());
-        }
+        event.reply(this.generateRamblingNoArgs());
     }
 
-    private String generateRambling() {
+    private String generateRamblingNoArgs() {
 
         List<String> ramblings = new ArrayList<String>() {{
             add(String.format("Dude, the best part about going to %s is getting to experience %s.",
                     MessageGenerator.location(),
                     MessageGenerator.derogatoryNoun()
             ));
-            add(String.format("If there one thing about %s that pisses me off about %s, it's the %s.",
+            add(String.format("If there's one thing that pisses me off about %s, it's %s.",
                     MessageGenerator.location(),
                     MessageGenerator.derogatoryNoun()
             ));
@@ -44,13 +42,37 @@ public class RambleCommand extends Command {
                     MessageGenerator.derogatoryNoun(),
                     MessageGenerator.location()
             ));
-            add(String.format("I am sick of %s, can't they just go to %s?",
+            add(String.format("Sadly, the prospect of %s is not enough to deter people from going to %s.",
                     MessageGenerator.derogatoryNoun(),
                     MessageGenerator.location()
             ));
-            add(String.format("Why is there so much %s in %s?",
+            add(String.format("Let's all %s on down to %s so we can see %s!",
+                    MessageGenerator.motionVerb(),
+                    MessageGenerator.location(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("I think we all know that %s is really just %s's version of %s.",
                     MessageGenerator.derogatoryNoun(),
-                    MessageGenerator.location()
+                    MessageGenerator.location(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("My professor says that %s was the birthplace of %s. Fucking astounding.",
+                    MessageGenerator.location(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("I have decided to turn away from %s and instead turn to %s.",
+                    MessageGenerator.derogatoryNoun(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("The only things that get me through my day are a strong shot of vodka and %s.",
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("I have decided to turn away from %s and instead turn to %s.",
+                    MessageGenerator.derogatoryNoun(),
+                    MessageGenerator.derogatoryNoun()
+            ));
+            add(String.format("Some times we just need %s.",
+                    MessageGenerator.derogatoryNoun()
             ));
         }};
 
