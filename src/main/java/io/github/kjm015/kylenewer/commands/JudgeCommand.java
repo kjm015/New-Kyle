@@ -70,7 +70,6 @@ public class JudgeCommand extends Command {
             event.reply(target.getAsMention() + " is pretty good at that coding nonsense");
             event.reply("...but I'm probably still the best. Just saying.");
         } else {
-           // TODO: make this more in-depth
            event.reply(generateJudgement(target));
        }
     }

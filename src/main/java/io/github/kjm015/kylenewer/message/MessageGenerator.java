@@ -334,13 +334,4 @@ public class MessageGenerator {
         return temp;
     }
 
-    public static String removeRambles(String string) {
-        String temp = new String(string);
-
-        if (temp.startsWith("on about ") || temp.startsWith("about ")) {
-        }
-
-        return temp;
-    }
-
 }
