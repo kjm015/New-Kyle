@@ -13,7 +13,6 @@ import java.util.Random;
 public class RambleCommand extends Command {
 
     private static final Random RANDY = new Random();
-    private static final int UPPER_BOUND = 5;
 
     public RambleCommand() {
         this.name = "ramble";
@@ -24,7 +23,42 @@ public class RambleCommand extends Command {
 
     @Override
     protected void execute(CommandEvent event) {
-        event.reply(this.generateRamblingNoArgs());
+        // Give a default response if no arguments are given, otherwise use the arguments in the reply
+        if (event.getArgs().isEmpty()) {
+            event.reply(this.generateRamblingNoArgs());
+        } else {
+            event.reply(this.generateRambling(event.getArgs()));
+        }
+    }
+
+    private String generateRambling(String string) {
+        String arguments = MessageGenerator.pruneAbout(string);
+
+        List<String> ramblings = new ArrayList<>();
+
+        ramblings.add(String.format("Ah, yes: %s. The best way to cope with %s.",
+                MessageGenerator.removeArticles(arguments),
+                MessageGenerator.derogatoryNoun()
+        ));
+        ramblings.add(String.format("The only thing I can say about %s is the similarity to %s.",
+                MessageGenerator.removeArticles(arguments),
+                MessageGenerator.derogatoryNoun()
+        ));
+        ramblings.add(String.format("I don't mess with %s. Not since I went to %s.",
+                MessageGenerator.removeArticles(arguments),
+                MessageGenerator.location()
+        ));
+        ramblings.add(String.format("Only %s can save you from %s.",
+                MessageGenerator.derogatoryNoun(),
+                MessageGenerator.removeArticles(arguments)
+        ));
+        ramblings.add(String.format("My ex-girlfriend told me about %s. Now she has to deal with %s in %s.",
+                MessageGenerator.removeArticles(arguments),
+                MessageGenerator.derogatoryNoun(),
+                MessageGenerator.location()
+        ));
+
+        return ramblings.get(RANDY.nextInt(ramblings.size()));
     }
 
     private String generateRamblingNoArgs() {

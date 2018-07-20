@@ -304,15 +304,31 @@ public class MessageGenerator {
         return locations.get(randy.nextInt(locations.size()));
     }
 
+    // TODO: add "switch perspective" method that changes pronouns from first to second person
+    // TODO: separate this from the "removeArticles" method
+
     public static String removeArticles(String string) {
         String temp = new String(string);
 
-        if (temp.startsWith("my ") || temp.startsWith("the ") || temp.startsWith("a ") || temp.startsWith("an ")) {
-            temp = temp.replace("my ", "");
-            temp = temp.replace("the ", "");
-            temp = temp.replace("a ", "");
-            temp = temp.replace("an ", "");
-        }
+        temp = temp.replace("my ", "your ");
+        temp = temp.replace("the ", "");
+        temp = temp.replace("a ", "");
+        temp = temp.replace("an ", "");
+        temp = temp.replace("your ", "my ");
+        temp = temp.replace("his ", "");
+        temp = temp.replace("her ", "");
+        temp = temp.replace("some ", "that ");
+        temp = temp.replace("this ", "that ");
+        temp = temp.replace("these ", "those ");
+
+        return temp;
+    }
+
+    public static String pruneAbout(String string) {
+        String temp = new String(string);
+
+        temp = temp.replace("about ", "");
+        temp = temp.replace("on about ", "");
 
         return temp;
     }
@@ -325,6 +341,5 @@ public class MessageGenerator {
 
         return temp;
     }
-
 
 }
