@@ -1,4 +1,6 @@
 .gradle
+.properties
+/src/main/resources
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 
