@@ -304,8 +304,6 @@ public class MessageGenerator {
         return locations.get(randy.nextInt(locations.size()));
     }
 
-    // TODO: add "switchPerspective" method that changes pronouns from first to second person
-
     public static String removeArticles(String string) {
         String temp = new String(string);
 
@@ -313,14 +311,25 @@ public class MessageGenerator {
         temp = temp.replace("a ", "");
         temp = temp.replace("an ", "");
 
-        // TODO: separate this from this method
-        temp = temp.replace("your ", "my ");
-        temp = temp.replace("his ", "");
-        temp = temp.replace("her ", "");
-        temp = temp.replace("some ", "that ");
-        temp = temp.replace("this ", "that ");
+        return temp;
+    }
+
+    public static String switchPerspectives(String string) {
+        String temp = string;
+
+        if (temp.contains("your ") || temp.contains("you ") || temp.contains("yourself ")) {
+            temp = temp.replace("your ", "my ");
+            temp = temp.replace("you ", "me ");
+            temp = temp.replace("yourself", "myself");
+        } else {
+            temp = temp.replace("I ", "you ");
+            temp = temp.replace("me ", "you ");
+            temp = temp.replace("my ", "your ");
+            temp = temp.replace("myself", "yourself");
+            temp = temp.replace("this ", "that ");
+        }
+        temp = temp.replace("some ", "those ");
         temp = temp.replace("these ", "those ");
-        temp = temp.replace("my ", "your ");
 
         return temp;
     }

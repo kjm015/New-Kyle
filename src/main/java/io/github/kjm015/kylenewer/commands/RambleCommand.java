@@ -17,7 +17,7 @@ public class RambleCommand extends Command {
     public RambleCommand() {
         this.name = "ramble";
         this.help = "Kyle will ramble about a given topic";
-        this.aliases = new String[] {"yammer", "rave", "dote"};
+        this.aliases = new String[] {"yammer", "dote"};
         this.arguments = "<topic>";
     }
 
@@ -37,23 +37,23 @@ public class RambleCommand extends Command {
         List<String> ramblings = new ArrayList<>();
 
         ramblings.add(String.format("Ah, yes: %s. The best way to cope with %s.",
-                MessageGenerator.removeArticles(arguments),
+                MessageGenerator.switchPerspectives(arguments),
                 MessageGenerator.derogatoryNoun()
         ));
         ramblings.add(String.format("The only thing I can say about %s is the similarity to %s.",
-                MessageGenerator.removeArticles(arguments),
+                MessageGenerator.switchPerspectives(arguments),
                 MessageGenerator.derogatoryNoun()
         ));
         ramblings.add(String.format("I don't mess with %s. Not since I went to %s.",
-                MessageGenerator.removeArticles(arguments),
+                MessageGenerator.switchPerspectives(arguments),
                 MessageGenerator.location()
         ));
         ramblings.add(String.format("Only %s can save you from %s.",
                 MessageGenerator.derogatoryNoun(),
-                MessageGenerator.removeArticles(arguments)
+                MessageGenerator.switchPerspectives(arguments)
         ));
         ramblings.add(String.format("My ex-girlfriend told me about %s. Now she has to deal with %s in %s.",
-                MessageGenerator.removeArticles(arguments),
+                MessageGenerator.switchPerspectives(arguments),
                 MessageGenerator.derogatoryNoun(),
                 MessageGenerator.location()
         ));
