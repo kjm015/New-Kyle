@@ -142,7 +142,7 @@ public class MessageGenerator {
             add("destroying copies of WWE 2010 because you hate John Cena");
             add("people who unironically share iFunny memes");
             add("dropping out of college to become an alcoholic waiter at Olive Garden");
-            add("dropping out of college adn moving to Florida to get a boating certificate");
+            add("dropping out of college and moving to Florida to get a boating certificate");
             add("being fired from Taco Bell for being late");
             add("post-bankruptcy Toys R Us");
             add("not knowing how to order a hamburger at a restaurant");
@@ -252,11 +252,44 @@ public class MessageGenerator {
             add("Lauren Southern's racism-raft");
             add("the local garbage dump");
             add("hell");
-            add("Constantinople");
+            add("Constantinople circa 1453");
             add("the cold floor of a county jail");
             add("a ska-themed bar mitzvah");
             add("a run-down public restroom");
             add("some white trash trailer park in Kentucky");
+            add("my basement");
+            add("a tender-age facility");
+            add("a concentration camp");
+            add("Jared Fogle's prison cell");
+            add("an illegal logging site");
+            add("Mogadishu");
+            add("an adults-only furry convention");
+            add("an unscrupulous anime convention");
+            add("the drunk tank");
+            add("rehab");
+            add("a juvenile detention center");
+            add("Neverland Ranch");
+            add("Pen Island");
+            add("boating school");
+            add("northern Florida");
+            add("a well-maintained meth lab");
+            add("America");
+            add("Nazi Germany");
+            add("Vichy France");
+            add("Imperial Japan");
+            add("The British Empire");
+            add("China");
+            add("North Korea");
+            add("Pyongyang");
+            add("post-Katrina New Orleans");
+            add("the Hard Rock Cafe");
+            add("O'Hare airport");
+            add("Chicago");
+            add("San Francisco");
+            add("Ferguson, Missouri");
+            add("the Pacific Ocean");
+            add("the slums of Bangladesh");
+            add("the dumpster behind my apartment");
 
             add("GoDaddy.com");
             add("BlackPeopleMeet.com");
@@ -274,24 +307,40 @@ public class MessageGenerator {
     public static String removeArticles(String string) {
         String temp = new String(string);
 
-        if (temp.startsWith("my ") || temp.startsWith("the ") || temp.startsWith("a ") || temp.startsWith("an ")) {
-            temp = temp.replace("my ", "");
-            temp = temp.replace("the ", "");
-            temp = temp.replace("a ", "");
-            temp = temp.replace("an ", "");
-        }
+        temp = temp.replace("the ", "");
+        temp = temp.replace("a ", "");
+        temp = temp.replace("an ", "");
 
         return temp;
     }
 
-    public static String removeRambles(String string) {
+    public static String switchPerspectives(String string) {
+        String temp = string;
+
+        if (temp.contains("your ") || temp.contains("you ") || temp.contains("yourself ")) {
+            temp = temp.replace("your ", "my ");
+            temp = temp.replace("you ", "me ");
+            temp = temp.replace("yourself", "myself");
+        } else {
+            temp = temp.replace("I ", "you ");
+            temp = temp.replace("me ", "you ");
+            temp = temp.replace("my ", "your ");
+            temp = temp.replace("myself", "yourself");
+            temp = temp.replace("this ", "that ");
+        }
+        temp = temp.replace("some ", "those ");
+        temp = temp.replace("these ", "those ");
+
+        return temp;
+    }
+
+    public static String pruneAbout(String string) {
         String temp = new String(string);
 
-        if (temp.startsWith("on about ") || temp.startsWith("about ")) {
-        }
+        temp = temp.replace("about ", "");
+        temp = temp.replace("on about ", "");
 
         return temp;
     }
-
 
 }

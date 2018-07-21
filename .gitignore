@@ -1,8 +1,4 @@
 .gradle
-.properties
-.yml
-/src/main/resources/
-/test/resources/
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 
