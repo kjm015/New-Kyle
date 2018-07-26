@@ -30,6 +30,19 @@ import javax.security.auth.login.LoginException;
 @Slf4j
 public class KyleNewerApplication {
 
+	/**
+	 * The head honcho method! This is the main method that runs the whole application.
+	 * It also applies the settings to the application before it runs, giving it, you know,
+	 * functionality.
+	 *
+	 * @param args - a dummy argument that makes it so that main isn't an integer anymore (yay!)
+	 *
+	 * @exception LoginException - you don't have the right credentials, you dingus
+	 * @exception IllegalArgumentException - stop sending my application garbage responses
+	 *
+	 * @author kjm015
+	 * @since 7/26/2018
+	 */
 	public static void main(String[] args) throws LoginException, IllegalArgumentException {
 
 		// That Spring thing I was talking about earlier ¯\_(ツ)_/¯

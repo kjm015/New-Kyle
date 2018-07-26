@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author kjm015
  * @since 7/26/2018
- *
  */
 @RestController
 public class KyleController {

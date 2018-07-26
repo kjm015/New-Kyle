@@ -9,6 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * This command is supposed to respond to requests that Kyle go suck, kiss, or lick something that
+ * he is very nonplussed about actually doing.
+ *
+ * @author kjm015
+ * @since 7/26/2018
+ */
 @Slf4j
 public class SuckCommand extends Command {
 
