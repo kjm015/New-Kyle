@@ -7,20 +7,18 @@ import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
-import net.dv8tion.jda.core.exceptions.RateLimitedException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.security.auth.login.LoginException;
-import java.io.IOException;
 
 @SpringBootApplication
 @Slf4j
 public class KyleNewerApplication {
 
-	public static void main(String[] args) throws IOException, LoginException, IllegalArgumentException, RateLimitedException {
+	public static void main(String[] args) throws LoginException, IllegalArgumentException {
 
 		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfiguration.class);
 		DiscordSettings settings = applicationContext.getBean(DiscordSettings.class);
