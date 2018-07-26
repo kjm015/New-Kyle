@@ -19,8 +19,10 @@ import java.util.Random;
 @Slf4j
 public class SuckCommand extends Command {
 
-    private static final Random randy = new Random();
+    // Random number generator that Adam finds hilarious
+    private static final Random RANDY = new Random();
 
+    // Constructor required for all commands
     public SuckCommand() {
         this.name = "suck";
         this.aliases = new String[] {"lick", "kiss", "fondle"};
@@ -28,6 +30,19 @@ public class SuckCommand extends Command {
         this.arguments = "<what to suck>";
     }
 
+    /**
+     * This command overrides the abstract method from the Command class.
+     * When this command is called, this is the stuff that actually happens.
+     *
+     * For this class, Kyle will respond with his reaction to the suck request.
+     * Generally, his response will be rather trite as per
+     * {@link io.github.kjm015.kylenewer.message.MessageGenerator}
+     *
+     * @param event - The instance of the command that got called
+     *
+     * @author kjm015
+     * @since 7/26/2018
+     */
     @Override
     protected void execute(CommandEvent event) {
         if (event.getArgs().isEmpty() || event.getArgs().contains(" it")) {
@@ -37,6 +52,16 @@ public class SuckCommand extends Command {
         }
     }
 
+    /**
+     * This command generates Kyle's retort based on the arguments that were
+     * passed into the command.
+     *
+     * @param event - the instance of the command that got called
+     * @return the retort
+     *
+     * @author kjm015
+     * @since 7/26/2018
+     */
     private String getRetort(CommandEvent event) {
         List<String> locations = new ArrayList<String>() {{
             add(String.format("Yeah, well you can take your %s and %s on over to %s.",
@@ -54,6 +79,6 @@ public class SuckCommand extends Command {
             ));
         }};
 
-        return locations.get(randy.nextInt(locations.size()));
+        return locations.get(RANDY.nextInt(locations.size()));
     }
 }
