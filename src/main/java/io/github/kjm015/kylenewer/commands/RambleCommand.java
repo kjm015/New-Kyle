@@ -9,11 +9,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * This command is to allow Kyle to ramble about whatever is on his mind at any given moment.
+ * It usually generates nonsensical garbage, you can add more message templates if you feel like it.
+ *
+ * @author kjm015
+ * @since 7/26/2018
+ */
 @Slf4j
 public class RambleCommand extends Command {
 
+    // Random number generator that Tim finds hilarious
     private static final Random RANDY = new Random();
 
+    // Required constructor for all commands
     public RambleCommand() {
         this.name = "ramble";
         this.help = "Kyle will ramble about a given topic";
@@ -21,6 +30,18 @@ public class RambleCommand extends Command {
         this.arguments = "<topic>";
     }
 
+    /**
+     * This command overrides the abstract method from the Command class.
+     * When this command is called, this is the stuff that actually happens.
+     *
+     * For this class, Kyle will respond to the command with some absolute garbage message
+     * as per the {@link io.github.kjm015.kylenewer.message.MessageGenerator} class
+     *
+     * @param event - The instance of the command that got called
+     *
+     * @author kjm015
+     * @since 7/26/2018
+     */
     @Override
     protected void execute(CommandEvent event) {
         // Give a default response if no arguments are given, otherwise use the arguments in the reply
@@ -31,8 +52,17 @@ public class RambleCommand extends Command {
         }
     }
 
-    private String generateRambling(String string) {
-        String arguments = MessageGenerator.pruneAbout(string);
+    /**
+     * Formats a retort based on the stuff that is passed into the command arguments.
+     *
+     * @param args - the arguments to be passed into the message formatter
+     * @return the formatted response String
+     *
+     * @author kjm015
+     * @since 7/26/2018
+     */
+    private String generateRambling(String args) {
+        String arguments = MessageGenerator.pruneAbout(args);
 
         List<String> ramblings = new ArrayList<>();
 
@@ -61,6 +91,14 @@ public class RambleCommand extends Command {
         return ramblings.get(RANDY.nextInt(ramblings.size()));
     }
 
+    /**
+     * Formats a retort based on whatever.
+     *
+     * @return the formatted response String
+     *
+     * @author kjm015
+     * @since 7/26/2018
+     */
     private String generateRamblingNoArgs() {
 
         List<String> ramblings = new ArrayList<String>() {{
