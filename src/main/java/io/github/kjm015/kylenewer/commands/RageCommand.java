@@ -52,8 +52,9 @@ public class RageCommand extends Command {
         event.reply(String.format("%s %s the %s out of %s",
                 MessageGenerator.intents.get(randy.nextInt(MessageGenerator.intents.size())),
                 MessageGenerator.open.get(randy.nextInt(MessageGenerator.open.size())),
-                exc.get(randy.nextInt(exc.size()));
-                MessageGenerator.target.get(randy.nextInt(MessageGenerator.target.size()));
+                exc.get(randy.nextInt(exc.size())),
+                MessageGenerator.target.get(randy.nextInt(MessageGenerator.target.size()))
+        ));
 
         event.reply(MessageGenerator.closers.get(randy.nextInt(MessageGenerator.closers.size())));
     }
