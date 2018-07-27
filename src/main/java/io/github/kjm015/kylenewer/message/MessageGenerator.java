@@ -405,7 +405,7 @@ public class MessageGenerator {
         return temp;
     }
 
-	// List of weird side messages TODO: move to MessageGenerator
+	// List of weird side messages
 	public static final List<String> adjuncts =  new ArrayList<String>() {{
 		add("Like, who fucking though this was a good idea");
 		add("Seriously, where the fuck were you when that happened");
@@ -418,7 +418,7 @@ public class MessageGenerator {
 		add("Like, I can't fucking stand this shit anymore.");
 	}};
 
-	// Closing statements. TODO: move to MessageGenerator
+	// Closing statements.
 	public static final List<String> closers = new ArrayList<String>() {{
 		add("Not having any of this");
 		add("This is so fucking stupid");
@@ -442,7 +442,7 @@ public class MessageGenerator {
 		add("I'm so done with this game's bullshit.");
 	}};
 
-	// List of entry phrases. TODO: Should probably move this to MessageGenerator.
+	// List of entry phrases.
 	public static final List<String> intents = new ArrayList<String>() {{
 		add("I want to");
 		add("Someone should seriously");
@@ -460,7 +460,7 @@ public class MessageGenerator {
 		add("I know some guys that would");
 	}};
 
-	// List of verbs, TODO: should move to MessageGenerator
+	// List of verbs
 	public static final List<String> open = new ArrayList<String>() {{
 		add("fuck");
 		add("invade");
@@ -483,7 +483,7 @@ public class MessageGenerator {
 		add("vandalize");
 	}};
 
-	// List of intended targets of the action, TODO: should move to MessageGenerator
+	// List of intended targets of the action
 	public static final List<String> target = new ArrayList<String>() {{
 		add("Ethan Couch");
 		add("Mike Pence");
