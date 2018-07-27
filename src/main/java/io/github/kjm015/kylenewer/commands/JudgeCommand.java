@@ -11,12 +11,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * This command will make Kyle pass judgement on a specified user, or an unsuspecting
+ * person in the channel should he so will it.
+ *
+ * @author kjm015
+ * @since 7/26/2018
+ */
 @Getter
 @Slf4j
 public class JudgeCommand extends Command {
 
-    private static final Random randy = new Random();
+    // Random number generator
+    private static final Random RANDY = new Random();
 
+    // Required constructor for all commands
     public JudgeCommand() {
         this.name = "judge";
         this.help = "Kyle will judge a random user, or a specific one if mentioned";
@@ -27,6 +36,22 @@ public class JudgeCommand extends Command {
         this.cooldown = 20;
     }
 
+    /**
+     * This command overrides the abstract method from the Command class.
+     * When this command is called, this is the stuff that actually happens.
+     *
+     * For this class, Kyle will pass a random judgement message that is primarily
+     * determined by getting pieces from the MessageGenerator class.
+     * {@link io.github.kjm015.kylenewer.message.MessageGenerator}
+     *
+     * He will also mention a target, which is either randomly selected from the pool
+     * of the channels users, or it is matched in the command args themselves.
+     *
+     * @param event - The instance of the command that got called
+     *
+     * @author kjm015
+     * @since 7/26/2018
+     */
     @Override
     protected void execute(CommandEvent event) {
         boolean foundUser = false;
@@ -34,7 +59,7 @@ public class JudgeCommand extends Command {
         String arg = event.getArgs();
 
        // Default to a random user in the server
-        User target = users.get(randy.nextInt(users.size()));
+        User target = users.get(RANDY.nextInt(users.size()));
 
        // Try to get the user that the command sender mentioned, if there is one
         for (User user: users) {
@@ -66,7 +91,9 @@ public class JudgeCommand extends Command {
         if (target.equals(event.getSelfUser())) {
             event.reply("I'm not saying I'm the best person ever, but...");
             event.reply("I totally am.");
-        } else if (target.getName().contains("kjm015")) {
+        }
+        // Special case for smart people!
+        else if (target.getName().contains("kjm015")) {
             event.reply(target.getAsMention() + " is pretty good at that coding nonsense");
             event.reply("...but I'm probably still the best. Just saying.");
         } else {
@@ -74,7 +101,18 @@ public class JudgeCommand extends Command {
        }
     }
 
+    /**
+     * This method formats the judgement message to be sent to a specific user. The judgement
+     * is put together using pieces from MessageGenerator given these preset formats.
+     *
+     * @param target - The user targeted for judgement that will also be mentioned in the message
+     * @return the message String to be sent
+     *
+     * @author kjm015
+     * @since 7/26/2018
+     */
     private String generateJudgement(User target) {
+        // Make a list of String formats
         List<String> funList = new ArrayList<String>() {{
             add(String.format("Nothing says %s like %s.",
                     target.getAsMention(),
@@ -203,7 +241,7 @@ public class JudgeCommand extends Command {
                     target.getAsMention()
             ));
         }};
-
-        return funList.get(randy.nextInt(funList.size()));
+        // Return a random element from the list of Strings
+        return funList.get(RANDY.nextInt(funList.size()));
     }
 }
