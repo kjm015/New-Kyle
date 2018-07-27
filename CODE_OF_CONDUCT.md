@@ -2,7 +2,7 @@
 
 ## Our Pledge
 
-In the interest of fostering an open development platform.
+In the interest of fostering an open development platform, we have some rules, chumps. So read carefully.
 
 ## Our Standards
 
