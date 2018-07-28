@@ -4,6 +4,7 @@ import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import io.github.kjm015.kylenewer.message.MessageGenerator;
 import lombok.Getter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -17,6 +18,9 @@ import java.util.Random;
  */
 @Getter
 public class RageCommand extends Command {
+
+    @Autowired
+    private MessageGenerator generator;
 
     private Random randy = new Random();
 
@@ -50,12 +54,12 @@ public class RageCommand extends Command {
     @Override
     protected void execute(CommandEvent event) {
         event.reply(String.format("%s %s the %s out of %s",
-                MessageGenerator.intents.get(randy.nextInt(MessageGenerator.intents.size())),
-                MessageGenerator.open.get(randy.nextInt(MessageGenerator.open.size())),
+                generator.intent(),
+                generator.openers(),
                 exc.get(randy.nextInt(exc.size())),
-                MessageGenerator.target.get(randy.nextInt(MessageGenerator.target.size()))
+                generator.targets()
         ));
 
-        event.reply(MessageGenerator.closers.get(randy.nextInt(MessageGenerator.closers.size())));
+        event.reply(generator.closer());
     }
 }
