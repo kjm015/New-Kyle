@@ -3,7 +3,9 @@ package io.github.kjm015.kylenewer.commands;
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import io.github.kjm015.kylenewer.message.MessageGenerator;
+import io.github.kjm015.kylenewer.message.MessageModifier;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,12 @@ import java.util.Random;
  */
 @Slf4j
 public class RambleCommand extends Command {
+
+    @Autowired
+    private MessageGenerator generator;
+
+    @Autowired
+    private MessageModifier modifier;
 
     // Random number generator that Tim finds hilarious
     private static final Random RANDY = new Random();
@@ -62,30 +70,30 @@ public class RambleCommand extends Command {
      * @since 7/26/2018
      */
     private String generateRambling(String args) {
-        String arguments = MessageGenerator.pruneAbout(args);
+        String arguments = modifier.pruneAbout(args);
 
         List<String> ramblings = new ArrayList<>();
 
         ramblings.add(String.format("Ah, yes: %s. The best way to cope with %s.",
-                MessageGenerator.switchPerspectives(arguments),
-                MessageGenerator.derogatoryNoun()
+                modifier.switchPerspectives(arguments),
+                generator.derogatoryNoun()
         ));
         ramblings.add(String.format("The only thing I can say about %s is the similarity to %s.",
-                MessageGenerator.switchPerspectives(arguments),
-                MessageGenerator.derogatoryNoun()
+                modifier.switchPerspectives(arguments),
+                generator.derogatoryNoun()
         ));
         ramblings.add(String.format("I don't mess with %s. Not since I went to %s.",
-                MessageGenerator.switchPerspectives(arguments),
-                MessageGenerator.location()
+                modifier.switchPerspectives(arguments),
+                generator.location()
         ));
         ramblings.add(String.format("Only %s can save you from %s.",
-                MessageGenerator.derogatoryNoun(),
-                MessageGenerator.switchPerspectives(arguments)
+                generator.derogatoryNoun(),
+                modifier.switchPerspectives(arguments)
         ));
         ramblings.add(String.format("My ex-girlfriend told me about %s. Now she has to deal with %s in %s.",
-                MessageGenerator.switchPerspectives(arguments),
-                MessageGenerator.derogatoryNoun(),
-                MessageGenerator.location()
+                modifier.switchPerspectives(arguments),
+                generator.derogatoryNoun(),
+                generator.location()
         ));
 
         return ramblings.get(RANDY.nextInt(ramblings.size()));
@@ -103,52 +111,52 @@ public class RambleCommand extends Command {
 
         List<String> ramblings = new ArrayList<String>() {{
             add(String.format("Dude, the best part about going to %s is getting to experience %s.",
-                    MessageGenerator.location(),
-                    MessageGenerator.derogatoryNoun()
+                    generator.location(),
+                    generator.derogatoryNoun()
             ));
             add(String.format("If there's one thing that pisses me off about %s, it's %s.",
-                    MessageGenerator.location(),
-                    MessageGenerator.derogatoryNoun()
+                    generator.location(),
+                    generator.derogatoryNoun()
             ));
             add(String.format("I've always said that people who mess with %s are the first to end up in %s.",
-                    MessageGenerator.derogatoryNoun(),
-                    MessageGenerator.location()
+                    generator.derogatoryNoun(),
+                    generator.location()
             ));
             add(String.format("Sadly, the prospect of %s is not enough to deter people from going to %s.",
-                    MessageGenerator.derogatoryNoun(),
-                    MessageGenerator.location()
+                    generator.derogatoryNoun(),
+                    generator.location()
             ));
             add(String.format("Let's all %s on down to %s so we can see what %s is like!",
-                    MessageGenerator.motionVerb(),
-                    MessageGenerator.location(),
-                    MessageGenerator.derogatoryNoun()
+                    generator.motionVerb(),
+                    generator.location(),
+                    generator.derogatoryNoun()
             ));
             add(String.format("I think we all know that %s is really just %s's version of %s.",
-                    MessageGenerator.derogatoryNoun(),
-                    MessageGenerator.location(),
-                    MessageGenerator.derogatoryNoun()
+                    generator.derogatoryNoun(),
+                    generator.location(),
+                    generator.derogatoryNoun()
             ));
             add(String.format("My professor says that %s was the birthplace of %s. Fucking astounding.",
-                    MessageGenerator.location(),
-                    MessageGenerator.derogatoryNoun()
+                    generator.location(),
+                    generator.derogatoryNoun()
             ));
             add(String.format("I have decided to turn away from %s and instead turn to %s.",
-                    MessageGenerator.derogatoryNoun(),
-                    MessageGenerator.derogatoryNoun()
+                    generator.derogatoryNoun(),
+                    generator.derogatoryNoun()
             ));
             add(String.format("The only things that get me through my day are a strong shot of vodka and %s.",
-                    MessageGenerator.derogatoryNoun()
+                    generator.derogatoryNoun()
             ));
             add(String.format("I have decided to turn away from %s and instead turn to %s.",
-                    MessageGenerator.derogatoryNoun(),
-                    MessageGenerator.derogatoryNoun()
+                    generator.derogatoryNoun(),
+                    generator.derogatoryNoun()
             ));
             add(String.format("Some times we just need %s.",
-                    MessageGenerator.derogatoryNoun()
+                    generator.derogatoryNoun()
             ));
             add(String.format("The best advice comes from guys who are %s. They speak the true-true.",
-                    MessageGenerator.derogatoryNoun(),
-                    MessageGenerator.derogatoryNoun()
+                    generator.derogatoryNoun(),
+                    generator.derogatoryNoun()
             ));
         }};
 
