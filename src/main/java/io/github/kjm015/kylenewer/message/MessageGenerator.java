@@ -1,6 +1,7 @@
 package io.github.kjm015.kylenewer.message;
 
 import lombok.Getter;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.Random;
  * @author kjm015
  * @since 7/26/2018
  */
+@Component
 @Getter
 public class MessageGenerator {
 
@@ -27,7 +29,7 @@ public class MessageGenerator {
 	 * @author kjm015
 	 * @since 7/26/2018
 	 */
-    public static String motionVerb() {
+    public String motionVerb() {
         List<String> verbs = new ArrayList<String>() {{
             add("stroll");
             add("mosey");
@@ -67,7 +69,7 @@ public class MessageGenerator {
 	 * @author kjm015
 	 * @since 7/26/2018
 	 */
-    public static String derogatoryNoun() {
+    public String derogatoryNoun() {
         List<String> nouns = new ArrayList<String>() {{
             add("Highlander: The Source");
             add("\"working\" at Channel Awesome for 10 years");
@@ -279,7 +281,7 @@ public class MessageGenerator {
 	 * @author kjm015
 	 * @since 7/26/2018
 	 */
-    public static String location() {
+    public String location() {
         List<String> locations = new ArrayList<String>() {{
             add("the shattered remains of Detroit");
             add("my neighbor's lawn");
@@ -339,171 +341,120 @@ public class MessageGenerator {
         return locations.get(RANDY.nextInt(locations.size()));
     }
 
-	/**
-	 * Removes articles (a, an, the) from a String.
-	 * This is for grammatical purposes in select cases.
-	 *
-	 * @param string - the String to be modified (have its articles removed)
-	 * @return the modified String to be sent back (no articles)
-	 * @author kjm015
-	 * @since 7/26/2018
-	 */
-    public static String removeArticles(String string) {
-        String temp = new String(string);
-
-        temp = temp.replace("the ", "");
-        temp = temp.replace("a ", "");
-        temp = temp.replace("an ", "");
-
-        return temp;
-    }
-
-	/**
-	 * Switches the perspectives of certain pronouns in a String (you -> me, yourself -> myself etc.)
-	 * This is done to make responses to questions more logical.
-	 *
-	 * @param string - the String to have its perspective reversed
-	 * @return the new String with the reversed perspective
-	 * @author kjm015
-	 * @since 7/26/2018
-	 */
-    public static String switchPerspectives(String string) {
-        String temp = string;
-
-        if (temp.contains("your ") || temp.contains("you ") || temp.contains("yourself ")) {
-            temp = temp.replace("your ", "my ");
-            temp = temp.replace("you ", "me ");
-            temp = temp.replace("yourself", "myself");
-        } else {
-            temp = temp.replace("I ", "you ");
-            temp = temp.replace("me ", "you ");
-            temp = temp.replace("my ", "your ");
-            temp = temp.replace("myself", "yourself");
-            temp = temp.replace("this ", "that ");
-        }
-        temp = temp.replace("some ", "those ");
-        temp = temp.replace("these ", "those ");
-
-        return temp;
-    }
-
-	/**
-	 * Removes the word "about" or the phrase "on about" from a String
-	 * used in very limited circumstances, might consider moving this or deprecating
-	 *
-	 * @param string - the String to modify
-	 * @return the new String without "about"
-	 * @author kjm015
-	 * @since 7/26/2018
-	 */
-    public static String pruneAbout(String string) {
-        String temp = new String(string);
-
-        temp = temp.replace("about ", "");
-        temp = temp.replace("on about ", "");
-
-        return temp;
-    }
-
 	// List of weird side messages
-	public static final List<String> adjuncts =  new ArrayList<String>() {{
-		add("Like, who fucking though this was a good idea");
-		add("Seriously, where the fuck were you when that happened");
-		add("How is that shit allowed to happen");
-		add("I am not fucking around");
-		add("No one can fucking stop me");
-		add("The system is fucking rigged.");
-		add("We all know it's bullshit.");
-		add("I'm so done with this game's bullshit.");
-		add("Like, I can't fucking stand this shit anymore.");
-	}};
+	public String adjuncts() {
+		List<String> adjuncts = new ArrayList<String>() {{
+			add("Like, who fucking though this was a good idea");
+			add("Seriously, where the fuck were you when that happened");
+			add("How is that shit allowed to happen");
+			add("I am not fucking around");
+			add("No one can fucking stop me");
+			add("The system is fucking rigged.");
+			add("We all know it's bullshit.");
+			add("I'm so done with this game's bullshit.");
+			add("Like, I can't fucking stand this shit anymore.");
+		}};
+		return adjuncts.get(RANDY.nextInt(adjuncts.size()));
+	}
 
 	// Closing statements.
-	public static final List<String> closers = new ArrayList<String>() {{
-		add("Not having any of this");
-		add("This is so fucking stupid");
-		add("You guys are fucking stupid");
-		add("I don't give a flying fuck");
-		add("Like what the fuck, dude");
-		add("Literally the dumbest shit");
-		add("I am so fucking done with this");
-		add("This is why we need genocide");
-		add("Like, god fucking damn it");
-		add("We all know it's bullshit.");
-		add("I'm so done with this game's bullshit.");
-		add("Fucking nobody can be okay with this.");
-		add("Like, who fucking though this was a good idea");
-		add("Seriously, where the fuck were you when that happened");
-		add("How is that shit allowed to happen");
-		add("I am not fucking around");
-		add("No one can fucking stop me");
-		add("The system is fucking rigged.");
-		add("We all know it's bullshit.");
-		add("I'm so done with this game's bullshit.");
-	}};
+	public String closer() {
+		List<String> closers = new ArrayList<String>() {{
+			add("Not having any of this");
+			add("This is so fucking stupid");
+			add("You guys are fucking stupid");
+			add("I don't give a flying fuck");
+			add("Like what the fuck, dude");
+			add("Literally the dumbest shit");
+			add("I am so fucking done with this");
+			add("This is why we need genocide");
+			add("Like, god fucking damn it");
+			add("We all know it's bullshit.");
+			add("I'm so done with this game's bullshit.");
+			add("Fucking nobody can be okay with this.");
+			add("Like, who fucking though this was a good idea");
+			add("Seriously, where the fuck were you when that happened");
+			add("How is that shit allowed to happen");
+			add("I am not fucking around");
+			add("No one can fucking stop me");
+			add("The system is fucking rigged.");
+			add("We all know it's bullshit.");
+			add("I'm so done with this game's bullshit.");
+		}};
+		return closers.get(RANDY.nextInt(closers.size()));
+	}
 
 	// List of entry phrases.
-	public static final List<String> intents = new ArrayList<String>() {{
-		add("I want to");
-		add("Someone should seriously");
-		add("I should totally");
-		add("Just saying, I'll");
-		add("I am going to");
-		add("Like, I will");
-		add("I'm considering calling someone to");
-		add("I plan to");
-		add("Gonna fucking");
-		add("I should get my dad to");
-		add("Seriously,");
-		add("Why don't I just");
-		add("Even my girlfriend says to");
-		add("I know some guys that would");
-	}};
+	public String intent() {
+		List<String> intents = new ArrayList<String>() {{
+			add("I want to");
+			add("Someone should seriously");
+			add("I should totally");
+			add("Just saying, I'll");
+			add("I am going to");
+			add("Like, I will");
+			add("I'm considering calling someone to");
+			add("I plan to");
+			add("Gonna fucking");
+			add("I should get my dad to");
+			add("Seriously,");
+			add("Why don't I just");
+			add("Even my girlfriend says to");
+			add("I know some guys that would");
+		}};
+		return intents.get(RANDY.nextInt(intents.size()));
+	}
 
 	// List of verbs
-	public static final List<String> open = new ArrayList<String>() {{
-		add("fuck");
-		add("invade");
-		add("roundhouse kick");
-		add("shoot");
-		add("motherfucking sue");
-		add("curb stomp");
-		add("choke slam");
-		add("drop kick");
-		add("kill");
-		add("murder");
-		add("dick punch");
-		add("stab");
-		add("hack");
-		add("exterminate");
-		add("gas");
-		add("protest");
-		add("run over");
-		add("sue");
-		add("vandalize");
-	}};
+	public String openers() {
+		List<String> open = new ArrayList<String>() {{
+			add("fuck");
+			add("invade");
+			add("roundhouse kick");
+			add("shoot");
+			add("motherfucking sue");
+			add("curb stomp");
+			add("choke slam");
+			add("drop kick");
+			add("kill");
+			add("murder");
+			add("dick punch");
+			add("stab");
+			add("hack");
+			add("exterminate");
+			add("gas");
+			add("protest");
+			add("run over");
+			add("sue");
+			add("vandalize");
+		}};
+		return open.get(RANDY.nextInt(open.size()));
+	}
 
 	// List of intended targets of the action
-	public static final List<String> target = new ArrayList<String>() {{
-		add("Ethan Couch");
-		add("Mike Pence");
-		add("Trump");
-		add("Nate");
-		add("Gaijin");
-		add("the Russians");
-		add("these Chinese hackers");
-		add("you fucking idiots");
-		add("Richard Spencer");
-		add("these kids");
-		add("the alt-right");
-		add("my boss");
-		add("the police");
-		add("that guy Seamus");
-		add("the Mamluks");
-		add("the Pope");
-		add("Hitler");
-		add("Nazis");
-		add("stupid people");
-	}};
+	public String targets() {
+		List<String> target = new ArrayList<String>() {{
+			add("Ethan Couch");
+			add("Mike Pence");
+			add("Trump");
+			add("Nate");
+			add("Gaijin");
+			add("the Russians");
+			add("these Chinese hackers");
+			add("you fucking idiots");
+			add("Richard Spencer");
+			add("these kids");
+			add("the alt-right");
+			add("my boss");
+			add("the police");
+			add("that guy Seamus");
+			add("the Mamluks");
+			add("the Pope");
+			add("Hitler");
+			add("Nazis");
+			add("stupid people");
+		}};
+		return target.get(RANDY.nextInt(target.size()));
+	}
 
 }
