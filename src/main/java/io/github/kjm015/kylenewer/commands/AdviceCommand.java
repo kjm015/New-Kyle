@@ -18,6 +18,8 @@ import java.util.Random;
 @Getter
 public class AdviceCommand extends Command {
 
+    // Nemo was here
+
     // Random number generator
     private static final Random RANDY = new Random();
 
