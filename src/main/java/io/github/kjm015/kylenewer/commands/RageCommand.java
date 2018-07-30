@@ -3,6 +3,7 @@ package io.github.kjm015.kylenewer.commands;
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import io.github.kjm015.kylenewer.message.MessageGenerator;
+import io.github.kjm015.kylenewer.message.MessageModifier;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -19,8 +20,9 @@ import java.util.Random;
 @Getter
 public class RageCommand extends Command {
 
-    @Autowired
-    private MessageGenerator generator;
+    private MessageGenerator generator = new MessageGenerator();
+
+    private MessageModifier modifier = new MessageModifier();
 
     private Random randy = new Random();
 

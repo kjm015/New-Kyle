@@ -21,11 +21,9 @@ import java.util.Random;
 @Slf4j
 public class RambleCommand extends Command {
 
-    @Autowired
-    private MessageGenerator generator;
+    private MessageGenerator generator = new MessageGenerator();
 
-    @Autowired
-    private MessageModifier modifier;
+    private MessageModifier modifier = new MessageModifier();
 
     // Random number generator that Tim finds hilarious
     private static final Random RANDY = new Random();

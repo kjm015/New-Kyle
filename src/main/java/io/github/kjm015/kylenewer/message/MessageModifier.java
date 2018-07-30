@@ -1,8 +1,8 @@
 package io.github.kjm015.kylenewer.message;
 
-import org.springframework.stereotype.Component;
+import lombok.NoArgsConstructor;
 
-@Component
+@NoArgsConstructor
 public class MessageModifier {
 
 	/**
