@@ -1,7 +1,6 @@
 package io.github.kjm015.kylenewer.message;
 
-import lombok.Getter;
-import org.springframework.stereotype.Component;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +14,7 @@ import java.util.Random;
  * @author kjm015
  * @since 7/26/2018
  */
-@Component
-@Getter
+@NoArgsConstructor
 public class MessageGenerator {
 
 	// Random number generator
