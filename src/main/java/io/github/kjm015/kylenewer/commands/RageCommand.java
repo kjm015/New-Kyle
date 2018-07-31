@@ -26,17 +26,6 @@ public class RageCommand extends Command {
 
     private Random randy = new Random();
 
-    // Exclamations for Kyle to yell
-    private ArrayList<String> exc = new ArrayList<String>() {{
-        add("shit");
-        add("fuck");
-        add("ass");
-        add("piss");
-        add("dick");
-        add("balls");
-        add("everlasting fucksmack");
-    }};
-
     // Required constructor for all commands
     public RageCommand() {
         this.name = "rage";
@@ -58,7 +47,7 @@ public class RageCommand extends Command {
         event.reply(String.format("%s %s the %s out of %s",
                 generator.intent(),
                 generator.openers(),
-                exc.get(randy.nextInt(exc.size())),
+                generator.exclamations(),
                 generator.targets()
         ));
 

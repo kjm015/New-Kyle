@@ -455,4 +455,18 @@ public class MessageGenerator {
 		return target.get(RANDY.nextInt(target.size()));
 	}
 
+	// Exclamations for Kyle to yell
+	public String exclamations() {
+		ArrayList<String> exclamations = new ArrayList<String>() {{
+			add("shit");
+			add("fuck");
+			add("ass");
+			add("piss");
+			add("dick");
+			add("balls");
+			add("everlasting fucksmack");
+		}};
+		return exclamations.get(RANDY.nextInt(exclamations.size()));
+	}
+
 }
