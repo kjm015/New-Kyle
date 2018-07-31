@@ -7,6 +7,13 @@ import org.junit.runner.RunWith;
 import org.mockito.*;
 import org.springframework.test.context.junit4.SpringRunner;
 
+/**
+ * Integration test class for the RageCommand class. Tests execution of the command and checks to see that its output
+ * is correctly formatted.
+ *
+ * @author kjm015
+ * @since 7/30/2018
+ */
 @RunWith(SpringRunner.class)
 public class RageCommandTests {
 
@@ -32,9 +39,13 @@ public class RageCommandTests {
 
 		Mockito.when(generator.exclamations()).thenReturn(something);
 
+		Mockito.when(generator.closer()).thenReturn(something);
+
 		final String out = String.format("%s %s the %s out of %s", something, something, something, something);
 
 		rageCommand.execute(event);
+
 		Mockito.verify(event).reply(out);
+		Mockito.verify(event).reply(something);
 	}
 }
