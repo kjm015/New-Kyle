@@ -32,13 +32,9 @@ public class RageCommandTests {
 		final String something = "something";
 
 		Mockito.when(generator.intent()).thenReturn(something);
-
 		Mockito.when(generator.openers()).thenReturn(something);
-
 		Mockito.when(generator.targets()).thenReturn(something);
-
 		Mockito.when(generator.exclamations()).thenReturn(something);
-
 		Mockito.when(generator.closer()).thenReturn(something);
 
 		final String out = String.format("%s %s the %s out of %s", something, something, something, something);
