@@ -1,6 +1,7 @@
 package io.github.kjm015.kylenewer.commands;
 
 import com.jagrosh.jdautilities.command.CommandEvent;
+import io.github.kjm015.kylenewer.message.MessageGenerator;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.entities.User;
 import org.junit.Test;
@@ -8,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.Spy;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;

@@ -3,12 +3,10 @@ package io.github.kjm015.kylenewer.commands;
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import io.github.kjm015.kylenewer.message.MessageGenerator;
-import io.github.kjm015.kylenewer.message.MessageModifier;
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.core.entities.User;
-import org.springframework.beans.factory.annotation.Autowired;
 
+import java.lang.annotation.Documented;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -20,13 +18,10 @@ import java.util.Random;
  * @author kjm015
  * @since 7/26/2018
  */
-@Getter
 @Slf4j
 public class JudgeCommand extends Command {
 
     private MessageGenerator generator = new MessageGenerator();
-
-    private MessageModifier modifier = new MessageModifier();
 
     // Random number generator
     private static final Random RANDY = new Random();
@@ -60,6 +55,8 @@ public class JudgeCommand extends Command {
      */
     @Override
     protected void execute(CommandEvent event) {
+    	// TODO: split all different conditional judgements into separate methods
+
         boolean foundUser = false;
         List<User> users = event.getJDA().getUsers();
         String arg = event.getArgs();
@@ -68,24 +65,17 @@ public class JudgeCommand extends Command {
         User target = users.get(RANDY.nextInt(users.size()));
 
        // Try to get the user that the command sender mentioned, if there is one
-        for (User user: users) {
-           if (arg.contains(user.getName()) || arg.contains(user.getDiscriminator())) {
-               target = user;
-               log.debug("User " + user.getName() + " has discriminator of " + user.getDiscriminator());
-               foundUser = true;
-               break;
-           }
-       }
+	    if (getUserFromList(users, arg) != null) {
+		    target = getUserFromList(users, arg);
+	    } else {
+		    event.reply("I'm not sure who you're referring to when you say \"" + arg + ",\" but...");
+	    }
 
        // Set the user to the sender if they want judgement passed on themselves of the bot
        if (("me").equalsIgnoreCase(arg)) {
-            foundUser = true;
-            target = event.getAuthor();
-            event.reply("If you insist...");
+            this.judgeSender(event);
        } else if (arg.contains("yourself")) {
-            foundUser = true;
-            target = event.getSelfUser();
-            event.reply("That's an easy one.");
+            this.judgeSelf(event);
        }
 
        // If the command sender tried to judge a person that could not be found
@@ -95,8 +85,7 @@ public class JudgeCommand extends Command {
 
        // Pass final judgement
         if (target.equals(event.getSelfUser())) {
-            event.reply("I'm not saying I'm the best person ever, but...");
-            event.reply("I totally am.");
+
         }
         // Special case for smart people!
         else if (target.getName().contains("kjm015")) {
@@ -105,6 +94,55 @@ public class JudgeCommand extends Command {
         } else {
            event.reply(generateJudgement(target));
        }
+    }
+
+    /**
+     * This method scans a list of users for a selected user with a given discriminator or name.
+     *
+     * @param users - list of users to be scanned
+     * @param discriminatorOrName - the discriminator or name to be scanned against
+     * @return the user you're looking for
+     *
+     * @author kjm015
+     * @since 8/5/2018
+     */
+    public User getUserFromList(List<User> users, String discriminatorOrName) {
+    	User target = null;
+        for (User user: users) {
+            if (discriminatorOrName.contains(user.getName()) || discriminatorOrName.contains(user.getDiscriminator())) {
+                target = user;
+                break;
+            }
+        }
+        return target;
+    }
+
+	/**
+	 * This method will make Kyle reply with a self-assessment
+	 *
+	 * @param event - the judge command event coming in to reply to
+	 *
+	 * @author kjm015
+	 * @since 8/5/2018
+	 */
+    private void judgeSelf(CommandEvent event) {
+        event.reply("That's an easy one.");
+	    event.reply("I'm not saying I'm the best person ever, but...");
+	    event.reply("I totally am.");
+    }
+
+	/**
+	 * This method will make Kyle judge the sender of the command
+	 *
+	 * @param event - the judge command event coming in to reply to
+	 *
+	 * @author kjm015
+	 * @since 8/5/2018
+	 */
+    private void judgeSender(CommandEvent event) {
+	    User target = event.getAuthor();
+	    event.reply("If you insist...");
+	    event.reply(generateJudgement(target));
     }
 
     /**
