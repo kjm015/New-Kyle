@@ -1,6 +1,7 @@
 package io.github.kjm015.kylenewer.message;
 
 import lombok.NoArgsConstructor;
+import net.dv8tion.jda.core.entities.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -467,6 +468,150 @@ public class MessageGenerator {
 			add("everlasting fucksmack");
 		}};
 		return exclamations.get(RANDY.nextInt(exclamations.size()));
+	}
+
+	/**
+	 * This method formats the judgement message to be sent to a specific user. The judgement
+	 * is put together using pieces from MessageGenerator given these preset formats.
+	 *
+	 * @param target - The user targeted for judgement that will also be mentioned in the message
+	 * @return the message String to be sent
+	 *
+	 * @author kjm015
+	 * @since 7/26/2018
+	 */
+	public String generateJudgement(User target) {
+		// Make a list of String formats
+		List<String> funList = new ArrayList<String>() {{
+			add(String.format("Nothing says %s like %s.",
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("%s loves nothing more than %s.",
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("There's nothing that %s cherishes more than %s.",
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("%s is great, but there's nothing better than %s.",
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("I always knew that %s was really just %s in disguise.",
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("%s practically wrote the book on %s.",
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("The only class that %s didn't flunk was %s 101.",
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("%s is just a sad combination of %s and %s.",
+					target.getAsMention(),
+					derogatoryNoun(),
+					derogatoryNoun()
+			));
+			add(String.format("Some say %s is a cross between %s and %s",
+					target.getAsMention(),
+					derogatoryNoun(),
+					derogatoryNoun()
+			));
+			add(String.format("It is a fact that %s identifies with %s",
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("Some people have spirit animals. %s has %s.",
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("If %s had a million dollars, all of it would go towards %s and %s.",
+					target.getAsMention(),
+					derogatoryNoun(),
+					derogatoryNoun()
+			));
+			add(String.format("%s, %s, and %s: the perfect Friday for %s",
+					derogatoryNoun(),
+					derogatoryNoun(),
+					derogatoryNoun(),
+					target.getAsMention()
+
+			));
+			add(String.format("It was %s that inspired %s to found the cult of %s.",
+					derogatoryNoun(),
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("It is wildly debated if %s or %s was the downfall of %s.",
+					derogatoryNoun(),
+					derogatoryNoun(),
+					target.getAsMention()
+			));
+			add(String.format("You might suck %s, but at least you are an expert in %s.",
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("Taking comfort in %s is sadly the only thing that %s has left.",
+					derogatoryNoun(),
+					target.getAsMention()
+			));
+			add(String.format("Kids, learn from %s: %s is not a valid contraceptive.",
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("%s is a valuable lesson in why we learn from schools, and not from %s.",
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("%s is proof that %s and %s do not go together.",
+					target.getAsMention(),
+					derogatoryNoun(),
+					derogatoryNoun()
+			));
+			add(String.format("I'm sorry %s, but %s is not a marketable skill.",
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("All hail %s, master of %s!",
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("Breakfast? No, %s starts the morning off right with %s, %s, and %s.",
+					target.getAsMention(),
+					derogatoryNoun(),
+					derogatoryNoun(),
+					derogatoryNoun()
+			));
+			add(String.format("%s could never live alone, not without %s",
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("I despise %s, but I hate %s more.",
+					derogatoryNoun(),
+					target.getAsMention()
+			));
+			add(String.format("Legalizing %s will only encourage %s to embrace %s.",
+					derogatoryNoun(),
+					target.getAsMention(),
+					derogatoryNoun()
+			));
+			add(String.format("Leave it to %s to ruin the fine American pasttimes of %s and %s.",
+					target.getAsMention(),
+					derogatoryNoun(),
+					derogatoryNoun()
+			));
+			add(String.format("Combining %s and %s gives you %s. What a world.",
+					derogatoryNoun(),
+					derogatoryNoun(),
+					target.getAsMention()
+			));
+		}};
+		// Return a random element from the list of Strings
+		return funList.get(RANDY.nextInt(funList.size()));
 	}
 
 }

@@ -6,7 +6,6 @@ import io.github.kjm015.kylenewer.message.MessageGenerator;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.core.entities.User;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -22,7 +21,6 @@ public class JudgeCommand extends Command {
 
     private MessageGenerator generator = new MessageGenerator();
 
-    // Random number generator
     private static final Random RANDY = new Random();
 
     // Required constructor for all commands
@@ -47,6 +45,9 @@ public class JudgeCommand extends Command {
      * He will also mention a target, which is either randomly selected from the pool
      * of the channels users, or it is matched in the command args themselves.
      *
+     * The response hinges upon the arguments coming in, and different judgements
+     * are generated for different people.
+     *
      * @param event - The instance of the command that got called
      *
      * @author kjm015
@@ -60,6 +61,7 @@ public class JudgeCommand extends Command {
         if (("me").equalsIgnoreCase(arg)) {
         	this.judgeSender(event);
         } else if (arg.contains("yourself")) {
+	        event.reply("That's an easy one.");
         	this.judgeSelf(event);
         } else if (arg.contains("someone") || arg.contains("somebody")) {
         	this.judgeRandom(event);
@@ -84,7 +86,7 @@ public class JudgeCommand extends Command {
 	    User target = this.getUserFromList(users, arg);
 
 	    if (target != null && !target.equals(event.getSelfUser())) {
-		    event.reply(this.generateJudgement(target));
+		    event.reply(generator.generateJudgement(target));
 	    } else if (target.equals(event.getSelfUser())) {
 		    event.reply("That's a tough one.");
 			this.judgeSelf(event);
@@ -110,7 +112,7 @@ public class JudgeCommand extends Command {
 		    event.reply("I'll roast myself, thank you very much.");
 		    this.judgeSelf(event);
 	    } else {
-		    event.reply(this.generateJudgement(target));
+		    event.reply(generator.generateJudgement(target));
 	    }
     }
 
@@ -123,7 +125,6 @@ public class JudgeCommand extends Command {
 	 * @since 8/5/2018
 	 */
     protected void judgeSelf(CommandEvent event) {
-        event.reply("That's an easy one.");
 	    event.reply("I'm not saying I'm the best person ever, but...");
 	    event.reply("I totally am.");
     }
@@ -139,151 +140,7 @@ public class JudgeCommand extends Command {
     protected void judgeSender(CommandEvent event) {
 	    User target = event.getAuthor();
 	    event.reply("If you insist...");
-	    event.reply(this.generateJudgement(target));
-    }
-
-    /**
-     * This method formats the judgement message to be sent to a specific user. The judgement
-     * is put together using pieces from MessageGenerator given these preset formats.
-     *
-     * @param target - The user targeted for judgement that will also be mentioned in the message
-     * @return the message String to be sent
-     *
-     * @author kjm015
-     * @since 7/26/2018
-     */
-    private String generateJudgement(User target) {
-        // Make a list of String formats
-        List<String> funList = new ArrayList<String>() {{
-            add(String.format("Nothing says %s like %s.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("%s loves nothing more than %s.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("There's nothing that %s cherishes more than %s.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("%s is great, but there's nothing better than %s.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("I always knew that %s was really just %s in disguise.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("%s practically wrote the book on %s.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("The only class that %s didn't flunk was %s 101.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("%s is just a sad combination of %s and %s.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("Some say %s is a cross between %s and %s",
-                    target.getAsMention(),
-                    generator.derogatoryNoun(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("It is a fact that %s identifies with %s",
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("Some people have spirit animals. %s has %s.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("If %s had a million dollars, all of it would go towards %s and %s.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("%s, %s, and %s: the perfect Friday for %s",
-                    generator.derogatoryNoun(),
-                    generator.derogatoryNoun(),
-                    generator.derogatoryNoun(),
-                    target.getAsMention()
-
-            ));
-            add(String.format("It was %s that inspired %s to found the cult of %s.",
-                    generator.derogatoryNoun(),
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("It is wildly debated if %s or %s was the downfall of %s.",
-                    generator.derogatoryNoun(),
-                    generator.derogatoryNoun(),
-                    target.getAsMention()
-            ));
-            add(String.format("You might suck %s, but at least you are an expert in %s.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("Taking comfort in %s is sadly the only thing that %s has left.",
-                    generator.derogatoryNoun(),
-                    target.getAsMention()
-            ));
-            add(String.format("Kids, learn from %s: %s is not a valid contraceptive.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("%s is a valuable lesson in why we learn from schools, and not from %s.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("%s is proof that %s and %s do not go together.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("I'm sorry %s, but %s is not a marketable skill.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("All hail %s, master of %s!",
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("Breakfast? No, %s starts the morning off right with %s, %s, and %s.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun(),
-                    generator.derogatoryNoun(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("%s could never live alone, not without %s",
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("I despise %s, but I hate %s more.",
-                    generator.derogatoryNoun(),
-                    target.getAsMention()
-            ));
-            add(String.format("Legalizing %s will only encourage %s to embrace %s.",
-                    generator.derogatoryNoun(),
-                    target.getAsMention(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("Leave it to %s to ruin the fine American pasttimes of %s and %s.",
-                    target.getAsMention(),
-                    generator.derogatoryNoun(),
-                    generator.derogatoryNoun()
-            ));
-            add(String.format("Combining %s and %s gives you %s. What a world.",
-                    generator.derogatoryNoun(),
-                    generator.derogatoryNoun(),
-                    target.getAsMention()
-            ));
-        }};
-        // Return a random element from the list of Strings
-        return funList.get(RANDY.nextInt(funList.size()));
+	    event.reply(generator.generateJudgement(target));
     }
 
 	/**
