@@ -2,6 +2,7 @@ package io.github.kjm015.kylenewer.commands;
 
 import com.jagrosh.jdautilities.command.CommandEvent;
 import io.github.kjm015.kylenewer.message.MessageGenerator;
+import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.entities.User;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,10 +10,9 @@ import org.junit.runner.RunWith;
 import org.mockito.*;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.Random;
+import java.util.ArrayList;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.verify;
@@ -30,17 +30,14 @@ public class JudgeCommandTests {
 	@Mock
 	private User user;
 
-	@Captor
-	private ArgumentCaptor<User> userCaptor;
-
-	@Captor
-	private ArgumentCaptor<String> stringCaptor;
-
 	@InjectMocks
 	private JudgeCommand judgeCommand;
 
 	@Mock
-	private Random randy;
+	private ArrayList<User> users;
+
+	@Spy
+	private JDA jda;
 
 	@Before
 	public void init() {
