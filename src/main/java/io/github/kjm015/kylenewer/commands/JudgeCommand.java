@@ -6,7 +6,6 @@ import io.github.kjm015.kylenewer.message.MessageGenerator;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.core.entities.User;
 
-import java.lang.annotation.Documented;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -55,77 +54,75 @@ public class JudgeCommand extends Command {
      */
     @Override
     protected void execute(CommandEvent event) {
-    	// TODO: split all different conditional judgements into separate methods
+    	String arg = event.getArgs();
 
-        boolean foundUser = false;
-        List<User> users = event.getJDA().getUsers();
-        String arg = event.getArgs();
-
-       // Default to a random user in the server
-        User target = users.get(RANDY.nextInt(users.size()));
-
-       // Try to get the user that the command sender mentioned, if there is one
-	    if (getUserFromList(users, arg) != null) {
-		    target = getUserFromList(users, arg);
-	    } else {
-		    event.reply("I'm not sure who you're referring to when you say \"" + arg + ",\" but...");
-	    }
-
-       // Set the user to the sender if they want judgement passed on themselves of the bot
-       if (("me").equalsIgnoreCase(arg)) {
-            this.judgeSender(event);
-       } else if (arg.contains("yourself")) {
-            this.judgeSelf(event);
-       }
-
-       // If the command sender tried to judge a person that could not be found
-       if (!foundUser && !arg.isEmpty() && !arg.contains("someone") && !arg.contains("somebody")) {
-            event.reply("I'm not sure who you're referring to when you say \"" + arg + ",\" but...");
-       }
-
-       // Pass final judgement
-        if (target.equals(event.getSelfUser())) {
-
-        }
-        // Special case for smart people!
-        else if (target.getName().contains("kjm015")) {
-            event.reply(target.getAsMention() + " is pretty good at that coding nonsense");
-            event.reply("...but I'm probably still the best. Just saying.");
+    	// Set the user to the sender if they want judgement passed on themselves of the bot
+        if (("me").equalsIgnoreCase(arg)) {
+        	this.judgeSender(event);
+        } else if (arg.contains("yourself")) {
+        	this.judgeSelf(event);
+        } else if (arg.contains("someone") || arg.contains("somebody")) {
+        	this.judgeRandom(event);
         } else {
-           event.reply(generateJudgement(target));
-       }
-    }
-
-    /**
-     * This method scans a list of users for a selected user with a given discriminator or name.
-     *
-     * @param users - list of users to be scanned
-     * @param discriminatorOrName - the discriminator or name to be scanned against
-     * @return the user you're looking for
-     *
-     * @author kjm015
-     * @since 8/5/2018
-     */
-    public User getUserFromList(List<User> users, String discriminatorOrName) {
-    	User target = null;
-        for (User user: users) {
-            if (discriminatorOrName.contains(user.getName()) || discriminatorOrName.contains(user.getDiscriminator())) {
-                target = user;
-                break;
-            }
+        	this.judgeTarget(event);
         }
-        return target;
     }
 
 	/**
-	 * This method will make Kyle reply with a self-assessment
+	 * This method generates and sends a judgement for a given target User.
+	 * If the given user can't be found, judge a random person instead.
+	 *
+	 * @param event - the instance of the command being set
+	 *
+	 * @author kjm015
+	 * @since 8/6/2018
+	 */
+    protected void judgeTarget(CommandEvent event) {
+	    List<User> users = event.getJDA().getUsers();
+	    String arg = event.getArgs();
+
+	    User target = this.getUserFromList(users, arg);
+
+	    if (target != null && !target.equals(event.getSelfUser())) {
+		    event.reply(this.generateJudgement(target));
+	    } else if (target.equals(event.getSelfUser())) {
+		    event.reply("That's a tough one.");
+			this.judgeSelf(event);
+	    } else {
+		    event.reply("I'm not sure who you're referring to when you say \"" + arg + ",\" but...");
+		    this.judgeRandom(event);
+	    }
+    }
+
+	/**
+	 * This method generates and sends a judgement for a random user in the server
+	 *
+	 * @param event - the instance of the command being set
+	 *
+	 * @author kjm015
+	 * @since 8/6/2018
+	 */
+    protected void judgeRandom(CommandEvent event) {
+	    List<User> users = event.getJDA().getUsers();
+	    User target = users.get(RANDY.nextInt(users.size()));
+
+	    if (target.equals(event.getSelfUser())) {
+		    event.reply("I'll roast myself, thank you very much.");
+		    this.judgeSelf(event);
+	    } else {
+		    event.reply(this.generateJudgement(target));
+	    }
+    }
+
+	/**
+	 * This method will make Kyle reply with a flattering self-assessment
 	 *
 	 * @param event - the judge command event coming in to reply to
 	 *
 	 * @author kjm015
 	 * @since 8/5/2018
 	 */
-    private void judgeSelf(CommandEvent event) {
+    protected void judgeSelf(CommandEvent event) {
         event.reply("That's an easy one.");
 	    event.reply("I'm not saying I'm the best person ever, but...");
 	    event.reply("I totally am.");
@@ -139,10 +136,10 @@ public class JudgeCommand extends Command {
 	 * @author kjm015
 	 * @since 8/5/2018
 	 */
-    private void judgeSender(CommandEvent event) {
+    protected void judgeSender(CommandEvent event) {
 	    User target = event.getAuthor();
 	    event.reply("If you insist...");
-	    event.reply(generateJudgement(target));
+	    event.reply(this.generateJudgement(target));
     }
 
     /**
@@ -288,4 +285,25 @@ public class JudgeCommand extends Command {
         // Return a random element from the list of Strings
         return funList.get(RANDY.nextInt(funList.size()));
     }
+
+	/**
+	 * This method scans a list of users for a selected user with a given discriminator or name.
+	 *
+	 * @param users - list of users to be scanned
+	 * @param discriminatorOrName - the discriminator or name to be scanned against
+	 * @return the user you're looking for
+	 *
+	 * @author kjm015
+	 * @since 8/5/2018
+	 */
+	private User getUserFromList(List<User> users, String discriminatorOrName) {
+		User target = null;
+		for (User user: users) {
+			if (discriminatorOrName.contains(user.getName()) || discriminatorOrName.contains(user.getDiscriminator())) {
+				target = user;
+				break;
+			}
+		}
+		return target;
+	}
 }
