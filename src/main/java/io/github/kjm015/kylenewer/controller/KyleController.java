@@ -1,5 +1,7 @@
 package io.github.kjm015.kylenewer.controller;
 
+import io.github.kjm015.kylenewer.service.DataService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -15,11 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class KyleController {
 
+    @Autowired
+    private DataService dataService;
+
     /**
      * Tell the world hello! This is currently the placeholder home page.
      *
      * @return a pleasant greeting
-     * @author kjm015
      * @since 7/26/2018
      */
     @GetMapping("/")
