@@ -3,8 +3,6 @@ package io.github.kjm015.kylenewer;
 import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import io.github.kjm015.kylenewer.commands.*;
-import io.github.kjm015.kylenewer.message.MessageGenerator;
-import io.github.kjm015.kylenewer.message.MessageModifier;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDABuilder;
@@ -13,10 +11,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
 
 import javax.security.auth.login.LoginException;
-import java.util.Random;
 
 /**
  * Alright, this is the important file.

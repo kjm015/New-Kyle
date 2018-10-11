@@ -32,6 +32,8 @@ dependencies {
 
 	compile 'com.jagrosh:jda-utilities:2.1.1'
 	compile 'net.dv8tion:JDA:3.6.0_376'
+	
+	compile 'com.h2database:h2'
 
 	compileOnly('org.projectlombok:lombok')
 
