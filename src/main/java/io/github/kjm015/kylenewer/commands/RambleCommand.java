@@ -45,7 +45,6 @@ public class RambleCommand extends Command {
      *
      * @param event - The instance of the command that got called
      *
-     * @author kjm015
      * @since 7/26/2018
      */
     @Override
@@ -64,7 +63,6 @@ public class RambleCommand extends Command {
      * @param args - the arguments to be passed into the message formatter
      * @return the formatted response String
      *
-     * @author kjm015
      * @since 7/26/2018
      */
     private String generateRambling(String args) {
@@ -102,7 +100,6 @@ public class RambleCommand extends Command {
      *
      * @return the formatted response String
      *
-     * @author kjm015
      * @since 7/26/2018
      */
     private String generateRamblingNoArgs() {

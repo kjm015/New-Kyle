@@ -134,7 +134,6 @@ public class JudgeCommand extends Command {
 	 *
 	 * @param event - the judge command event coming in to reply to
 	 *
-	 * @author kjm015
 	 * @since 8/5/2018
 	 */
     protected void judgeSender(CommandEvent event) {
@@ -150,7 +149,6 @@ public class JudgeCommand extends Command {
 	 * @param discriminatorOrName - the discriminator or name to be scanned against
 	 * @return the user you're looking for
 	 *
-	 * @author kjm015
 	 * @since 8/5/2018
 	 */
 	private User getUserFromList(List<User> users, String discriminatorOrName) {

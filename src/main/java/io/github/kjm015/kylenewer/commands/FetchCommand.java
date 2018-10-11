@@ -40,7 +40,6 @@ public class FetchCommand extends Command {
      *
      * @param event - The instance of the command that got called
      *
-     * @author kjm015
      * @since 7/26/2018
      */
     @Override
