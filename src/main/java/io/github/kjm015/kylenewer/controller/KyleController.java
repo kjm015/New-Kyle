@@ -1,5 +1,6 @@
 package io.github.kjm015.kylenewer.controller;
 
+import io.github.kjm015.kylenewer.manager.KyleManager;
 import io.github.kjm015.kylenewer.service.DataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +20,9 @@ public class KyleController {
 
     @Autowired
     private DataService dataService;
+
+    @Autowired
+    private KyleManager manager;
 
     /**
      * Tell the world hello! This is currently the placeholder home page.
