@@ -46,7 +46,6 @@ public class SuckCommand extends Command {
      *
      * @param event - The instance of the command that got called
      *
-     * @author kjm015
      * @since 7/26/2018
      */
     @Override
@@ -65,7 +64,6 @@ public class SuckCommand extends Command {
      * @param event - the instance of the command that got called
      * @return the retort
      *
-     * @author kjm015
      * @since 7/26/2018
      */
     private String getRetort(CommandEvent event) {

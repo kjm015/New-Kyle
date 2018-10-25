@@ -5,9 +5,7 @@ import com.jagrosh.jdautilities.command.CommandEvent;
 import io.github.kjm015.kylenewer.message.MessageGenerator;
 import io.github.kjm015.kylenewer.message.MessageModifier;
 import lombok.Getter;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -39,7 +37,6 @@ public class RageCommand extends Command {
      *
      * @param event - the command instance
      *
-     * @author kjm015
      * @since 7/26/2018
      */
     @Override

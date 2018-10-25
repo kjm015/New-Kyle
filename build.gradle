@@ -29,9 +29,15 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-hateoas')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.data:spring-data-jpa')
+
+	// compile 'javax.persistence:persistence-api:1.0.2'
 
 	compile 'com.jagrosh:jda-utilities:2.1.1'
 	compile 'net.dv8tion:JDA:3.6.0_376'
+
+	compile("org.springframework.boot:spring-boot-starter-data-jpa")
+	compile("com.h2database:h2")
 
 	compileOnly('org.projectlombok:lombok')
 
