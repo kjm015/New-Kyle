@@ -1,12 +1,7 @@
 package io.github.kjm015.kylenewer.controller;
 
-import io.github.kjm015.kylenewer.manager.KyleManager;
-import io.github.kjm015.kylenewer.service.DataService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * This controller is in place in case we want to implement a home page or MVC functionality
@@ -17,12 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class KyleController {
-
-    @Autowired
-    private DataService dataService;
-
-    @Autowired
-    private KyleManager manager;
 
     /**
      * Tell the world hello! This is currently the placeholder home page.
