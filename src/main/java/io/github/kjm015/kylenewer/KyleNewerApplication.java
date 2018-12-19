@@ -67,7 +67,7 @@ public class KyleNewerApplication {
 		builder.addCommand(new JudgeCommand());
 		builder.addCommand(new SuckCommand());
 		builder.addCommand(new RambleCommand());
-		builder.addCommand(new SkyrimCommand());
+		builder.addCommand(new QuoteCommand());
 
 		// Set the owner of the bot (set in properties)
 		builder.setOwnerId(owner);
