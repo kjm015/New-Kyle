@@ -26,7 +26,7 @@ public class FetchCommand extends Command {
     // Required constructor for all Commands
     public FetchCommand() {
         this.name = "fetch";
-        this.aliases = new String[] {"retrieve", "get", "return"};
+        this.aliases = new String[] {"retrieve", "get", "return", "给我"};
         this.help = "Kyle will fetch some server value";
         this.arguments = "<value>";
     }

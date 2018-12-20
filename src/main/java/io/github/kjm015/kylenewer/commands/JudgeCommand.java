@@ -85,14 +85,19 @@ public class JudgeCommand extends Command {
 
 	    User target = this.getUserFromList(users, arg);
 
-	    if (target != null && !target.equals(event.getSelfUser())) {
-		    event.reply(generator.generateJudgement(target));
-	    } else if (target.equals(event.getSelfUser())) {
-		    event.reply("That's a tough one.");
-			this.judgeSelf(event);
-	    } else {
-		    event.reply("I'm not sure who you're referring to when you say \"" + arg + ",\" but...");
-		    this.judgeRandom(event);
+	    try {
+		    if (target != null && !target.equals(event.getSelfUser())) {
+			    event.reply(generator.generateJudgement(target));
+		    } else if (target.equals(event.getSelfUser())) {
+			    event.reply("That's a tough one.");
+			    this.judgeSelf(event);
+		    } else {
+			    event.reply("I'm not sure who you're referring to when you say \"" + arg + ",\" but...");
+			    this.judgeRandom(event);
+		    }
+	    } catch (NullPointerException e) {
+	    	log.warn("Requester " + event.getMember() + " tried to look up user that does not exist: ", e);
+	    	event.reply("Whoops! Couldn't find that person.");
 	    }
     }
 
