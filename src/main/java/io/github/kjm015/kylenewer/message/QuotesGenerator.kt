@@ -2,11 +2,11 @@ package io.github.kjm015.kylenewer.message
 
 import java.util.*
 
-class SkyrimQuotes {
+class QuotesGenerator {
 
     private var randy = Random()
 
-    fun getQuote(): String {
+    fun getSkyrimQuote(): String {
         var quotes: ArrayList<String> = ArrayList()
 
         quotes.add("I'd be a lot warmer and a lot happier with a belly full of mead.")
@@ -37,6 +37,7 @@ class SkyrimQuotes {
         quotes.add("What do you want, milk drinker?")
         quotes.add("You'll be so much easier to rob when you're dead!")
         quotes.add("Never should have come here!")
+        quotes.add("Shor's bones, you're going to freeze to death!")
         quotes.add("By Ysmir, you'll never leave here alive!")
         quotes.add("I've fought colds tougher than you!")
         quotes.add("No more! I yield, I yield!")
