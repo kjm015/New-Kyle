@@ -21,4 +21,5 @@ public class SpringConfiguration {
     public static PropertySourcesPlaceholderConfigurer propertyConfigInDev() {
         return new PropertySourcesPlaceholderConfigurer();
     }
+
 }
