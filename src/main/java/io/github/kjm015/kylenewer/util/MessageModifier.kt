@@ -1,4 +1,4 @@
-package io.github.kjm015.kylenewer.message
+package io.github.kjm015.kylenewer.util
 
 import lombok.NoArgsConstructor
 

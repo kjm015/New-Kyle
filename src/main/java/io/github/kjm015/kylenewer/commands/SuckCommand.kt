@@ -2,10 +2,9 @@ package io.github.kjm015.kylenewer.commands
 
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
-import io.github.kjm015.kylenewer.message.MessageGenerator
-import io.github.kjm015.kylenewer.message.MessageModifier
+import io.github.kjm015.kylenewer.util.MessageGenerator
+import io.github.kjm015.kylenewer.util.MessageModifier
 import lombok.extern.slf4j.Slf4j
-import org.springframework.beans.factory.annotation.Autowired
 
 import java.util.ArrayList
 import java.util.Random
@@ -38,7 +37,7 @@ class SuckCommand : Command() {
      *
      * For this class, Kyle will respond with his reaction to the suck request.
      * Generally, his response will be rather trite as per
-     * [io.github.kjm015.kylenewer.message.MessageGenerator]
+     * [io.github.kjm015.kylenewer.util.MessageGenerator]
      *
      * @param event - The instance of the command that got called
      *

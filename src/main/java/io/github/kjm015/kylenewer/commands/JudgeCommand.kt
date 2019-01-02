@@ -2,7 +2,7 @@ package io.github.kjm015.kylenewer.commands
 
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
-import io.github.kjm015.kylenewer.message.MessageGenerator
+import io.github.kjm015.kylenewer.util.MessageGenerator
 import lombok.extern.slf4j.Slf4j
 import net.dv8tion.jda.core.entities.User
 import java.util.Random
@@ -34,9 +34,9 @@ class JudgeCommand : Command() {
      * This command overrides the abstract method from the Command class.
      * When this command is called, this is the stuff that actually happens.
      *
-     * For this class, Kyle will pass a random judgement message that is primarily
+     * For this class, Kyle will pass a random judgement util that is primarily
      * determined by getting pieces from the MessageGenerator class.
-     * [io.github.kjm015.kylenewer.message.MessageGenerator]
+     * [io.github.kjm015.kylenewer.util.MessageGenerator]
      *
      * He will also mention a target, which is either randomly selected from the pool
      * of the channels users, or it is matched in the command args themselves.
