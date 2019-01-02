@@ -7,7 +7,7 @@ class QuotesGenerator {
     private var randy = Random()
 
     fun getSkyrimQuote(): String {
-        var quotes: ArrayList<String> = ArrayList()
+        val quotes: ArrayList<String> = ArrayList()
 
         quotes.add("I'd be a lot warmer and a lot happier with a belly full of mead.")
         quotes.add("Is that... Fur? Coming out of your ears?")

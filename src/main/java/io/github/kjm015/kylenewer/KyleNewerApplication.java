@@ -68,6 +68,7 @@ public class KyleNewerApplication {
 		builder.addCommand(new SuckCommand());
 		builder.addCommand(new RambleCommand());
 		builder.addCommand(new QuoteCommand());
+		builder.addCommand(new StoryCommand());
 
 		// Set the owner of the bot (set in properties)
 		builder.setOwnerId(owner);
