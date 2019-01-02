@@ -5,9 +5,7 @@ import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
 import io.github.kjm015.kylenewer.util.MessageModifier
 import lombok.extern.slf4j.Slf4j
-
-import java.util.ArrayList
-import java.util.Random
+import java.util.*
 
 /**
  * This command is to allow Kyle to ramble about whatever is on his mind at any given moment.

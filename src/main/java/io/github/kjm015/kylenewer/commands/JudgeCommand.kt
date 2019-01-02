@@ -5,7 +5,7 @@ import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
 import lombok.extern.slf4j.Slf4j
 import net.dv8tion.jda.core.entities.User
-import java.util.Random
+import java.util.*
 
 /**
  * This command will make Kyle pass judgement on a specified user, or an unsuspecting

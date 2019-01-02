@@ -2,9 +2,7 @@ package io.github.kjm015.kylenewer.util
 
 import lombok.NoArgsConstructor
 import net.dv8tion.jda.core.entities.User
-
-import java.util.ArrayList
-import java.util.Random
+import java.util.*
 
 /**
  * This class generates all of the random shit that Kyle will say.

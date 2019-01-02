@@ -8,7 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 /**
  * This class sets the properties for this instance of the Discord bot, stored in the application's
  * property file. I mean, you could store the values in here directly, but that would be stupid.
- *
+ * <p>
  * Don't do it.
  *
  * @author kjm015
@@ -19,13 +19,13 @@ import org.springframework.context.annotation.PropertySource;
 @Getter
 public class DiscordSettings {
 
-    @Value("${discord.oauth}")
-    private String oauth;
+	@Value("${discord.oauth}")
+	private String oauth;
 
-    @Value("${discord.game}")
-    private String game;
+	@Value("${discord.game}")
+	private String game;
 
-    @Value("${discord.owner}")
-    private String owner;
+	@Value("${discord.owner}")
+	private String owner;
 
 }

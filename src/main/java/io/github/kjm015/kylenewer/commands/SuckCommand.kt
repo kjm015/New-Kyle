@@ -5,9 +5,7 @@ import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
 import io.github.kjm015.kylenewer.util.MessageModifier
 import lombok.extern.slf4j.Slf4j
-
-import java.util.ArrayList
-import java.util.Random
+import java.util.*
 
 /**
  * This command is supposed to respond to requests that Kyle go suck, kiss, or lick something that

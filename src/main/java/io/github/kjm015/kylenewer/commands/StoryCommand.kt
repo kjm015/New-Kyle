@@ -11,7 +11,7 @@ class StoryCommand : Command() {
     init {
         this.name = "story"
         this.aliases = arrayOf("tale", "fable")
-        this.help = "Kyle will tell you a story about his life."
+        this.help = "Kyle will tell you a story about a recent occurrence in his life."
     }
 
     override fun execute(event: CommandEvent) {
