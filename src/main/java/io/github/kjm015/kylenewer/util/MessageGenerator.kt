@@ -1,10 +1,8 @@
-package io.github.kjm015.kylenewer.message
+package io.github.kjm015.kylenewer.util
 
 import lombok.NoArgsConstructor
 import net.dv8tion.jda.core.entities.User
-
-import java.util.ArrayList
-import java.util.Random
+import java.util.*
 
 /**
  * This class generates all of the random shit that Kyle will say.
@@ -485,11 +483,11 @@ class MessageGenerator {
     }
 
     /**
-     * This method formats the judgement message to be sent to a specific user. The judgement
+     * This method formats the judgement util to be sent to a specific user. The judgement
      * is put together using pieces from MessageGenerator given these preset formats.
      *
-     * @param target - The user targeted for judgement that will also be mentioned in the message
-     * @return the message String to be sent
+     * @param target - The user targeted for judgement that will also be mentioned in the util
+     * @return the util String to be sent
      *
      * @author kjm015
      * @since 7/26/2018

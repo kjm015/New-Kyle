@@ -27,7 +27,7 @@ class AdviceCommand : Command() {
      *
      * For this class, Kyle gives advices that is formatted based on things from
      * both this class and the MessageGenerator class
-     * [io.github.kjm015.kylenewer.message.MessageGenerator]
+     * [io.github.kjm015.kylenewer.util.MessageGenerator]
      *
      * @param event - The instance of the command that got called
      * @since 7/26/2018
