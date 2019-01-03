@@ -27,7 +27,7 @@ class FetchCommand : Command() {
      * This command overrides the abstract method from the Command class.
      * When this command is called, this is the stuff that actually happens.
      *
-     * For this class, Kyle, will post a message relating to the specific statistic
+     * For this class, Kyle, will post a util relating to the specific statistic
      * that was requested to be gathered for the server.
      *
      * @param event - The instance of the command that got called

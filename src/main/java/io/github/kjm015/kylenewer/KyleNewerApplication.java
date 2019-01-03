@@ -16,11 +16,11 @@ import javax.security.auth.login.LoginException;
 
 /**
  * Alright, this is the important file.
- *
+ * <p>
  * This is where the application gets ran, and where all of the commands are imported.
  * This is where all of the beans are created and where the settings for each instance of the
  * bot are put into place.
- *
+ * <p>
  * If your code adds a command, DON'T FORGET TO ADD IT HERE BEFORE YOU PUSH IT!
  *
  * @author kjm015
@@ -36,10 +36,8 @@ public class KyleNewerApplication {
 	 * functionality.
 	 *
 	 * @param args - a dummy argument that makes it so that main isn't an integer anymore (yay!)
-	 *
-	 * @exception LoginException - you don't have the right credentials, you dingus
-	 * @exception IllegalArgumentException - stop sending my application garbage responses
-	 *
+	 * @throws LoginException           - you don't have the right credentials, you dingus
+	 * @throws IllegalArgumentException - stop sending my application garbage responses
 	 * @author kjm015
 	 * @since 7/26/2018
 	 */
@@ -68,6 +66,7 @@ public class KyleNewerApplication {
 		builder.addCommand(new SuckCommand());
 		builder.addCommand(new RambleCommand());
 		builder.addCommand(new QuoteCommand());
+		builder.addCommand(new StoryCommand());
 
 		// Set the owner of the bot (set in properties)
 		builder.setOwnerId(owner);
