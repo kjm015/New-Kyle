@@ -124,7 +124,7 @@ class JudgeCommand : Command() {
      * @author kjm015
      * @since 8/5/2018
      */
-    protected fun judgeSelf(event: CommandEvent) {
+    private fun judgeSelf(event: CommandEvent) {
         event.reply("I'm not saying I'm the best person ever, but...")
         event.reply("I totally am.")
     }
@@ -136,7 +136,7 @@ class JudgeCommand : Command() {
      *
      * @since 8/5/2018
      */
-    protected fun judgeSender(event: CommandEvent) {
+    private fun judgeSender(event: CommandEvent) {
         val target = event.author
         event.reply("If you insist...")
         event.reply(generator.generateJudgement(target))

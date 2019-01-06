@@ -3,6 +3,7 @@ package io.github.kjm015.kylenewer;
 import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import io.github.kjm015.kylenewer.commands.*;
+import io.github.kjm015.kylenewer.listeners.MessageListener;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDABuilder;
@@ -38,8 +39,6 @@ public class KyleNewerApplication {
 	 * @param args - a dummy argument that makes it so that main isn't an integer anymore (yay!)
 	 * @throws LoginException           - you don't have the right credentials, you dingus
 	 * @throws IllegalArgumentException - stop sending my application garbage responses
-	 * @author kjm015
-	 * @since 7/26/2018
 	 */
 	public static void main(String[] args) throws LoginException, IllegalArgumentException {
 
@@ -79,6 +78,7 @@ public class KyleNewerApplication {
 				.setGame(Game.watching(game))
 				.setToken(token)
 				.addEventListener(client)
+				.addEventListener(new MessageListener())
 				.buildAsync();
 
 		// Run the application that hosts the bot
