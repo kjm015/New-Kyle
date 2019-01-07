@@ -2,6 +2,7 @@ package io.github.kjm015.kylenewer.commands
 
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
+import io.github.kjm015.kylenewer.util.AppConstants
 import lombok.Getter
 
 /**
@@ -53,6 +54,10 @@ class FetchCommand : Command() {
             val users = jda.users
 
             event.reply("I would guess there are like " + users.size + " guys in this server.")
+        } else if (args.contains("controversial") || args.contains("demonetized")) {
+
+            event.reply(AppConstants.DISASTER)
+
         } else {
             event.replyWarning("No clue what you want from me, dude.")
             event.replyWarning("Like, what is \"$args\" supposed to mean?")
@@ -60,5 +65,7 @@ class FetchCommand : Command() {
         }// Don't recognize the command arguments
         // Fetch the number of members in the server
     }
+
+
 
 }

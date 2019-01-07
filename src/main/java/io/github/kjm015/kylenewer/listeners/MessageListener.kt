@@ -21,12 +21,21 @@ class MessageListener: ListenerAdapter() {
     override fun onMessageReceived(event: MessageReceivedEvent) {
         super.onMessageReceived(event)
 
+        // Log messages with the channel and sender
         if (event.isFromType(ChannelType.PRIVATE)) {
-            log.info(String.format("[PM] %s: %s\n", event.author.name, event.message.contentDisplay))
+            log.debug(String.format("[PM] %s: %s\n", event.author.name, event.message.contentDisplay))
         } else {
-            log.info(String.format("[%s][%s] %s: %s\n", event.guild.name, event.textChannel.name,
+            log.debug(String.format("[%s][%s] %s: %s\n", event.guild.name, event.textChannel.name,
                     event.member.effectiveName, event.message.contentDisplay))
         }
+
+        // Send a reminder if people ask where Kyle went
+        if (event.message.contentRaw.contains("Where's Kyle", ignoreCase = true) ||
+                event.message.contentRaw.contains("Where is Kyle", ignoreCase = true) ||
+                event.message.contentRaw.contains("Where did Kyle go", ignoreCase = true)) {
+            event.textChannel.sendMessage("I'm here, you fucking scrub!").queue()
+        }
+
     }
 
 }
