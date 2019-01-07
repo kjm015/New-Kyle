@@ -2,22 +2,18 @@ package io.github.kjm015.kylenewer.commands
 
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
-import io.github.kjm015.kylenewer.message.MessageGenerator
-import io.github.kjm015.kylenewer.message.MessageModifier
+import io.github.kjm015.kylenewer.util.MessageGenerator
+import io.github.kjm015.kylenewer.util.MessageModifier
 import lombok.extern.slf4j.Slf4j
-import org.springframework.beans.factory.annotation.Autowired
-
-import java.util.ArrayList
-import java.util.Random
+import java.util.*
 
 /**
  * This command is to allow Kyle to ramble about whatever is on his mind at any given moment.
- * It usually generates nonsensical garbage, you can add more message templates if you feel like it.
+ * It usually generates nonsensical garbage, you can add more util templates if you feel like it.
  *
  * @author kjm015
  * @since 7/26/2018
  */
-@Slf4j
 class RambleCommand : Command() {
 
     private val generator = MessageGenerator()
@@ -36,8 +32,8 @@ class RambleCommand : Command() {
      * This command overrides the abstract method from the Command class.
      * When this command is called, this is the stuff that actually happens.
      *
-     * For this class, Kyle will respond to the command with some absolute garbage message
-     * as per the [io.github.kjm015.kylenewer.message.MessageGenerator] class
+     * For this class, Kyle will respond to the command with some absolute garbage util
+     * as per the [io.github.kjm015.kylenewer.util.MessageGenerator] class
      *
      * @param event - The instance of the command that got called
      *
@@ -55,7 +51,7 @@ class RambleCommand : Command() {
     /**
      * Formats a retort based on the stuff that is passed into the command arguments.
      *
-     * @param args - the arguments to be passed into the message formatter
+     * @param args - the arguments to be passed into the util formatter
      * @return the formatted response String
      *
      * @since 7/26/2018
@@ -156,7 +152,6 @@ class RambleCommand : Command() {
     }
 
     companion object {
-
         // Random number generator that Tim finds hilarious
         private val RANDY = Random()
     }

@@ -2,6 +2,7 @@ package io.github.kjm015.kylenewer.commands
 
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
+import io.github.kjm015.kylenewer.util.AppConstants
 import lombok.Getter
 
 /**
@@ -27,7 +28,7 @@ class FetchCommand : Command() {
      * This command overrides the abstract method from the Command class.
      * When this command is called, this is the stuff that actually happens.
      *
-     * For this class, Kyle, will post a message relating to the specific statistic
+     * For this class, Kyle, will post a util relating to the specific statistic
      * that was requested to be gathered for the server.
      *
      * @param event - The instance of the command that got called
@@ -53,6 +54,10 @@ class FetchCommand : Command() {
             val users = jda.users
 
             event.reply("I would guess there are like " + users.size + " guys in this server.")
+        } else if (args.contains("controversial") || args.contains("demonetized")) {
+
+            event.reply(AppConstants.DISASTER)
+
         } else {
             event.replyWarning("No clue what you want from me, dude.")
             event.replyWarning("Like, what is \"$args\" supposed to mean?")
@@ -60,5 +65,7 @@ class FetchCommand : Command() {
         }// Don't recognize the command arguments
         // Fetch the number of members in the server
     }
+
+
 
 }

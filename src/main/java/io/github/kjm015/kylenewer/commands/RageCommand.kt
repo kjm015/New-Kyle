@@ -2,11 +2,8 @@ package io.github.kjm015.kylenewer.commands
 
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
-import io.github.kjm015.kylenewer.message.MessageGenerator
-import io.github.kjm015.kylenewer.message.MessageModifier
+import io.github.kjm015.kylenewer.util.MessageGenerator
 import lombok.Getter
-
-import java.util.Random
 
 /**
  * This command makes Kyle rant and rage about something that he would much rather
@@ -29,7 +26,7 @@ class RageCommand : Command() {
 
     /**
      * The actual things that happen when this command gets run.
-     * In this instance, Kyle replies with a very angry message.
+     * In this instance, Kyle replies with a very angry util.
      *
      * @param event - the command instance
      *

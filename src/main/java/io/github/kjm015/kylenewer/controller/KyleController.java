@@ -1,7 +1,9 @@
 package io.github.kjm015.kylenewer.controller;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * This controller is in place in case we want to implement a home page or MVC functionality
@@ -13,16 +15,15 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class KyleController {
 
-    /**
-     * Tell the world hello! This is currently the placeholder home page.
-     *
-     * @return a pleasant greeting
-     * @since 7/26/2018
-     */
-    @GetMapping("/")
-    @ResponseStatus(HttpStatus.OK)
-    public String sayHello() {
-        return "Hello, world!";
-    }
+	/**
+	 * Tell the world hello! This is currently the placeholder home page.
+	 *
+	 * @return a pleasant greeting
+	 */
+	@GetMapping("/")
+	@ResponseStatus(HttpStatus.OK)
+	public String sayHello() {
+		return "Hello, world!";
+	}
 
 }

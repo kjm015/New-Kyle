@@ -2,7 +2,7 @@ package io.github.kjm015.kylenewer.commands
 
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
-import io.github.kjm015.kylenewer.message.QuotesGenerator
+import io.github.kjm015.kylenewer.util.QuotesGenerator
 
 class QuoteCommand : Command() {
 
