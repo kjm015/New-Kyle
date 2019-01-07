@@ -6,7 +6,6 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent
 import net.dv8tion.jda.core.hooks.ListenerAdapter
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import java.lang.IllegalStateException
 
 /**
  * This class is a listener for when Kyle gets direct messaged or mentioned.
@@ -16,7 +15,7 @@ import java.lang.IllegalStateException
  * @author kjm015
  * @since 1/6/2019
  */
-class MessageListener: ListenerAdapter() {
+class MessageListener : ListenerAdapter() {
 
     private val log: Logger = LoggerFactory.getLogger(this.javaClass)
 
@@ -48,6 +47,13 @@ class MessageListener: ListenerAdapter() {
             } catch (e: Exception) {
                 log.warn("Could not delete that user's message! \n $e")
             }
+
+            event.message.channel.sendMessage(AppConstants.DISASTER).queue()
+
+            event.message.channel.sendTyping().queue()
+            Thread.sleep(250)
+
+            event.message.channel.sendMessage("This is Felix. Felix is an idiot. Don't be like Felix.").queue()
         }
 
         if (event.message.contentDisplay.contains(AppConstants.FLAG_TERM_2, ignoreCase = true)) {
