@@ -175,7 +175,6 @@ class StoryGenerator {
         snarks.add("In my defense, our dog was really fucking small. ")
         snarks.add("Another reason to grow your own medicine and food!")
 
-
         return snarks[randy.nextInt(snarks.size)]
     }
 

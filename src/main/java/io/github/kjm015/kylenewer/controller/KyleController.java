@@ -19,7 +19,6 @@ public class KyleController {
 	 * Tell the world hello! This is currently the placeholder home page.
 	 *
 	 * @return a pleasant greeting
-	 * @since 7/26/2018
 	 */
 	@GetMapping("/")
 	@ResponseStatus(HttpStatus.OK)
