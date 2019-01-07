@@ -81,7 +81,6 @@ class SuckCommand : Command() {
     }
 
     companion object {
-
         // Random number generator that Adam finds hilarious
         private val RANDY = Random()
     }

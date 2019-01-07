@@ -14,7 +14,6 @@ import java.util.*
  * @author kjm015
  * @since 7/26/2018
  */
-@Slf4j
 class RambleCommand : Command() {
 
     private val generator = MessageGenerator()
@@ -153,7 +152,6 @@ class RambleCommand : Command() {
     }
 
     companion object {
-
         // Random number generator that Tim finds hilarious
         private val RANDY = Random()
     }
