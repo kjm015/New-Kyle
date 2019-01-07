@@ -16,6 +16,7 @@ buildscript {
 
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.2.71'
+    id 'com.sedmelluq.jdaction' version '1.0.2'
 }
 compileKotlin {
     kotlinOptions {
