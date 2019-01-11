@@ -4,6 +4,7 @@ import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import io.github.kjm015.kylenewer.commands.*;
 import io.github.kjm015.kylenewer.listeners.ExodusListener;
+import io.github.kjm015.kylenewer.listeners.InfluxListener;
 import io.github.kjm015.kylenewer.listeners.MessageListener;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.core.AccountType;
@@ -81,6 +82,7 @@ public class KyleNewerApplication {
 				.addEventListener(client)
 				.addEventListener(new MessageListener())
 				.addEventListener(new ExodusListener())
+				.addEventListener(new InfluxListener())
 				.buildAsync();
 
 		// Run the application that hosts the bot
