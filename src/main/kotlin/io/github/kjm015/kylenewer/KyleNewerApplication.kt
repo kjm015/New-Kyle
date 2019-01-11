@@ -77,6 +77,7 @@ class KyleNewerApplication {
             JDABuilder(AccountType.BOT)
                     .setGame(Game.watching(game))
                     .setToken(token)
+                    // Add new event listeners here
                     .addEventListener(client)
                     .addEventListener(MessageListener())
                     .addEventListener(ExodusListener())

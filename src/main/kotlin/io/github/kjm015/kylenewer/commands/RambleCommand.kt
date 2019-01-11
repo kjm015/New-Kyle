@@ -4,7 +4,6 @@ import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
 import io.github.kjm015.kylenewer.util.MessageModifier
-import lombok.extern.slf4j.Slf4j
 import java.util.*
 
 /**

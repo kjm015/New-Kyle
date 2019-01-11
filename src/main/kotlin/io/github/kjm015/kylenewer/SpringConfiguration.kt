@@ -9,17 +9,16 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer
  * This has something to do with the way that the Discord settings relate to Spring beans.
  * Not quite sure what this does. I just know that if you remove it, everything breaks.
  *
- *
  * Don't do it.
  *
  * @since 7/26/2018
  */
 @Configuration
 @ComponentScan
-open class SpringConfiguration {
+class SpringConfiguration {
 
     @Bean
-    open fun propertyConfigInDev(): PropertySourcesPlaceholderConfigurer {
+    fun propertyConfigInDev(): PropertySourcesPlaceholderConfigurer {
         return PropertySourcesPlaceholderConfigurer()
     }
 
