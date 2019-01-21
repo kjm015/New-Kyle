@@ -1,6 +1,7 @@
 # Kyle-Newer (New Kyle)
-
+[![Stars](https://img.shields.io/github/stars/kjm015/Kyle-Newer.svg)](https://github.com/kjm015/Kyle-Newer/stargazers)
 [![CodeFactor](https://www.codefactor.io/repository/github/kjm015/kyle-newer/badge)](https://www.codefactor.io/repository/github/kjm015/kyle-newer) [![Build Status](https://travis-ci.com/kjm015/Kyle-Newer.svg?branch=master)](https://travis-ci.com/kjm015/Kyle-Newer)
+[![Discord](https://discordapp.com/api/guilds/242747048707751936/widget.png)](https://discord.gg/mPnEpjb)<br>
 
 Welcome! This project is an open-source [Kotlin](https://github.com/JetBrains/kotlin)-based Discord bot that uses the [JDA](https://github.com/DV8FromTheWorld/JDA) and [Josh Grosh](https://github.com/jagrosh)'s [JDA Utilities](https://github.com/JDA-Applications/JDA-Utilities).
 
