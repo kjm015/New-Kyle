@@ -35,8 +35,6 @@ class RambleCommand : Command() {
      * as per the [io.github.kjm015.kylenewer.util.MessageGenerator] class
      *
      * @param event - The instance of the command that got called
-     *
-     * @since 7/26/2018
      */
     override fun execute(event: CommandEvent) {
         // Give a default response if no arguments are given, otherwise use the arguments in the reply
@@ -52,8 +50,6 @@ class RambleCommand : Command() {
      *
      * @param args - the arguments to be passed into the util formatter
      * @return the formatted response String
-     *
-     * @since 7/26/2018
      */
     private fun generateRambling(args: String): String {
         val arguments = modifier.pruneAbout(args)
@@ -89,8 +85,6 @@ class RambleCommand : Command() {
      * Formats a retort based on whatever.
      *
      * @return the formatted response String
-     *
-     * @since 7/26/2018
      */
     private fun generateRamblingNoArgs(): String {
 

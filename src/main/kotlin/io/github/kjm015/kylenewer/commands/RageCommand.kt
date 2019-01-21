@@ -3,7 +3,6 @@ package io.github.kjm015.kylenewer.commands
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
-import lombok.Getter
 
 /**
  * This command makes Kyle rant and rage about something that he would much rather
@@ -12,7 +11,6 @@ import lombok.Getter
  * @author kjm015
  * @since 7/26/2018
  */
-@Getter
 class RageCommand : Command() {
 
     private val generator = MessageGenerator()
@@ -42,4 +40,5 @@ class RageCommand : Command() {
 
         event.reply(generator.closer())
     }
+
 }

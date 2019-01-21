@@ -1,8 +1,13 @@
 package io.github.kjm015.kylenewer.util
 
-import lombok.NoArgsConstructor
-
-@NoArgsConstructor
+/**
+ * This class converts perspectives of certain sentences. In other words, if a user submits a request
+ * to Kyle saying "YOU SUCK!", Kyle should give a response that takes what the user said, but with the
+ * pronouns flipped.
+ *
+ * @author kjm015
+ * @since 7/26/2018
+ */
 class MessageModifier {
 
     /**
@@ -11,8 +16,6 @@ class MessageModifier {
      *
      * @param string - the String to have its perspective reversed
      * @return the new String with the reversed perspective
-     * @author kjm015
-     * @since 7/26/2018
      */
     fun switchPerspectives(string: String): String {
         var temp = string
@@ -40,8 +43,6 @@ class MessageModifier {
      *
      * @param string - the String to modify
      * @return the new String without "about"
-     * @author kjm015
-     * @since 7/26/2018
      */
     fun pruneAbout(string: String): String {
         var temp = string
@@ -58,8 +59,6 @@ class MessageModifier {
      *
      * @param string - the String to be modified (have its articles removed)
      * @return the modified String to be sent back (no articles)
-     * @author kjm015
-     * @since 7/26/2018
      */
     fun removeArticles(string: String): String {
         var temp = string
@@ -70,4 +69,5 @@ class MessageModifier {
 
         return temp
     }
+
 }

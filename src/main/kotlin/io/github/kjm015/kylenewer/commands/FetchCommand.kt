@@ -3,7 +3,6 @@ package io.github.kjm015.kylenewer.commands
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.AppConstants
-import lombok.Getter
 
 /**
  * This class makes Kyle fetch some random information about the server or the bot environment.
@@ -13,7 +12,6 @@ import lombok.Getter
  * @author kjm015
  * @since 7/26/2018
  */
-@Getter
 class FetchCommand : Command() {
 
     // Required constructor for all Commands
@@ -65,6 +63,5 @@ class FetchCommand : Command() {
         }// Don't recognize the command arguments
         // Fetch the number of members in the server
     }
-
 
 }
