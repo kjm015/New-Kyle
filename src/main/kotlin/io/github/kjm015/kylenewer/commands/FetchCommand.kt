@@ -30,8 +30,6 @@ class FetchCommand : Command() {
      * that was requested to be gathered for the server.
      *
      * @param event - The instance of the command that got called
-     *
-     * @since 7/26/2018
      */
     public override fun execute(event: CommandEvent) {
         val args = event.args
@@ -60,8 +58,8 @@ class FetchCommand : Command() {
             event.replyWarning("No clue what you want from me, dude.")
             event.replyWarning("Like, what is \"$args\" supposed to mean?")
             event.replyWarning("You're giving off some bad ju-ju, man.")
-        }// Don't recognize the command arguments
-        // Fetch the number of members in the server
+        }
+
     }
 
 }
