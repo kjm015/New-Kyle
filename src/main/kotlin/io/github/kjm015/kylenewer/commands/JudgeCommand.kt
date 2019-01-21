@@ -3,7 +3,6 @@ package io.github.kjm015.kylenewer.commands
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
-import lombok.extern.slf4j.Slf4j
 import net.dv8tion.jda.core.entities.User
 import java.util.*
 
@@ -14,7 +13,6 @@ import java.util.*
  * @author kjm015
  * @since 7/26/2018
  */
-@Slf4j
 class JudgeCommand : Command() {
 
     private val generator = MessageGenerator()
@@ -45,9 +43,6 @@ class JudgeCommand : Command() {
      * are generated for different people.
      *
      * @param event - The instance of the command that got called
-     *
-     * @author kjm015
-     * @since 7/26/2018
      */
     public override fun execute(event: CommandEvent) {
         val arg = event.args
@@ -70,9 +65,6 @@ class JudgeCommand : Command() {
      * If the given user can't be found, judge a random person instead.
      *
      * @param event - the instance of the command being set
-     *
-     * @author kjm015
-     * @since 8/6/2018
      */
     private fun judgeTarget(event: CommandEvent) {
         val users = event.jda.users
@@ -100,11 +92,8 @@ class JudgeCommand : Command() {
      * This method generates and sends a judgement for a random user in the server
      *
      * @param event - the instance of the command being set
-     *
-     * @author kjm015
-     * @since 8/6/2018
      */
-    protected fun judgeRandom(event: CommandEvent) {
+    private fun judgeRandom(event: CommandEvent) {
         val users = event.jda.users
         val target = users[RANDY.nextInt(users.size)]
 
@@ -120,9 +109,6 @@ class JudgeCommand : Command() {
      * This method will make Kyle reply with a flattering self-assessment
      *
      * @param event - the judge command event coming in to reply to
-     *
-     * @author kjm015
-     * @since 8/5/2018
      */
     private fun judgeSelf(event: CommandEvent) {
         event.reply("I'm not saying I'm the best person ever, but...")
@@ -133,8 +119,6 @@ class JudgeCommand : Command() {
      * This method will make Kyle judge the sender of the command
      *
      * @param event - the judge command event coming in to reply to
-     *
-     * @since 8/5/2018
      */
     private fun judgeSender(event: CommandEvent) {
         val target = event.author
@@ -148,8 +132,6 @@ class JudgeCommand : Command() {
      * @param users - list of users to be scanned
      * @param discriminatorOrName - the discriminator or name to be scanned against
      * @return the user you're looking for
-     *
-     * @since 8/5/2018
      */
     private fun getUserFromList(users: List<User>, discriminatorOrName: String): User? {
         var target: User? = null

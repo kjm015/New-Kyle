@@ -50,12 +50,13 @@ class KyleNewerApplication {
             val token = settings.oauth
             val game = settings.game
             val owner = settings.owner
+            val prefix = settings.prefix
 
             // We could put this all on one line, but we won't. Don't do it.
             val builder = CommandClientBuilder()
 
             // Set the bot's prefix (what triggers commands)
-            builder.setPrefix("Hey Kyle, ")
+            builder.setPrefix(prefix)
 
             // Add the commands to the running pool (Add yours here!)
             builder.addCommand(RageCommand())

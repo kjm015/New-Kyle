@@ -19,8 +19,6 @@ class MessageGenerator {
      * Returns a random String from a list of dumb motion verbs
      *
      * @return a randomly selected motion verb String
-     * @author kjm015
-     * @since 7/26/2018
      */
     fun motionVerb(): String {
         val verbs = object : ArrayList<String>() {
@@ -61,8 +59,6 @@ class MessageGenerator {
      * Feel free to add stuff to this list if you think it fits!
      *
      * @return a randomly selected noun String
-     * @author kjm015
-     * @since 7/26/2018
      */
     fun derogatoryNoun(): String {
         val nouns = object : ArrayList<String>() {
@@ -488,9 +484,6 @@ class MessageGenerator {
      *
      * @param target - The user targeted for judgement that will also be mentioned in the util
      * @return the util String to be sent
-     *
-     * @author kjm015
-     * @since 7/26/2018
      */
     fun generateJudgement(target: User): String {
         // Make a list of String formats

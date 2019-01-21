@@ -3,6 +3,15 @@ package io.github.kjm015.kylenewer.util
 import java.util.*
 import kotlin.collections.ArrayList
 
+
+/**
+ * This class generates a story that was compiled from a list of sources.
+ * Namely, top posts from the illustrious subreddit /r/thatHappened, which
+ * contains a lot of hilarious "true" stories.
+ *
+ * @author kjm015
+ * @since 01/20/2019
+ */
 class StoryGenerator {
 
     fun story(): String {
@@ -19,6 +28,12 @@ class StoryGenerator {
         return builder.toString()
     }
 
+    /**
+     * This function generates the setup String for the story to be generated.
+     * Essentially, it sets the scene for the ridiculousness that is to come.
+     *
+     * @return the setup String to the story
+     */
     private fun setup(): String {
         val intros = ArrayList<String>()
 
@@ -52,6 +67,13 @@ class StoryGenerator {
         return intros[randy.nextInt(intros.size)]
     }
 
+    /**
+     * This function generates the point of conflict in the story. If you read
+     * some of the top posts from /r/thatHappened, you'll notice that pretty much
+     * all of them have some cartoon-villain levels of shit like this.
+     *
+     * @return some stupid String that signifies the antagonist of the story
+     */
     private fun antagonism(): String {
         val ants = ArrayList<String>()
 
@@ -87,6 +109,14 @@ class StoryGenerator {
         return ants[randy.nextInt(ants.size)]
     }
 
+    /**
+     * This function generates the storyteller's response to the made-up situation at hand.
+     * This is those "DESTROYS" moment, where the person telling
+     * the story thinks they've just done some triumphant form of heroism, but in reality, they
+     * just made themselves sound like an idiot.
+     *
+     * @return some garbage String response
+     */
     private fun retort(): String {
         val retorts = ArrayList<String>()
 
@@ -121,6 +151,12 @@ class StoryGenerator {
         return retorts[randy.nextInt(retorts.size)]
     }
 
+    /**
+     * This function creates the part of the story where the storyteller gets some reward for their courage.
+     * The infamous "and everybody clapped" comes to mind.
+     *
+     * @return some made up crap about being a hero String
+     */
     private fun affirmation(): String {
         val affirm = ArrayList<String>()
 
@@ -149,6 +185,13 @@ class StoryGenerator {
         return affirm[randy.nextInt(affirm.size)]
     }
 
+    /**
+     * This function generates an optional closing statement from the storyteller. It's often the cherry atop
+     * the sundae for the story at hand. It's an extra bit of snark that just kind of cements the narcissism
+     * of whomever decided that telling this story was a great idea.
+     *
+     * @return snark String
+     */
     private fun snark(): String {
         val snarks = ArrayList<String>()
 
@@ -182,4 +225,5 @@ class StoryGenerator {
         // Random number generator
         private val randy = Random()
     }
+
 }

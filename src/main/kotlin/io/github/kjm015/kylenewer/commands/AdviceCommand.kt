@@ -30,7 +30,6 @@ class AdviceCommand : Command() {
      * [io.github.kjm015.kylenewer.util.MessageGenerator]
      *
      * @param event - The instance of the command that got called
-     * @since 7/26/2018
      */
     override fun execute(event: CommandEvent) {
         val reply = String.format("%s: %s %s",
