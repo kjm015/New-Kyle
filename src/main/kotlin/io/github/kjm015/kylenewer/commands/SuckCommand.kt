@@ -4,7 +4,6 @@ import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
 import io.github.kjm015.kylenewer.util.MessageModifier
-import lombok.extern.slf4j.Slf4j
 import java.util.*
 
 /**
@@ -14,7 +13,6 @@ import java.util.*
  * @author kjm015
  * @since 7/26/2018
  */
-@Slf4j
 class SuckCommand : Command() {
 
     private val generator = MessageGenerator()
@@ -38,8 +36,6 @@ class SuckCommand : Command() {
      * [io.github.kjm015.kylenewer.util.MessageGenerator]
      *
      * @param event - The instance of the command that got called
-     *
-     * @since 7/26/2018
      */
     override fun execute(event: CommandEvent) {
         if (event.args.isEmpty() || event.args.contains(" it")) {
@@ -55,8 +51,6 @@ class SuckCommand : Command() {
      *
      * @param event - the instance of the command that got called
      * @return the retort
-     *
-     * @since 7/26/2018
      */
     private fun getRetort(event: CommandEvent): String {
         val locations = object : ArrayList<String>() {
@@ -84,4 +78,5 @@ class SuckCommand : Command() {
         // Random number generator that Adam finds hilarious
         private val RANDY = Random()
     }
+
 }

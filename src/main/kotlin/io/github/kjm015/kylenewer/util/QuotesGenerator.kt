@@ -2,10 +2,22 @@ package io.github.kjm015.kylenewer.util
 
 import java.util.*
 
+/**
+ * This class generates quotes from different sources. This should be expanded upon in the
+ * future, as right now it only contains quotes from Skyrim.
+ *
+ * @author kjm015
+ * @since 01/20/2019
+ */
 class QuotesGenerator {
 
     private var randy = Random()
 
+    /**
+     * This function returns a Skyrim quote from a list.
+     *
+     * @return a Skyrim quote String
+     */
     fun getSkyrimQuote(): String {
         val quotes: ArrayList<String> = ArrayList()
 
@@ -59,4 +71,5 @@ class QuotesGenerator {
 
         return quotes[randy.nextInt(quotes.size)]
     }
+
 }
