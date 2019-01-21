@@ -56,7 +56,7 @@ class KyleNewerApplication {
             val builder = CommandClientBuilder()
 
             // Set the bot's prefix (what triggers commands)
-            builder.setPrefix(prefix)
+            builder.setPrefix("Hey Kyle, ")
 
             // Add the commands to the running pool (Add yours here!)
             builder.addCommand(RageCommand())
@@ -67,6 +67,7 @@ class KyleNewerApplication {
             builder.addCommand(RambleCommand())
             builder.addCommand(QuoteCommand())
             builder.addCommand(StoryCommand())
+            builder.addCommand(LyricsCommand())
 
             // Set the owner of the bot (set in properties)
             builder.setOwnerId(owner)
