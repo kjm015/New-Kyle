@@ -16,6 +16,9 @@ class QuotesGenerator {
      *
      * @return a Skyrim quote String
      */
+
+    //potato chips
+
     fun getSkyrimQuote(): String {
         val quotes: ArrayList<String> = ArrayList()
 
