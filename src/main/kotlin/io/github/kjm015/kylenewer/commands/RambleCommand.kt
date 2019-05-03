@@ -141,7 +141,7 @@ class RambleCommand : Command() {
             }
         }
 
-        return ramblings[RANDY.nextInt(ramblings.size)]
+        return ramblings.random()
     }
 
     companion object {

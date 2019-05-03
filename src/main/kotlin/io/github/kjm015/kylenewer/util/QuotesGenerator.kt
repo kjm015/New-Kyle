@@ -11,8 +11,6 @@ import java.util.*
  */
 class QuotesGenerator {
 
-    private var randy = Random()
-
     /**
      * This function returns a Skyrim quote from a list.
      *
@@ -69,7 +67,7 @@ class QuotesGenerator {
         quotes.add("Psst. Hey, I know who you are. Hail Sithis!")
         quotes.add("Heard they're reforming the Dawnguard. Vampire hunters or something, in the old fort near Riften. Might consider joining up myself.")
 
-        return quotes[randy.nextInt(quotes.size)]
+        return quotes.random()
     }
 
 }
