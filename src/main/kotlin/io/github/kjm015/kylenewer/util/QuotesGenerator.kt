@@ -6,7 +6,7 @@ import java.util.*
  * This class generates quotes from different sources. This should be expanded upon in the
  * future, as right now it only contains quotes from Skyrim.
  *
- * @author kjm015
+ * @author kjm015, Tdickens1234
  * @since 01/20/2019
  */
 class QuotesGenerator {
@@ -16,8 +16,6 @@ class QuotesGenerator {
      *
      * @return a Skyrim quote String
      */
-
-    //potato chips
 
     fun getSkyrimQuote(): String {
         val quotes: ArrayList<String> = ArrayList()
@@ -73,4 +71,21 @@ class QuotesGenerator {
         return quotes.random()
     }
 
+    /**
+     * This function returns a Star Wars quote from a list.
+     *
+     * @return a Star Wars quote String
+     */
+
+    fun getStarWarsQuote(): String {
+        val quotes: ArrayList<String> = ArrayList()
+        quotes.add("Never tell me the odds!")
+        quotes.add("Good, good. Let the hate flow through you.")
+        quotes.add("Use the force, Luke")
+        quotes.add("Noooooooooooooooooooo!")
+        quotes.add("It's over Anakin, I have the high ground!")
+        quotes.add("No, I am your father.")
+
+        return quotes.random()
+    }
 }

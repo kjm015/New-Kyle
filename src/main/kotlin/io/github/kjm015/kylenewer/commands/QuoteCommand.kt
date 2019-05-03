@@ -26,6 +26,8 @@ class QuoteCommand : Command() {
     override fun execute(event: CommandEvent) {
         if (event.args.contains("Skyrim", ignoreCase = true)) {
             event.reply(quotes.getSkyrimQuote())
+        } else if (event.args.contains("Star Wars", ignoreCase = true)){
+            event.reply(quotes.getStarWarsQuote())
         } else if (event.args.isEmpty()) {
             event.reply("I can't think of anything off the top of my head...")
         }
