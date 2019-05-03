@@ -6,13 +6,13 @@ import io.github.kjm015.kylenewer.listeners.ExodusListener
 import io.github.kjm015.kylenewer.listeners.InfluxListener
 import io.github.kjm015.kylenewer.listeners.MessageListener
 import net.dv8tion.jda.core.AccountType
+import net.dv8tion.jda.core.JDA
 import net.dv8tion.jda.core.JDABuilder
 import net.dv8tion.jda.core.entities.Game
-import org.slf4j.Logger
-import org.slf4j.LoggerFactory
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import org.springframework.context.annotation.AnnotationConfigApplicationContext
+import org.springframework.context.annotation.Bean
 
 /**
  * Alright, this is the important file.
@@ -29,67 +29,54 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 @SpringBootApplication
 class KyleNewerApplication {
 
-    companion object {
-        private val log: Logger = LoggerFactory.getLogger(this::class.java)
+    @Autowired
+    private lateinit var settings: DiscordSettings
 
-        /**
-         * The head honcho method! This is the main method that runs the whole application.
-         * It also applies the settings to the application before it runs, giving it, you know,
-         * functionality.
-         *
-         * @param args - a dummy argument that makes it so that main isn't an integer like C++
-         */
-        @JvmStatic
-        fun main(args: Array<String>) {
+    @Bean
+    fun jda(): JDA {
+        // Import values from settings
+        val token = settings.oauth
+        val game = settings.game
+        val owner = settings.owner
+        val prefix = settings.prefix
 
-            // That Spring thing I was talking about earlier ¯\_(ツ)_/¯
-            val applicationContext = AnnotationConfigApplicationContext(SpringConfiguration::class.java)
-            val settings = applicationContext.getBean(DiscordSettings::class.java)
+        // We could put this all on one line, but we won't. Don't do it.
+        val builder = CommandClientBuilder()
 
-            // Import values from settings
-            val token = settings.oauth
-            val game = settings.game
-            val owner = settings.owner
-            val prefix = settings.prefix
+        // Set the bot's prefix (what triggers commands)
+        builder.setPrefix("Hey Kyle, ")
 
-            // We could put this all on one line, but we won't. Don't do it.
-            val builder = CommandClientBuilder()
+        // Add the commands to the running pool (Add yours here!)
+        builder.addCommand(RageCommand())
+        builder.addCommand(AdviceCommand())
+        builder.addCommand(FetchCommand())
+        builder.addCommand(JudgeCommand())
+        builder.addCommand(SuckCommand())
+        builder.addCommand(RambleCommand())
+        builder.addCommand(QuoteCommand())
+        builder.addCommand(StoryCommand())
+        builder.addCommand(LyricsCommand())
 
-            // Set the bot's prefix (what triggers commands)
-            builder.setPrefix("Hey Kyle, ")
+        // Set the owner of the bot (set in properties)
+        builder.setOwnerId(owner)
 
-            // Add the commands to the running pool (Add yours here!)
-            builder.addCommand(RageCommand())
-            builder.addCommand(AdviceCommand())
-            builder.addCommand(FetchCommand())
-            builder.addCommand(JudgeCommand())
-            builder.addCommand(SuckCommand())
-            builder.addCommand(RambleCommand())
-            builder.addCommand(QuoteCommand())
-            builder.addCommand(StoryCommand())
-            builder.addCommand(LyricsCommand())
+        // Build the command listener
+        val client = builder.build()
 
-            // Set the owner of the bot (set in properties)
-            builder.setOwnerId(owner)
-
-            // Build the command listener
-            val client = builder.build()
-
-            // Build the bot with the given settings and listeners
-            JDABuilder(AccountType.BOT)
-                    .setGame(Game.watching(game))
-                    .setToken(token)
-                    // Add new event listeners here
-                    .addEventListener(client)
-                    .addEventListener(MessageListener())
-                    .addEventListener(ExodusListener())
-                    .addEventListener(InfluxListener())
-                    .buildAsync()
-
-            // Run the application that hosts the bot
-            SpringApplication.run(KyleNewerApplication::class.java, *args)
-            log.info("App now running!")
-        }
+        // Build the bot with the given settings and listeners
+        return JDABuilder(AccountType.BOT)
+            .setGame(Game.watching(game))
+            .setToken(token)
+            // Add new event listeners here
+            .addEventListener(client)
+            .addEventListener(MessageListener())
+            .addEventListener(ExodusListener())
+            .addEventListener(InfluxListener())
+            .buildAsync()
     }
 
+}
+
+fun main(args: Array<String>) {
+    SpringApplication.run(KyleNewerApplication::class.java, *args)
 }
