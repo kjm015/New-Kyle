@@ -20,6 +20,7 @@ class RageCommand : Command() {
         this.name = "rage"
         this.aliases = arrayOf("rant.", "rage.")
         this.help = "Kyle will say something in anger"
+        this.guildOnly = false
     }
 
     /**
@@ -31,16 +32,7 @@ class RageCommand : Command() {
      * @since 7/26/2018
      */
     public override fun execute(event: CommandEvent) {
-        event.reply(
-            String.format(
-                "%s %s the %s out of %s",
-                generator.intent(),
-                generator.openers(),
-                generator.exclamations(),
-                generator.targets()
-            )
-        )
-
+        event.reply("${generator.intent()} ${generator.openers()} the ${generator.exclamations()} out of ${generator.targets()}")
         event.reply(generator.closer())
     }
 
