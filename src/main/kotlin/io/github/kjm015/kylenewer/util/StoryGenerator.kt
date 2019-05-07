@@ -64,7 +64,7 @@ class StoryGenerator {
         intros.add("I was sitting on the couch minding my own business, ")
         intros.add("I was sitting in the airport waiting for my connecting flight, ")
 
-        return intros[randy.nextInt(intros.size)]
+        return intros.random()
     }
 
     /**
@@ -106,7 +106,7 @@ class StoryGenerator {
         ants.add("when my sister's friend brushed against my thigh to see if I'd notice. ")
         ants.add("when some blond-haired blue-eyed group of college kids came and asked a Native American where all of his land went. ")
 
-        return ants[randy.nextInt(ants.size)]
+        return ants.random()
     }
 
     /**
@@ -148,7 +148,7 @@ class StoryGenerator {
         retorts.add("I then life up my dress to reveal the blade I have strapped on my thigh. ")
         retorts.add("My response to them was \"Hey, how does it feel to be descendants of thieves and murderers and rapists?\" ")
 
-        return retorts[randy.nextInt(retorts.size)]
+        return retorts.random()
     }
 
     /**
@@ -182,7 +182,7 @@ class StoryGenerator {
         affirm.add("Hopefully that teaches them not to disrespect women. ")
         affirm.add("She sucked out all of the spider venom and used herbs as an anti-venom, saving my life! ")
 
-        return affirm[randy.nextInt(affirm.size)]
+        return affirm.random()
     }
 
     /**
@@ -218,7 +218,7 @@ class StoryGenerator {
         snarks.add("In my defense, our dog was really fucking small. ")
         snarks.add("Another reason to grow your own medicine and food!")
 
-        return snarks[randy.nextInt(snarks.size)]
+        return snarks.random()
     }
 
     companion object {
