@@ -4,7 +4,6 @@ import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
 import net.dv8tion.jda.core.entities.User
-import java.util.*
 
 /**
  * This command will make Kyle pass judgement on a specified user, or an unsuspecting
@@ -23,9 +22,8 @@ class JudgeCommand : Command() {
         this.help = "Kyle will judge a random user, or a specific one if mentioned"
         this.aliases = arrayOf("roast", "berate", "condemn", "castigate", "defame", "criticize")
         this.arguments = "<user>"
-
-        // how long after this command gets called before it can be called again
-        this.cooldown = 20
+        this.guildOnly = true
+        this.cooldown = 10
     }
 
     /**
@@ -44,20 +42,15 @@ class JudgeCommand : Command() {
      *
      * @param event - The instance of the command that got called
      */
-    public override fun execute(event: CommandEvent) {
-        val arg = event.args
-
-        // Set the user to the sender if they want judgement passed on themselves of the bot
-        if ("me".equals(arg, ignoreCase = true)) {
-            this.judgeSender(event)
-        } else if (arg.contains("yourself")) {
-            event.reply("That's an easy one.")
-            this.judgeSelf(event)
-        } else if (arg.contains("someone") || arg.contains("somebody")) {
-            this.judgeRandom(event)
-        } else {
-            this.judgeTarget(event)
-        }
+    public override fun execute(event: CommandEvent) = if ("me".equals(event.args, ignoreCase = true)) {
+        this.judgeSender(event)
+    } else if (event.args.contains("yourself")) {
+        event.reply("That's an easy one.")
+        this.judgeSelf(event)
+    } else if (event.args.contains("someone") || event.args.contains("somebody") || event.args.isBlank()) {
+        this.judgeRandom(event)
+    } else {
+        this.judgeTarget(event)
     }
 
     /**
@@ -83,7 +76,7 @@ class JudgeCommand : Command() {
                 this.judgeRandom(event)
             }
         } catch (e: NullPointerException) {
-            event.reply(String.format("Who the hell is %s?", arg))
+            event.reply("Who the hell is $arg?")
         }
 
     }
@@ -95,7 +88,7 @@ class JudgeCommand : Command() {
      */
     private fun judgeRandom(event: CommandEvent) {
         val users = event.jda.users
-        val target = users[RANDY.nextInt(users.size)]
+        val target = users.random()
 
         if (target == event.selfUser) {
             event.reply("I'll roast myself, thank you very much.")
@@ -133,19 +126,12 @@ class JudgeCommand : Command() {
      * @param discriminatorOrName - the discriminator or name to be scanned against
      * @return the user you're looking for
      */
-    private fun getUserFromList(users: List<User>, discriminatorOrName: String): User? {
-        var target: User? = null
-        for (user in users) {
-            if (discriminatorOrName.contains(user.name) || discriminatorOrName.contains(user.discriminator)) {
-                target = user
-                break
-            }
+    private fun getUserFromList(users: List<User>, discriminatorOrName: String): User? = try {
+        users.first {
+            discriminatorOrName.contains(it.name) || discriminatorOrName.contains(it.discriminator)
         }
-        return target
-    }
-
-    companion object {
-        private val RANDY = Random()
+    } catch (e: NoSuchElementException) {
+        null
     }
 
 }
