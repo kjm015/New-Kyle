@@ -55,19 +55,28 @@ class SuckCommand : Command() {
     private fun getRetort(event: CommandEvent): String {
         val locations = object : ArrayList<String>() {
             init {
-                add(String.format("Yeah, well you can take your %s and %s on over to %s.",
+                add(
+                    String.format(
+                        "Yeah, well you can take your %s and %s on over to %s.",
                         modifier.removeArticles(event.args),
                         generator.motionVerb(),
                         generator.location()
-                ))
-                add(String.format("Sorry, I don't touch the %s of someone who dabbles with %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "Sorry, I don't touch the %s of someone who dabbles with %s.",
                         modifier.removeArticles(event.args),
                         generator.derogatoryNoun()
-                ))
-                add(String.format("Nice one, I'm sure talking about %s will lead to a promising career with %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "Nice one, I'm sure talking about %s will lead to a promising career with %s.",
                         modifier.removeArticles(event.args),
                         generator.location()
-                ))
+                    )
+                )
             }
         }
 

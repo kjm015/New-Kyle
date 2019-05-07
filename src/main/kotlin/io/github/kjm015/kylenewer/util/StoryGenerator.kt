@@ -18,9 +18,9 @@ class StoryGenerator {
         val builder = StringBuilder()
 
         builder.append(setup())
-                .append(antagonism())
-                .append(retort())
-                .append(affirmation())
+            .append(antagonism())
+            .append(retort())
+            .append(affirmation())
 
         if (randy.nextBoolean())
             builder.append(snark())

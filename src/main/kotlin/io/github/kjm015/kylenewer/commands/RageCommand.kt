@@ -31,12 +31,15 @@ class RageCommand : Command() {
      * @since 7/26/2018
      */
     public override fun execute(event: CommandEvent) {
-        event.reply(String.format("%s %s the %s out of %s",
+        event.reply(
+            String.format(
+                "%s %s the %s out of %s",
                 generator.intent(),
                 generator.openers(),
                 generator.exclamations(),
                 generator.targets()
-        ))
+            )
+        )
 
         event.reply(generator.closer())
     }

@@ -489,132 +489,216 @@ class MessageGenerator {
         // Make a list of String formats
         val funList = object : ArrayList<String>() {
             init {
-                add(String.format("Nothing says %s like %s.",
+                add(
+                    String.format(
+                        "Nothing says %s like %s.",
                         target.asMention,
                         derogatoryNoun()
-                ))
-                add(String.format("%s loves nothing more than %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "%s loves nothing more than %s.",
                         target.asMention,
                         derogatoryNoun()
-                ))
-                add(String.format("There's nothing that %s cherishes more than %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "There's nothing that %s cherishes more than %s.",
                         target.asMention,
                         derogatoryNoun()
-                ))
-                add(String.format("%s is great, but there's nothing better than %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "%s is great, but there's nothing better than %s.",
                         target.asMention,
                         derogatoryNoun()
-                ))
-                add(String.format("I always knew that %s was really just %s in disguise.",
+                    )
+                )
+                add(
+                    String.format(
+                        "I always knew that %s was really just %s in disguise.",
                         target.asMention,
                         derogatoryNoun()
-                ))
-                add(String.format("%s practically wrote the book on %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "%s practically wrote the book on %s.",
                         target.asMention,
                         derogatoryNoun()
-                ))
-                add(String.format("The only class that %s didn't flunk was %s 101.",
+                    )
+                )
+                add(
+                    String.format(
+                        "The only class that %s didn't flunk was %s 101.",
                         target.asMention,
                         derogatoryNoun()
-                ))
-                add(String.format("%s is just a sad combination of %s and %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "%s is just a sad combination of %s and %s.",
                         target.asMention,
                         derogatoryNoun(),
                         derogatoryNoun()
-                ))
-                add(String.format("Some say %s is a cross between %s and %s",
+                    )
+                )
+                add(
+                    String.format(
+                        "Some say %s is a cross between %s and %s",
                         target.asMention,
                         derogatoryNoun(),
                         derogatoryNoun()
-                ))
-                add(String.format("It is a fact that %s identifies with %s",
+                    )
+                )
+                add(
+                    String.format(
+                        "It is a fact that %s identifies with %s",
                         target.asMention,
                         derogatoryNoun()
-                ))
-                add(String.format("Some people have spirit animals. %s has %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "Some people have spirit animals. %s has %s.",
                         target.asMention,
                         derogatoryNoun()
-                ))
-                add(String.format("If %s had a million dollars, all of it would go towards %s and %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "If %s had a million dollars, all of it would go towards %s and %s.",
                         target.asMention,
                         derogatoryNoun(),
                         derogatoryNoun()
-                ))
-                add(String.format("%s, %s, and %s: the perfect Friday for %s",
+                    )
+                )
+                add(
+                    String.format(
+                        "%s, %s, and %s: the perfect Friday for %s",
                         derogatoryNoun(),
                         derogatoryNoun(),
                         derogatoryNoun(),
                         target.asMention
 
-                ))
-                add(String.format("It was %s that inspired %s to found the cult of %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "It was %s that inspired %s to found the cult of %s.",
                         derogatoryNoun(),
                         target.asMention,
                         derogatoryNoun()
-                ))
-                add(String.format("It is wildly debated if %s or %s was the downfall of %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "It is wildly debated if %s or %s was the downfall of %s.",
                         derogatoryNoun(),
                         derogatoryNoun(),
                         target.asMention
-                ))
-                add(String.format("You might suck %s, but at least you are an expert in %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "You might suck %s, but at least you are an expert in %s.",
                         target.asMention,
                         derogatoryNoun()
-                ))
-                add(String.format("Taking comfort in %s is sadly the only thing that %s has left.",
+                    )
+                )
+                add(
+                    String.format(
+                        "Taking comfort in %s is sadly the only thing that %s has left.",
                         derogatoryNoun(),
                         target.asMention
-                ))
-                add(String.format("Kids, learn from %s: %s is not a valid contraceptive.",
+                    )
+                )
+                add(
+                    String.format(
+                        "Kids, learn from %s: %s is not a valid contraceptive.",
                         target.asMention,
                         derogatoryNoun()
-                ))
-                add(String.format("%s is a valuable lesson in why we learn from schools, and not from %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "%s is a valuable lesson in why we learn from schools, and not from %s.",
                         target.asMention,
                         derogatoryNoun()
-                ))
-                add(String.format("%s is proof that %s and %s do not go together.",
-                        target.asMention,
-                        derogatoryNoun(),
-                        derogatoryNoun()
-                ))
-                add(String.format("I'm sorry %s, but %s is not a marketable skill.",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("All hail %s, master of %s!",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("Breakfast? No, %s starts the morning off right with %s, %s, and %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "%s is proof that %s and %s do not go together.",
                         target.asMention,
                         derogatoryNoun(),
-                        derogatoryNoun(),
                         derogatoryNoun()
-                ))
-                add(String.format("%s could never live alone, not without %s",
+                    )
+                )
+                add(
+                    String.format(
+                        "I'm sorry %s, but %s is not a marketable skill.",
                         target.asMention,
                         derogatoryNoun()
-                ))
-                add(String.format("I despise %s, but I hate %s more.",
+                    )
+                )
+                add(
+                    String.format(
+                        "All hail %s, master of %s!",
+                        target.asMention,
+                        derogatoryNoun()
+                    )
+                )
+                add(
+                    String.format(
+                        "Breakfast? No, %s starts the morning off right with %s, %s, and %s.",
+                        target.asMention,
+                        derogatoryNoun(),
+                        derogatoryNoun(),
+                        derogatoryNoun()
+                    )
+                )
+                add(
+                    String.format(
+                        "%s could never live alone, not without %s",
+                        target.asMention,
+                        derogatoryNoun()
+                    )
+                )
+                add(
+                    String.format(
+                        "I despise %s, but I hate %s more.",
                         derogatoryNoun(),
                         target.asMention
-                ))
-                add(String.format("Legalizing %s will only encourage %s to embrace %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "Legalizing %s will only encourage %s to embrace %s.",
                         derogatoryNoun(),
                         target.asMention,
                         derogatoryNoun()
-                ))
-                add(String.format("Leave it to %s to ruin the fine American pasttimes of %s and %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "Leave it to %s to ruin the fine American pasttimes of %s and %s.",
                         target.asMention,
                         derogatoryNoun(),
                         derogatoryNoun()
-                ))
-                add(String.format("Combining %s and %s gives you %s. What a world.",
+                    )
+                )
+                add(
+                    String.format(
+                        "Combining %s and %s gives you %s. What a world.",
                         derogatoryNoun(),
                         derogatoryNoun(),
                         target.asMention
-                ))
+                    )
+                )
             }
         }
         // Return a random element from the list of Strings

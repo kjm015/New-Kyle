@@ -56,27 +56,42 @@ class RambleCommand : Command() {
 
         val ramblings = ArrayList<String>()
 
-        ramblings.add(String.format("Ah, yes: %s. The best way to cope with %s.",
+        ramblings.add(
+            String.format(
+                "Ah, yes: %s. The best way to cope with %s.",
                 modifier.switchPerspectives(arguments),
                 generator.derogatoryNoun()
-        ))
-        ramblings.add(String.format("The only thing I can say about %s is the similarity to %s.",
+            )
+        )
+        ramblings.add(
+            String.format(
+                "The only thing I can say about %s is the similarity to %s.",
                 modifier.switchPerspectives(arguments),
                 generator.derogatoryNoun()
-        ))
-        ramblings.add(String.format("I don't mess with %s. Not since I went to %s.",
+            )
+        )
+        ramblings.add(
+            String.format(
+                "I don't mess with %s. Not since I went to %s.",
                 modifier.switchPerspectives(arguments),
                 generator.location()
-        ))
-        ramblings.add(String.format("Only %s can save you from %s.",
+            )
+        )
+        ramblings.add(
+            String.format(
+                "Only %s can save you from %s.",
                 generator.derogatoryNoun(),
                 modifier.switchPerspectives(arguments)
-        ))
-        ramblings.add(String.format("My ex-girlfriend told me about %s. Now she has to deal with %s in %s.",
+            )
+        )
+        ramblings.add(
+            String.format(
+                "My ex-girlfriend told me about %s. Now she has to deal with %s in %s.",
                 modifier.switchPerspectives(arguments),
                 generator.derogatoryNoun(),
                 generator.location()
-        ))
+            )
+        )
 
         return ramblings[RANDY.nextInt(ramblings.size)]
     }
@@ -90,54 +105,90 @@ class RambleCommand : Command() {
 
         val ramblings = object : ArrayList<String>() {
             init {
-                add(String.format("Dude, the best part about going to %s is getting to experience %s.",
+                add(
+                    String.format(
+                        "Dude, the best part about going to %s is getting to experience %s.",
                         generator.location(),
                         generator.derogatoryNoun()
-                ))
-                add(String.format("If there's one thing that pisses me off about %s, it's %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "If there's one thing that pisses me off about %s, it's %s.",
                         generator.location(),
                         generator.derogatoryNoun()
-                ))
-                add(String.format("I've always said that people who mess with %s are the first to end up in %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "I've always said that people who mess with %s are the first to end up in %s.",
                         generator.derogatoryNoun(),
                         generator.location()
-                ))
-                add(String.format("Sadly, the prospect of %s is not enough to deter people from going to %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "Sadly, the prospect of %s is not enough to deter people from going to %s.",
                         generator.derogatoryNoun(),
                         generator.location()
-                ))
-                add(String.format("Let's all %s on down to %s so we can see what %s is like!",
+                    )
+                )
+                add(
+                    String.format(
+                        "Let's all %s on down to %s so we can see what %s is like!",
                         generator.motionVerb(),
                         generator.location(),
                         generator.derogatoryNoun()
-                ))
-                add(String.format("I think we all know that %s is really just %s's version of %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "I think we all know that %s is really just %s's version of %s.",
                         generator.derogatoryNoun(),
                         generator.location(),
                         generator.derogatoryNoun()
-                ))
-                add(String.format("My professor says that %s was the birthplace of %s. Fucking astounding.",
+                    )
+                )
+                add(
+                    String.format(
+                        "My professor says that %s was the birthplace of %s. Fucking astounding.",
                         generator.location(),
                         generator.derogatoryNoun()
-                ))
-                add(String.format("I have decided to turn away from %s and instead turn to %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "I have decided to turn away from %s and instead turn to %s.",
                         generator.derogatoryNoun(),
                         generator.derogatoryNoun()
-                ))
-                add(String.format("The only things that get me through my day are a strong shot of vodka and %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "The only things that get me through my day are a strong shot of vodka and %s.",
                         generator.derogatoryNoun()
-                ))
-                add(String.format("I have decided to turn away from %s and instead turn to %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "I have decided to turn away from %s and instead turn to %s.",
                         generator.derogatoryNoun(),
                         generator.derogatoryNoun()
-                ))
-                add(String.format("Some times we just need %s.",
+                    )
+                )
+                add(
+                    String.format(
+                        "Some times we just need %s.",
                         generator.derogatoryNoun()
-                ))
-                add(String.format("The best advice comes from guys who are %s. They speak the true-true.",
+                    )
+                )
+                add(
+                    String.format(
+                        "The best advice comes from guys who are %s. They speak the true-true.",
                         generator.derogatoryNoun(),
                         generator.derogatoryNoun()
-                ))
+                    )
+                )
             }
         }
 

@@ -32,10 +32,11 @@ class AdviceCommand : Command() {
      * @param event - The instance of the command that got called
      */
     override fun execute(event: CommandEvent) {
-        val reply = String.format("%s: %s %s",
-                event.member.asMention,
-                openings[RANDY.nextInt(openings.size)],
-                tips[RANDY.nextInt(tips.size)]
+        val reply = String.format(
+            "%s: %s %s",
+            event.member.asMention,
+            openings[RANDY.nextInt(openings.size)],
+            tips[RANDY.nextInt(tips.size)]
         )
         event.reply(reply)
     }

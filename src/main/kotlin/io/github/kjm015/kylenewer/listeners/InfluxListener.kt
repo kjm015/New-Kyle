@@ -36,7 +36,7 @@ class InfluxListener : ListenerAdapter() {
         log.info("User \"${event.user.name}\" has joined a group with New Kyle.")
         try {
             event.group.sendMessage("Hey, ${event.user.name} just joined.")
-                    .queue()
+                .queue()
         } catch (e: Exception) {
             log.error("Could not post messages to group ${event.group}:\n$e")
         }
@@ -55,8 +55,8 @@ class InfluxListener : ListenerAdapter() {
 
         try {
             event.guild.getTextChannelById("general")
-                    .sendMessage("Hey guys, someone named \"${event.member.effectiveName}\" just joined the server.")
-                    .queue()
+                .sendMessage("Hey guys, someone named \"${event.member.effectiveName}\" just joined the server.")
+                .queue()
         } catch (e: NullPointerException) {
             log.warn("General channel in ${event.guild} not found:\n$e")
         } catch (e: InsufficientPermissionException) {
@@ -79,8 +79,8 @@ class InfluxListener : ListenerAdapter() {
 
         try {
             event.guild.getTextChannelById("general")
-                    .sendMessage("Good news, people. That dude named ${event.user.name} just got unbanned from the server.")
-                    .queue()
+                .sendMessage("Good news, people. That dude named ${event.user.name} just got unbanned from the server.")
+                .queue()
         } catch (e: NullPointerException) {
             log.warn("General channel in ${event.guild} not found:\n$e")
         } catch (e: InsufficientPermissionException) {
