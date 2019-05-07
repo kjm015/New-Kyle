@@ -20,10 +20,8 @@ class KyleController {
      *
      * @return a pleasant greeting
      */
-    @GetMapping("/")
+    @GetMapping(path = ["/", "/hello"])
     @ResponseStatus(HttpStatus.OK)
-    fun sayHello(): String {
-        return "Hello, world!"
-    }
+    fun sayHello(): String = "Hello, world!"
 
 }

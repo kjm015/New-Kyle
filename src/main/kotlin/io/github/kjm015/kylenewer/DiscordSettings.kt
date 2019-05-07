@@ -1,6 +1,6 @@
 package io.github.kjm015.kylenewer
 
-import org.springframework.beans.factory.annotation.Value
+import org.springframework.boot.context.properties.ConfigurationProperties
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.PropertySource
 
@@ -14,19 +14,16 @@ import org.springframework.context.annotation.PropertySource
  * @since 7/26/2018
  */
 @Configuration
-@PropertySource("classpath:application.properties")
+@ConfigurationProperties(prefix = "discord")
+@PropertySource("classpath:discord.properties")
 class DiscordSettings {
 
-    @Value("\${discord.oauth}")
-    val oauth: String? = null
+    var oauth: String? = null
 
-    @Value("\${discord.game}")
-    val game: String? = null
+    var game: String = "War Thunder"
 
-    @Value("\${discord.owner}")
-    val owner: String? = null
+    var owner: String? = null
 
-    @Value("\${discord.prefix}")
-    val prefix: String? = null
+    var prefix: String = "Hey Kyle,"
 
 }
