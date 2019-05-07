@@ -55,8 +55,8 @@ class ExodusListener : ListenerAdapter() {
 
         try {
             event.guild.getTextChannelById("general")
-                    .sendMessage("Bad news, guys. ${event.member.effectiveName}, otherwise known as \"${event.member.nickname}\" has left the server.")
-                    .queue()
+                .sendMessage("Bad news, guys. ${event.member.effectiveName}, otherwise known as \"${event.member.nickname}\" has left the server.")
+                .queue()
         } catch (e: NullPointerException) {
             log.warn("Could not post messages to general channel in ${event.guild}:\n$e")
         } catch (e: InsufficientPermissionException) {
@@ -79,8 +79,8 @@ class ExodusListener : ListenerAdapter() {
 
         try {
             event.guild.getTextChannelById("general")
-                    .sendMessage("Hey guys, ${event.user.name} just got ban-hammered. Nothing personnel, kid.")
-                    .queue()
+                .sendMessage("Hey guys, ${event.user.name} just got ban-hammered. Nothing personnel, kid.")
+                .queue()
         } catch (e: NullPointerException) {
             log.warn("General channel in ${event.guild} does not exist:\n$e")
         } catch (e: InsufficientPermissionException) {

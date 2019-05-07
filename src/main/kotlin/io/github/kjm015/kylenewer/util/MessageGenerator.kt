@@ -51,7 +51,7 @@ class MessageGenerator {
                 add("ride")
             }
         }
-        return verbs[RANDY.nextInt(verbs.size)]
+        return verbs.random()
     }
 
     /**
@@ -95,17 +95,14 @@ class MessageGenerator {
                 add("people who create social media pages for their pets and unborn children")
                 add("supply-side economics")
                 add("conservative talk show hosts who assault union workers")
-                add("a right-wing utopia where white people work 60-hour weeks at jobs they hate and everyone else is dead")
+                add("a right-wing utopia")
                 add("standing up for traditional marriage whilst cheating on your wife with an 18-year-old male intern")
                 add("losing your job as a sleep psychologist for sleeping on the job")
-                add("hoping in one hand and shitting in the other to see which one fills first")
                 add("a Gaijin fanboy on r/WarThunder")
                 add("poorly translated signs in China")
                 add("drinking and driving")
-                add("not being able to connect to the translator service")
                 add("overdosing and dying")
-                add("cherishing flower and grass to care about future")
-                add("my RAM after using Chrome for 5 minutes")
+                add("gluten-free menu options")
                 add("earning a daily bonus of 100 silver lions")
                 add("some white guy in a polo shirt")
                 add("shaving your hair into a cake and eating it")
@@ -176,6 +173,9 @@ class MessageGenerator {
                 add("dropping out of Computer Science because it's too hard")
                 add("an MMA fighter seeking validation from American tourists in China")
                 add("my mixtape")
+                add("swearing on Roblox")
+                add("Fortnite skins")
+                add("a hefty sum of money from Epic Games")
                 add("a hearty dose of THC")
                 add("flat-earther conventions")
                 add("Despacito 2 memes")
@@ -226,6 +226,7 @@ class MessageGenerator {
                 add("that asshat Bobby Flay")
                 add("a guy named George who names all of his kids George")
                 add("a girl named George")
+                add("praying the gay away")
                 add("a crack dealer on a Ferris wheel")
                 add("people who talk about moving south because it's too cold")
                 add("neckbeard uprisings")
@@ -237,10 +238,13 @@ class MessageGenerator {
                 add("Anarcho-Individualism")
                 add("stopping a mandatory social-justice lecture to talk about libertarian Satanism")
                 add("black female Nazi soldiers")
-                add("Panic at the Disco themed weddings")
+                add("Panic at the Disco-themed weddings")
                 add("hoarding graphics cards for profit")
                 add("Battlefield: Hardline")
                 add("receiving multiple VAC bans")
+                add("finding your original birth certificate in a pile of trash")
+                add("first aid kits filled with bullets")
+                add("anti-vax Facebook moms")
 
                 add("deceased hip-hop artists from the 1990's")
                 add("deeply-rooted ignorance")
@@ -256,14 +260,18 @@ class MessageGenerator {
                 add("claiming to be Japanese after watching anime")
                 add("a pirated CrunchyRoll subscription")
                 add("eating fresh™")
+                add("having an anime profile picture")
+                add("frequenting 4chan")
                 add("asking for sex from minors")
                 add("being the mascot for a sandwich chain")
                 add("concentration camps")
+                add("donating to an alt-right Patreon account")
                 add("tender-age facilities")
+                add("anime body pillows")
             }
         }
 
-        return nouns[RANDY.nextInt(nouns.size)]
+        return nouns.random()
     }
 
     /**
@@ -321,6 +329,7 @@ class MessageGenerator {
                 add("the Pacific Ocean")
                 add("the slums of Bangladesh")
                 add("the dumpster behind my apartment")
+                add("a truck load of Minions merchandise.")
 
                 add("GoDaddy.com")
                 add("BlackPeopleMeet.com")
@@ -333,7 +342,7 @@ class MessageGenerator {
             }
         }
 
-        return locations[RANDY.nextInt(locations.size)]
+        return locations.random()
     }
 
     // List of weird side messages
@@ -351,7 +360,7 @@ class MessageGenerator {
                 add("Like, I can't fucking stand this shit anymore.")
             }
         }
-        return adjuncts[RANDY.nextInt(adjuncts.size)]
+        return adjuncts.random()
     }
 
     // Closing statements.
@@ -380,7 +389,7 @@ class MessageGenerator {
                 add("I'm so done with this game's bullshit.")
             }
         }
-        return closers[RANDY.nextInt(closers.size)]
+        return closers.random()
     }
 
     // List of entry phrases.
@@ -403,7 +412,7 @@ class MessageGenerator {
                 add("I know some guys that would")
             }
         }
-        return intents[RANDY.nextInt(intents.size)]
+        return intents.random()
     }
 
     // List of verbs
@@ -431,7 +440,7 @@ class MessageGenerator {
                 add("vandalize")
             }
         }
-        return open[RANDY.nextInt(open.size)]
+        return open.random()
     }
 
     // List of intended targets of the action
@@ -459,7 +468,7 @@ class MessageGenerator {
                 add("stupid people")
             }
         }
-        return target[RANDY.nextInt(target.size)]
+        return target.random()
     }
 
     // Exclamations for Kyle to yell
@@ -475,7 +484,7 @@ class MessageGenerator {
                 add("everlasting fucksmack")
             }
         }
-        return exclamations[RANDY.nextInt(exclamations.size)]
+        return exclamations.random()
     }
 
     /**
@@ -489,141 +498,39 @@ class MessageGenerator {
         // Make a list of String formats
         val funList = object : ArrayList<String>() {
             init {
-                add(String.format("Nothing says %s like %s.",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("%s loves nothing more than %s.",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("There's nothing that %s cherishes more than %s.",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("%s is great, but there's nothing better than %s.",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("I always knew that %s was really just %s in disguise.",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("%s practically wrote the book on %s.",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("The only class that %s didn't flunk was %s 101.",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("%s is just a sad combination of %s and %s.",
-                        target.asMention,
-                        derogatoryNoun(),
-                        derogatoryNoun()
-                ))
-                add(String.format("Some say %s is a cross between %s and %s",
-                        target.asMention,
-                        derogatoryNoun(),
-                        derogatoryNoun()
-                ))
-                add(String.format("It is a fact that %s identifies with %s",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("Some people have spirit animals. %s has %s.",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("If %s had a million dollars, all of it would go towards %s and %s.",
-                        target.asMention,
-                        derogatoryNoun(),
-                        derogatoryNoun()
-                ))
-                add(String.format("%s, %s, and %s: the perfect Friday for %s",
-                        derogatoryNoun(),
-                        derogatoryNoun(),
-                        derogatoryNoun(),
-                        target.asMention
-
-                ))
-                add(String.format("It was %s that inspired %s to found the cult of %s.",
-                        derogatoryNoun(),
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("It is wildly debated if %s or %s was the downfall of %s.",
-                        derogatoryNoun(),
-                        derogatoryNoun(),
-                        target.asMention
-                ))
-                add(String.format("You might suck %s, but at least you are an expert in %s.",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("Taking comfort in %s is sadly the only thing that %s has left.",
-                        derogatoryNoun(),
-                        target.asMention
-                ))
-                add(String.format("Kids, learn from %s: %s is not a valid contraceptive.",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("%s is a valuable lesson in why we learn from schools, and not from %s.",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("%s is proof that %s and %s do not go together.",
-                        target.asMention,
-                        derogatoryNoun(),
-                        derogatoryNoun()
-                ))
-                add(String.format("I'm sorry %s, but %s is not a marketable skill.",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("All hail %s, master of %s!",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("Breakfast? No, %s starts the morning off right with %s, %s, and %s.",
-                        target.asMention,
-                        derogatoryNoun(),
-                        derogatoryNoun(),
-                        derogatoryNoun()
-                ))
-                add(String.format("%s could never live alone, not without %s",
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("I despise %s, but I hate %s more.",
-                        derogatoryNoun(),
-                        target.asMention
-                ))
-                add(String.format("Legalizing %s will only encourage %s to embrace %s.",
-                        derogatoryNoun(),
-                        target.asMention,
-                        derogatoryNoun()
-                ))
-                add(String.format("Leave it to %s to ruin the fine American pasttimes of %s and %s.",
-                        target.asMention,
-                        derogatoryNoun(),
-                        derogatoryNoun()
-                ))
-                add(String.format("Combining %s and %s gives you %s. What a world.",
-                        derogatoryNoun(),
-                        derogatoryNoun(),
-                        target.asMention
-                ))
+                add("Nothing says ${target.asMention} like ${derogatoryNoun()} and ${derogatoryNoun()}.")
+                add("${target.asMention} loves nothing more than ${derogatoryNoun()} on a Sunday morning in ${location()}.")
+                add("There's nothing that ${target.asMention} cherishes more than ${derogatoryNoun()}.")
+                add("${target.asMention} is great, but there's nothing better than ${derogatoryNoun()}.")
+                add("I always knew that ${target.asMention} was really just ${derogatoryNoun()} in disguise.")
+                add("${target.asMention} practically wrote the book on ${derogatoryNoun()}")
+                add("The only class that ${target.asMention} didn't flunk was ${derogatoryNoun()} 101.")
+                add("${target.asMention} is really just a sad combination of ${derogatoryNoun()} and ${derogatoryNoun()}.")
+                add("Some say that ${target.asMention} is really just a cross between ${derogatoryNoun()} and ${derogatoryNoun()}.")
+                add("It is a fact that ${target.asMention} identifies strongly with ${derogatoryNoun()}.")
+                add("Some people have spirit animals. ${target.asMention} has ${derogatoryNoun()}.")
+                add("If ${target.asMention} had a million dollars, it would all go towards ${derogatoryNoun()} and ${derogatoryNoun()}.")
+                add("${derogatoryNoun()}, ${derogatoryNoun()}, and ${derogatoryNoun()}: the perfect Friday night for ${target.asMention}")
+                add("I hear that ${target.asMention} is starring in a reality TV show about ${derogatoryNoun()}. A good fit, I say!")
+                add("I heard that ${target.asMention} subsists solely on a diet of ${derogatoryNoun()}. Good for you, man.")
+                add("What ruined ${target.asMention} was the rapid onset of ${derogatoryNoun()} and ${derogatoryNoun()}.")
+                add("You might suck, ${target.asMention}, but at least you're an expert in ${derogatoryNoun()}.")
+                add("Taking comfort in ${derogatoryNoun()} is sadly the only thing that ${target.asMention} has left.")
+                add("Kids, learn from ${target.asMention}: ${derogatoryNoun()} is not a valuable career choice.")
+                add("${target.asMention} is a valuable lesson in why we learn from schools, and not ${derogatoryNoun()}.")
+                add("${target.asMention} is proof that ${derogatoryNoun()} and ${derogatoryNoun()} should not mix.")
+                add("I'm sorry, ${target.asMention}, but nobody appreciates your fascination with ${derogatoryNoun()}.")
+                add("All hail ${target.asMention}, master of ${derogatoryNoun()}!")
+                add("Breakfast? No, ${target.asMention} starts the day off right with ${derogatoryNoun()} and ${derogatoryNoun()}.")
+                add("We all know that ${target.asMention} couldn't live without ${derogatoryNoun()}.")
+                add("I despise ${derogatoryNoun()}, but I hate ${target.asMention} even more!")
+                add("The only thing worse than ${derogatoryNoun()} is ${target.asMention}'s obsession with ${derogatoryNoun()}.")
+                add("Leave it to ${target.asMention} to ruin the fine American pasttimes of ${derogatoryNoun()} and ${derogatoryNoun()}.")
+                add("A combination of ${derogatoryNoun()} and ${derogatoryNoun()} gives you ${target.asMention}. What a world.")
             }
         }
         // Return a random element from the list of Strings
-        return funList[RANDY.nextInt(funList.size)]
-    }
-
-    companion object {
-        // Random number generator
-        private val RANDY = Random()
+        return funList.random()
     }
 
 }

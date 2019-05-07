@@ -27,6 +27,7 @@ class LyricsCommand : Command() {
         this.arguments = "<song name>"
         this.help = "Kyle will get some lyrics for a song of your choice"
         this.aliases = arrayOf("sing", "song")
+        this.guildOnly = false
     }
 
     override fun execute(event: CommandEvent) {

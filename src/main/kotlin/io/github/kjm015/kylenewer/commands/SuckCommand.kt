@@ -37,12 +37,10 @@ class SuckCommand : Command() {
      *
      * @param event - The instance of the command that got called
      */
-    override fun execute(event: CommandEvent) {
-        if (event.args.isEmpty() || event.args.contains(" it")) {
-            event.reply("I can't do something with a thing that you don't have, dude.")
-        } else {
-            event.reply(event.author.asMention + " " + this.getRetort(event))
-        }
+    override fun execute(event: CommandEvent) = if (event.args.isEmpty() || event.args.contains(" it")) {
+        event.reply("I can't do something with a thing that you don't have, dude.")
+    } else {
+        event.reply(event.author.asMention + " " + this.getRetort(event))
     }
 
     /**
@@ -55,28 +53,13 @@ class SuckCommand : Command() {
     private fun getRetort(event: CommandEvent): String {
         val locations = object : ArrayList<String>() {
             init {
-                add(String.format("Yeah, well you can take your %s and %s on over to %s.",
-                        modifier.removeArticles(event.args),
-                        generator.motionVerb(),
-                        generator.location()
-                ))
-                add(String.format("Sorry, I don't touch the %s of someone who dabbles with %s.",
-                        modifier.removeArticles(event.args),
-                        generator.derogatoryNoun()
-                ))
-                add(String.format("Nice one, I'm sure talking about %s will lead to a promising career with %s.",
-                        modifier.removeArticles(event.args),
-                        generator.location()
-                ))
+                add("Yeah, well you can take ${modifier.switchPerspectives(event.args)} and ${generator.motionVerb()} over to ${generator.location()}")
+                add("Sorry, but ${modifier.switchPerspectives(event.args)} is more suited to ${generator.derogatoryNoun()}.")
+                add("Fuck you, I'm sure that talking about ${modifier.switchPerspectives(event.args)} is a promising future.")
             }
         }
 
-        return locations[RANDY.nextInt(locations.size)]
-    }
-
-    companion object {
-        // Random number generator that Adam finds hilarious
-        private val RANDY = Random()
+        return locations.random()
     }
 
 }

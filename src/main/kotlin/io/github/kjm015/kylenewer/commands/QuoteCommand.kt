@@ -21,6 +21,7 @@ class QuoteCommand : Command() {
         this.aliases = arrayOf("recite", "reference")
         this.arguments = "<source of quote>"
         this.help = "Kyle will pull some quote from a source, maybe. Probably not."
+        this.guildOnly = false
     }
 
     override fun execute(event: CommandEvent) {

@@ -55,30 +55,17 @@ class RambleCommand : Command() {
         val arguments = modifier.pruneAbout(args)
 
         val ramblings = ArrayList<String>()
+        val sp = modifier.switchPerspectives(arguments)
+        val dn = generator.derogatoryNoun()
+        val loc = generator.location()
 
-        ramblings.add(String.format("Ah, yes: %s. The best way to cope with %s.",
-                modifier.switchPerspectives(arguments),
-                generator.derogatoryNoun()
-        ))
-        ramblings.add(String.format("The only thing I can say about %s is the similarity to %s.",
-                modifier.switchPerspectives(arguments),
-                generator.derogatoryNoun()
-        ))
-        ramblings.add(String.format("I don't mess with %s. Not since I went to %s.",
-                modifier.switchPerspectives(arguments),
-                generator.location()
-        ))
-        ramblings.add(String.format("Only %s can save you from %s.",
-                generator.derogatoryNoun(),
-                modifier.switchPerspectives(arguments)
-        ))
-        ramblings.add(String.format("My ex-girlfriend told me about %s. Now she has to deal with %s in %s.",
-                modifier.switchPerspectives(arguments),
-                generator.derogatoryNoun(),
-                generator.location()
-        ))
+        ramblings.add("Ah, yes: $sp. The best way to cope with $dn.")
+        ramblings.add("The only thing I can say about $sp is the similarity to $dn.")
+        ramblings.add("I don't deal with $sp. Not since I went to $loc.")
+        ramblings.add("The only thing that can save you from $sp is $dn.")
+        ramblings.add("My ex-girlfriend told me about $sp. Now she only deals with $dn in $loc.")
 
-        return ramblings[RANDY.nextInt(ramblings.size)]
+        return ramblings.random()
     }
 
     /**
@@ -90,62 +77,21 @@ class RambleCommand : Command() {
 
         val ramblings = object : ArrayList<String>() {
             init {
-                add(String.format("Dude, the best part about going to %s is getting to experience %s.",
-                        generator.location(),
-                        generator.derogatoryNoun()
-                ))
-                add(String.format("If there's one thing that pisses me off about %s, it's %s.",
-                        generator.location(),
-                        generator.derogatoryNoun()
-                ))
-                add(String.format("I've always said that people who mess with %s are the first to end up in %s.",
-                        generator.derogatoryNoun(),
-                        generator.location()
-                ))
-                add(String.format("Sadly, the prospect of %s is not enough to deter people from going to %s.",
-                        generator.derogatoryNoun(),
-                        generator.location()
-                ))
-                add(String.format("Let's all %s on down to %s so we can see what %s is like!",
-                        generator.motionVerb(),
-                        generator.location(),
-                        generator.derogatoryNoun()
-                ))
-                add(String.format("I think we all know that %s is really just %s's version of %s.",
-                        generator.derogatoryNoun(),
-                        generator.location(),
-                        generator.derogatoryNoun()
-                ))
-                add(String.format("My professor says that %s was the birthplace of %s. Fucking astounding.",
-                        generator.location(),
-                        generator.derogatoryNoun()
-                ))
-                add(String.format("I have decided to turn away from %s and instead turn to %s.",
-                        generator.derogatoryNoun(),
-                        generator.derogatoryNoun()
-                ))
-                add(String.format("The only things that get me through my day are a strong shot of vodka and %s.",
-                        generator.derogatoryNoun()
-                ))
-                add(String.format("I have decided to turn away from %s and instead turn to %s.",
-                        generator.derogatoryNoun(),
-                        generator.derogatoryNoun()
-                ))
-                add(String.format("Some times we just need %s.",
-                        generator.derogatoryNoun()
-                ))
-                add(String.format("The best advice comes from guys who are %s. They speak the true-true.",
-                        generator.derogatoryNoun(),
-                        generator.derogatoryNoun()
-                ))
+                add("Dude, the best part about going to ${generator.location()} is getting to experience ${generator.derogatoryNoun()}.")
+                add("If there's one thing that pisses me off about ${generator.location()}, it's ${generator.derogatoryNoun()}.")
+                add("I've always said that the people who mess with ${generator.derogatoryNoun()} are the first to end up in ${generator.location()}.")
+                add("Sadly, the prospect of ${generator.derogatoryNoun()} is not enough to deter people from going to ${generator.location()}.")
+                add("Let's ${generator.motionVerb()} on down to ${generator.location()} so that we can see what ${generator.derogatoryNoun()} is like.")
+                add("I think we all know that ${generator.derogatoryNoun()} is just ${generator.location()}'s version of ${generator.derogatoryNoun()}.")
+                add("My professor says that ${generator.location()} was the birthplace of ${generator.derogatoryNoun()}. Astounding.")
+                add("I have decreased my reliance on ${generator.derogatoryNoun()} and instead turned my focus to ${generator.derogatoryNoun()}.")
+                add("The only things that get me through my day are a strong flask of whiskey and ${generator.derogatoryNoun()}.")
+                add("Sometimes we just need ${generator.derogatoryNoun()} in our lives, no?")
+                add("The best advice comes from ${generator.derogatoryNoun()}. They speak the true-true.")
             }
         }
 
         return ramblings.random()
     }
 
-    companion object {
-        // Random number generator that Tim finds hilarious
-        private val RANDY = Random()
-    }
 }

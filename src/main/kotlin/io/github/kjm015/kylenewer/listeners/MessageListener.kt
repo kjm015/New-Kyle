@@ -26,17 +26,17 @@ class MessageListener : ListenerAdapter() {
         super.onMessageReceived(event)
 
         // Log messages with the channel and sender
-        if (event.isFromType(ChannelType.PRIVATE)) {
-            log.debug(String.format("[PM] %s: %s\n", event.author.name, msg))
+        if (event.isFromType(ChannelType.PRIVATE) && event.author != null) {
+            log.debug("[PM] ${event.author.name}: $msg\n")
         } else {
-            log.debug(String.format("[%s][%s] %s: %s\n", event.guild.name, event.textChannel.name, event.member.effectiveName, msg))
+            log.debug("[${event.guild.name}][${event.textChannel.name}] ${event.member?.effectiveName ?: ""}: $msg\n")
         }
 
         // Send a reminder if people ask where Kyle went
-        for (string in AppConstants.KYLE_LOCATION_QUESTIONS) {
-            if (event.message.contentRaw.contains(string)) {
-                log.info(String.format("%s just asked where Kyle went.", event.member.effectiveName))
-                event.textChannel.sendMessage("I'm here, you fucking scrub!").queue()
+        AppConstants.KYLE_LOCATION_QUESTIONS.forEach {
+            if (event.message.contentRaw.contains(it, ignoreCase = true)) {
+                log.info("\"${event.member.effectiveName}\" just asked where Kyle went.")
+                event.textChannel.sendMessage("I'm right here, you fucking scrub!").queue()
             }
         }
 
@@ -51,7 +51,6 @@ class MessageListener : ListenerAdapter() {
             event.message.channel.sendMessage(AppConstants.DISASTER).queue()
 
             event.message.channel.sendTyping().queue()
-            Thread.sleep(250)
 
             event.message.channel.sendMessage("This is Felix. Felix is an idiot. Don't be like Felix.").queue()
         }
