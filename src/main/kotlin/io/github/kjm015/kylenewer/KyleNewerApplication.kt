@@ -56,6 +56,7 @@ class KyleNewerApplication {
         builder.addCommand(QuoteCommand())
         builder.addCommand(StoryCommand())
         builder.addCommand(LyricsCommand())
+        builder.addCommand(DieCommand())
 
         // Set the owner of the bot (set in properties)
         builder.setOwnerId(owner)
