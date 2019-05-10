@@ -76,7 +76,7 @@ class QuotesGenerator {
         val quotes: ArrayList<String> = ArrayList()
 
         with(quotes) {
-            add("Rolf too yearns for the simple life of a noodle head...")
+            add("Rolf too yearns for the simple life of a noodle-head...")
             add("No cash! A fine strip of bacon, yes?")
             add("Not since mama got a new shoehorn have I seen such bravery!")
             add("Hotshot Eddy once again interrupts our personal drudgery!")
@@ -90,8 +90,8 @@ class QuotesGenerator {
             add("Oh, great shoe, grant Rolf his wish and take him to the old country!")
             add("Why must you spoil Wilfred with this lavish monkey suit? This will only lead him to the life as an airline steward!")
             add("Rolf respects your vow to uphold the sticky-notes of elders, yet, you must be punished.")
-            add("Soak the milk, Ed boy, gather your inadequate strength, and FLEE! Flee in the name of blanched rhubarb!")
-            add("The space beneath the rock is vacant, she-who-gives-migraines!")
+            add("Soak the milk, Ed boy, gather your inadequate strength, and flee! Flee in the name of blanched rhubarb!")
+            add("The space beneath the rock is vacant, she who gives migraines!")
             add("Jimmy's foolish affection for a stuffed hand-cloth touches Rolf, as I too have a childhood companion!")
             add("Meet my clam, Bobo! To this day, Rolf seeks comfort from Bobo when he is frightened. Hello, Bobo...")
             add("Ed-boy has bitten the belly of the stuffed hand-cloth! Quickly, we must seek refuge in the belly of Bobo!")
@@ -107,8 +107,8 @@ class QuotesGenerator {
             add("You make Rolf sick... If you must quarrel over the orb of rapture, it must be with honor! A competition of shrewdness!")
             add("Shed a tear for the one-proud eggplant, its round and supple life TRAMPLED by your noodle-headed playful oafs!")
             add("Rolf was the son of a shepherd, now Rolf is the posterior of a duck!")
-            add("Johnny the wood boy, always with this head of yours there are so many jokes, yes? Rolf respects your cluelessness!")
-            add("She who loafs for the name of vanity, hurry as judgement day approaches!")
+            add("Johnny the wood boy, always with this head of yours, there are so many jokes, yes? Rolf respects your cluelessness!")
+            add("She who loafs to the name of vanity, hurry as judgement day approaches!")
             add("Silence! As it is Rolf's turn to grovel.")
             add("Stand back, as Rolf has eaten mama's pickled cabbage!")
             add("What is this sound that makes Rolf soil his trousers?!")
@@ -137,6 +137,7 @@ class QuotesGenerator {
             add("Cookies and milk? Do you wish Rolf ridicule at the son of a shepherd social club?")
             add("You may thank Rolf for polishing that chicken posterior you call a head.")
             add("Your garden is overgrown and your cucumbers are soft!")
+            add("Our modern postage system will ensure my relatives have fresh fish for dinner!")
 
             return quotes.random()
         }
