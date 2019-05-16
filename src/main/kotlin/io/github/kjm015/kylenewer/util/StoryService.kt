@@ -1,6 +1,11 @@
 package io.github.kjm015.kylenewer.util
 
+import io.github.kjm015.kylenewer.repository.StoryEntry
+import io.github.kjm015.kylenewer.repository.StoryRepository
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Service
 import java.util.*
+import kotlin.NoSuchElementException
 import kotlin.collections.ArrayList
 
 
@@ -12,7 +17,11 @@ import kotlin.collections.ArrayList
  * @author kjm015
  * @since 01/20/2019
  */
-class StoryGenerator {
+@Service
+class StoryService {
+
+    @Autowired
+    private lateinit var storyRepository: StoryRepository
 
     fun story(): String {
         val builder = StringBuilder()
@@ -27,6 +36,30 @@ class StoryGenerator {
 
         return builder.toString()
     }
+
+    @Throws(NoSuchElementException::class)
+    fun customStory(): String {
+        val sb = java.lang.StringBuilder()
+        sb.append("${storyRepository.findAllByCategory(category = "setup").random().text}, ")
+        sb.append("${storyRepository.findAllByCategory(category = "antagonism").random().text}. ")
+        sb.append("${storyRepository.findAllByCategory(category = "retort").random().text}. ")
+        sb.append("${storyRepository.findAllByCategory(category = "affirmation").random().text}. ")
+        sb.append(storyRepository.findAllByCategory(category = "snark").random().text)
+
+        return sb.toString()
+    }
+
+    fun storeStoryComponent(category: String, text: String, author: String): StoryEntry {
+        val storyEntry = StoryEntry()
+
+        storyEntry.category = category
+        storyEntry.text = text
+        storyEntry.author = author
+
+        return storyRepository.save(storyEntry)
+    }
+
+    fun getAllStoryComponents() = storyRepository.findAll().toList()
 
     /**
      * This function generates the setup String for the story to be generated.
