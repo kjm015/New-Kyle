@@ -1,31 +1,41 @@
 buildscript {
+
     ext {
         springBootVersion = '2.1.1.RELEASE'
-        kotlinVersion = '1.3.11'
+        kotlinVersion = '1.3.31'
+        jdaVersion = '3.6.0_376'
+        jdaUtilitiesVersion = '2.1.1'
     }
+
     repositories {
         mavenCentral()
         jcenter()
     }
+
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
         classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
         classpath("org.jetbrains.kotlin:kotlin-noarg:${kotlinVersion}")
     }
+
 }
 
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.3.11'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.31'
     id 'com.sedmelluq.jdaction' version '1.0.2'
 }
+
 compileKotlin {
     kotlinOptions {
+        freeCompilerArgs = ['-Xjsr305=strict']
         jvmTarget = "1.8"
     }
 }
+
 compileTestKotlin {
     kotlinOptions {
+        freeCompilerArgs = ['-Xjsr305=strict']
         jvmTarget = "1.8"
     }
 }
@@ -46,6 +56,7 @@ sourceCompatibility = 1.8
 repositories {
     mavenCentral()
     jcenter()
+    
     maven {
         url "https://dl.bintray.com/jagrosh/maven"
     }
@@ -56,10 +67,12 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-hateoas'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'org.springframework.boot:spring-boot-devtools'
 
     // Discord dependencies
-    compile 'com.jagrosh:jda-utilities:2.1.1'
-    compile 'net.dv8tion:JDA:3.6.0_376'
+    compile "com.jagrosh:jda-utilities:${jdaUtilitiesVersion}"
+    compile "net.dv8tion:JDA:${jdaVersion}"
 
     // Lombok
     compileOnly('org.projectlombok:lombok')
@@ -73,6 +86,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
     implementation "org.jetbrains.kotlin:kotlin-reflect"
+
+    runtimeOnly 'com.h2database:h2'
 
     // Lyrics API
     compile "com.jagrosh:JLyrics:0.2"
