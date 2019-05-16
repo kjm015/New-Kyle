@@ -22,4 +22,6 @@ class StoryEntry {
     @Size(min = 3, max = 64)
     var text: String = ""
 
+    var author: String = "Unknown"
+
 }

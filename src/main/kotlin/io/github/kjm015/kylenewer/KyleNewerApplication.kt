@@ -32,6 +32,9 @@ class KyleNewerApplication {
     @Autowired
     private lateinit var settings: DiscordSettings
 
+    @Autowired
+    private lateinit var storyCommand: StoryCommand
+
     @Bean
     fun jda(): JDA {
         // Import values from settings
@@ -54,7 +57,7 @@ class KyleNewerApplication {
         builder.addCommand(SuckCommand())
         builder.addCommand(RambleCommand())
         builder.addCommand(QuoteCommand())
-        builder.addCommand(StoryCommand())
+        builder.addCommand(storyCommand)
         builder.addCommand(LyricsCommand())
         builder.addCommand(DieCommand())
 
