@@ -3,6 +3,7 @@ package io.github.kjm015.kylenewer.commands
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.AppConstants
+import org.springframework.stereotype.Component
 
 /**
  * This class makes Kyle fetch some random information about the server or the bot environment.
@@ -12,6 +13,7 @@ import io.github.kjm015.kylenewer.util.AppConstants
  * @author kjm015
  * @since 7/26/2018
  */
+@Component
 class FetchCommand : Command() {
 
     // Required constructor for all Commands

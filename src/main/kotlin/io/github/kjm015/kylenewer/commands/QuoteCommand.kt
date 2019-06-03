@@ -3,6 +3,8 @@ package io.github.kjm015.kylenewer.commands
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.QuotesGenerator
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Component
 
 /**
  * This command will make Kyle pull a quote from the QuoteGenerator class.
@@ -12,9 +14,11 @@ import io.github.kjm015.kylenewer.util.QuotesGenerator
  * @author kjm015
  * @since 1/20/2019
  */
+@Component
 class QuoteCommand : Command() {
 
-    private var quotes = QuotesGenerator()
+    @Autowired
+    private lateinit var quotes: QuotesGenerator
 
     init {
         this.name = "quote"

@@ -1,6 +1,11 @@
 package io.github.kjm015.kylenewer.util
 
+import io.github.kjm015.kylenewer.repository.StoryEntry
+import io.github.kjm015.kylenewer.repository.StoryRepository
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Service
 import java.util.*
+import kotlin.NoSuchElementException
 import kotlin.collections.ArrayList
 
 
@@ -12,7 +17,11 @@ import kotlin.collections.ArrayList
  * @author kjm015
  * @since 01/20/2019
  */
-class StoryGenerator {
+@Service
+class StoryService {
+
+    @Autowired
+    private lateinit var storyRepository: StoryRepository
 
     fun story(): String {
         val builder = StringBuilder()
@@ -27,6 +36,30 @@ class StoryGenerator {
 
         return builder.toString()
     }
+
+    @Throws(NoSuchElementException::class)
+    fun customStory(): String {
+        val sb = java.lang.StringBuilder()
+        sb.append("${storyRepository.findAllByCategory(category = "setup").random().text}, ")
+        sb.append("${storyRepository.findAllByCategory(category = "antagonism").random().text}. ")
+        sb.append("${storyRepository.findAllByCategory(category = "retort").random().text}. ")
+        sb.append("${storyRepository.findAllByCategory(category = "affirmation").random().text}. ")
+        sb.append(storyRepository.findAllByCategory(category = "snark").random().text)
+
+        return sb.toString()
+    }
+
+    fun storeStoryComponent(category: String, text: String, author: String): StoryEntry {
+        val storyEntry = StoryEntry()
+
+        storyEntry.category = category
+        storyEntry.text = text
+        storyEntry.author = author
+
+        return storyRepository.save(storyEntry)
+    }
+
+    fun getAllStoryComponents() = storyRepository.findAll().toList()
 
     /**
      * This function generates the setup String for the story to be generated.
@@ -100,6 +133,7 @@ class StoryGenerator {
         ants.add("when I began to sing to myself. ")
         ants.add("and I heard a girl say: \"Boys are so dumb.\" ")
         ants.add("and we completely ran out of chicken to make McNuggets. ")
+        ants.add("when my professor came in 30 minutes late, hungover, shirt inside-out and backwards, with nothing on his feet but flip-flops.")
         ants.add("and the cab driver had \"My Life\" by 50 Cent and Eminem on. He asked me if I wanted him to change it to country. ")
         ants.add("when I see a Chad violently beating a drunk girl. At this point, she's on the floor, cowering and crying. ")
         ants.add("when I played my favorite song for my girlfriend. She said it sounded like \"elevator music\". ")
@@ -143,9 +177,10 @@ class StoryGenerator {
         retorts.add("So, I made 10 batches of vegan chicken nuggets with the ingredients that were on hand. ")
         retorts.add("I responded by rapping my favorite song word for word. ")
         retorts.add("I immediately dumped my girlfriend at that point. ")
-        retorts.add("Getting up, I say \"Hey, fuck off man, you have to reason to do that!\" I decked him, and his jaw came off at the hinges, hitting a table on the way down. ")
+        retorts.add("Getting up, I say \"Hey, fuck off man, you have no reason to do that!\" I decked him, and his jaw came off at the hinges, hitting a table on the way down. ")
         retorts.add("I didn't have to go to the hospital though, because my fiance is a badass! ")
-        retorts.add("I then life up my dress to reveal the blade I have strapped on my thigh. ")
+        retorts.add("I then lifted up my dress to reveal the blade I had strapped on my thigh. ")
+        retorts.add("He sat at his desk and banged his fist on the table, sobbing \"I hate this class so much!\"")
         retorts.add("My response to them was \"Hey, how does it feel to be descendants of thieves and murderers and rapists?\" ")
 
         return retorts.random()
@@ -181,6 +216,7 @@ class StoryGenerator {
         affirm.add("None of the customers realized, and I even heard that they liked it more than usual. ")
         affirm.add("Hopefully that teaches them not to disrespect women. ")
         affirm.add("She sucked out all of the spider venom and used herbs as an anti-venom, saving my life! ")
+        affirm.add("I responded \"Same.\" out of habit.")
 
         return affirm.random()
     }
@@ -214,9 +250,9 @@ class StoryGenerator {
         snarks.add("My son is six. Six! And he knows more than doctors already!")
         snarks.add("#blessed")
         snarks.add("Best Target experience yet!")
-        snarks.add("So yeah, if you could give me that Galaxy Fortnite skin, that would be great.")
         snarks.add("In my defense, our dog was really fucking small. ")
         snarks.add("Another reason to grow your own medicine and food!")
+        snarks.add("That man? Albert Einstein.")
 
         return snarks.random()
     }

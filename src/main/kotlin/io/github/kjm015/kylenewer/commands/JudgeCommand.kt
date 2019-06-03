@@ -4,6 +4,9 @@ import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
 import net.dv8tion.jda.core.entities.User
+import org.slf4j.LoggerFactory
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Component
 
 /**
  * This command will make Kyle pass judgement on a specified user, or an unsuspecting
@@ -12,9 +15,13 @@ import net.dv8tion.jda.core.entities.User
  * @author kjm015
  * @since 7/26/2018
  */
+@Component
 class JudgeCommand : Command() {
 
-    private val generator = MessageGenerator()
+    @Autowired
+    private lateinit var generator: MessageGenerator
+
+    private val log = LoggerFactory.getLogger(this.javaClass)
 
     // Required constructor for all commands
     init {
@@ -47,7 +54,11 @@ class JudgeCommand : Command() {
     } else if (event.args.contains("yourself")) {
         event.reply("That's an easy one.")
         this.judgeSelf(event)
-    } else if (event.args.contains("someone") || event.args.contains("somebody") || event.args.isBlank()) {
+    } else if (event.args.contains("someone", ignoreCase = true) || event.args.contains(
+            "somebody",
+            ignoreCase = true
+        ) || event.args.isBlank()
+    ) {
         this.judgeRandom(event)
     } else {
         this.judgeTarget(event)
@@ -76,6 +87,7 @@ class JudgeCommand : Command() {
                 this.judgeRandom(event)
             }
         } catch (e: NullPointerException) {
+            log.warn("Error: could not find user in list -> $e")
             event.reply("Who the hell is $arg?")
         }
 
@@ -131,6 +143,7 @@ class JudgeCommand : Command() {
             discriminatorOrName.contains(it.name) || discriminatorOrName.contains(it.discriminator)
         }
     } catch (e: NoSuchElementException) {
+        log.warn("Could not find user in list with name or discriminator \"$discriminatorOrName\"! -> $e")
         null
     }
 

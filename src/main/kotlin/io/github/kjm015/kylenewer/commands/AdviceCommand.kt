@@ -3,6 +3,7 @@ package io.github.kjm015.kylenewer.commands
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import net.dv8tion.jda.core.entities.ChannelType
+import org.springframework.stereotype.Component
 import java.util.*
 
 /**
@@ -12,6 +13,7 @@ import java.util.*
  * @author kjm015
  * @since 7/26/2018
  */
+@Component
 class AdviceCommand : Command() {
 
     // Required constructor for every command

@@ -1,5 +1,6 @@
 package io.github.kjm015.kylenewer.util
 
+import org.springframework.stereotype.Component
 import java.util.*
 
 /**
@@ -9,6 +10,7 @@ import java.util.*
  * @author kjm015
  * @since 01/20/2019
  */
+@Component
 class QuotesGenerator {
 
     /**

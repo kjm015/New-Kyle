@@ -1,7 +1,7 @@
 package io.github.kjm015.kylenewer.util
 
-import lombok.NoArgsConstructor
 import net.dv8tion.jda.core.entities.User
+import org.springframework.stereotype.Service
 import java.util.*
 
 /**
@@ -12,7 +12,7 @@ import java.util.*
  * @author kjm015
  * @since 7/26/2018
  */
-@NoArgsConstructor
+@Service
 class MessageGenerator {
 
     /**
@@ -527,6 +527,7 @@ class MessageGenerator {
                 add("The only thing worse than ${derogatoryNoun()} is ${target.asMention}'s obsession with ${derogatoryNoun()}.")
                 add("Leave it to ${target.asMention} to ruin the fine American pasttimes of ${derogatoryNoun()} and ${derogatoryNoun()}.")
                 add("A combination of ${derogatoryNoun()} and ${derogatoryNoun()} gives you ${target.asMention}. What a world.")
+                add("I checked ${target.asMention}'s internet history, and there's a lot of weird porn about ${derogatoryNoun()} and ${derogatoryNoun()}.")
             }
         }
         // Return a random element from the list of Strings
