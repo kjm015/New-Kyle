@@ -4,6 +4,8 @@ import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
 import io.github.kjm015.kylenewer.util.MessageModifier
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Component
 import java.util.*
 
 /**
@@ -13,11 +15,14 @@ import java.util.*
  * @author kjm015
  * @since 7/26/2018
  */
+@Component
 class RambleCommand : Command() {
 
-    private val generator = MessageGenerator()
+    @Autowired
+    private lateinit var generator: MessageGenerator
 
-    private val modifier = MessageModifier()
+    @Autowired
+    private lateinit var modifier: MessageModifier
 
     // Required constructor for all commands
     init {

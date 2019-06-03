@@ -3,6 +3,8 @@ package io.github.kjm015.kylenewer.commands
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Component
 
 /**
  * This command makes Kyle rant and rage about something that he would much rather
@@ -11,9 +13,11 @@ import io.github.kjm015.kylenewer.util.MessageGenerator
  * @author kjm015
  * @since 7/26/2018
  */
+@Component
 class RageCommand : Command() {
 
-    private val generator = MessageGenerator()
+    @Autowired
+    private lateinit var generator: MessageGenerator
 
     // Required constructor for all commands
     init {

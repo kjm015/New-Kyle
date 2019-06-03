@@ -3,7 +3,6 @@ package io.github.kjm015.kylenewer.commands
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.repository.StoryEntry
-import io.github.kjm015.kylenewer.repository.StoryRepository
 import io.github.kjm015.kylenewer.util.StoryService
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
@@ -36,13 +35,59 @@ class StoryCommand : Command() {
         event.args.startsWith(prefix = "add", ignoreCase = true) -> try {
             val argMatey = event.args.drop(n = "add".length + 1)
 
-            generator.storeStoryComponent(
-                category = argMatey.substringBefore(delimiter = " ").toLowerCase(),
-                text = argMatey.substringAfter(delimiter = " "),
-                author = event.author.name
-            )
+            when {
+                argMatey.startsWith("se", ignoreCase = true) -> {
+                    generator.storeStoryComponent(
+                        category = "setup",
+                        text = argMatey.substringAfter(delimiter = " "),
+                        author = event.author.name
+                    )
 
-            event.replySuccess("Okay, got it.")
+                    event.replySuccess("Okay, got it.")
+                }
+                argMatey.startsWith("an", ignoreCase = true) -> {
+                    generator.storeStoryComponent(
+                        category = "antagonism",
+                        text = argMatey.substringAfter(delimiter = " "),
+                        author = event.author.name
+                    )
+
+                    event.replySuccess("Okay, got it.")
+                }
+                argMatey.startsWith("re", ignoreCase = true) -> {
+                    generator.storeStoryComponent(
+                        category = "retort",
+                        text = argMatey.substringAfter(delimiter = " "),
+                        author = event.author.name
+                    )
+
+                    event.replySuccess("Okay, got it.")
+                }
+                argMatey.startsWith("af", ignoreCase = true) -> {
+                    generator.storeStoryComponent(
+                        category = "affirmation",
+                        text = argMatey.substringAfter(delimiter = " "),
+                        author = event.author.name
+                    )
+
+                    event.replySuccess("Okay, got it.")
+                }
+                argMatey.startsWith("sn", ignoreCase = true) -> {
+                    generator.storeStoryComponent(
+                        category = "snark",
+                        text = argMatey.substringAfter(delimiter = " "),
+                        author = event.author.name
+                    )
+
+                    event.replySuccess("Okay, got it.")
+                }
+
+                else -> {
+                    event.replyError("\"${argMatey.substringBefore(delimiter = " ")}\" is not a valid story category, my guy.")
+                }
+            }
+
+            log.debug("${event.author.name} tried to create a story component!")
         } catch (e: Exception) {
             log.error("Could not save story entry! -> $e")
             event.replyError("No can do!")
@@ -50,9 +95,12 @@ class StoryCommand : Command() {
 
         event.args.startsWith(prefix = "get", ignoreCase = true) -> {
             event.reply("Let me check what I've got...\n")
-            generator.getAllStoryComponents().forEachIndexed { i: Int, storyEntry: StoryEntry ->
-                event.reply("${i + 1}. ${storyEntry.category} by ${storyEntry.author}: \"${storyEntry.text}\"")
+            generator.getAllStoryComponents().sortedBy {
+                it.category
+            }.forEachIndexed { i: Int, storyEntry: StoryEntry ->
+                event.reply("${i + 1}. ${storyEntry.category.capitalize()} by ${storyEntry.author}: \"${storyEntry.text}\"")
             }
+
             event.replySuccess("\nThat's all I've got.")
         }
 

@@ -5,6 +5,8 @@ import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
 import net.dv8tion.jda.core.entities.User
 import org.slf4j.LoggerFactory
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Component
 
 /**
  * This command will make Kyle pass judgement on a specified user, or an unsuspecting
@@ -13,9 +15,11 @@ import org.slf4j.LoggerFactory
  * @author kjm015
  * @since 7/26/2018
  */
+@Component
 class JudgeCommand : Command() {
 
-    private val generator = MessageGenerator()
+    @Autowired
+    private lateinit var generator: MessageGenerator
 
     private val log = LoggerFactory.getLogger(this.javaClass)
 

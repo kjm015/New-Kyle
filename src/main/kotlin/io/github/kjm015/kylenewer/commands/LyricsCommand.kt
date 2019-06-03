@@ -5,6 +5,7 @@ import com.jagrosh.jdautilities.command.CommandEvent
 import com.jagrosh.jlyrics.LyricsClient
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import org.springframework.stereotype.Component
 
 /**
  * This command allows Kyle to post lyrics of a song. He will display the name of the song, the author,
@@ -16,6 +17,7 @@ import org.slf4j.LoggerFactory
  * @author kjm015
  * @since 01/20/2019
  */
+@Component
 class LyricsCommand : Command() {
 
     private val log: Logger = LoggerFactory.getLogger(this.javaClass)

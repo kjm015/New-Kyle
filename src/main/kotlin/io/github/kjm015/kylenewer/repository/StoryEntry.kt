@@ -19,7 +19,7 @@ class StoryEntry {
     var category: String = "none"
 
     @NotBlank
-    @Size(min = 3, max = 64)
+    @Size(min = 3, max = 128)
     var text: String = ""
 
     var author: String = "Unknown"

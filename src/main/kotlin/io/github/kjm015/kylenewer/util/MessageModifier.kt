@@ -1,5 +1,7 @@
 package io.github.kjm015.kylenewer.util
 
+import org.springframework.stereotype.Component
+
 /**
  * This class converts perspectives of certain sentences. In other words, if a user submits a request
  * to Kyle saying "YOU SUCK!", Kyle should give a response that takes what the user said, but with the
@@ -8,6 +10,7 @@ package io.github.kjm015.kylenewer.util
  * @author kjm015
  * @since 7/26/2018
  */
+@Component
 class MessageModifier {
 
     /**

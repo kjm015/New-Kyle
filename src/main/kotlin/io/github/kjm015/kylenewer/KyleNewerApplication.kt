@@ -35,6 +35,33 @@ class KyleNewerApplication {
     @Autowired
     private lateinit var storyCommand: StoryCommand
 
+    @Autowired
+    private lateinit var fetchCommand: FetchCommand
+
+    @Autowired
+    private lateinit var adviceCommand: AdviceCommand
+
+    @Autowired
+    private lateinit var dieCommand: DieCommand
+
+    @Autowired
+    private lateinit var rageCommand: RageCommand
+
+    @Autowired
+    private lateinit var judgeCommand: JudgeCommand
+
+    @Autowired
+    private lateinit var suckCommand: SuckCommand
+
+    @Autowired
+    private lateinit var rambleCommand: RambleCommand
+
+    @Autowired
+    private lateinit var quoteCommand: QuoteCommand
+
+    @Autowired
+    private lateinit var lyricsCommand: LyricsCommand
+
     @Bean
     fun jda(): JDA {
         // Import values from settings
@@ -50,16 +77,16 @@ class KyleNewerApplication {
         builder.setPrefix(prefix)
 
         // Add the commands to the running pool (Add yours here!)
-        builder.addCommand(RageCommand())
-        builder.addCommand(AdviceCommand())
-        builder.addCommand(FetchCommand())
-        builder.addCommand(JudgeCommand())
-        builder.addCommand(SuckCommand())
-        builder.addCommand(RambleCommand())
-        builder.addCommand(QuoteCommand())
+        builder.addCommand(rageCommand)
+        builder.addCommand(adviceCommand)
+        builder.addCommand(fetchCommand)
+        builder.addCommand(judgeCommand)
+        builder.addCommand(suckCommand)
+        builder.addCommand(rambleCommand)
+        builder.addCommand(quoteCommand)
         builder.addCommand(storyCommand)
-        builder.addCommand(LyricsCommand())
-        builder.addCommand(DieCommand())
+        builder.addCommand(lyricsCommand)
+        builder.addCommand(dieCommand)
 
         // Set the owner of the bot (set in properties)
         builder.setOwnerId(owner)

@@ -2,6 +2,7 @@ package io.github.kjm015.kylenewer.commands
 
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
+import org.springframework.stereotype.Component
 import java.util.*
 
 /**
@@ -11,8 +12,9 @@ import java.util.*
  * @author tdickens1234
  * @since 7/26/2018
  */
-
+@Component
 class DieCommand : Command() {
+
     // Required constructor for every command
     init {
         this.name = "die"

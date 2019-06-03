@@ -1,7 +1,7 @@
 package io.github.kjm015.kylenewer.util
 
-import lombok.NoArgsConstructor
 import net.dv8tion.jda.core.entities.User
+import org.springframework.stereotype.Service
 import java.util.*
 
 /**
@@ -12,6 +12,7 @@ import java.util.*
  * @author kjm015
  * @since 7/26/2018
  */
+@Service
 class MessageGenerator {
 
     /**
