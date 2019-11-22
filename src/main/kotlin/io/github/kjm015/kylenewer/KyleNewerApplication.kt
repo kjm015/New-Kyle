@@ -5,10 +5,9 @@ import io.github.kjm015.kylenewer.commands.*
 import io.github.kjm015.kylenewer.listeners.ExodusListener
 import io.github.kjm015.kylenewer.listeners.InfluxListener
 import io.github.kjm015.kylenewer.listeners.MessageListener
-import net.dv8tion.jda.core.AccountType
-import net.dv8tion.jda.core.JDA
-import net.dv8tion.jda.core.JDABuilder
-import net.dv8tion.jda.core.entities.Game
+import net.dv8tion.jda.api.AccountType
+import net.dv8tion.jda.api.JDA
+import net.dv8tion.jda.api.JDABuilder
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
@@ -66,7 +65,6 @@ class KyleNewerApplication {
     fun jda(): JDA {
         // Import values from settings
         val token = settings.oauth
-        val game = settings.game
         val owner = settings.owner
         val prefix = settings.prefix
 
@@ -96,14 +94,9 @@ class KyleNewerApplication {
 
         // Build the bot with the given settings and listeners
         return JDABuilder(AccountType.BOT)
-            .setGame(Game.watching(game))
-            .setToken(token)
-            // Add new event listeners here
-            .addEventListener(client)
-            .addEventListener(MessageListener())
-            .addEventListener(ExodusListener())
-            .addEventListener(InfluxListener())
-            .buildAsync()
+                .setToken(token)
+                .addEventListeners(client, MessageListener(), ExodusListener(), InfluxListener())
+                .build()
     }
 
 }

@@ -40,7 +40,7 @@ class FetchCommand : Command() {
         // Fetch the ping
         // argument for getting delay for New Kyle
         if (args.contains("ping") || args.contains("delay") || args.contains("lag")) {
-            val pingSec = jda.ping.toDouble() / 1000.0
+            val pingSec = jda.gatewayPing.toDouble() / 1000.0
             event.reply("There's like a $pingSec second delay when I post messages")
 
             when {

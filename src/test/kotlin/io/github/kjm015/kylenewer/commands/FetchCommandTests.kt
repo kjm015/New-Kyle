@@ -1,8 +1,8 @@
 package io.github.kjm015.kylenewer.commands
 
 import com.jagrosh.jdautilities.command.CommandEvent
-import net.dv8tion.jda.core.JDA
-import net.dv8tion.jda.core.entities.User
+import net.dv8tion.jda.api.JDA
+import net.dv8tion.jda.api.entities.User
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.InjectMocks
@@ -40,11 +40,11 @@ class FetchCommandTests {
     fun testExecutionForPingAndLessThan100() {
         Mockito.`when`(event!!.args).thenReturn("ping")
         Mockito.`when`(event.jda).thenReturn(jda)
-        Mockito.`when`(jda!!.ping).thenReturn(54.toLong())
+        Mockito.`when`(jda!!.gatewayPing).thenReturn(54.toLong())
 
         fetchCommand!!.execute(event)
 
-        val out = String.format("There's like a %s second delay when I post messages", jda.ping.toDouble() / 1000.0)
+        val out = String.format("There's like a %s second delay when I post messages", jda.gatewayPing.toDouble() / 1000.0)
 
         Mockito.verify(event).reply(out)
         Mockito.verify(event).reply("Not bad.")
@@ -54,11 +54,11 @@ class FetchCommandTests {
     fun testExecutionForPingAndOver100() {
         Mockito.`when`(event!!.args).thenReturn("delay")
         Mockito.`when`(event.jda).thenReturn(jda)
-        Mockito.`when`(jda!!.ping).thenReturn(154.toLong())
+        Mockito.`when`(jda!!.gatewayPing).thenReturn(154.toLong())
 
         fetchCommand!!.execute(event)
 
-        val out = String.format("There's like a %s second delay when I post messages", jda.ping.toDouble() / 1000.0)
+        val out = String.format("There's like a %s second delay when I post messages", jda.gatewayPing.toDouble() / 1000.0)
 
         Mockito.verify(event).reply(out)
         Mockito.verify(event).reply("Which is kind of shit if you ask me.")
@@ -68,11 +68,11 @@ class FetchCommandTests {
     fun testExecutionForPingAndOver500() {
         Mockito.`when`(event!!.args).thenReturn("lag")
         Mockito.`when`(event.jda).thenReturn(jda)
-        Mockito.`when`(jda!!.ping).thenReturn(551.toLong())
+        Mockito.`when`(jda!!.gatewayPing).thenReturn(551.toLong())
 
         fetchCommand!!.execute(event)
 
-        val out = String.format("There's like a %s second delay when I post messages", jda.ping.toDouble() / 1000.0)
+        val out = String.format("There's like a %s second delay when I post messages", jda.gatewayPing.toDouble() / 1000.0)
 
         Mockito.verify(event).reply(out)
         Mockito.verify(event).reply("Holy fucking shit, that's a lot of lag.")

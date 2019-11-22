@@ -1,12 +1,10 @@
 package io.github.kjm015.kylenewer.listeners
 
-import net.dv8tion.jda.client.events.group.GroupUserJoinEvent
-import net.dv8tion.jda.client.exceptions.VerificationLevelException
-import net.dv8tion.jda.core.events.guild.GuildUnbanEvent
-import net.dv8tion.jda.core.events.guild.member.GuildMemberJoinEvent
-import net.dv8tion.jda.core.exceptions.InsufficientPermissionException
-import net.dv8tion.jda.core.hooks.ListenerAdapter
-import org.slf4j.Logger
+import net.dv8tion.jda.api.events.guild.GuildUnbanEvent
+import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent
+import net.dv8tion.jda.api.exceptions.InsufficientPermissionException
+import net.dv8tion.jda.api.exceptions.VerificationLevelException
+import net.dv8tion.jda.api.hooks.ListenerAdapter
 import org.slf4j.LoggerFactory
 
 /**
@@ -21,26 +19,7 @@ import org.slf4j.LoggerFactory
  */
 class InfluxListener : ListenerAdapter() {
 
-    private val log: Logger = LoggerFactory.getLogger(this.javaClass)
-
-    /**
-     * This method gets called when a user joins a group chat with New Kyle.
-     * This should probably not be used, as New Kyle is meant to be for servers
-     * and not for group chats.
-     *
-     * @param event - an event where a user joins a group chat
-     */
-    override fun onGroupUserJoin(event: GroupUserJoinEvent) {
-        super.onGroupUserJoin(event)
-
-        log.info("User \"${event.user.name}\" has joined a group with New Kyle.")
-        try {
-            event.group.sendMessage("Hey, ${event.user.name} just joined.")
-                .queue()
-        } catch (e: Exception) {
-            log.error("Could not post messages to group ${event.group}:\n$e")
-        }
-    }
+    private val log = LoggerFactory.getLogger(this.javaClass)
 
     /**
      * This method gets called when a user joins a guild/server.
@@ -54,9 +33,9 @@ class InfluxListener : ListenerAdapter() {
         log.info("User \"${event.member.effectiveName}\" just joined guild \"${event.guild.name}\".")
 
         try {
-            event.guild.getTextChannelById("general")
-                .sendMessage("Hey guys, someone named \"${event.member.effectiveName}\" just joined the server.")
-                .queue()
+            event.guild.getTextChannelById("general")!!
+                    .sendMessage("Hey guys, someone named \"${event.member.effectiveName}\" just joined the server.")
+                    .queue()
         } catch (e: NullPointerException) {
             log.warn("General channel in ${event.guild} not found:\n$e")
         } catch (e: InsufficientPermissionException) {
@@ -78,9 +57,9 @@ class InfluxListener : ListenerAdapter() {
         log.info("User \"${event.user.name}\" has been unbanned from guild \"${event.guild.name}\".")
 
         try {
-            event.guild.getTextChannelById("general")
-                .sendMessage("Good news, people. That dude named ${event.user.name} just got unbanned from the server.")
-                .queue()
+            event.guild.getTextChannelById("general")!!
+                    .sendMessage("Good news, people. That dude named ${event.user.name} just got unbanned from the server.")
+                    .queue()
         } catch (e: NullPointerException) {
             log.warn("General channel in ${event.guild} not found:\n$e")
         } catch (e: InsufficientPermissionException) {

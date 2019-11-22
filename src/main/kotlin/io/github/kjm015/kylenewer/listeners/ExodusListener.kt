@@ -1,11 +1,10 @@
 package io.github.kjm015.kylenewer.listeners
 
-import net.dv8tion.jda.client.events.group.GroupUserLeaveEvent
-import net.dv8tion.jda.client.exceptions.VerificationLevelException
-import net.dv8tion.jda.core.events.guild.GuildBanEvent
-import net.dv8tion.jda.core.events.guild.member.GuildMemberLeaveEvent
-import net.dv8tion.jda.core.exceptions.InsufficientPermissionException
-import net.dv8tion.jda.core.hooks.ListenerAdapter
+import net.dv8tion.jda.api.events.guild.GuildBanEvent
+import net.dv8tion.jda.api.events.guild.member.GuildMemberLeaveEvent
+import net.dv8tion.jda.api.exceptions.InsufficientPermissionException
+import net.dv8tion.jda.api.exceptions.VerificationLevelException
+import net.dv8tion.jda.api.hooks.ListenerAdapter
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
@@ -25,23 +24,6 @@ class ExodusListener : ListenerAdapter() {
     private val log: Logger = LoggerFactory.getLogger(this.javaClass)
 
     /**
-     * This function occurs when a user leave a chat group. This probably will not be
-     * used, since New Kyle's functionality is centered around guilds/servers.
-     *
-     * @param event - the event where the user leaves the chat group
-     */
-    override fun onGroupUserLeave(event: GroupUserLeaveEvent) {
-        super.onGroupUserLeave(event)
-
-        log.info("${event.user.name} has left a chat group.")
-        try {
-            event.group.sendMessage("Well, ${event.user.name} left the chat.").queue()
-        } catch (e: Exception) {
-            log.warn("Something went wrong posting to group chat:\n$e")
-        }
-    }
-
-    /**
      * This function occurs when a user leaves a guild or server that New Kyle is in. More messages can
      * be added to this function later, as I feel that there is room for a lot of
      * snark and showboating here.
@@ -54,7 +36,7 @@ class ExodusListener : ListenerAdapter() {
         log.info("User ${event.member.effectiveName} has left the guild known as \"${event.guild.name}\".")
 
         try {
-            event.guild.getTextChannelById("general")
+            event.guild.getTextChannelById("general")!!
                 .sendMessage("Bad news, guys. ${event.member.effectiveName}, otherwise known as \"${event.member.nickname}\" has left the server.")
                 .queue()
         } catch (e: NullPointerException) {
@@ -78,7 +60,7 @@ class ExodusListener : ListenerAdapter() {
         log.info("User ${event.user.name} has been banned from guild \"${event.guild.name}\"")
 
         try {
-            event.guild.getTextChannelById("general")
+            event.guild.getTextChannelById("general")!!
                 .sendMessage("Hey guys, ${event.user.name} just got ban-hammered. Nothing personnel, kid.")
                 .queue()
         } catch (e: NullPointerException) {
