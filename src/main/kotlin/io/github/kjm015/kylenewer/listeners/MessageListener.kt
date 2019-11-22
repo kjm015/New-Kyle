@@ -1,9 +1,9 @@
 package io.github.kjm015.kylenewer.listeners
 
 import io.github.kjm015.kylenewer.util.AppConstants
-import net.dv8tion.jda.core.entities.ChannelType
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent
-import net.dv8tion.jda.core.hooks.ListenerAdapter
+import net.dv8tion.jda.api.entities.ChannelType
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent
+import net.dv8tion.jda.api.hooks.ListenerAdapter
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
@@ -26,7 +26,7 @@ class MessageListener : ListenerAdapter() {
         super.onMessageReceived(event)
 
         // Log messages with the channel and sender
-        if (event.isFromType(ChannelType.PRIVATE) && event.author != null) {
+        if (event.isFromType(ChannelType.PRIVATE)) {
             log.debug("[PM] ${event.author.name}: $msg\n")
         } else {
             log.debug("[${event.guild.name}][${event.textChannel.name}] ${event.member?.effectiveName ?: ""}: $msg\n")
@@ -35,7 +35,7 @@ class MessageListener : ListenerAdapter() {
         // Send a reminder if people ask where Kyle went
         AppConstants.KYLE_LOCATION_QUESTIONS.forEach {
             if (event.message.contentRaw.contains(it, ignoreCase = true)) {
-                log.info("\"${event.member.effectiveName}\" just asked where Kyle went.")
+                log.info("\"${event.member!!.effectiveName}\" just asked where Kyle went.")
                 event.textChannel.sendMessage("I'm right here, you fucking scrub!").queue()
             }
         }

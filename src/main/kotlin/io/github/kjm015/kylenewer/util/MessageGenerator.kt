@@ -1,6 +1,6 @@
 package io.github.kjm015.kylenewer.util
 
-import net.dv8tion.jda.core.entities.User
+import net.dv8tion.jda.api.entities.User
 import org.springframework.stereotype.Service
 import java.util.*
 
