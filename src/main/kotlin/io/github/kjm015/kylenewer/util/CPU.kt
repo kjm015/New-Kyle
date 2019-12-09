@@ -86,8 +86,8 @@ fun generateRyzenProcessor(): CPU {
 
 fun generateIntelProcessor(): CPU {
     val tiers = arrayListOf(3, 5, 7, 9)
-    val generations = arrayListOf(2, 3, 4, 5, 6, 7, 8, 9)
-    val extensions = arrayListOf("", "K", "KF", "F")
+    val generations = arrayListOf(7, 8, 9)
+    val extensions = arrayListOf("", "K", "KF", "F", "KS")
 
     var tier = tiers.random()
     var generation = generations.random()
@@ -97,9 +97,18 @@ fun generateIntelProcessor(): CPU {
         generation = generations.random()
     }
 
+    var extension = extensions.random()
+
+    while ((extension == "KS" && tier != 9) || (extension == "F" && tier > 7)) {
+        extension = extensions.random()
+    }
+
     val serial = when (tier) {
-        9 -> (90 + Random.nextInt(9)) * 10
-        else -> Random.nextInt(99) * 10
+        9 -> 900
+        7 -> 700
+        5 -> if (extension.contains("K", ignoreCase = true)) 600 else 400
+        3 -> if (extension.contains("K", ignoreCase = true)) 350 else 100
+        else -> 100
     }
 
     return CPU(
@@ -108,6 +117,6 @@ fun generateIntelProcessor(): CPU {
             tier = tier,
             generation = generation,
             serial = serial,
-            extension = extensions.random()
+            extension = extension
     )
 }
