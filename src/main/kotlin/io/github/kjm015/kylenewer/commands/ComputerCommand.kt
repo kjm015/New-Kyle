@@ -2,9 +2,7 @@ package io.github.kjm015.kylenewer.commands
 
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
-import io.github.kjm015.kylenewer.util.generateIntelProcessor
-import io.github.kjm015.kylenewer.util.generateNvidiaCard
-import io.github.kjm015.kylenewer.util.generateRyzenProcessor
+import io.github.kjm015.kylenewer.util.*
 import kotlin.random.Random
 
 class ComputerCommand : Command() {
@@ -25,7 +23,13 @@ class ComputerCommand : Command() {
         else
             generateRyzenProcessor()
 
-        event.reply("I would get a PC with ${gpu.toString().withArticle()} and ${cpu.toString().withArticle()}.")
+        val motherboard = if (cpu.company == "AMD") {
+            generateRandomAM4Motherboard()
+        } else {
+            generateLGA1151Motherboard(cpu.generation)
+        }
+
+        event.reply("I would get a PC with ${gpu.toString().withArticle()} and ${cpu.toString().withArticle()} on ${motherboard.toString().withArticle()}")
     }
 }
 

@@ -11,44 +11,20 @@ data class Motherboard(
         val dimSlots: Int
 ) {
     override fun toString(): String {
-        return "$manufacturer $chipSet $modelName $formFactor $socket motherboard"
+        return "$manufacturer $chipSet $formFactor motherboard"
     }
 }
 
-val gigabyte: Map<String, ArrayList<String>> = mapOf(
-        Pair("Gigabyte",
-                arrayListOf(
-                        "Aorus Elite",
-                        "Aorus M",
-                        "Aorus Master",
-                        "Aorus Ultra",
-                        "Aorus Xtreme",
-                        "Aorus Pro WiFi"
-                )
-        )
-)
-
-val asus: Map<String, ArrayList<String>> = mapOf(
-        Pair("Asus",
-                arrayListOf(
-                        "Aorus Elite",
-                        "Aorus M",
-                        "Aorus Master",
-                        "Aorus Ultra",
-                        "Aorus Xtreme",
-                        "Aorus Pro WiFi"
-                )
-        )
-)
-
+val manufacturers = arrayListOf("ASUS", "Gigabyte", "MSI", "ASRock")
+val formFactors = arrayListOf("ATX", "EATX", "mATX", "ITX")
 fun generateRandomAM4Motherboard(): Motherboard {
-    val manufacturer = arrayListOf("ASUS", "Gigabyte", "MSI", "ASRock").random()
+    val manufacturer = manufacturers.random()
     val amdChipSets = arrayListOf("A320", "B350", "X370", "B450", "X470", "B550", "X570")
 
     val socket = "AM4"
     val chipSet = amdChipSets.random()
 
-    val formFactor = arrayListOf("ATX", "EATX", "mATX", "ITX").random()
+    val formFactor = formFactors.random()
     val dimmSlots = if (formFactor == "ITX")
         2
     else if (formFactor == "mATX" && Random.nextBoolean())
@@ -59,7 +35,41 @@ fun generateRandomAM4Motherboard(): Motherboard {
     return Motherboard(
             manufacturer = manufacturer,
             chipSet = chipSet,
-            modelName = "",
+            modelName = "Gaming",
+            socket = socket,
+            formFactor = formFactor,
+            dimSlots = dimmSlots
+    )
+}
+
+fun generateLGA1151Motherboard(generation: Int): Motherboard {
+    val manufacturer = manufacturers.random()
+
+    val intelChipSets6 = arrayListOf("H110", "B150", "Z170")
+    val intelChipSets7 = arrayListOf("H210", "B250", "Z270")
+    val intelChipSets8 = arrayListOf("H370", "B360", "Z370")
+    val intelChipSets9 = arrayListOf("H310", "B365", "Z390")
+
+    val chipSet = when(generation) {
+        9 -> intelChipSets9.random()
+        8 -> intelChipSets8.random()
+        7 -> intelChipSets7.random()
+        6 -> intelChipSets6.random()
+        else -> "X79"
+    }
+
+    val socket = "LGA-1151"
+    val formFactor = formFactors.random()
+
+    val dimmSlots = if (formFactor == "ITX")
+        2
+    else
+        4
+
+    return Motherboard(
+            manufacturer = manufacturer,
+            chipSet = chipSet,
+            modelName = "Gaming",
             socket = socket,
             formFactor = formFactor,
             dimSlots = dimmSlots
