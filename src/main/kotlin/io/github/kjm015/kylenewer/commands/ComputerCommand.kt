@@ -16,7 +16,10 @@ class ComputerCommand : Command() {
     }
 
     override fun execute(event: CommandEvent) {
-        val gpu = generateNvidiaCard()
+        val gpu = if (Random.nextBoolean())
+            generateNvidiaCard()
+        else
+            generateRadeonCard()
 
         val cpu = if (Random.nextBoolean())
             generateIntelProcessor()

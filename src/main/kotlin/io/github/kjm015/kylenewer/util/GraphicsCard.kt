@@ -18,10 +18,12 @@ data class GraphicsCard(
         var model: String = "",
         var memoryAmountInGigabytes: Int
 ) {
-    override fun toString(): String = if (!prefix.equals("TITAN", ignoreCase = true)) {
+    override fun toString(): String = if (company.equals("Nvidia", ignoreCase = true) && !prefix.equals("TITAN", ignoreCase = true)) {
         "$company $prefix $generation$tier $extension"
     } else if (prefix.equals("TITAN", ignoreCase = true) && generation < 10) {
         "$company GTX $prefix $extension"
+    } else if (company == "AMD") {
+        "Radeon $prefix ${generation}${tier} $extension"
     } else {
         "$company $prefix $extension"
     }
@@ -103,6 +105,43 @@ fun generateNvidiaCard(): GraphicsCard {
             manufacturer = manufacturer,
             embellishment = "",
             prefix = initializer,
+            generation = generation,
+            tier = tier,
+            extension = extension,
+            model = "",
+            memoryAmountInGigabytes = 0
+    )
+}
+
+fun generateRadeonCard(): GraphicsCard {
+    val manufacturers = arrayListOf("ASUS", "PowerColor", "MSI", "Gigabyte", "Sapphire", "XFX", "Yeston")
+    val generations = arrayListOf(2, 3, 4, 5)
+    val tiers = arrayListOf(70, 80, 90)
+    val highTiers = arrayListOf(500, 600, 700)
+
+    val generation = generations.random()
+
+    val tier: Int
+    var extension = ""
+
+    if (generation == 5 && Random.nextBoolean()) {
+        tier = highTiers.random()
+        if (Random.nextBoolean())
+            extension = "XT"
+    } else {
+        tier = tiers.random()
+        if (generation < 4 && Random.nextBoolean())
+            extension = "X"
+    }
+
+    val prefix = if (generation < 4) "R9" else "RX"
+    val manufacturer = manufacturers.random()
+
+    return GraphicsCard(
+            company = "AMD",
+            manufacturer = manufacturer,
+            embellishment = "",
+            prefix = prefix,
             generation = generation,
             tier = tier,
             extension = extension,
