@@ -62,32 +62,7 @@ fun generateNvidiaCard(): GraphicsCard {
     }
 
     if (Random.nextBoolean() || tier > 80) {
-        extension = when (generation) {
-            20 -> if (tier > 80) "RTX" else if (Random.nextBoolean() && tier == 80) "Ti" else "Super"
-
-            16 -> if (Random.nextBoolean() && tier == 60) "Ti" else "Super"
-
-            10 -> when (tier) {
-                90 -> "XP"
-                80 -> "Ti"
-                70 -> "Ti"
-                50 -> "Ti"
-                else -> ""
-            }
-            9 -> when (tier) {
-                90 -> "X"
-                80 -> "Ti"
-                else -> ""
-            }
-            7 -> when (tier) {
-                90 -> if (Random.nextBoolean()) "Black" else "Z"
-                80 -> "Ti"
-                60 -> "Ti"
-                50 -> "Ti"
-                else -> ""
-            }
-            else -> ""
-        }
+        extension = getNvidiaExtension(tier, generation)
     }
 
     return GraphicsCard(
@@ -101,6 +76,33 @@ fun generateNvidiaCard(): GraphicsCard {
             model = "",
             memoryAmountInGigabytes = 0
     )
+}
+
+fun getNvidiaExtension(tier: Int, generation: Int): String = when (generation) {
+    20 -> if (tier > 80) "RTX" else if (Random.nextBoolean() && tier == 80) "Ti" else "Super"
+
+    16 -> if (Random.nextBoolean() && tier == 60) "Ti" else "Super"
+
+    10 -> when (tier) {
+        90 -> "XP"
+        80 -> "Ti"
+        70 -> "Ti"
+        50 -> "Ti"
+        else -> ""
+    }
+    9 -> when (tier) {
+        90 -> "X"
+        80 -> "Ti"
+        else -> ""
+    }
+    7 -> when (tier) {
+        90 -> if (Random.nextBoolean()) "Black" else "Z"
+        80 -> "Ti"
+        60 -> "Ti"
+        50 -> "Ti"
+        else -> ""
+    }
+    else -> ""
 }
 
 fun generateRadeonCard(): GraphicsCard {
