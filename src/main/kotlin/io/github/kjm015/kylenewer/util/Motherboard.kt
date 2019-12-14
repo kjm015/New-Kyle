@@ -50,7 +50,7 @@ fun generateLGA1151Motherboard(generation: Int): Motherboard {
     val intelChipSets8 = arrayListOf("H370", "B360", "Z370")
     val intelChipSets9 = arrayListOf("H310", "B365", "Z390")
 
-    val chipSet = when(generation) {
+    val intelChipset = when(generation) {
         9 -> intelChipSets9.random()
         8 -> intelChipSets8.random()
         7 -> intelChipSets7.random()
@@ -58,7 +58,7 @@ fun generateLGA1151Motherboard(generation: Int): Motherboard {
         else -> "X79"
     }
 
-    val socket = "LGA-1151"
+    val intelSocket = "LGA-1151"
     val formFactor = formFactors.random()
 
     val dimmSlots = if (formFactor == "ITX")
@@ -68,9 +68,9 @@ fun generateLGA1151Motherboard(generation: Int): Motherboard {
 
     return Motherboard(
             manufacturer = manufacturer,
-            chipSet = chipSet,
+            chipSet = intelChipset,
             modelName = "Gaming",
-            socket = socket,
+            socket = intelSocket,
             formFactor = formFactor,
             dimSlots = dimmSlots
     )

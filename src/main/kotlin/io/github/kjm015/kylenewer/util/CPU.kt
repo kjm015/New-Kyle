@@ -26,7 +26,7 @@ fun generateRyzenProcessor(): CPU {
     var tier = tiers.shuffled().random()
     var generation = generations.shuffled().random()
 
-    while ((generation < 3 && tier > 7)) {
+    while (generation < 3 && tier > 7) {
         tier = tiers.shuffled().random()
         generation = generations.shuffled().random()
     }
@@ -62,11 +62,11 @@ fun generateRyzenProcessor(): CPU {
             generation < 2 && serial == 400 -> ""
             generation > 1 && serial == 400 -> "G"
             generation < 3 && serial == 500 -> "X"
-            serial == 600 || (generation > 2 && serial == 500) -> if (Random.nextBoolean()) "X" else ""
+            serial == 600 || generation > 2 && serial == 500 -> if (Random.nextBoolean()) "X" else ""
             else -> ""
         }
 
-        7 -> if ((generation > 2 || serial > 700) || Random.nextBoolean()) "X" else ""
+        7 -> if (generation > 2 || serial > 700 || Random.nextBoolean()) "X" else ""
 
         9 -> if (serial == 900 && Random.nextBoolean()) "" else "X"
 
@@ -99,7 +99,7 @@ fun generateIntelProcessor(): CPU {
 
     var extension = extensions.random()
 
-    while ((extension == "KS" && tier != 9) || (extension == "F" && tier > 7)) {
+    while (extension == "KS" && tier != 9 || extension == "F" && tier > 7) {
         extension = extensions.random()
     }
 

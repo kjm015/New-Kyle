@@ -32,7 +32,9 @@ class ComputerCommand : Command() {
             generateLGA1151Motherboard(cpu.generation)
         }
 
-        event.reply("I would get a PC with ${gpu.toString().withArticle()} and ${cpu.toString().withArticle()} on ${motherboard.toString().withArticle()}")
+        event.reply("I would get a PC with ${gpu.toString().withArticle()} and " +
+                "${cpu.toString().withArticle()} on " +
+                "${motherboard.toString().withArticle()}.")
     }
 }
 

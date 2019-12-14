@@ -44,10 +44,10 @@ fun generateNvidiaCard(): GraphicsCard {
 
     // Find illegal generation and tier combinations
     while (
-            (generation > 16 && tier < 60) ||
-            (generation == 16 && tier !in 50..60) ||
-            (generation == 10 && tier < 30) ||
-            (generation == 9 && tier < 50)
+            generation > 16 && tier < 60 ||
+            generation == 16 && tier !in 50..60 ||
+            generation == 10 && tier < 30 ||
+            generation == 9 && tier < 50
     ) {
         generation = generations.shuffled().random()
         tier = tiers.shuffled().random()
@@ -63,19 +63,9 @@ fun generateNvidiaCard(): GraphicsCard {
 
     if (Random.nextBoolean() || tier > 80) {
         extension = when (generation) {
-            20 -> if (tier > 80) {
-                "RTX"
-            } else if (Random.nextBoolean() && tier == 80) {
-                "Ti"
-            } else {
-                "Super"
-            }
+            20 -> if (tier > 80) "RTX" else if (Random.nextBoolean() && tier == 80) "Ti" else "Super"
 
-            16 -> if (Random.nextBoolean() && tier == 60) {
-                "Ti"
-            } else {
-                "Super"
-            }
+            16 -> if (Random.nextBoolean() && tier == 60) "Ti" else "Super"
 
             10 -> when (tier) {
                 90 -> "XP"
