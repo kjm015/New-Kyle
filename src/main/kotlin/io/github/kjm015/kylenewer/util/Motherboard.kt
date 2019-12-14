@@ -17,6 +17,7 @@ data class Motherboard(
 
 val manufacturers = arrayListOf("ASUS", "Gigabyte", "MSI", "ASRock")
 val formFactors = arrayListOf("ATX", "EATX", "mATX", "ITX")
+
 fun generateRandomAM4Motherboard(): Motherboard {
     val manufacturer = manufacturers.random()
     val amdChipSets = arrayListOf("A320", "B350", "X370", "B450", "X470", "B550", "X570")
@@ -45,19 +46,6 @@ fun generateRandomAM4Motherboard(): Motherboard {
 fun generateLGA1151Motherboard(generation: Int): Motherboard {
     val manufacturer = manufacturers.random()
 
-    val intelChipSets6 = arrayListOf("H110", "B150", "Z170")
-    val intelChipSets7 = arrayListOf("H210", "B250", "Z270")
-    val intelChipSets8 = arrayListOf("H370", "B360", "Z370")
-    val intelChipSets9 = arrayListOf("H310", "B365", "Z390")
-
-    val intelChipset = when(generation) {
-        9 -> intelChipSets9.random()
-        8 -> intelChipSets8.random()
-        7 -> intelChipSets7.random()
-        6 -> intelChipSets6.random()
-        else -> "X79"
-    }
-
     val intelSocket = "LGA-1151"
     val formFactor = formFactors.random()
 
@@ -68,10 +56,25 @@ fun generateLGA1151Motherboard(generation: Int): Motherboard {
 
     return Motherboard(
             manufacturer = manufacturer,
-            chipSet = intelChipset,
+            chipSet = getIntelChipset(generation),
             modelName = "Gaming",
             socket = intelSocket,
             formFactor = formFactor,
             dimSlots = dimmSlots
     )
+}
+
+fun getIntelChipset(generation: Int): String {
+    val intelChipSets6 = arrayListOf("H110", "B150", "Z170")
+    val intelChipSets7 = arrayListOf("H210", "B250", "Z270")
+    val intelChipSets8 = arrayListOf("H370", "B360", "Z370")
+    val intelChipSets9 = arrayListOf("H310", "B365", "Z390")
+
+    return when (generation) {
+        9 -> intelChipSets9.random()
+        8 -> intelChipSets8.random()
+        7 -> intelChipSets7.random()
+        6 -> intelChipSets6.random()
+        else -> "X79"
+    }
 }
