@@ -31,26 +31,40 @@ fun generateRyzenProcessor(): CPU {
         generation = generations.shuffled().random()
     }
 
-    val serial = when (tier) {
-        3 -> when {
-            generation < 3 && Random.nextBoolean() -> 300
-            else -> 200
-        }
+    val serial = getRyzenSerialNumber(tier = tier, generation = generation)
+    val extension = getRyzenExtension(tier = tier, generation = generation, serial = serial)
 
-        5 -> when {
-            Random.nextBoolean() -> 400
-            Random.nextBoolean() -> 500
-            else -> 600
-        }
+    return CPU(
+            company = "AMD",
+            series = "Ryzen",
+            tier = tier,
+            generation = generation,
+            serial = serial,
+            extension = extension
+    )
+}
 
-        7 -> if (Random.nextBoolean() || generation == 2) 700 else 800
-
-        9 -> if (Random.nextBoolean()) 900 else 950
-
-        else -> 0
+fun getRyzenSerialNumber(tier: Int, generation: Int): Int = when (tier) {
+    3 -> when {
+        generation < 3 && Random.nextBoolean() -> 300
+        else -> 200
     }
 
-    val extension = when (tier) {
+    5 -> when {
+        Random.nextBoolean() -> 400
+        Random.nextBoolean() -> 500
+        else -> 600
+    }
+
+    7 -> if (Random.nextBoolean() || generation == 2) 700 else 800
+
+    9 -> if (Random.nextBoolean()) 900 else 950
+
+    else -> 0
+}
+
+fun getRyzenExtension(tier: Int, generation: Int, serial: Int): String {
+    return when (tier) {
         3 -> when {
             serial == 200 && generation < 2 -> ""
             serial == 200 && generation > 1 -> "G"
@@ -72,16 +86,6 @@ fun generateRyzenProcessor(): CPU {
 
         else -> ""
     }
-
-
-    return CPU(
-            company = "AMD",
-            series = "Ryzen",
-            tier = tier,
-            generation = generation,
-            serial = serial,
-            extension = extension
-    )
 }
 
 fun generateIntelProcessor(): CPU {
