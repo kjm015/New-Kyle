@@ -53,14 +53,6 @@ fun generateNvidiaCard(): GraphicsCard {
         tier = tiers.shuffled().random()
     }
 
-    // Get initializer based on tier and generation
-    val initializer = when {
-        generation > 16 && tier in 60..80 -> "RTX"
-        generation < 20 && tier in 50..80 -> "GTX"
-        tier > 80 -> "TITAN"
-        else -> "GT"
-    }
-
     if (Random.nextBoolean() || tier > 80) {
         extension = getNvidiaExtension(tier, generation)
     }
@@ -69,13 +61,20 @@ fun generateNvidiaCard(): GraphicsCard {
             company = "Nvidia",
             manufacturer = manufacturer,
             embellishment = "",
-            prefix = initializer,
+            prefix = getNvidiaInitializer(tier, generation),
             generation = generation,
             tier = tier,
             extension = extension,
             model = "",
             memoryAmountInGigabytes = 0
     )
+}
+
+fun getNvidiaInitializer(tier: Int, generation: Int) = when {
+    generation > 16 && tier in 60..80 -> "RTX"
+    generation < 20 && tier in 50..80 -> "GTX"
+    tier > 80 -> "TITAN"
+    else -> "GT"
 }
 
 fun getNvidiaExtension(tier: Int, generation: Int): String = when (generation) {
