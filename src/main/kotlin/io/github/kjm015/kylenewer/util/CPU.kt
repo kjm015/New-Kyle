@@ -63,29 +63,27 @@ fun getRyzenSerialNumber(tier: Int, generation: Int): Int = when (tier) {
     else -> 0
 }
 
-fun getRyzenExtension(tier: Int, generation: Int, serial: Int): String {
-    return when (tier) {
-        3 -> when {
-            serial == 200 && generation < 2 -> ""
-            serial == 200 && generation > 1 -> "G"
-            serial == 300 -> "X"
-            else -> ""
-        }
-
-        5 -> when {
-            generation < 2 && serial == 400 -> ""
-            generation > 1 && serial == 400 -> "G"
-            generation < 3 && serial == 500 -> "X"
-            serial == 600 || generation > 2 && serial == 500 -> if (Random.nextBoolean()) "X" else ""
-            else -> ""
-        }
-
-        7 -> if (generation > 2 || serial > 700 || Random.nextBoolean()) "X" else ""
-
-        9 -> if (serial == 900 && Random.nextBoolean()) "" else "X"
-
+fun getRyzenExtension(tier: Int, generation: Int, serial: Int): String = when (tier) {
+    3 -> when {
+        serial == 200 && generation < 2 -> ""
+        serial == 200 && generation > 1 -> "G"
+        serial == 300 -> "X"
         else -> ""
     }
+
+    5 -> when {
+        generation < 2 && serial == 400 -> ""
+        generation > 1 && serial == 400 -> "G"
+        generation < 3 && serial == 500 -> "X"
+        serial == 600 || generation > 2 && serial == 500 -> if (Random.nextBoolean()) "X" else ""
+        else -> ""
+    }
+
+    7 -> if (generation > 2 || serial > 700 || Random.nextBoolean()) "X" else ""
+
+    9 -> if (serial == 900 && Random.nextBoolean()) "" else "X"
+
+    else -> ""
 }
 
 fun generateIntelProcessor(): CPU {
