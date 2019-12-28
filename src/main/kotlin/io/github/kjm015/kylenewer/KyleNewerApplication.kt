@@ -75,16 +75,19 @@ class KyleNewerApplication {
         builder.setPrefix(prefix)
 
         // Add the commands to the running pool (Add yours here!)
-        builder.addCommand(rageCommand)
-        builder.addCommand(adviceCommand)
-        builder.addCommand(fetchCommand)
-        builder.addCommand(judgeCommand)
-        builder.addCommand(suckCommand)
-        builder.addCommand(rambleCommand)
-        builder.addCommand(quoteCommand)
-        builder.addCommand(storyCommand)
-        builder.addCommand(lyricsCommand)
-        builder.addCommand(dieCommand)
+        builder.addCommands(
+                rageCommand,
+                adviceCommand,
+                fetchCommand,
+                judgeCommand,
+                suckCommand,
+                rambleCommand,
+                quoteCommand,
+                storyCommand,
+                lyricsCommand,
+                dieCommand,
+                ComputerCommand()
+        )
 
         // Set the owner of the bot (set in properties)
         builder.setOwnerId(owner)
