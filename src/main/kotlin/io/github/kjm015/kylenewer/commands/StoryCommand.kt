@@ -5,7 +5,6 @@ import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.repository.StoryEntry
 import io.github.kjm015.kylenewer.util.StoryService
 import org.slf4j.LoggerFactory
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 /**
@@ -35,45 +34,45 @@ class StoryCommand(private val generator: StoryService) : Command() {
             when {
                 argMatey.startsWith("se", ignoreCase = true) -> {
                     generator.storeStoryComponent(
-                        category = "setup",
-                        text = argMatey.substringAfter(delimiter = " "),
-                        author = event.author.name
+                            category = "setup",
+                            text = argMatey.substringAfter(delimiter = " "),
+                            author = event.author.name
                     )
 
                     event.replySuccess("Okay, got it.")
                 }
                 argMatey.startsWith("an", ignoreCase = true) -> {
                     generator.storeStoryComponent(
-                        category = "antagonism",
-                        text = argMatey.substringAfter(delimiter = " "),
-                        author = event.author.name
+                            category = "antagonism",
+                            text = argMatey.substringAfter(delimiter = " "),
+                            author = event.author.name
                     )
 
                     event.replySuccess("Okay, got it.")
                 }
                 argMatey.startsWith("re", ignoreCase = true) -> {
                     generator.storeStoryComponent(
-                        category = "retort",
-                        text = argMatey.substringAfter(delimiter = " "),
-                        author = event.author.name
+                            category = "retort",
+                            text = argMatey.substringAfter(delimiter = " "),
+                            author = event.author.name
                     )
 
                     event.replySuccess("Okay, got it.")
                 }
                 argMatey.startsWith("af", ignoreCase = true) -> {
                     generator.storeStoryComponent(
-                        category = "affirmation",
-                        text = argMatey.substringAfter(delimiter = " "),
-                        author = event.author.name
+                            category = "affirmation",
+                            text = argMatey.substringAfter(delimiter = " "),
+                            author = event.author.name
                     )
 
                     event.replySuccess("Okay, got it.")
                 }
                 argMatey.startsWith("sn", ignoreCase = true) -> {
                     generator.storeStoryComponent(
-                        category = "snark",
-                        text = argMatey.substringAfter(delimiter = " "),
-                        author = event.author.name
+                            category = "snark",
+                            text = argMatey.substringAfter(delimiter = " "),
+                            author = event.author.name
                     )
 
                     event.replySuccess("Okay, got it.")

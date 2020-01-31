@@ -5,7 +5,6 @@ import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
 import net.dv8tion.jda.api.entities.User
 import org.slf4j.LoggerFactory
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 /**
@@ -52,9 +51,9 @@ class JudgeCommand(private val generator: MessageGenerator) : Command() {
         event.reply("That's an easy one.")
         this.judgeSelf(event)
     } else if (event.args.contains("someone", ignoreCase = true) || event.args.contains(
-            "somebody",
-            ignoreCase = true
-        ) || event.args.isBlank()
+                    "somebody",
+                    ignoreCase = true
+            ) || event.args.isBlank()
     ) {
         this.judgeRandom(event)
     } else {
