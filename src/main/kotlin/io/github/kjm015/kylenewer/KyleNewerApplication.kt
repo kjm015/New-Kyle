@@ -1,6 +1,7 @@
 package io.github.kjm015.kylenewer
 
 import com.jagrosh.jdautilities.command.CommandClientBuilder
+import com.jagrosh.jlyrics.LyricsClient
 import io.github.kjm015.kylenewer.commands.*
 import io.github.kjm015.kylenewer.listeners.ExodusListener
 import io.github.kjm015.kylenewer.listeners.InfluxListener
@@ -60,6 +61,9 @@ class KyleNewerApplication {
 
     @Autowired
     private lateinit var lyricsCommand: LyricsCommand
+
+    @Bean
+    fun lyricsClient(): LyricsClient = LyricsClient()
 
     @Bean
     fun jda(): JDA {

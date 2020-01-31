@@ -18,11 +18,9 @@ import org.springframework.stereotype.Component
  * @since 01/20/2019
  */
 @Component
-class LyricsCommand : Command() {
+class LyricsCommand(private val lyrics: LyricsClient) : Command() {
 
     private val log: Logger = LoggerFactory.getLogger(this.javaClass)
-
-    private val lyrics: LyricsClient = LyricsClient()
 
     init {
         this.name = "lyrics"
@@ -46,5 +44,4 @@ class LyricsCommand : Command() {
             event.replyError("I don't know any song named \"${event.args}\".")
         }
     }
-
 }
