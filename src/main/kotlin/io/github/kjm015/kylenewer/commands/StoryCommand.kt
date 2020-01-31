@@ -17,12 +17,9 @@ import org.springframework.stereotype.Component
  * @since 01/20/2019
  */
 @Component
-class StoryCommand : Command() {
+class StoryCommand(private val generator: StoryService) : Command() {
 
     private val log = LoggerFactory.getLogger(this.javaClass)
-
-    @Autowired
-    private lateinit var generator: StoryService
 
     init {
         this.name = "story"
@@ -115,5 +112,4 @@ class StoryCommand : Command() {
 
         else -> event.reply(generator.story())
     }
-
 }
