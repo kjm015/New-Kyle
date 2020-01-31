@@ -16,10 +16,7 @@ import org.springframework.stereotype.Component
  * @since 7/26/2018
  */
 @Component
-class JudgeCommand : Command() {
-
-    @Autowired
-    private lateinit var generator: MessageGenerator
+class JudgeCommand(private val generator: MessageGenerator) : Command() {
 
     private val log = LoggerFactory.getLogger(this.javaClass)
 
@@ -146,5 +143,4 @@ class JudgeCommand : Command() {
         log.warn("Could not find user in list with name or discriminator \"$discriminatorOrName\"! -> $e")
         null
     }
-
 }
