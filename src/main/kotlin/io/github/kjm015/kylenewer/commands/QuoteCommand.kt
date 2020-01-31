@@ -15,10 +15,7 @@ import org.springframework.stereotype.Component
  * @since 1/20/2019
  */
 @Component
-class QuoteCommand : Command() {
-
-    @Autowired
-    private lateinit var quotes: QuotesGenerator
+class QuoteCommand(private val quotes: QuotesGenerator) : Command() {
 
     init {
         this.name = "quote"
