@@ -4,7 +4,6 @@ import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
 import io.github.kjm015.kylenewer.util.MessageModifier
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 import java.util.*
 
@@ -16,13 +15,7 @@ import java.util.*
  * @since 7/26/2018
  */
 @Component
-class RambleCommand : Command() {
-
-    @Autowired
-    private lateinit var generator: MessageGenerator
-
-    @Autowired
-    private lateinit var modifier: MessageModifier
+class RambleCommand(private val generator: MessageGenerator, private val modifier: MessageModifier) : Command() {
 
     // Required constructor for all commands
     init {
@@ -78,25 +71,17 @@ class RambleCommand : Command() {
      *
      * @return the formatted response String
      */
-    private fun generateRamblingNoArgs(): String {
-
-        val ramblings = object : ArrayList<String>() {
-            init {
-                add("Dude, the best part about going to ${generator.location()} is getting to experience ${generator.derogatoryNoun()}.")
-                add("If there's one thing that pisses me off about ${generator.location()}, it's ${generator.derogatoryNoun()}.")
-                add("I've always said that the people who mess with ${generator.derogatoryNoun()} are the first to end up in ${generator.location()}.")
-                add("Sadly, the prospect of ${generator.derogatoryNoun()} is not enough to deter people from going to ${generator.location()}.")
-                add("Let's ${generator.motionVerb()} on down to ${generator.location()} so that we can see what ${generator.derogatoryNoun()} is like.")
-                add("I think we all know that ${generator.derogatoryNoun()} is just ${generator.location()}'s version of ${generator.derogatoryNoun()}.")
-                add("My professor says that ${generator.location()} was the birthplace of ${generator.derogatoryNoun()}. Astounding.")
-                add("I have decreased my reliance on ${generator.derogatoryNoun()} and instead turned my focus to ${generator.derogatoryNoun()}.")
-                add("The only things that get me through my day are a strong flask of whiskey and ${generator.derogatoryNoun()}.")
-                add("Sometimes we just need ${generator.derogatoryNoun()} in our lives, no?")
-                add("The best advice comes from ${generator.derogatoryNoun()}. They speak the true-true.")
-            }
-        }
-
-        return ramblings.random()
-    }
-
+    private fun generateRamblingNoArgs(): String = arrayListOf(
+            "Dude, the best part about going to ${generator.location()} is getting to experience ${generator.derogatoryNoun()}.",
+            "If there's one thing that pisses me off about ${generator.location()}, it's ${generator.derogatoryNoun()}.",
+            "I've always said that the people who mess with ${generator.derogatoryNoun()} are the first to end up in ${generator.location()}.",
+            "Sadly, the prospect of ${generator.derogatoryNoun()} is not enough to deter people from going to ${generator.location()}.",
+            "Let's ${generator.motionVerb()} on down to ${generator.location()} so that we can see what ${generator.derogatoryNoun()} is like.",
+            "I think we all know that ${generator.derogatoryNoun()} is just ${generator.location()}'s version of ${generator.derogatoryNoun()}.",
+            "My professor says that ${generator.location()} was the birthplace of ${generator.derogatoryNoun()}. Astounding.",
+            "I have decreased my reliance on ${generator.derogatoryNoun()} and instead turned my focus to ${generator.derogatoryNoun()}.",
+            "The only things that get me through my day are a strong flask of whiskey and ${generator.derogatoryNoun()}.",
+            "Sometimes we just need ${generator.derogatoryNoun()} in our lives, no?",
+            "The best advice comes from ${generator.derogatoryNoun()}. They speak the true-true.")
+            .random()
 }
