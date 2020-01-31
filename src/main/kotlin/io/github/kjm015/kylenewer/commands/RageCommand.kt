@@ -14,10 +14,7 @@ import org.springframework.stereotype.Component
  * @since 7/26/2018
  */
 @Component
-class RageCommand : Command() {
-
-    @Autowired
-    private lateinit var generator: MessageGenerator
+class RageCommand(private val generator: MessageGenerator) : Command() {
 
     // Required constructor for all commands
     init {
@@ -39,5 +36,4 @@ class RageCommand : Command() {
         event.reply("${generator.intent()} ${generator.openers()} the ${generator.exclamations()} out of ${generator.targets()}")
         event.reply(generator.closer())
     }
-
 }

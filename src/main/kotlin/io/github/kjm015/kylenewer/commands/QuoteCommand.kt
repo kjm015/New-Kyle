@@ -34,5 +34,4 @@ class QuoteCommand(private val quotes: QuotesGenerator) : Command() {
             event.reply("I can't think of anything off the top of my head...")
         }
     }
-
 }
