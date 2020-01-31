@@ -4,7 +4,6 @@ import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
 import io.github.kjm015.kylenewer.util.MessageModifier
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 import java.util.*
 
@@ -16,13 +15,7 @@ import java.util.*
  * @since 7/26/2018
  */
 @Component
-class SuckCommand : Command() {
-
-    @Autowired
-    private lateinit var generator: MessageGenerator
-
-    @Autowired
-    private lateinit var modifier: MessageModifier
+class SuckCommand(private val generator: MessageGenerator, private val modifier: MessageModifier) : Command() {
 
     // Constructor required for all commands
     init {
@@ -66,5 +59,4 @@ class SuckCommand : Command() {
 
         return locations.random()
     }
-
 }
