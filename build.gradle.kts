@@ -1,11 +1,10 @@
-val springBootVersion = "2.2.4.RELEASE"
 val jdaVersion = "4.1.1_108"
 val jdaUtilitiesVersion = "3.0.2"
 val jLyricsVersion = "0.4"
 
 plugins {
     id("org.jetbrains.kotlin.plugin.jpa") version embeddedKotlinVersion
-    id("org.springframework.boot") version "2.2.2.RELEASE"
+    id("org.springframework.boot") version "2.2.4.RELEASE"
     id("org.jetbrains.kotlin.jvm") version embeddedKotlinVersion
     id("org.jetbrains.kotlin.plugin.spring") version embeddedKotlinVersion
     idea
