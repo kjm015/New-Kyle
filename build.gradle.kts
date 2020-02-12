@@ -1,6 +1,7 @@
 val springBootVersion = "2.2.2.RELEASE"
 val jdaVersion = "4.1.1_108"
 val jdaUtilitiesVersion = "3.0.2"
+val jLyricsVersion = "0.4"
 
 plugins {
     id("org.jetbrains.kotlin.plugin.jpa") version embeddedKotlinVersion
@@ -34,7 +35,7 @@ dependencies {
     // Discord dependencies
     "implementation"("com.jagrosh:jda-utilities:${jdaUtilitiesVersion}")
     "implementation"("net.dv8tion:JDA:${jdaVersion}")
-    "implementation"("com.jagrosh:JLyrics:0.2")
+    "implementation"("com.jagrosh:JLyrics:$jLyricsVersion")
 
     "runtimeOnly"("org.springframework.boot:spring-boot-devtools")
     "runtimeOnly"("com.h2database:h2")
