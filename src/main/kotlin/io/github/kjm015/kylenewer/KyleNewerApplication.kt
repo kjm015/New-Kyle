@@ -1,7 +1,6 @@
 package io.github.kjm015.kylenewer
 
 import com.jagrosh.jdautilities.command.CommandClientBuilder
-import com.jagrosh.jlyrics.LyricsClient
 import io.github.kjm015.kylenewer.commands.*
 import io.github.kjm015.kylenewer.config.DiscordSettings
 import io.github.kjm015.kylenewer.listeners.ExodusListener
@@ -10,7 +9,6 @@ import io.github.kjm015.kylenewer.listeners.MessageListener
 import net.dv8tion.jda.api.AccountType
 import net.dv8tion.jda.api.JDA
 import net.dv8tion.jda.api.JDABuilder
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.annotation.Bean
