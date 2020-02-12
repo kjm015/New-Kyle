@@ -1,4 +1,4 @@
-val springBootVersion = "2.2.2.RELEASE"
+val springBootVersion = "2.2.4.RELEASE"
 val jdaVersion = "4.1.1_108"
 val jdaUtilitiesVersion = "3.0.2"
 val jLyricsVersion = "0.4"
