@@ -1,5 +1,6 @@
-package io.github.kjm015.kylenewer
+package io.github.kjm015.kylenewer.config
 
+import com.jagrosh.jlyrics.LyricsClient
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
@@ -21,5 +22,8 @@ class SpringConfiguration {
     fun propertyConfigInDev(): PropertySourcesPlaceholderConfigurer {
         return PropertySourcesPlaceholderConfigurer()
     }
+
+    @Bean
+    fun lyricsClient(): LyricsClient = LyricsClient()
 
 }

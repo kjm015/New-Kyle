@@ -3,6 +3,7 @@ package io.github.kjm015.kylenewer
 import com.jagrosh.jdautilities.command.CommandClientBuilder
 import com.jagrosh.jlyrics.LyricsClient
 import io.github.kjm015.kylenewer.commands.*
+import io.github.kjm015.kylenewer.config.DiscordSettings
 import io.github.kjm015.kylenewer.listeners.ExodusListener
 import io.github.kjm015.kylenewer.listeners.InfluxListener
 import io.github.kjm015.kylenewer.listeners.MessageListener
@@ -27,43 +28,19 @@ import org.springframework.context.annotation.Bean
  * @since 7/26/2018
  */
 @SpringBootApplication
-class KyleNewerApplication {
-
-    @Autowired
-    private lateinit var settings: DiscordSettings
-
-    @Autowired
-    private lateinit var storyCommand: StoryCommand
-
-    @Autowired
-    private lateinit var fetchCommand: FetchCommand
-
-    @Autowired
-    private lateinit var adviceCommand: AdviceCommand
-
-    @Autowired
-    private lateinit var dieCommand: DieCommand
-
-    @Autowired
-    private lateinit var rageCommand: RageCommand
-
-    @Autowired
-    private lateinit var judgeCommand: JudgeCommand
-
-    @Autowired
-    private lateinit var suckCommand: SuckCommand
-
-    @Autowired
-    private lateinit var rambleCommand: RambleCommand
-
-    @Autowired
-    private lateinit var quoteCommand: QuoteCommand
-
-    @Autowired
-    private lateinit var lyricsCommand: LyricsCommand
-
-    @Bean
-    fun lyricsClient(): LyricsClient = LyricsClient()
+class KyleNewerApplication(
+        private val settings: DiscordSettings,
+        private val storyCommand: StoryCommand,
+        private val fetchCommand: FetchCommand,
+        private val adviceCommand: AdviceCommand,
+        private val dieCommand: DieCommand,
+        private val rageCommand: RageCommand,
+        private val judgeCommand: JudgeCommand,
+        private val rambleCommand: RambleCommand,
+        private val suckCommand: SuckCommand,
+        private val quoteCommand: QuoteCommand,
+        private val lyricsCommand: LyricsCommand
+) {
 
     @Bean
     fun jda(): JDA {
