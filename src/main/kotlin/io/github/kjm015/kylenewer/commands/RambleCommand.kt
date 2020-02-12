@@ -3,7 +3,8 @@ package io.github.kjm015.kylenewer.commands
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
-import io.github.kjm015.kylenewer.util.MessageModifier
+import io.github.kjm015.kylenewer.util.withoutAbout
+import io.github.kjm015.kylenewer.util.withReversedPerspective
 import org.springframework.stereotype.Component
 import java.util.*
 
@@ -15,7 +16,7 @@ import java.util.*
  * @since 7/26/2018
  */
 @Component
-class RambleCommand(private val generator: MessageGenerator, private val modifier: MessageModifier) : Command() {
+class RambleCommand(private val generator: MessageGenerator) : Command() {
 
     // Required constructor for all commands
     init {
@@ -50,10 +51,10 @@ class RambleCommand(private val generator: MessageGenerator, private val modifie
      * @return the formatted response String
      */
     private fun generateRambling(args: String): String {
-        val arguments = modifier.pruneAbout(args)
+        val arguments = args.withoutAbout()
 
         val ramblings = ArrayList<String>()
-        val sp = modifier.switchPerspectives(arguments)
+        val sp = arguments.withReversedPerspective()
         val dn = generator.derogatoryNoun()
         val loc = generator.location()
 
