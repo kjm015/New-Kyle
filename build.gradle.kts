@@ -7,7 +7,6 @@ plugins {
     id("org.springframework.boot") version "2.2.2.RELEASE"
     id("org.jetbrains.kotlin.jvm") version embeddedKotlinVersion
     id("org.jetbrains.kotlin.plugin.spring") version embeddedKotlinVersion
-    id("com.sedmelluq.jdaction") version "1.0.99-beta3"
     idea
     java
     eclipse
