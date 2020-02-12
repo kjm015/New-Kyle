@@ -3,7 +3,6 @@ package io.github.kjm015.kylenewer.commands
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 /**
@@ -14,10 +13,7 @@ import org.springframework.stereotype.Component
  * @since 7/26/2018
  */
 @Component
-class RageCommand : Command() {
-
-    @Autowired
-    private lateinit var generator: MessageGenerator
+class RageCommand(private val generator: MessageGenerator) : Command() {
 
     // Required constructor for all commands
     init {
@@ -39,5 +35,4 @@ class RageCommand : Command() {
         event.reply("${generator.intent()} ${generator.openers()} the ${generator.exclamations()} out of ${generator.targets()}")
         event.reply(generator.closer())
     }
-
 }

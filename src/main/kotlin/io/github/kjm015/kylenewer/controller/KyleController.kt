@@ -23,5 +23,4 @@ class KyleController {
     @GetMapping(path = ["/", "/hello"])
     @ResponseStatus(HttpStatus.OK)
     fun sayHello(): String = "Hello, world!"
-
 }

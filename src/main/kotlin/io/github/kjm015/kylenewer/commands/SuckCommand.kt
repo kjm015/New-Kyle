@@ -3,8 +3,7 @@ package io.github.kjm015.kylenewer.commands
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.MessageGenerator
-import io.github.kjm015.kylenewer.util.MessageModifier
-import org.springframework.beans.factory.annotation.Autowired
+import io.github.kjm015.kylenewer.util.withReversedPerspective
 import org.springframework.stereotype.Component
 import java.util.*
 
@@ -16,15 +15,8 @@ import java.util.*
  * @since 7/26/2018
  */
 @Component
-class SuckCommand : Command() {
+class SuckCommand(private val generator: MessageGenerator) : Command() {
 
-    @Autowired
-    private lateinit var generator: MessageGenerator
-
-    @Autowired
-    private lateinit var modifier: MessageModifier
-
-    // Constructor required for all commands
     init {
         this.name = "suck"
         this.aliases = arrayOf("lick", "kiss", "fondle")
@@ -58,13 +50,12 @@ class SuckCommand : Command() {
     private fun getRetort(event: CommandEvent): String {
         val locations = object : ArrayList<String>() {
             init {
-                add("Yeah, well you can take ${modifier.switchPerspectives(event.args)} and ${generator.motionVerb()} over to ${generator.location()}")
-                add("Sorry, but ${modifier.switchPerspectives(event.args)} is more suited to ${generator.derogatoryNoun()}.")
-                add("Fuck you, I'm sure that talking about ${modifier.switchPerspectives(event.args)} is a promising future.")
+                add("Yeah, well you can take ${event.args.withReversedPerspective()} and ${generator.motionVerb()} over to ${generator.location()}")
+                add("Sorry, but ${event.args.withReversedPerspective()} is more suited to ${generator.derogatoryNoun()}.")
+                add("Fuck you, I'm sure that talking about ${event.args.withReversedPerspective()} is a promising future.")
             }
         }
 
         return locations.random()
     }
-
 }

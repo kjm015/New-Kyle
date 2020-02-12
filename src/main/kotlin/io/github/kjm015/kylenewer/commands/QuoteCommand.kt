@@ -3,7 +3,6 @@ package io.github.kjm015.kylenewer.commands
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.kylenewer.util.QuotesGenerator
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 /**
@@ -15,10 +14,7 @@ import org.springframework.stereotype.Component
  * @since 1/20/2019
  */
 @Component
-class QuoteCommand : Command() {
-
-    @Autowired
-    private lateinit var quotes: QuotesGenerator
+class QuoteCommand(private val quotes: QuotesGenerator) : Command() {
 
     init {
         this.name = "quote"
@@ -37,5 +33,4 @@ class QuoteCommand : Command() {
             event.reply("I can't think of anything off the top of my head...")
         }
     }
-
 }

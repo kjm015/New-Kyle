@@ -5,7 +5,6 @@ import net.dv8tion.jda.api.events.guild.member.GuildMemberLeaveEvent
 import net.dv8tion.jda.api.exceptions.InsufficientPermissionException
 import net.dv8tion.jda.api.exceptions.VerificationLevelException
 import net.dv8tion.jda.api.hooks.ListenerAdapter
-import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 /**
@@ -21,7 +20,7 @@ import org.slf4j.LoggerFactory
  */
 class ExodusListener : ListenerAdapter() {
 
-    private val log: Logger = LoggerFactory.getLogger(this.javaClass)
+    private val log = LoggerFactory.getLogger(this.javaClass)
 
     /**
      * This function occurs when a user leaves a guild or server that New Kyle is in. More messages can
@@ -37,8 +36,8 @@ class ExodusListener : ListenerAdapter() {
 
         try {
             event.guild.getTextChannelById("general")!!
-                .sendMessage("Bad news, guys. ${event.member.effectiveName}, otherwise known as \"${event.member.nickname}\" has left the server.")
-                .queue()
+                    .sendMessage("Bad news, guys. ${event.member.effectiveName}, otherwise known as \"${event.member.nickname}\" has left the server.")
+                    .queue()
         } catch (e: NullPointerException) {
             log.warn("Could not post messages to general channel in ${event.guild}:\n$e")
         } catch (e: InsufficientPermissionException) {
@@ -61,8 +60,8 @@ class ExodusListener : ListenerAdapter() {
 
         try {
             event.guild.getTextChannelById("general")!!
-                .sendMessage("Hey guys, ${event.user.name} just got ban-hammered. Nothing personnel, kid.")
-                .queue()
+                    .sendMessage("Hey guys, ${event.user.name} just got ban-hammered. Nothing personnel, kid.")
+                    .queue()
         } catch (e: NullPointerException) {
             log.warn("General channel in ${event.guild} does not exist:\n$e")
         } catch (e: InsufficientPermissionException) {
