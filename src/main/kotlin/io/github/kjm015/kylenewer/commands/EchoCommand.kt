@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component
 
 /**
  * This command will let Kyle mock you by saying exactly what you just said
- * 
  * @author ChiengBang
  * @since 07/05/2020
 */
