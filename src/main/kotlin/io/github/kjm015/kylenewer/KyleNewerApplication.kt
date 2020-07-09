@@ -65,7 +65,8 @@ class KyleNewerApplication(
                 storyCommand,
                 lyricsCommand,
                 dieCommand,
-                ComputerCommand()
+                ComputerCommand(),
+                EchoCommand()
         )
 
         // Set the owner of the bot (set in properties)
