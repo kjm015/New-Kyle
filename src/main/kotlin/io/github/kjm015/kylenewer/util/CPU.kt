@@ -75,20 +75,20 @@ fun getRyzenExtension(tier: Int, generation: Int, serial: Int): String = when (t
         generation < 2 && serial == 400 -> ""
         generation > 1 && serial == 400 -> "G"
         generation < 3 && serial == 500 -> "X"
-        serial == 600 || generation > 2 && serial == 500 -> if (Random.nextBoolean()) "X" else ""
+        serial == 600 || generation > 2 && serial == 500 -> if (Random.nextBoolean()) "X" else if (generation == 3 && Random.nextBoolean()) "XT" else ""
         else -> ""
     }
 
-    7 -> if (generation > 2 || serial > 700 || Random.nextBoolean()) "X" else ""
+    7 -> if (generation > 2 || serial > 700 || Random.nextBoolean()) "X" else if (generation > 2 && Random.nextBoolean()) "XT" else ""
 
-    9 -> if (serial == 900 && Random.nextBoolean()) "" else "X"
+    9 -> if (generation == 3 && serial == 900 && Random.nextBoolean()) "XT" else "X"
 
     else -> ""
 }
 
 fun generateIntelProcessor(): CPU {
     val tiers = arrayListOf(3, 5, 7, 9)
-    val generations = arrayListOf(7, 8, 9)
+    val generations = arrayListOf(7, 8, 9, 10)
     val extensions = arrayListOf("", "K", "KF", "F", "KS")
 
     var tier = tiers.random()
@@ -101,7 +101,7 @@ fun generateIntelProcessor(): CPU {
 
     var extension = extensions.random()
 
-    while (extension == "KS" && tier != 9 || extension == "F" && tier > 7) {
+    while (extension == "KS" && (tier != 9 || generation != 9) || extension == "F" && tier > 7) {
         extension = extensions.random()
     }
 
@@ -109,7 +109,7 @@ fun generateIntelProcessor(): CPU {
         9 -> 900
         7 -> 700
         5 -> if (extension.contains("K", ignoreCase = true)) 600 else 400
-        3 -> if (extension.contains("K", ignoreCase = true)) 350 else 100
+        3 -> if (generation < 10 && extension.contains("K", ignoreCase = true)) 350 else 100
         else -> 100
     }
 

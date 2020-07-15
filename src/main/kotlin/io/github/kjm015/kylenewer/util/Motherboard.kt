@@ -43,10 +43,10 @@ fun generateRandomAM4Motherboard(): Motherboard {
     )
 }
 
-fun generateLGA1151Motherboard(generation: Int): Motherboard {
+fun generateLGAMotherboard(generation: Int): Motherboard {
     val manufacturer = manufacturers.random()
 
-    val intelSocket = "LGA-1151"
+    val intelSocket = if (generation < 10) "LGA-1151" else "LGA-1200"
     val formFactor = formFactors.random()
 
     val dimmSlots = if (formFactor == "ITX")
@@ -69,8 +69,10 @@ fun getIntelChipset(generation: Int): String {
     val intelChipSets7 = arrayListOf("H210", "B250", "Z270")
     val intelChipSets8 = arrayListOf("H370", "B360", "Z370")
     val intelChipSets9 = arrayListOf("H310", "B365", "Z390")
+    val intelChipSets10 = arrayListOf("H410", "B460", "Z490")
 
     return when (generation) {
+        10 -> intelChipSets10.random()
         9 -> intelChipSets9.random()
         8 -> intelChipSets8.random()
         7 -> intelChipSets7.random()
