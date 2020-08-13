@@ -1,4 +1,4 @@
-package io.github.kjm015.kylenewer.util
+package io.github.kjm015.kylenewer.util.computer
 
 import kotlin.random.Random
 
@@ -7,7 +7,7 @@ data class Motherboard(
         val chipSet: String,
         val modelName: String,
         val socket: String,
-        val formFactor: String,
+        val formFactor: MotherboardFormFactor,
         val dimSlots: Int
 ) {
     override fun toString(): String {
@@ -16,7 +16,6 @@ data class Motherboard(
 }
 
 val manufacturers = arrayListOf("ASUS", "Gigabyte", "MSI", "ASRock")
-val formFactors = arrayListOf("ATX", "EATX", "mATX", "ITX")
 
 fun generateRandomAM4Motherboard(): Motherboard {
     val manufacturer = manufacturers.random()
@@ -25,10 +24,10 @@ fun generateRandomAM4Motherboard(): Motherboard {
     val socket = "AM4"
     val chipSet = amdChipSets.random()
 
-    val formFactor = formFactors.random()
-    val dimmSlots = if (formFactor == "ITX")
+    val formFactor = MotherboardFormFactor.values().random()
+    val dimmSlots = if (formFactor == MotherboardFormFactor.ITX)
         2
-    else if (formFactor == "mATX" && Random.nextBoolean())
+    else if (formFactor == MotherboardFormFactor.MATX && Random.nextBoolean())
         2
     else
         4
@@ -47,9 +46,9 @@ fun generateLGAMotherboard(generation: Int): Motherboard {
     val manufacturer = manufacturers.random()
 
     val intelSocket = if (generation < 10) "LGA-1151" else "LGA-1200"
-    val formFactor = formFactors.random()
+    val formFactor = MotherboardFormFactor.values().random()
 
-    val dimmSlots = if (formFactor == "ITX")
+    val dimmSlots = if (formFactor == MotherboardFormFactor.ITX)
         2
     else
         4
@@ -79,4 +78,8 @@ fun getIntelChipset(generation: Int): String {
         6 -> intelChipSets6.random()
         else -> "X79"
     }
+}
+
+enum class MotherboardFormFactor {
+    ATX, MATX, DTX, ITX, EATX
 }

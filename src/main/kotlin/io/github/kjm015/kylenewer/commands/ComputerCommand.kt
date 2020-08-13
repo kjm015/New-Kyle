@@ -2,8 +2,6 @@ package io.github.kjm015.kylenewer.commands
 
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
-import io.github.kjm015.kylenewer.util.*
-import kotlin.random.Random
 
 class ComputerCommand : Command() {
 
@@ -16,24 +14,6 @@ class ComputerCommand : Command() {
     }
 
     override fun execute(event: CommandEvent) {
-        val gpu = if (Random.nextBoolean())
-            generateNvidiaCard()
-        else
-            generateRadeonCard()
-
-        val cpu = if (Random.nextBoolean())
-            generateIntelProcessor()
-        else
-            generateRyzenProcessor()
-
-        val motherboard = if (cpu.company == "AMD") {
-            generateRandomAM4Motherboard()
-        } else {
-            generateLGAMotherboard(cpu.generation)
-        }
-
-        event.reply("I would get a PC with ${gpu.toString().withArticle()} and " +
-                "${cpu.toString().withArticle()} on " +
-                "${motherboard.toString().withArticle()}.")
+        event.replyError("Oof.")
     }
 }
