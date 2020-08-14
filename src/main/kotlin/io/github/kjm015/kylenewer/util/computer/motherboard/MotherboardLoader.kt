@@ -1,6 +1,6 @@
 package io.github.kjm015.kylenewer.util.computer.motherboard
 
-import io.github.kjm015.kylenewer.util.computer.MemoryGeneration
+import io.github.kjm015.kylenewer.util.computer.memory.MemoryGeneration
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
 import org.springframework.stereotype.Component
