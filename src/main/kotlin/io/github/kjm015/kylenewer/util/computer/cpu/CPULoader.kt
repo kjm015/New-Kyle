@@ -78,7 +78,8 @@ class CPULoader(private val cpuRepository: CPURepository) : ApplicationRunner {
                         threadCount = 16,
                         lithography = 7,
                         socket = "AM4",
-                        price = 398.99
+                        price = 398.99,
+                        includesCooler = false
                 ),
                 CPU(
                         company = "AMD",
@@ -96,7 +97,8 @@ class CPULoader(private val cpuRepository: CPURepository) : ApplicationRunner {
                         threadCount = 32,
                         lithography = 7,
                         socket = "AM4",
-                        price = 689.99
+                        price = 689.99,
+                        includesCooler = false
                 )
         ).forEach {
             if (!cpuRepository.existsByName(it.name))

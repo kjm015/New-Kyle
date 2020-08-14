@@ -3,6 +3,7 @@ package io.github.kjm015.kylenewer.util.computer
 import io.github.kjm015.kylenewer.util.computer.cpu.CPU
 import io.github.kjm015.kylenewer.util.computer.gpu.GraphicsCard
 import io.github.kjm015.kylenewer.util.computer.motherboard.Motherboard
+import io.github.kjm015.kylenewer.util.computer.psu.PowerSupply
 
 data class Computer(
         var owner: String,
