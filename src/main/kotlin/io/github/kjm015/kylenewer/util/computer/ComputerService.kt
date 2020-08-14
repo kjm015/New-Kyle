@@ -8,6 +8,7 @@ import io.github.kjm015.kylenewer.util.computer.gpu.GPURepository
 import io.github.kjm015.kylenewer.util.computer.memory.MemoryRepository
 import io.github.kjm015.kylenewer.util.computer.motherboard.MotherboardRepository
 import io.github.kjm015.kylenewer.util.computer.psu.PowerSupplyRepository
+import io.github.kjm015.kylenewer.util.computer.storage.StorageRepository
 import org.springframework.stereotype.Service
 import javax.validation.constraints.Min
 
@@ -19,15 +20,16 @@ class ComputerService(
         private val gpuRepository: GPURepository,
         private val memoryRepository: MemoryRepository,
         private val motherboardRepository: MotherboardRepository,
-        private val powerSupplyRepository: PowerSupplyRepository
+        private val powerSupplyRepository: PowerSupplyRepository,
+        private val storageRepository: StorageRepository
 ) {
     fun buildComputer(budget: Double = 900.00, requester: String = "Someone"): Computer {
         val cpuBudget = budget * 0.20
         val gpuBudget = budget * 0.35
-        val mobBudget = budget * 0.15
+        val mobBudget = budget * 0.13
         val ramBudget = budget * 0.08
-        val casBudget = budget * 0.07
-        val psuBudget = budget * 0.07
+        val casBudget = budget * 0.08
+        val psuBudget = budget * 0.08
         val stoBudget = budget * 0.08
 
         val cpu = cpuRepository.findAll().filter {
@@ -54,8 +56,10 @@ class ComputerService(
             it.price <= psuBudget && it.formFactor == case.psuFormFactor
         }.maxBy { it.price }!!
 
-        val cost = cpu.price + mob.price + gpu.price + ram.price + case.price + psu.price
-        val remainingBudget = budget - cost
+        val storage = arrayListOf(storageRepository.findAll().filter { it.price <= stoBudget }.maxBy { it.price }!!)
+
+        var cost = cpu.price + mob.price + gpu.price + ram.price + case.price + psu.price + storage.first().price
+        var remainingBudget = budget - cost
 
         val cooler = coolerRepository.findAll().filter {
             it.price <= remainingBudget && it.supportedSockets.contains(mob.socket) && (!it.isLiquidCooler || it.radiatorSize <= case.maxRadiatorSupport)
@@ -65,6 +69,16 @@ class ComputerService(
             coolerRepository.findByName(cpu.includedCoolerName)
         else
             CPUCooler()
+
+        remainingBudget -= cooler.price
+        cost += cooler.price
+
+        while (remainingBudget > storageRepository.findAll().minBy { it.price }!!.price && storage.size < 3) {
+            val tempStorage = storageRepository.findAll().filter { it.price <= remainingBudget }.maxBy { it.price }!!
+            storage.add(tempStorage)
+            remainingBudget -= tempStorage.price
+            cost += tempStorage.price
+        }
 
         return Computer(
                 cpu = cpu,
@@ -76,7 +90,8 @@ class ComputerService(
                 cooler = cooler,
                 name = "${requester}'s PC",
                 owner = requester,
-                price = cost + cooler.price
+                storage = storage,
+                price = cost
         )
     }
 }

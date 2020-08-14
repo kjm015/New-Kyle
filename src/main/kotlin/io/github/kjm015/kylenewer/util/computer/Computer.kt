@@ -7,6 +7,7 @@ import io.github.kjm015.kylenewer.util.computer.gpu.GraphicsCard
 import io.github.kjm015.kylenewer.util.computer.memory.MemoryKit
 import io.github.kjm015.kylenewer.util.computer.motherboard.Motherboard
 import io.github.kjm015.kylenewer.util.computer.psu.PowerSupply
+import io.github.kjm015.kylenewer.util.computer.storage.Storage
 import java.math.RoundingMode
 
 data class Computer(
@@ -19,6 +20,7 @@ data class Computer(
         var case: ComputerCase,
         var memory: MemoryKit,
         var cooler: CPUCooler,
+        var storage: ArrayList<Storage> = arrayListOf(),
 
         var price: Double = 0.0
 ) {
@@ -30,7 +32,7 @@ data class Computer(
         CPU Cooler   | ${cooler.manufacturer} ${cooler.name} ($${cooler.price})
         Motherboard  | ${motherboard.manufacturer} ${motherboard.modelName} ($${motherboard.price})
         Memory       | ${memory.manufacturer} ${memory.name} ($${memory.price})
-        Storage      | 
+        Storage      | ${storage.map { it.productName() }} ($${storage.sumByDouble { it.price }})
         GPU          | ${gpu.manufacturer} ${gpu.productName} ($${gpu.price})
         Case         | ${case.manufacturer} ${case.name} ($${case.price})
         Power Supply | ${powerSupply.manufacturer} ${powerSupply.name} ($${powerSupply.price})
