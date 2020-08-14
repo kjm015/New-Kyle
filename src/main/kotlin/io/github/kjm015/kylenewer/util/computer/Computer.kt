@@ -1,5 +1,6 @@
 package io.github.kjm015.kylenewer.util.computer
 
+import io.github.kjm015.kylenewer.util.computer.compcase.ComputerCase
 import io.github.kjm015.kylenewer.util.computer.cpu.CPU
 import io.github.kjm015.kylenewer.util.computer.gpu.GraphicsCard
 import io.github.kjm015.kylenewer.util.computer.motherboard.Motherboard
