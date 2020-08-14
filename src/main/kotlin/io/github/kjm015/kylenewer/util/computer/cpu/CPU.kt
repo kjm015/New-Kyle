@@ -1,5 +1,6 @@
 package io.github.kjm015.kylenewer.util.computer.cpu
 
+import io.github.kjm015.kylenewer.util.computer.cooler.CPUCooler
 import javax.persistence.*
 import kotlin.random.Random
 
@@ -16,7 +17,8 @@ data class CPU(
         val threadCount: Int = -1,
         val lithography: Int = -1,
         val socket: String = "Unknown",
-        val includesCooler: Boolean = true,
+        val includesCooler: Boolean = false,
+        val includedCoolerName: String? = null,
 
         var price: Double = 0.0
 )

@@ -15,6 +15,8 @@ class CPULoader(private val cpuRepository: CPURepository) : ApplicationRunner {
                         threadCount = 8,
                         lithography = 7,
                         socket = "AM4",
+                        includesCooler = true,
+                        includedCoolerName = "Wraith Stealth",
                         price = 108.99
                 ),
                 CPU(
@@ -24,6 +26,8 @@ class CPULoader(private val cpuRepository: CPURepository) : ApplicationRunner {
                         threadCount = 8,
                         lithography = 7,
                         socket = "AM4",
+                        includesCooler = true,
+                        includedCoolerName = "Wraith Stealth",
                         price = 129.99
                 ),
                 CPU(
@@ -33,6 +37,8 @@ class CPULoader(private val cpuRepository: CPURepository) : ApplicationRunner {
                         threadCount = 12,
                         lithography = 7,
                         socket = "AM4",
+                        includesCooler = true,
+                        includedCoolerName = "Wraith Stealth",
                         price = 174.99
                 ),
                 CPU(
@@ -42,6 +48,8 @@ class CPULoader(private val cpuRepository: CPURepository) : ApplicationRunner {
                         threadCount = 12,
                         lithography = 7,
                         socket = "AM4",
+                        includesCooler = true,
+                        includedCoolerName = "Wraith Spire",
                         price = 209.99
                 ),
                 CPU(
@@ -51,6 +59,8 @@ class CPULoader(private val cpuRepository: CPURepository) : ApplicationRunner {
                         threadCount = 12,
                         lithography = 7,
                         socket = "AM4",
+                        includesCooler = true,
+                        includedCoolerName = "Wraith Spire",
                         price = 239.99
                 ),
                 CPU(
@@ -60,6 +70,8 @@ class CPULoader(private val cpuRepository: CPURepository) : ApplicationRunner {
                         threadCount = 16,
                         lithography = 7,
                         socket = "AM4",
+                        includesCooler = true,
+                        includedCoolerName = "Wraith Prism",
                         price = 283.00
                 ),
                 CPU(
@@ -69,6 +81,8 @@ class CPULoader(private val cpuRepository: CPURepository) : ApplicationRunner {
                         threadCount = 16,
                         lithography = 7,
                         socket = "AM4",
+                        includesCooler = true,
+                        includedCoolerName = "Wraith Prism",
                         price = 329.99
                 ),
                 CPU(
@@ -78,8 +92,7 @@ class CPULoader(private val cpuRepository: CPURepository) : ApplicationRunner {
                         threadCount = 16,
                         lithography = 7,
                         socket = "AM4",
-                        price = 398.99,
-                        includesCooler = false
+                        price = 398.99
                 ),
                 CPU(
                         company = "AMD",
@@ -88,6 +101,8 @@ class CPULoader(private val cpuRepository: CPURepository) : ApplicationRunner {
                         threadCount = 24,
                         lithography = 7,
                         socket = "AM4",
+                        includesCooler = true,
+                        includedCoolerName = "Wraith Prism",
                         price = 428.90
                 ),
                 CPU(
@@ -97,8 +112,7 @@ class CPULoader(private val cpuRepository: CPURepository) : ApplicationRunner {
                         threadCount = 32,
                         lithography = 7,
                         socket = "AM4",
-                        price = 689.99,
-                        includesCooler = false
+                        price = 689.99
                 )
         ).forEach {
             if (!cpuRepository.existsByName(it.name))

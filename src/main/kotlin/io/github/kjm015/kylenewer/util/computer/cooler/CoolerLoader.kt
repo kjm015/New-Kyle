@@ -9,6 +9,25 @@ class CoolerLoader(private val repository: CoolerRepository) : ApplicationRunner
     override fun run(args: ApplicationArguments) {
         listOf(
                 CPUCooler(
+                        manufacturer = "Cooler Master",
+                        name = "Wraith Stealth",
+                        fanCount = 1,
+                        supportedSockets = arrayListOf("AM4")
+                ),
+                CPUCooler(
+                        manufacturer = "Cooler Master",
+                        name = "Wraith Spire",
+                        fanCount = 1,
+                        supportedSockets = arrayListOf("AM4")
+                ),
+                CPUCooler(
+                        manufacturer = "Cooler Master",
+                        name = "Wraith Prism",
+                        fanCount = 1,
+                        supportedSockets = arrayListOf("AM4"),
+                        hasRGB = true
+                ),
+                CPUCooler(
                         manufacturer = "be quiet!",
                         name = "Pure Rock Slim",
                         height = 125,
