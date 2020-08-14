@@ -9,6 +9,19 @@ class GPULoader(private val gpuRepository: GPURepository) : ApplicationRunner {
     override fun run(args: ApplicationArguments) {
         listOf(
                 GraphicsCard(
+                        manufacturer = "ASRock",
+                        productName = "Radeon RX 570 4 GB Phantom Gaming D",
+                        memoryGB = 4,
+                        memoryType = "GDDR5",
+                        tdp = 150,
+                        chipset = "Radeon RX 570",
+                        length = 236,
+                        fanCount = 2,
+                        coreClock = 1168,
+                        boostClock = 1244,
+                        price = 129.99
+                ),
+                GraphicsCard(
                         manufacturer = "Asus",
                         productName = "GeForce GTX 1650 4 GB DUAL OC",
                         memoryGB = 4,

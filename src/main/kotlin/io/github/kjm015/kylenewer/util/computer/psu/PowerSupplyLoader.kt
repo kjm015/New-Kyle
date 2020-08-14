@@ -9,6 +9,15 @@ class PowerSupplyLoader(private val repository: PowerSupplyRepository) : Applica
     override fun run(args: ApplicationArguments) {
         listOf(
                 PowerSupply(
+                        manufacturer = "EVGA",
+                        name = "W3 450 W",
+                        wattage = 450,
+                        modularity = Modularity.NONE,
+                        efficiency = EightyPlusEfficiency.WHITE,
+                        formFactor = PowerSupplyFormFactor.ATX,
+                        price = 44.99
+                ),
+                PowerSupply(
                         manufacturer = "SeaSonic",
                         name = "S12III 500 W",
                         wattage = 500,

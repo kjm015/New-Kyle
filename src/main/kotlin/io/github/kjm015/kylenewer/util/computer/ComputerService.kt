@@ -26,11 +26,11 @@ class ComputerService(
     fun buildComputer(budget: Double = 900.00, requester: String = "Someone"): Computer {
         val cpuBudget = budget * 0.20
         val gpuBudget = budget * 0.35
-        val mobBudget = budget * 0.13
+        val mobBudget = budget * 0.15
         val ramBudget = budget * 0.08
-        val casBudget = budget * 0.08
+        val casBudget = budget * 0.07
         val psuBudget = budget * 0.08
-        val stoBudget = budget * 0.08
+        val stoBudget = budget * 0.07
 
         val cpu = cpuRepository.findAll().filter {
             it.price <= cpuBudget

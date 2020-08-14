@@ -11,6 +11,18 @@ class MotherboardLoader(private val repository: MotherboardRepository) : Applica
         listOf(
                 Motherboard(
                         manufacturer = "Gigabyte",
+                        modelName = "B450M DS3H",
+                        formFactor = MotherboardFormFactor.MATX,
+                        memoryType = MemoryGeneration.DDR4,
+                        memorySlots = 4,
+                        maxMemoryLimitGB = 64,
+                        maxMemorySpeed = 3200,
+                        chipSet = "AMD B450",
+                        socket = "AM4",
+                        price = 74.99
+                ),
+                Motherboard(
+                        manufacturer = "Gigabyte",
                         modelName = "B550M DS3H",
                         formFactor = MotherboardFormFactor.MATX,
                         memoryType = MemoryGeneration.DDR4,

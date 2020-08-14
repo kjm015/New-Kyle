@@ -11,6 +11,24 @@ class CaseLoader(private val repository: CaseRepository): ApplicationRunner {
     override fun run(args: ApplicationArguments) {
         listOf(
                 ComputerCase(
+                        manufacturer = "DIYPC",
+                        name = "MA08",
+                        formFactor = MotherboardFormFactor.MATX,
+                        psuFormFactor = PowerSupplyFormFactor.ATX,
+                        maxGPULength = 315,
+                        maxRadiatorSupport = 0,
+                        price = 31.99
+                ),
+                ComputerCase(
+                        manufacturer = "DIYPC",
+                        name = "Solo-T2-BK Black",
+                        formFactor = MotherboardFormFactor.ATX,
+                        psuFormFactor = PowerSupplyFormFactor.ATX,
+                        maxGPULength = 375,
+                        maxRadiatorSupport = 0,
+                        price = 33.98
+                ),
+                ComputerCase(
                         manufacturer = "Cooler Master",
                         name = "MasterBox Q300L",
                         formFactor = MotherboardFormFactor.MATX,
