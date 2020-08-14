@@ -1,6 +1,6 @@
 package io.github.kjm015.kylenewer.util.computer
 
-data class MemoryKit (
+data class MemoryKit(
         val manufacturer: String,
         val name: String,
         val memoryGeneration: MemoryGeneration,
@@ -11,5 +11,5 @@ data class MemoryKit (
 )
 
 enum class MemoryGeneration {
-    DDR, DDR2, DDR3, DDR4, DDR5
+    DDR, DDR2, DDR3, DDR4, DDR5, UNKNOWN
 }
