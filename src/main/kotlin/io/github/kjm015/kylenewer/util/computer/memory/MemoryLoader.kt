@@ -26,7 +26,7 @@ class MemoryLoader(private val repository: MemoryRepository): ApplicationRunner 
                         memoryGeneration = MemoryGeneration.DDR4,
                         speed = 3000,
                         casLatency = 16,
-                        price = 53.99
+                        price = 50.99
                 ),
                 MemoryKit(
                         manufacturer = "G.Skill",

@@ -6,6 +6,7 @@ import io.github.kjm015.kylenewer.util.computer.ComputerService
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 import java.lang.Exception
+import kotlin.random.Random
 
 @Component
 class ComputerCommand(private val computerService: ComputerService) : Command() {
@@ -23,7 +24,7 @@ class ComputerCommand(private val computerService: ComputerService) : Command() 
 
     override fun execute(event: CommandEvent) {
         val budget = if (event.args.isBlank()) {
-            1000.00
+            Random.nextDouble(750.00, 2500.00)
         } else {
             try {
                 event.args.toDouble()

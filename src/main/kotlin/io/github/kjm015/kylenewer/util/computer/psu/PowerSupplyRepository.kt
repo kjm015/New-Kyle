@@ -8,4 +8,5 @@ import org.springframework.transaction.annotation.Transactional
 @Transactional
 interface PowerSupplyRepository : CrudRepository<PowerSupply, Long> {
     fun existsByName(name: String): Boolean
+    fun findAllByPriceLessThan(price: Double): List<PowerSupply>
 }

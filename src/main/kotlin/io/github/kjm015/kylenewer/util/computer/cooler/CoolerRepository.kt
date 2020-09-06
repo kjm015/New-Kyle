@@ -9,4 +9,5 @@ import org.springframework.transaction.annotation.Transactional
 interface CoolerRepository : CrudRepository<CPUCooler, Long> {
     fun existsByName(name: String): Boolean
     fun findByName(name: String): CPUCooler
+    fun findAllByPriceLessThan(price: Double): List<CPUCooler>
 }

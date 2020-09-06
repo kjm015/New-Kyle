@@ -11,6 +11,18 @@ class MotherboardLoader(private val repository: MotherboardRepository) : Applica
         listOf(
                 Motherboard(
                         manufacturer = "Gigabyte",
+                        modelName = "A520M S2H",
+                        formFactor = MotherboardFormFactor.MATX,
+                        memoryType = MemoryGeneration.DDR4,
+                        memorySlots = 2,
+                        maxMemoryLimitGB = 64,
+                        maxMemorySpeed = 5000,
+                        chipSet = "AMD A520",
+                        socket = "AM4",
+                        price = 69.99
+                ),
+                Motherboard(
+                        manufacturer = "Gigabyte",
                         modelName = "B450M DS3H",
                         formFactor = MotherboardFormFactor.MATX,
                         memoryType = MemoryGeneration.DDR4,
@@ -37,6 +49,18 @@ class MotherboardLoader(private val repository: MotherboardRepository) : Applica
                         manufacturer = "ASRock",
                         modelName = "B550M Pro4",
                         formFactor = MotherboardFormFactor.MATX,
+                        memoryType = MemoryGeneration.DDR4,
+                        memorySlots = 4,
+                        maxMemoryLimitGB = 128,
+                        maxMemorySpeed = 4533,
+                        chipSet = "AMD B550",
+                        socket = "AM4",
+                        price = 114.99
+                ),
+                Motherboard(
+                        manufacturer = "ASRock",
+                        modelName = "B550 Phantom Gaming 4",
+                        formFactor = MotherboardFormFactor.ATX,
                         memoryType = MemoryGeneration.DDR4,
                         memorySlots = 4,
                         maxMemoryLimitGB = 128,
@@ -183,9 +207,35 @@ class MotherboardLoader(private val repository: MotherboardRepository) : Applica
                 ),
                 Motherboard(
                         manufacturer = "Gigabyte",
-                        modelName = "X570 AORUS XTREME",
+                        modelName = "TRX40 AORUS PRO WIFI",
+                        wifiType = 6,
+                        formFactor = MotherboardFormFactor.ATX,
+                        memoryType = MemoryGeneration.DDR4,
+                        memorySlots = 8,
+                        maxMemoryLimitGB = 256,
+                        maxMemorySpeed = 4400,
+                        chipSet = "AMD TRX40",
+                        socket = "sTRX4",
+                        price = 399.99
+                ),
+                Motherboard(
+                        manufacturer = "Asus",
+                        modelName = "ROG STRIX TRX40-XE GAMING",
                         wifiType = 6,
                         formFactor = MotherboardFormFactor.EATX,
+                        memoryType = MemoryGeneration.DDR4,
+                        memorySlots = 8,
+                        maxMemoryLimitGB = 256,
+                        maxMemorySpeed = 4666,
+                        chipSet = "AMD TRX40",
+                        socket = "sTRX4",
+                        price = 549.99
+                ),
+                Motherboard(
+                        manufacturer = "Gigabyte",
+                        modelName = "X570 AORUS XTREME",
+                        wifiType = 6,
+                        formFactor = MotherboardFormFactor.ATX,
                         memoryType = MemoryGeneration.DDR4,
                         memorySlots = 4,
                         maxMemoryLimitGB = 128,
@@ -193,6 +243,19 @@ class MotherboardLoader(private val repository: MotherboardRepository) : Applica
                         chipSet = "AMD X570",
                         socket = "AM4",
                         price = 699.99
+                ),
+                Motherboard(
+                        manufacturer = "Asus",
+                        modelName = "ROG ZENITH II EXTREME ALPHA",
+                        wifiType = 6,
+                        formFactor = MotherboardFormFactor.EATX,
+                        memoryType = MemoryGeneration.DDR4,
+                        memorySlots = 8,
+                        maxMemoryLimitGB = 256,
+                        maxMemorySpeed = 4600,
+                        chipSet = "AMD TRX40",
+                        socket = "sTRX4",
+                        price = 829.99
                 )
         ).forEach {
             if (!repository.existsByModelName(it.modelName)) {

@@ -162,6 +162,42 @@ class CaseLoader(private val repository: CaseRepository): ApplicationRunner {
                         maxGPULength = 524,
                         maxRadiatorSupport = 480,
                         price = 207.99
+                ),
+                ComputerCase(
+                        manufacturer = "be quiet!",
+                        name = "Dark Base Pro 900 Rev. 2",
+                        formFactor = MotherboardFormFactor.EATX,
+                        psuFormFactor = PowerSupplyFormFactor.ATX,
+                        maxGPULength = 472,
+                        maxRadiatorSupport = 420,
+                        price = 269.00
+                ),
+                ComputerCase(
+                        manufacturer = "Asus",
+                        name = "ROG Strix Helios GX601",
+                        formFactor = MotherboardFormFactor.ATX,
+                        psuFormFactor = PowerSupplyFormFactor.ATX,
+                        maxGPULength = 450,
+                        maxRadiatorSupport = 420,
+                        price = 309.99
+                ),
+                ComputerCase(
+                        manufacturer = "Cooler Master",
+                        name = "Cosmos C700P Black Edition",
+                        formFactor = MotherboardFormFactor.EATX,
+                        psuFormFactor = PowerSupplyFormFactor.ATX,
+                        maxGPULength = 490,
+                        maxRadiatorSupport = 420,
+                        price = 390.26
+                ),
+                ComputerCase(
+                        manufacturer = "In Win",
+                        name = "925",
+                        formFactor = MotherboardFormFactor.EATX,
+                        psuFormFactor = PowerSupplyFormFactor.ATX,
+                        maxGPULength = 420,
+                        maxRadiatorSupport = 360,
+                        price = 520.99
                 )
         ).forEach {
             if (!repository.existsByName(it.name)) {

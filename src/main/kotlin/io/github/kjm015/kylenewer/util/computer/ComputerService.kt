@@ -5,6 +5,7 @@ import io.github.kjm015.kylenewer.util.computer.cooler.CPUCooler
 import io.github.kjm015.kylenewer.util.computer.cooler.CoolerRepository
 import io.github.kjm015.kylenewer.util.computer.cpu.CPURepository
 import io.github.kjm015.kylenewer.util.computer.gpu.GPURepository
+import io.github.kjm015.kylenewer.util.computer.gpu.GraphicsCard
 import io.github.kjm015.kylenewer.util.computer.memory.MemoryRepository
 import io.github.kjm015.kylenewer.util.computer.motherboard.MotherboardRepository
 import io.github.kjm015.kylenewer.util.computer.psu.PowerSupplyRepository
@@ -32,7 +33,7 @@ class ComputerService(
         val psuBudget = budget * 0.08
         val stoBudget = budget * 0.07
 
-        val cpu = cpuRepository.findAll().filter {
+        var cpu = cpuRepository.findAll().filter {
             it.price <= cpuBudget
         }.maxBy { it.price }!!
 
@@ -66,12 +67,14 @@ class ComputerService(
         }.maxBy {
             it.price
         } ?: if (cpu.includedCoolerName != null)
-            coolerRepository.findByName(cpu.includedCoolerName)
+            coolerRepository.findByName(cpu.includedCoolerName!!)
         else
             CPUCooler()
 
         remainingBudget -= cooler.price
         cost += cooler.price
+
+        cpu = cpuRepository.findAllByPriceLessThan(cpuBudget + remainingBudget).filter { it.socket == mob.socket }.maxBy { it.price }!!
 
         while (remainingBudget > storageRepository.findAll().minBy { it.price }!!.price && storage.size < 3) {
             val tempStorage = storageRepository.findAll().filter { it.price <= remainingBudget }.maxBy { it.price }!!
@@ -92,6 +95,61 @@ class ComputerService(
                 owner = requester,
                 storage = storage,
                 price = cost
+        )
+    }
+
+    fun buildNewComputer(budget: Double = 500.00, requester: String = "Someone"): Computer {
+        var remainingBudget = budget
+
+        var cpu = cpuRepository.findAll().minBy { it.price }!!
+        remainingBudget -= cpu.price
+
+        var motherboard = motherboardRepository.findAllBySocket(cpu.socket).minBy { it.price }!!
+        remainingBudget -= motherboard.price
+
+        var memory = memoryRepository.findAll().minBy { it.price }!!
+        remainingBudget -= memory.price
+
+        var gpu: GraphicsCard? = if (cpu.integratedGraphics == null) {
+            val found = gpuRepository.findAll().minBy { it.price }!!
+            remainingBudget -= found.price
+            found
+        } else {
+            null
+        }
+
+        var case = caseRepository.findAll().minBy { it.price }!!
+        remainingBudget -= case.price
+
+        var psu = powerSupplyRepository.findAll().minBy { it.price }!!
+        remainingBudget -= psu.price
+
+        var storage = arrayListOf(storageRepository.findAll().minBy { it.price }!!)
+        remainingBudget -= storage.first().price
+
+        var cooler = if (cpu.includesCooler && cpu.includedCoolerName != null) {
+            coolerRepository.findByName(cpu.includedCoolerName!!)
+        } else {
+            coolerRepository.findAll().minBy { it.price }!!
+        }
+        remainingBudget -= cooler.price
+
+        while (remainingBudget > 0) {
+            
+        }
+
+        return Computer(
+                cpu = cpu,
+                gpu = gpu ?: GraphicsCard(),
+                motherboard = motherboard,
+                memory = memory,
+                case = case,
+                powerSupply = psu,
+                cooler = cooler,
+                name = "${requester}'s PC",
+                owner = requester,
+                storage = storage,
+                price = budget - remainingBudget
         )
     }
 }

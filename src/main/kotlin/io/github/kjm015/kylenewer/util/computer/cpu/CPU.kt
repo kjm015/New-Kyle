@@ -17,6 +17,7 @@ data class CPU(
         val threadCount: Int = -1,
         val lithography: Int = -1,
         val socket: String = "Unknown",
+        val integratedGraphics: String? = null,
         val includesCooler: Boolean = false,
         val includedCoolerName: String? = null,
 

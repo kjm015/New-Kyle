@@ -113,6 +113,33 @@ class CPULoader(private val cpuRepository: CPURepository) : ApplicationRunner {
                         lithography = 7,
                         socket = "AM4",
                         price = 689.99
+                ),
+                CPU(
+                        company = "AMD",
+                        name = "Threadripper 3960X",
+                        coreCount = 24,
+                        threadCount = 48,
+                        lithography = 7,
+                        socket = "sTRX4",
+                        price = 1349.99
+                ),
+                CPU(
+                        company = "AMD",
+                        name = "Threadripper 3970X",
+                        coreCount = 32,
+                        threadCount = 64,
+                        lithography = 7,
+                        socket = "sTRX4",
+                        price = 1853.37
+                ),
+                CPU(
+                        company = "AMD",
+                        name = "Threadripper 3990X",
+                        coreCount = 64,
+                        threadCount = 128,
+                        lithography = 7,
+                        socket = "sTRX4",
+                        price = 3564.99
                 )
         ).forEach {
             if (!cpuRepository.existsByName(it.name))

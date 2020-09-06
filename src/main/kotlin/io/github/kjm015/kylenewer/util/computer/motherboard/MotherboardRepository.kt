@@ -8,4 +8,6 @@ import org.springframework.transaction.annotation.Transactional
 @Transactional
 interface MotherboardRepository : CrudRepository<Motherboard, Long> {
     fun existsByModelName(modelName: String): Boolean
+    fun findAllBySocket(socket: String): List<Motherboard>
+    fun findAllByPriceLessThan(price: Double): List<Motherboard>
 }
