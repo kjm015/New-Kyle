@@ -1,5 +1,5 @@
-val jdaVersion = "4.1.1_108"
-val jdaUtilitiesVersion = "3.0.2"
+val jdaVersion = "4.2.0_214"
+val jdaUtilitiesVersion = "3.0.4"
 val jLyricsVersion = "0.4"
 
 plugins {
