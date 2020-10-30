@@ -6,7 +6,6 @@ import io.github.kjm015.kylenewer.config.DiscordSettings
 import io.github.kjm015.kylenewer.listeners.ExodusListener
 import io.github.kjm015.kylenewer.listeners.InfluxListener
 import io.github.kjm015.kylenewer.listeners.MessageListener
-import net.dv8tion.jda.api.AccountType
 import net.dv8tion.jda.api.JDA
 import net.dv8tion.jda.api.JDABuilder
 import org.springframework.boot.SpringApplication
@@ -77,10 +76,7 @@ class KyleNewerApplication(
         val client = builder.build()
 
         // Build the bot with the given settings and listeners
-        return JDABuilder(AccountType.BOT)
-                .setToken(token)
-                .addEventListeners(client, MessageListener(), ExodusListener(), InfluxListener())
-                .build()
+        return JDABuilder.createDefault(token).addEventListeners(client, MessageListener(), ExodusListener(), InfluxListener()).build()
     }
 
 }
