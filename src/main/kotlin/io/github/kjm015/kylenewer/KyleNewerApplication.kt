@@ -36,7 +36,8 @@ class KyleNewerApplication(
         private val rambleCommand: RambleCommand,
         private val suckCommand: SuckCommand,
         private val quoteCommand: QuoteCommand,
-        private val lyricsCommand: LyricsCommand
+        private val lyricsCommand: LyricsCommand,
+        private val spamCommand: SpamCommand
 ) {
 
     @Bean
@@ -65,7 +66,8 @@ class KyleNewerApplication(
                 lyricsCommand,
                 dieCommand,
                 ComputerCommand(),
-                EchoCommand()
+                EchoCommand(),
+                spamCommand
         )
 
         // Set the owner of the bot (set in properties)
