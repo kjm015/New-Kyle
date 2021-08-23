@@ -1,0 +1,82 @@
+{
+  "cards": [
+    {
+      "manufacturer": "Sapphire",
+      "productName": "Pulse RX 6600 XT",
+      "chipset": "AMD Radeon RX 6600 XT",
+      "coreClock": 2000,
+      "boostClock": 2593,
+      "memoryGB": 8,
+      "memoryType": "GDDR6",
+      "length": 240,
+      "tdp": 160,
+      "fanCount": 2,
+      "price": 379.99
+    },
+    {
+      "manufacturer": "Nvidia",
+      "productName": "Founder's Edition RTX 3060 Ti",
+      "chipset": "Nvidia GeForce RTX 3060 Ti",
+      "coreClock": 1410,
+      "boostClock": 1665,
+      "memoryGB": 8,
+      "memoryType": "GDDR6",
+      "length": 242,
+      "tdp": 200,
+      "fanCount": 2,
+      "price": 399.99
+    },
+    {
+      "manufacturer": "EVGA",
+      "productName": "RTX 3060 XC",
+      "chipset": "Nvidia GeForce RTX 3060",
+      "coreClock": 1320,
+      "boostClock": 1882,
+      "memoryGB": 12,
+      "memoryType": "GDDR6",
+      "length": 202,
+      "tdp": 170,
+      "fanCount": 2,
+      "price": 399.99
+    },
+    {
+      "manufacturer": "AMD",
+      "productName": "RX 6700 XT Reference Model",
+      "chipset": "AMD Radeon RX 6700 XT",
+      "coreClock": 2321,
+      "boostClock": 2581,
+      "memoryGB": 12,
+      "memoryType": "GDDR6",
+      "length": 267,
+      "tdp": 230,
+      "fanCount": 2,
+      "price": 479.99
+    },
+    {
+      "manufacturer": "Nvidia",
+      "productName": "RTX 3070 Founder's Edition",
+      "chipset": "Nvidia GeForce RTX 3070",
+      "coreClock": 1500,
+      "boostClock": 1725,
+      "memoryGB": 8,
+      "memoryType": "GDDR6",
+      "length": 242,
+      "tdp": 220,
+      "fanCount": 2,
+      "price": 499.99
+    },
+    {
+      "manufacturer": "PowerColor",
+      "productName": "Red Devil RX 6900 XT Ultimate",
+      "chipset": "AMD Radeon RX 6900 XT",
+      "coreClock": 2050,
+      "boostClock": 2425,
+      "memoryGB": 16,
+      "memoryType": "GDDR6",
+      "length": 320,
+      "tdp": 300,
+      "fanCount": 3,
+      "price": 1799.99
+    }
+  ]
+}
