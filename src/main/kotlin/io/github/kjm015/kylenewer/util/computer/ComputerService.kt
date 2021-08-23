@@ -15,14 +15,14 @@ import javax.validation.constraints.Min
 
 @Service
 class ComputerService(
-        private val caseRepository: CaseRepository,
-        private val coolerRepository: CoolerRepository,
-        private val cpuRepository: CPURepository,
-        private val gpuRepository: GPURepository,
-        private val memoryRepository: MemoryRepository,
-        private val motherboardRepository: MotherboardRepository,
-        private val powerSupplyRepository: PowerSupplyRepository,
-        private val storageRepository: StorageRepository
+    private val caseRepository: CaseRepository,
+    private val coolerRepository: CoolerRepository,
+    private val cpuRepository: CPURepository,
+    private val gpuRepository: GPURepository,
+    private val memoryRepository: MemoryRepository,
+    private val motherboardRepository: MotherboardRepository,
+    private val powerSupplyRepository: PowerSupplyRepository,
+    private val storageRepository: StorageRepository
 ) {
     fun buildComputer(budget: Double = 900.00, requester: String = "Someone"): Computer {
         val cpuBudget = budget * 0.20
@@ -42,7 +42,7 @@ class ComputerService(
         }.maxBy { it.price }!!
 
         val ram = memoryRepository.findAll().filter {
-            it.price <= ramBudget && (it.moduleCount * it.moduleCapacityGB) < mob.maxMemoryLimitGB && it.speed <= mob.maxMemorySpeed
+            it.price <= ramBudget && it.moduleCount * it.moduleCapacityGB < mob.maxMemoryLimitGB && it.speed <= mob.maxMemorySpeed
         }.maxBy { it.price }!!
 
         val gpu = gpuRepository.findAll().filter {
@@ -74,7 +74,8 @@ class ComputerService(
         remainingBudget -= cooler.price
         cost += cooler.price
 
-        cpu = cpuRepository.findAllByPriceLessThan(cpuBudget + remainingBudget).filter { it.socket == mob.socket }.maxBy { it.price }!!
+        cpu = cpuRepository.findAllByPriceLessThan(cpuBudget + remainingBudget).filter { it.socket == mob.socket }
+            .maxBy { it.price }!!
 
         while (remainingBudget > storageRepository.findAll().minBy { it.price }!!.price && storage.size < 3) {
             val tempStorage = storageRepository.findAll().filter { it.price <= remainingBudget }.maxBy { it.price }!!
@@ -84,72 +85,17 @@ class ComputerService(
         }
 
         return Computer(
-                cpu = cpu,
-                gpu = gpu,
-                motherboard = mob,
-                memory = ram,
-                case = case,
-                powerSupply = psu,
-                cooler = cooler,
-                name = "${requester}'s PC",
-                owner = requester,
-                storage = storage,
-                price = cost
-        )
-    }
-
-    fun buildNewComputer(budget: Double = 500.00, requester: String = "Someone"): Computer {
-        var remainingBudget = budget
-
-        var cpu = cpuRepository.findAll().minBy { it.price }!!
-        remainingBudget -= cpu.price
-
-        var motherboard = motherboardRepository.findAllBySocket(cpu.socket).minBy { it.price }!!
-        remainingBudget -= motherboard.price
-
-        var memory = memoryRepository.findAll().minBy { it.price }!!
-        remainingBudget -= memory.price
-
-        var gpu: GraphicsCard? = if (cpu.integratedGraphics == null) {
-            val found = gpuRepository.findAll().minBy { it.price }!!
-            remainingBudget -= found.price
-            found
-        } else {
-            null
-        }
-
-        var case = caseRepository.findAll().minBy { it.price }!!
-        remainingBudget -= case.price
-
-        var psu = powerSupplyRepository.findAll().minBy { it.price }!!
-        remainingBudget -= psu.price
-
-        var storage = arrayListOf(storageRepository.findAll().minBy { it.price }!!)
-        remainingBudget -= storage.first().price
-
-        var cooler = if (cpu.includesCooler && cpu.includedCoolerName != null) {
-            coolerRepository.findByName(cpu.includedCoolerName!!)
-        } else {
-            coolerRepository.findAll().minBy { it.price }!!
-        }
-        remainingBudget -= cooler.price
-
-        while (remainingBudget > 0) {
-            
-        }
-
-        return Computer(
-                cpu = cpu,
-                gpu = gpu ?: GraphicsCard(),
-                motherboard = motherboard,
-                memory = memory,
-                case = case,
-                powerSupply = psu,
-                cooler = cooler,
-                name = "${requester}'s PC",
-                owner = requester,
-                storage = storage,
-                price = budget - remainingBudget
+            cpu = cpu,
+            gpu = gpu,
+            motherboard = mob,
+            memory = ram,
+            case = case,
+            powerSupply = psu,
+            cooler = cooler,
+            name = "${requester}'s PC",
+            owner = requester,
+            storage = storage,
+            price = cost
         )
     }
 }
