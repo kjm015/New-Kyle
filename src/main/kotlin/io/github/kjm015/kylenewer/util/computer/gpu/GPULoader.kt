@@ -5,7 +5,6 @@ import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
 import org.springframework.stereotype.Component
 import org.springframework.util.ResourceUtils
-import java.io.File
 
 @Component
 class GPULoader(private val gpuRepository: GPURepository) : ApplicationRunner {
@@ -14,8 +13,9 @@ class GPULoader(private val gpuRepository: GPURepository) : ApplicationRunner {
 
     override fun run(args: ApplicationArguments) {
         retrieveCardsFromFile().forEach {
-            if (!gpuRepository.existsByProductName(it.productName))
+            if (!gpuRepository.existsByProductName(it.productName)) {
                 gpuRepository.save(it)
+            }
         }
     }
 
