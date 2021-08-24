@@ -1,8 +1,6 @@
 package io.github.kjm015.kylenewer.util.computer.motherboard
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import io.github.kjm015.kylenewer.util.computer.gpu.CardList
-import io.github.kjm015.kylenewer.util.computer.memory.MemoryGeneration
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
 import org.springframework.stereotype.Component
@@ -21,7 +19,7 @@ class MotherboardLoader(private val repository: MotherboardRepository) : Applica
         }
     }
 
-    fun retrieveFromFile(): List<Motherboard> {
+    private fun retrieveFromFile(): List<Motherboard> {
         val file = ResourceUtils.getFile("classpath:computer/motherboards.json")
         val list = mapper.readValue(file, MotherboardList::class.java)
         return list.motherboards

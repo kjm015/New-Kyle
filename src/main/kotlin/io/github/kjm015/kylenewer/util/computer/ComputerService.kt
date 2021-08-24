@@ -26,8 +26,8 @@ class ComputerService(
 ) {
     fun buildComputer(budget: Double = 900.00, requester: String = "Someone"): Computer {
         val cpuBudget = budget * 0.20
-        val gpuBudget = budget * 0.35
-        val mobBudget = budget * 0.15
+        val gpuBudget = budget * 0.37
+        val mobBudget = budget * 0.13
         val ramBudget = budget * 0.08
         val casBudget = budget * 0.07
         val psuBudget = budget * 0.08
@@ -69,7 +69,19 @@ class ComputerService(
         } ?: if (cpu.includedCoolerName != null)
             coolerRepository.findByName(cpu.includedCoolerName!!)
         else
-            CPUCooler()
+            CPUCooler(
+                id = -1L,
+                name = "",
+                manufacturer = "",
+                isLiquidCooler = false,
+                radiatorSize = 0,
+                fanSize = 0,
+                fanCount = 0,
+                hasRGB = false,
+                height = 0,
+                supportedSockets = arrayListOf(),
+                price = 0.00
+            )
 
         remainingBudget -= cooler.price
         cost += cooler.price
