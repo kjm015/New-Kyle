@@ -1,6 +1,32 @@
 {
   "cards": [
     {
+      "manufacturer": "EVGA",
+      "productName": "GTX 1650 SC Ultra Black",
+      "chipset": "Nvidia GeForce GTX 1650",
+      "coreClock": 1485,
+      "boostClock": 1665,
+      "memoryGB": 4,
+      "memoryType": "GDDR5",
+      "length": 202,
+      "tdp": 75,
+      "fanCount": 2,
+      "price": 159.99
+    },
+    {
+      "manufacturer": "Gigabyte",
+      "productName": "RTX 3060 Eagle",
+      "chipset": "Nvidia GeForce RTX 3060",
+      "coreClock": 1320,
+      "boostClock": 1777,
+      "memoryGB": 12,
+      "memoryType": "GDDR6",
+      "length": 242,
+      "tdp": 170,
+      "fanCount": 2,
+      "price": 329.99
+    },
+    {
       "manufacturer": "Sapphire",
       "productName": "Pulse RX 6600 XT",
       "chipset": "AMD Radeon RX 6600 XT",
@@ -168,6 +194,58 @@
       "tdp": 300,
       "fanCount": 3,
       "price": 1799.99
+    },
+    {
+      "manufacturer": "EVGA",
+      "productName": "RTX 3090 FTW3 Ultra",
+      "chipset": "Nvidia GeForce RTX 3090",
+      "coreClock": 1395,
+      "boostClock": 1800,
+      "memoryGB": 24,
+      "memoryType": "GDDR6X",
+      "length": 300,
+      "tdp": 350,
+      "fanCount": 3,
+      "price": 1999.99
+    },
+    {
+      "manufacturer": "Gigabyte",
+      "productName": "Aorus RX 6900 XT Master",
+      "chipset": "AMD Radeon RX 6900 XT",
+      "coreClock": 1950,
+      "boostClock": 2365,
+      "memoryGB": 16,
+      "memoryType": "GDDR6",
+      "length": 322,
+      "tdp": 300,
+      "fanCount": 3,
+      "price": 2149.99
+    },
+    {
+      "manufacturer": "Sapphire",
+      "productName": "Toxic RX 6900 XT",
+      "chipset": "AMD Radeon RX 6900 XT",
+      "coreClock": 1950,
+      "boostClock": 2365,
+      "memoryGB": 16,
+      "memoryType": "GDDR6",
+      "length": 270,
+      "tdp": 300,
+      "fanCount": 4,
+      "price": 2399.99
+    },
+    {
+      "manufacturer": "Asus",
+      "productName": "ROG Strix RTX 3090 Gaming White OC",
+      "chipset": "Nvidia GeForce RTX 3090",
+      "coreClock": 1395,
+      "boostClock": 1860,
+      "memoryGB": 24,
+      "memoryType": "GDDR6X",
+      "length": 319,
+      "tdp": 350,
+      "fanCount": 3,
+      "price": 2499.99
     }
   ]
 }

@@ -35,11 +35,13 @@ class ComputerService(
 
         var cpu = cpuRepository.findAll().filter {
             it.price <= cpuBudget
-        }.maxBy { it.price }!!
+        }.maxBy { it.price } ?: cpuRepository.findAll().minBy { it.price }!!
 
         val mob = motherboardRepository.findAll().filter {
             it.socket == cpu.socket && it.price <= mobBudget
-        }.maxBy { it.price }!!
+        }.maxBy { it.price } ?: motherboardRepository.findAll().filter {
+            it.socket == cpu.socket && it.price <= mobBudget
+        }.minBy { it.price }!!
 
         val ram = memoryRepository.findAll().filter {
             it.price <= ramBudget && it.moduleCount * it.moduleCapacityGB < mob.maxMemoryLimitGB && it.speed <= mob.maxMemorySpeed
@@ -47,7 +49,7 @@ class ComputerService(
 
         val gpu = gpuRepository.findAll().filter {
             it.price <= gpuBudget
-        }.maxBy { it.price }!!
+        }.maxBy { it.price } ?: gpuRepository.findAll().minBy { it.price }!!
 
         val case = caseRepository.findAll().filter {
             it.price <= casBudget && it.formFactor == mob.formFactor && it.maxGPULength >= gpu.length
@@ -63,7 +65,7 @@ class ComputerService(
         var remainingBudget = budget - cost
 
         val cooler = coolerRepository.findAll().filter {
-            it.price <= remainingBudget && it.supportedSockets.contains(mob.socket) && (!it.isLiquidCooler || it.radiatorSize <= case.maxRadiatorSupport)
+            it.price <= remainingBudget / 1.5 && it.supportedSockets.contains(mob.socket) && (it.radiatorSize <= case.maxRadiatorSupport)
         }.maxBy {
             it.price
         } ?: if (cpu.includedCoolerName != null)
