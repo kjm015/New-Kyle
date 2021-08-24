@@ -1,10 +1,12 @@
 package io.github.kjm015.kylenewer.util.computer.cpu
 
+import net.minidev.json.annotate.JsonIgnore
 import javax.persistence.*
 
 @Entity
 data class CPU(
     @Id
+    @JsonIgnore
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true)
     var id: Long = -1L,

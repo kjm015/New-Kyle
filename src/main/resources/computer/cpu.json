@@ -134,17 +134,6 @@
     },
     {
       "company": "AMD",
-      "name": "Ryzen Threadripper 3990X",
-      "coreCount": 64,
-      "threadCount": 128,
-      "lithography": 7,
-      "socket": "sTRX4",
-      "includesCooler": false,
-      "includedCoolerName": "",
-      "price": 3990.00
-    },
-    {
-      "company": "AMD",
       "name": "Ryzen Threadripper PRO 3975WX",
       "coreCount": 32,
       "threadCount": 64,
@@ -153,6 +142,17 @@
       "includesCooler": false,
       "includedCoolerName": "",
       "price": 2599.99
+    },
+    {
+      "company": "AMD",
+      "name": "Ryzen Threadripper 3990X",
+      "coreCount": 64,
+      "threadCount": 128,
+      "lithography": 7,
+      "socket": "sTRX4",
+      "includesCooler": false,
+      "includedCoolerName": "",
+      "price": 3990.00
     },
     {
       "company": "AMD",
