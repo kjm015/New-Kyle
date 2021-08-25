@@ -1,10 +1,12 @@
 package io.github.kjm015.kylenewer.util.computer.psu
 
+import net.minidev.json.annotate.JsonIgnore
 import javax.persistence.*
 
 @Entity
 data class PowerSupply(
         @Id
+        @JsonIgnore
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(unique = true)
         var id: Long = -1L,
@@ -29,4 +31,8 @@ enum class EightyPlusEfficiency {
 
 enum class PowerSupplyFormFactor {
     SFX, SFXL, ATX, HFX, UNKNOWN
+}
+
+class PSUList {
+    var powerSupplies: List<PowerSupply> = listOf()
 }

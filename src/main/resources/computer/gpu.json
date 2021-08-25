@@ -14,6 +14,19 @@
       "price": 159.99
     },
     {
+      "manufacturer": "EVGA",
+      "productName": "GTX 1660 Super Black",
+      "chipset": "Nvidia GeForce GTX 1660 Super",
+      "coreClock": 1530,
+      "boostClock": 1785,
+      "memoryGB": 6,
+      "memoryType": "GDDR6",
+      "length": 190,
+      "tdp": 125,
+      "fanCount": 1,
+      "price": 229.99
+    },
+    {
       "manufacturer": "Gigabyte",
       "productName": "RTX 3060 Eagle",
       "chipset": "Nvidia GeForce RTX 3060",
