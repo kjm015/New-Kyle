@@ -1,9 +1,6 @@
 package io.github.kjm015.kylenewer.util.computer.compcase
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import io.github.kjm015.kylenewer.util.computer.cooler.CoolerList
-import io.github.kjm015.kylenewer.util.computer.motherboard.MotherboardFormFactor
-import io.github.kjm015.kylenewer.util.computer.psu.PowerSupplyFormFactor
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
 import org.springframework.stereotype.Component

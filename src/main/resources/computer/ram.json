@@ -1,0 +1,257 @@
+{
+  "ram": [
+    {
+      "manufacturer": "Patriot",
+      "name": "Viper",
+      "memoryGeneration": "DDR4",
+      "speed": 3000,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 4,
+      "price": 39.99
+    },
+    {
+      "manufacturer": "ADATA",
+      "name": "XPG Z1",
+      "memoryGeneration": "DDR4",
+      "speed": 3000,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 8,
+      "price": 58.99
+    },
+    {
+      "manufacturer": "Team",
+      "name": "T-FORCE DARK Z",
+      "memoryGeneration": "DDR4",
+      "speed": 3200,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 8,
+      "price": 59.99
+    },
+    {
+      "manufacturer": "Patriot",
+      "name": "Viper 4 Blackout",
+      "memoryGeneration": "DDR4",
+      "speed": 3200,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 8,
+      "price": 67.98
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Ripjaws V",
+      "memoryGeneration": "DDR4",
+      "speed": 3200,
+      "casLatency": 18,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 8,
+      "price": 69.98
+    },
+    {
+      "manufacturer": "Crucial",
+      "name": "Ballistix",
+      "memoryGeneration": "DDR4",
+      "speed": 3600,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 8,
+      "price": 84.99
+    },
+    {
+      "manufacturer": "Crucial",
+      "name": "Ballistix RGB",
+      "memoryGeneration": "DDR4",
+      "speed": 3600,
+      "casLatency": 16,
+      "hasRGB": true,
+      "moduleCount": 2,
+      "moduleCapacityGB": 8,
+      "price": 97.73
+    },
+    {
+      "manufacturer": "Team",
+      "name": "T-FORCE VULCAN Z",
+      "memoryGeneration": "DDR4",
+      "speed": 3200,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 16,
+      "price": 120.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Ripjaws V",
+      "memoryGeneration": "DDR4",
+      "speed": 3200,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 16,
+      "price": 127.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Trident Z RGB",
+      "memoryGeneration": "DDR4",
+      "speed": 3200,
+      "casLatency": 16,
+      "hasRGB": true,
+      "moduleCount": 2,
+      "moduleCapacityGB": 16,
+      "price": 149.99
+    },
+    {
+      "manufacturer": "Crucial",
+      "name": "Ballistix",
+      "memoryGeneration": "DDR4",
+      "speed": 3600,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 16,
+      "price": 154.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Ripjaws V",
+      "memoryGeneration": "DDR4",
+      "speed": 3600,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 16,
+      "price": 169.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Trident Z RGB",
+      "memoryGeneration": "DDR4",
+      "speed": 3600,
+      "casLatency": 16,
+      "hasRGB": true,
+      "moduleCount": 2,
+      "moduleCapacityGB": 16,
+      "price": 189.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Trident Z Neo",
+      "memoryGeneration": "DDR4",
+      "speed": 3600,
+      "casLatency": 16,
+      "hasRGB": true,
+      "moduleCount": 4,
+      "moduleCapacityGB": 8,
+      "price": 239.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Ripjaws V",
+      "memoryGeneration": "DDR4",
+      "speed": 4000,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 16,
+      "price": 249.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Ripjaws V",
+      "memoryGeneration": "DDR4",
+      "speed": 3200,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 4,
+      "moduleCapacityGB": 16,
+      "price": 259.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Ripjaws V",
+      "memoryGeneration": "DDR4",
+      "speed": 3600,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 32,
+      "price": 309.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Trident Z Neo",
+      "memoryGeneration": "DDR4",
+      "speed": 3600,
+      "casLatency": 16,
+      "hasRGB": true,
+      "moduleCount": 4,
+      "moduleCapacityGB": 16,
+      "price": 409.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Ripjaws V",
+      "memoryGeneration": "DDR4",
+      "speed": 3200,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 4,
+      "moduleCapacityGB": 32,
+      "price": 569.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Trident Z Neo",
+      "memoryGeneration": "DDR4",
+      "speed": 3200,
+      "casLatency": 16,
+      "hasRGB": true,
+      "moduleCount": 4,
+      "moduleCapacityGB": 32,
+      "price": 619.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Trident Z Neo",
+      "memoryGeneration": "DDR4",
+      "speed": 3600,
+      "casLatency": 16,
+      "hasRGB": true,
+      "moduleCount": 4,
+      "moduleCapacityGB": 32,
+      "price": 998.00
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Trident Z RGB",
+      "memoryGeneration": "DDR4",
+      "speed": 3200,
+      "casLatency": 16,
+      "hasRGB": true,
+      "moduleCount": 8,
+      "moduleCapacityGB": 32,
+      "price": 1189.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Ripjaws V",
+      "memoryGeneration": "DDR4",
+      "speed": 3600,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 8,
+      "moduleCapacityGB": 32,
+      "price": 1399.99
+    }
+  ]
+}
