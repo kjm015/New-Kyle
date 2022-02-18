@@ -36,7 +36,8 @@ class KyleNewerApplication(
         private val rambleCommand: RambleCommand,
         private val suckCommand: SuckCommand,
         private val quoteCommand: QuoteCommand,
-        private val lyricsCommand: LyricsCommand
+        private val lyricsCommand: LyricsCommand,
+        private val computerCommand: ComputerCommand
 ) {
 
     @Bean
@@ -64,7 +65,7 @@ class KyleNewerApplication(
                 storyCommand,
                 lyricsCommand,
                 dieCommand,
-                ComputerCommand(),
+                computerCommand,
                 EchoCommand()
         )
 

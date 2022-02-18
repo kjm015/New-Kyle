@@ -1,0 +1,175 @@
+{
+  "cases": [
+    {
+      "name": "MATREXX 30",
+      "manufacturer": "Deepcool",
+      "formFactor": "MATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 120,
+      "maxGPULength": 250,
+      "price": 39.99
+    },
+    {
+      "name": "MasterBox Q300L",
+      "manufacturer": "Cooler Master",
+      "formFactor": "MATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 240,
+      "maxGPULength": 360,
+      "price": 49.99
+    },
+    {
+      "name": "Eclipse P200A Performance",
+      "manufacturer": "Phanteks",
+      "formFactor": "ITX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 280,
+      "maxGPULength": 335,
+      "price": 54.99
+    },
+    {
+      "name": "Eclipse P300A",
+      "manufacturer": "Phanteks",
+      "formFactor": "ATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 240,
+      "maxGPULength": 335,
+      "price": 59.99
+    },
+    {
+      "name": "Eclipse P200A DRGB",
+      "manufacturer": "Phanteks",
+      "formFactor": "ITX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 280,
+      "maxGPULength": 335,
+      "price": 69.99
+    },
+    {
+      "name": "MasterBox MB311L",
+      "manufacturer": "Cooler Master",
+      "formFactor": "MATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 280,
+      "maxGPULength": 344,
+      "price": 74.99
+    },
+    {
+      "name": "Eclipse P360A",
+      "manufacturer": "Phanteks",
+      "formFactor": "ATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 280,
+      "maxGPULength": 400,
+      "price": 79.98
+    },
+    {
+      "name": "Eclipse P400A Digital",
+      "manufacturer": "Phanteks",
+      "formFactor": "ATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 360,
+      "maxGPULength": 420,
+      "price": 84.99
+    },
+    {
+      "name": "4000D Airflow",
+      "manufacturer": "Corsair",
+      "formFactor": "ATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 360,
+      "maxGPULength": 360,
+      "price": 94.99
+    },
+    {
+      "name": "Pure Base 500DX",
+      "manufacturer": "be quiet!",
+      "formFactor": "ATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 360,
+      "maxGPULength": 369,
+      "price": 99.90
+    },
+    {
+      "name": "TU150",
+      "manufacturer": "Lian Li",
+      "formFactor": "ITX",
+      "psuFormFactor": "SFX",
+      "maxRadiatorSupport": 120,
+      "maxGPULength": 320,
+      "price": 99.99
+    },
+    {
+      "name": "Meshify 2 Compact TG",
+      "manufacturer": "Fractal Design",
+      "formFactor": "ATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 360,
+      "maxGPULength": 341,
+      "price": 109.99
+    },
+    {
+      "name": "MasterCase H500 ARGB",
+      "manufacturer": "Cooler Master",
+      "formFactor": "ATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 360,
+      "maxGPULength": 410,
+      "price": 119.00
+    },
+    {
+      "name": "O11 Dynamic Mini",
+      "manufacturer": "Lian Li",
+      "formFactor": "ATX",
+      "psuFormFactor": "SFX",
+      "maxRadiatorSupport": 360,
+      "maxGPULength": 370,
+      "price": 119.99
+    },
+    {
+      "name": "Eclipse P500A",
+      "manufacturer": "Phanteks",
+      "formFactor": "EATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 420,
+      "maxGPULength": 435,
+      "price": 133.56
+    },
+    {
+      "name": "Meshify 2",
+      "manufacturer": "Fractal Design",
+      "formFactor": "ATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 420,
+      "maxGPULength": 467,
+      "price": 146.76
+    },
+    {
+      "name": "PC-O11 Dynamic",
+      "manufacturer": "Lian Li",
+      "formFactor": "ATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 360,
+      "maxGPULength": 420,
+      "price": 149.99
+    },
+    {
+      "name": "Meshify 2 XL",
+      "manufacturer": "Fractal Design",
+      "formFactor": "EATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 480,
+      "maxGPULength": 549,
+      "price": 179.99
+    },
+    {
+      "name": "7000D Airflow",
+      "manufacturer": "Corsair",
+      "formFactor": "EATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 480,
+      "maxGPULength": 450,
+      "price": 259.99
+    }
+  ]
+}

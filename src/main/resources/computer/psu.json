@@ -1,0 +1,211 @@
+{
+  "powerSupplies": [
+    {
+      "manufacturer": "EVGA",
+      "name": "500 BQ",
+      "wattage": 500,
+      "modularity": "SEMI",
+      "efficiency": "BRONZE",
+      "formFactor": "ATX",
+      "price": 34.99
+    },
+    {
+      "manufacturer": "EVGA",
+      "name": "600 BQ",
+      "wattage": 600,
+      "modularity": "SEMI",
+      "efficiency": "BRONZE",
+      "formFactor": "ATX",
+      "price": 44.99
+    },
+    {
+      "manufacturer": "EVGA",
+      "name": "650 BQ",
+      "wattage": 650,
+      "modularity": "SEMI",
+      "efficiency": "BRONZE",
+      "formFactor": "ATX",
+      "price": 49.95
+    },
+    {
+      "manufacturer": "EVGA",
+      "name": "BR 700",
+      "wattage": 700,
+      "modularity": "NONE",
+      "efficiency": "BRONZE",
+      "formFactor": "ATX",
+      "price": 59.38
+    },
+    {
+      "manufacturer": "EVGA",
+      "name": "750 BQ",
+      "wattage": 750,
+      "modularity": "SEMI",
+      "efficiency": "BRONZE",
+      "formFactor": "ATX",
+      "price": 64.98
+    },
+    {
+      "manufacturer": "EVGA",
+      "name": "650 G5",
+      "wattage": 650,
+      "modularity": "FULL",
+      "efficiency": "GOLD",
+      "formFactor": "ATX",
+      "price": 74.98
+    },
+    {
+      "manufacturer": "EVGA",
+      "name": "750 GQ",
+      "wattage": 750,
+      "modularity": "SEMI",
+      "efficiency": "GOLD",
+      "formFactor": "ATX",
+      "price": 79.99
+    },
+    {
+      "manufacturer": "EVGA",
+      "name": "750 P2",
+      "wattage": 750,
+      "modularity": "FULL",
+      "efficiency": "PLATINUM",
+      "formFactor": "ATX",
+      "price": 114.99
+    },
+    {
+      "manufacturer": "Corsair",
+      "name": "SF 600",
+      "wattage": 600,
+      "modularity": "FULL",
+      "efficiency": "PLATINUM",
+      "formFactor": "SFX",
+      "price": 119.99
+    },
+    {
+      "manufacturer": "Corsair",
+      "name": "RM 750",
+      "wattage": 750,
+      "modularity": "FULL",
+      "efficiency": "GOLD",
+      "formFactor": "ATX",
+      "price": 124.99
+    },
+    {
+      "manufacturer": "SeaSonic",
+      "name": "FOCUS SGX 650W",
+      "wattage": 650,
+      "modularity": "FULL",
+      "efficiency": "GOLD",
+      "formFactor": "SFX",
+      "price": 127.95
+    },
+    {
+      "manufacturer": "NZXT",
+      "name": "C 850",
+      "wattage": 850,
+      "modularity": "FULL",
+      "efficiency": "GOLD",
+      "formFactor": "ATX",
+      "price": 129.99
+    },
+    {
+      "manufacturer": "EVGA",
+      "name": "1000 G5",
+      "wattage": 1000,
+      "modularity": "FULL",
+      "efficiency": "GOLD",
+      "formFactor": "ATX",
+      "price": 129.99
+    },
+    {
+      "manufacturer": "Corsair",
+      "name": "RM 850",
+      "wattage": 850,
+      "modularity": "FULL",
+      "efficiency": "GOLD",
+      "formFactor": "ATX",
+      "price": 134.99
+    },
+    {
+      "manufacturer": "Cooler Master",
+      "name": "V850",
+      "wattage": 850,
+      "modularity": "FULL",
+      "efficiency": "GOLD",
+      "formFactor": "SFX",
+      "price": 144.99
+    },
+    {
+      "manufacturer": "Corsair",
+      "name": "RMx 850 (2021)",
+      "wattage": 850,
+      "modularity": "FULL",
+      "efficiency": "GOLD",
+      "formFactor": "ATX",
+      "price": 149.99
+    },
+    {
+      "manufacturer": "Corsair",
+      "name": "SF 750",
+      "wattage": 750,
+      "modularity": "FULL",
+      "efficiency": "PLATINUM",
+      "formFactor": "SFX",
+      "price": 184.99
+    },
+    {
+      "manufacturer": "EVGA",
+      "name": "850 GM",
+      "wattage": 850,
+      "modularity": "FULL",
+      "efficiency": "GOLD",
+      "formFactor": "SFX",
+      "price": 189.99
+    },
+    {
+      "manufacturer": "EVGA",
+      "name": "850 T2",
+      "wattage": 850,
+      "modularity": "FULL",
+      "efficiency": "TITANIUM",
+      "formFactor": "ATX",
+      "price": 249.40
+    },
+    {
+      "manufacturer": "EVGA",
+      "name": "1000 T2",
+      "wattage": 1000,
+      "modularity": "FULL",
+      "efficiency": "TITANIUM",
+      "formFactor": "ATX",
+      "price": 349.99
+    },
+    {
+      "manufacturer": "be quiet!",
+      "name": "Dark Power Pro 12 1200W",
+      "wattage": 1200,
+      "modularity": "FULL",
+      "efficiency": "TITANIUM",
+      "formFactor": "ATX",
+      "price": 399.99
+    },
+    {
+      "manufacturer": "be quiet!",
+      "name": "Dark Power Pro 12 1500W",
+      "wattage": 1500,
+      "modularity": "FULL",
+      "efficiency": "TITANIUM",
+      "formFactor": "ATX",
+      "price": 449.99
+    },
+    {
+      "manufacturer": "EVGA",
+      "name": "1600 P2",
+      "wattage": 1600,
+      "modularity": "FULL",
+      "efficiency": "PLATINUM",
+      "formFactor": "ATX",
+      "price": 479.99
+    }
+  ]
+}

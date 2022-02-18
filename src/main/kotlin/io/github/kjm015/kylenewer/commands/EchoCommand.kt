@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component
  * @author ChiengBang
  * @since 07/05/2020
 */
-
 @Component
 class EchoCommand : Command() {
     init {

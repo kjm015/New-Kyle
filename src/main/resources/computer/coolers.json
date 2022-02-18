@@ -1,0 +1,433 @@
+{
+  "coolers": [
+    {
+      "manufacturer": "Cooler Master",
+      "name": "Wraith Stealth",
+      "isLiquidCooler": false,
+      "radiatorSize": 0,
+      "fanSize": 80,
+      "fanCount": 1,
+      "hasRGB": false,
+      "height": 40,
+      "supportedSockets": [
+        "AM4"
+      ],
+      "price": 0.00
+    },
+    {
+      "manufacturer": "Cooler Master",
+      "name": "Wraith Spire",
+      "isLiquidCooler": false,
+      "radiatorSize": 0,
+      "fanSize": 80,
+      "fanCount": 1,
+      "hasRGB": false,
+      "height": 40,
+      "supportedSockets": [
+        "AM4"
+      ],
+      "price": 0.00
+    },
+    {
+      "manufacturer": "Cooler Master",
+      "name": "Wraith Prism",
+      "isLiquidCooler": false,
+      "radiatorSize": 0,
+      "fanSize": 80,
+      "fanCount": 1,
+      "hasRGB": true,
+      "height": 40,
+      "supportedSockets": [
+        "AM4"
+      ],
+      "price": 0.00
+    },
+    {
+      "manufacturer": "Deepcool",
+      "name": "GAMMAXX 400 V2",
+      "isLiquidCooler": false,
+      "radiatorSize": 0,
+      "fanSize": 120,
+      "fanCount": 1,
+      "hasRGB": true,
+      "height": 155,
+      "supportedSockets": [
+        "AM3+",
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200"
+      ],
+      "price": 24.99
+    },
+    {
+      "manufacturer": "ID-COOLING",
+      "name": "SE-224-XT Basic",
+      "isLiquidCooler": false,
+      "radiatorSize": 0,
+      "fanSize": 120,
+      "fanCount": 1,
+      "hasRGB": false,
+      "height": 154,
+      "supportedSockets": [
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066"
+      ],
+      "price": 25.99
+    },
+    {
+      "manufacturer": "be quiet!",
+      "name": "Pure Rock Slim 2",
+      "isLiquidCooler": false,
+      "radiatorSize": 0,
+      "fanSize": 92,
+      "fanCount": 1,
+      "hasRGB": false,
+      "height": 135,
+      "supportedSockets": [
+        "AM3+",
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200"
+      ],
+      "price": 29.99
+    },
+    {
+      "manufacturer": "Arctic",
+      "name": "Freezer 34 eSports",
+      "isLiquidCooler": false,
+      "radiatorSize": 0,
+      "fanSize": 120,
+      "fanCount": 1,
+      "hasRGB": false,
+      "height": 157,
+      "supportedSockets": [
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066"
+      ],
+      "price": 35.99
+    },
+    {
+      "manufacturer": "Cooler Master",
+      "name": "Hyper 212 Black Edition",
+      "isLiquidCooler": false,
+      "radiatorSize": 0,
+      "fanSize": 120,
+      "fanCount": 1,
+      "hasRGB": false,
+      "height": 159,
+      "supportedSockets": [
+        "AM3+",
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066"
+      ],
+      "price": 39.99
+    },
+    {
+      "manufacturer": "Noctua",
+      "name": "NH-U12S redux",
+      "isLiquidCooler": false,
+      "radiatorSize": 0,
+      "fanSize": 120,
+      "fanCount": 1,
+      "hasRGB": false,
+      "height": 158,
+      "supportedSockets": [
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066"
+      ],
+      "price": 49.95
+    },
+    {
+      "manufacturer": "Noctua",
+      "name": "LH-9a-AM4 chromax.black",
+      "isLiquidCooler": false,
+      "radiatorSize": 0,
+      "fanSize": 92,
+      "fanCount": 1,
+      "hasRGB": false,
+      "height": 37,
+      "supportedSockets": [
+        "AM4"
+      ],
+      "price": 54.95
+    },
+    {
+      "manufacturer": "be quiet!",
+      "name": "Dark Rock Slim",
+      "isLiquidCooler": false,
+      "radiatorSize": 0,
+      "fanSize": 120,
+      "fanCount": 1,
+      "hasRGB": false,
+      "height": 160,
+      "supportedSockets": [
+        "AM3+",
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066"
+      ],
+      "price": 64.98
+    },
+    {
+      "manufacturer": "Noctua",
+      "name": "NH-U12S chromax.black",
+      "isLiquidCooler": false,
+      "radiatorSize": 0,
+      "fanSize": 120,
+      "fanCount": 1,
+      "hasRGB": false,
+      "height": 158,
+      "supportedSockets": [
+        "AM3+",
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066"
+      ],
+      "price": 79.95
+    },
+    {
+      "manufacturer": "be quiet!",
+      "name": "Dark Rock Pro 4",
+      "isLiquidCooler": false,
+      "radiatorSize": 0,
+      "fanSize": 120,
+      "fanCount": 2,
+      "hasRGB": false,
+      "height": 163,
+      "supportedSockets": [
+        "AM3+",
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066"
+      ],
+      "price": 84.90
+    },
+    {
+      "manufacturer": "Arctic",
+      "name": "Liquid Freezer II 240",
+      "isLiquidCooler": true,
+      "radiatorSize": 240,
+      "fanSize": 120,
+      "fanCount": 2,
+      "hasRGB": false,
+      "height": 0,
+      "supportedSockets": [
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066"
+      ],
+      "price": 86.99
+    },
+    {
+      "manufacturer": "be quiet!",
+      "name": "Dark Rock Pro TR4",
+      "isLiquidCooler": false,
+      "radiatorSize": 0,
+      "fanSize": 120,
+      "fanCount": 2,
+      "hasRGB": false,
+      "height": 163,
+      "supportedSockets": [
+        "sTR4",
+        "sTRX4",
+        "sWRX8"
+      ],
+      "price": 89.90
+    },
+    {
+      "manufacturer": "Arctic",
+      "name": "Liquid Freezer II 240 A-RGB",
+      "isLiquidCooler": true,
+      "radiatorSize": 240,
+      "fanSize": 120,
+      "fanCount": 2,
+      "hasRGB": true,
+      "height": 0,
+      "supportedSockets": [
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066"
+      ],
+      "price": 105.66
+    },
+    {
+      "manufacturer": "Arctic",
+      "name": "Liquid Freezer II 280",
+      "isLiquidCooler": true,
+      "radiatorSize": 280,
+      "fanSize": 140,
+      "fanCount": 2,
+      "hasRGB": false,
+      "height": 0,
+      "supportedSockets": [
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066"
+      ],
+      "price": 108.99
+    },
+    {
+      "manufacturer": "be quiet!",
+      "name": "Pure Loop 360",
+      "isLiquidCooler": true,
+      "radiatorSize": 360,
+      "fanSize": 120,
+      "fanCount": 3,
+      "hasRGB": false,
+      "height": 0,
+      "supportedSockets": [
+        "AM3+",
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066"
+      ],
+      "price": 86.99
+    },
+    {
+      "manufacturer": "Arctic",
+      "name": "Liquid Freezer II 360",
+      "isLiquidCooler": true,
+      "radiatorSize": 360,
+      "fanSize": 120,
+      "fanCount": 3,
+      "hasRGB": false,
+      "height": 0,
+      "supportedSockets": [
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066"
+      ],
+      "price": 124.99
+    },
+    {
+      "manufacturer": "Arctic",
+      "name": "Liquid Freezer II 360 RGB",
+      "isLiquidCooler": true,
+      "radiatorSize": 360,
+      "fanSize": 120,
+      "fanCount": 3,
+      "hasRGB": true,
+      "height": 0,
+      "supportedSockets": [
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066"
+      ],
+      "price": 140.21
+    },
+    {
+      "manufacturer": "Fractal Design",
+      "name": "Celsius+ S36 Dynamic X2",
+      "isLiquidCooler": true,
+      "radiatorSize": 360,
+      "fanSize": 120,
+      "fanCount": 3,
+      "hasRGB": true,
+      "height": 0,
+      "supportedSockets": [
+        "AM3+",
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066",
+        "sTR4",
+        "sTRX4",
+        "sWRX8"
+      ],
+      "price": 160.99
+    },
+    {
+      "manufacturer": "Fractal Design",
+      "name": "Celsius+ S36 Prisma ARGB",
+      "isLiquidCooler": true,
+      "radiatorSize": 360,
+      "fanSize": 120,
+      "fanCount": 3,
+      "hasRGB": true,
+      "height": 0,
+      "supportedSockets": [
+        "AM3+",
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066",
+        "sTR4",
+        "sTRX4",
+        "sWRX8"
+      ],
+      "price": 199.99
+    },
+    {
+      "manufacturer": "Corsair",
+      "name": "H170i Elite Capellix",
+      "isLiquidCooler": true,
+      "radiatorSize": 420,
+      "fanSize": 140,
+      "fanCount": 3,
+      "hasRGB": true,
+      "height": 0,
+      "supportedSockets": [
+        "AM3+",
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066",
+        "sTR4",
+        "sTRX4",
+        "sWRX8"
+      ],
+      "price": 229.99
+    }
+  ]
+}
