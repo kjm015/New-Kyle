@@ -19,8 +19,8 @@ class PowerSupplyLoader(private val repository: PowerSupplyRepository) : Applica
     }
 
     private fun retrieveFromFile(): List<PowerSupply> {
-        val file = ResourceUtils.getFile("classpath:computer/psu.json")
-        val list = mapper.readValue(file, PSUList::class.java)
+        val url = ResourceUtils.getURL("classpath:computer/psu.json")
+        val list = mapper.readValue(url, PSUList::class.java)
         return list.powerSupplies
     }
 }

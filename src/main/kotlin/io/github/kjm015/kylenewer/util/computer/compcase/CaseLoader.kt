@@ -20,8 +20,8 @@ class CaseLoader(private val repository: CaseRepository) : ApplicationRunner {
     }
 
     private fun retrieveFromFile(): List<ComputerCase> {
-        val file = ResourceUtils.getFile("classpath:computer/cases.json")
-        val list = mapper.readValue(file, CaseList::class.java)
+        val url = ResourceUtils.getURL("classpath:computer/cases.json")
+        val list = mapper.readValue(url, CaseList::class.java)
         return list.cases
     }
 }

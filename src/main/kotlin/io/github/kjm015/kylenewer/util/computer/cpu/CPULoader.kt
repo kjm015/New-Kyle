@@ -19,8 +19,8 @@ class CPULoader(private val cpuRepository: CPURepository) : ApplicationRunner {
     }
 
     private fun retrieveFromFile(): List<CPU> {
-        val file = ResourceUtils.getFile("classpath:computer/cpu.json")
-        val list = mapper.readValue(file, CPUList::class.java)
+        val url = ResourceUtils.getURL("classpath:computer/cpu.json")
+        val list = mapper.readValue(url, CPUList::class.java)
         return list.processors
     }
 }

@@ -20,8 +20,8 @@ class StorageLoader(private val repository: StorageRepository) : ApplicationRunn
     }
 
     private fun loadFromFile(): List<Storage> {
-        val file = ResourceUtils.getFile("classpath:computer/ssd.json")
-        val list = mapper.readValue(file, StorageList::class.java)
+        val url = ResourceUtils.getURL("classpath:computer/ssd.json")
+        val list = mapper.readValue(url, StorageList::class.java)
         return list.drives
     }
 }
