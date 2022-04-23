@@ -35,38 +35,38 @@ class ComputerService(
 
         var cpu = cpuRepository.findAll().filter {
             it.price <= cpuBudget
-        }.maxBy { it.price } ?: cpuRepository.findAll().minBy { it.price }!!
+        }.maxByOrNull { it.price } ?: cpuRepository.findAll().minByOrNull { it.price }!!
 
         val mob = motherboardRepository.findAll().filter {
             it.socket == cpu.socket && it.price <= mobBudget
-        }.maxBy { it.price } ?: motherboardRepository.findAll().filter {
+        }.maxByOrNull { it.price } ?: motherboardRepository.findAll().filter {
             it.socket == cpu.socket && it.price <= mobBudget
-        }.minBy { it.price }!!
+        }.minByOrNull { it.price }!!
 
         val ram = memoryRepository.findAll().filter {
             it.price <= ramBudget && it.moduleCount * it.moduleCapacityGB < mob.maxMemoryLimitGB && it.speed <= mob.maxMemorySpeed
-        }.maxBy { it.price }!!
+        }.maxByOrNull { it.price }!!
 
         val gpu = gpuRepository.findAll().filter {
             it.price <= gpuBudget
-        }.maxBy { it.price } ?: gpuRepository.findAll().minBy { it.price }!!
+        }.maxByOrNull { it.price } ?: gpuRepository.findAll().minByOrNull { it.price }!!
 
         val case = caseRepository.findAll().filter {
             it.price <= casBudget && it.formFactor == mob.formFactor && it.maxGPULength >= gpu.length
-        }.maxBy { it.price }!!
+        }.maxByOrNull { it.price }!!
 
         val psu = powerSupplyRepository.findAll().filter {
             it.price <= psuBudget && it.formFactor == case.psuFormFactor
-        }.maxBy { it.price }!!
+        }.maxByOrNull { it.price }!!
 
-        val storage = arrayListOf(storageRepository.findAll().filter { it.price <= stoBudget }.maxBy { it.price }!!)
+        val storage = arrayListOf(storageRepository.findAll().filter { it.price <= stoBudget }.maxByOrNull { it.price }!!)
 
         var cost = cpu.price + mob.price + gpu.price + ram.price + case.price + psu.price + storage.first().price
         var remainingBudget = budget - cost
 
         val cooler = coolerRepository.findAll().filter {
             it.price <= remainingBudget / 1.5 && it.supportedSockets.contains(mob.socket) && (it.radiatorSize <= case.maxRadiatorSupport)
-        }.maxBy {
+        }.maxByOrNull {
             it.price
         } ?: if (cpu.includedCoolerName != null)
             coolerRepository.findByName(cpu.includedCoolerName!!)
@@ -89,10 +89,10 @@ class ComputerService(
         cost += cooler.price
 
         cpu = cpuRepository.findAllByPriceLessThan(cpuBudget + remainingBudget).filter { it.socket == mob.socket }
-            .maxBy { it.price }!!
+            .maxByOrNull { it.price }!!
 
-        while (remainingBudget > storageRepository.findAll().minBy { it.price }!!.price && storage.size < 3) {
-            val tempStorage = storageRepository.findAll().filter { it.price <= remainingBudget }.maxBy { it.price }!!
+        while (remainingBudget > storageRepository.findAll().minByOrNull { it.price }!!.price && storage.size < 3) {
+            val tempStorage = storageRepository.findAll().filter { it.price <= remainingBudget }.maxByOrNull { it.price }!!
             storage.add(tempStorage)
             remainingBudget -= tempStorage.price
             cost += tempStorage.price

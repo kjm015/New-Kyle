@@ -1,9 +1,8 @@
 package io.github.kjm015.kylenewer.listeners
 
 import net.dv8tion.jda.api.events.guild.GuildBanEvent
-import net.dv8tion.jda.api.events.guild.member.GuildMemberLeaveEvent
+import net.dv8tion.jda.api.events.guild.member.GuildMemberRemoveEvent
 import net.dv8tion.jda.api.exceptions.InsufficientPermissionException
-import net.dv8tion.jda.api.exceptions.VerificationLevelException
 import net.dv8tion.jda.api.hooks.ListenerAdapter
 import org.slf4j.LoggerFactory
 
@@ -29,21 +28,19 @@ class ExodusListener : ListenerAdapter() {
      *
      * @param event - an event where a guild member leaves the guild
      */
-    override fun onGuildMemberLeave(event: GuildMemberLeaveEvent) {
-        super.onGuildMemberLeave(event)
+    override fun onGuildMemberRemove(event: GuildMemberRemoveEvent) {
+        super.onGuildMemberRemove(event)
 
-        log.info("User ${event.member.effectiveName} has left the guild known as \"${event.guild.name}\".")
+        log.info("User ${event.member!!.effectiveName} has left the guild known as \"${event.guild.name}\".")
 
         try {
             event.guild.getTextChannelById("general")!!
-                    .sendMessage("Bad news, guys. ${event.member.effectiveName}, otherwise known as \"${event.member.nickname}\" has left the server.")
-                    .queue()
+                .sendMessage("Bad news, guys. ${event.member!!.effectiveName}, otherwise known as \"${event.member!!.nickname}\" has left the server.")
+                .queue()
         } catch (e: NullPointerException) {
             log.warn("Could not post messages to general channel in ${event.guild}:\n$e")
         } catch (e: InsufficientPermissionException) {
             log.warn("New Kyle does not have permission to post in general channel in ${event.guild}:\n$e")
-        } catch (e: VerificationLevelException) {
-            log.warn("New Kyle does not meet verification requirements in ${event.guild}:\n$e")
         }
     }
 
@@ -60,14 +57,12 @@ class ExodusListener : ListenerAdapter() {
 
         try {
             event.guild.getTextChannelById("general")!!
-                    .sendMessage("Hey guys, ${event.user.name} just got ban-hammered. Nothing personnel, kid.")
-                    .queue()
+                .sendMessage("Hey guys, ${event.user.name} just got ban-hammered. Nothing personnel, kid.")
+                .queue()
         } catch (e: NullPointerException) {
             log.warn("General channel in ${event.guild} does not exist:\n$e")
         } catch (e: InsufficientPermissionException) {
             log.warn("New Kyle does not have permission to post in general channel in ${event.guild}:\n$e")
-        } catch (e: VerificationLevelException) {
-            log.warn("New Kyle does not meet verification requirements in ${event.guild}:\n$e")
         }
     }
 

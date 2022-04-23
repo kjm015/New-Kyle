@@ -42,8 +42,3 @@ dependencies {
     "testImplementation"("org.springframework.boot:spring-boot-starter-test")
     "annotationProcessor"("org.springframework.boot:spring-boot-configuration-processor")
 }
-
-configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_12
-    targetCompatibility = JavaVersion.VERSION_12
-}
