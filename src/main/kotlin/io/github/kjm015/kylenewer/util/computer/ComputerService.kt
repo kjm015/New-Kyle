@@ -5,13 +5,11 @@ import io.github.kjm015.kylenewer.util.computer.cooler.CPUCooler
 import io.github.kjm015.kylenewer.util.computer.cooler.CoolerRepository
 import io.github.kjm015.kylenewer.util.computer.cpu.CPURepository
 import io.github.kjm015.kylenewer.util.computer.gpu.GPURepository
-import io.github.kjm015.kylenewer.util.computer.gpu.GraphicsCard
 import io.github.kjm015.kylenewer.util.computer.memory.MemoryRepository
 import io.github.kjm015.kylenewer.util.computer.motherboard.MotherboardRepository
 import io.github.kjm015.kylenewer.util.computer.psu.PowerSupplyRepository
 import io.github.kjm015.kylenewer.util.computer.storage.StorageRepository
 import org.springframework.stereotype.Service
-import javax.validation.constraints.Min
 
 @Service
 class ComputerService(

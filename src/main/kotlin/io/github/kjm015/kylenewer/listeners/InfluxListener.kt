@@ -3,7 +3,6 @@ package io.github.kjm015.kylenewer.listeners
 import net.dv8tion.jda.api.events.guild.GuildUnbanEvent
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent
 import net.dv8tion.jda.api.exceptions.InsufficientPermissionException
-import net.dv8tion.jda.api.exceptions.VerificationLevelException
 import net.dv8tion.jda.api.hooks.ListenerAdapter
 import org.slf4j.LoggerFactory
 
@@ -34,14 +33,12 @@ class InfluxListener : ListenerAdapter() {
 
         try {
             event.guild.getTextChannelById("general")!!
-                    .sendMessage("Hey guys, someone named \"${event.member.effectiveName}\" just joined the server.")
-                    .queue()
+                .sendMessage("Hey guys, someone named \"${event.member.effectiveName}\" just joined the server.")
+                .queue()
         } catch (e: NullPointerException) {
             log.warn("General channel in ${event.guild} not found:\n$e")
         } catch (e: InsufficientPermissionException) {
             log.warn("New Kyle does not have permission to post in general channel in ${event.guild}:\n$e")
-        } catch (e: VerificationLevelException) {
-            log.warn("New Kyle does not meet verification requirements in ${event.guild}:\n$e")
         }
     }
 
@@ -58,14 +55,12 @@ class InfluxListener : ListenerAdapter() {
 
         try {
             event.guild.getTextChannelById("general")!!
-                    .sendMessage("Good news, people. That dude named ${event.user.name} just got unbanned from the server.")
-                    .queue()
+                .sendMessage("Good news, people. That dude named ${event.user.name} just got unbanned from the server.")
+                .queue()
         } catch (e: NullPointerException) {
             log.warn("General channel in ${event.guild} not found:\n$e")
         } catch (e: InsufficientPermissionException) {
             log.warn("New Kyle does not have permission to post in general channel in ${event.guild}:\n$e")
-        } catch (e: VerificationLevelException) {
-            log.warn("New Kyle does not meet verification requirements in ${event.guild}:\n$e")
         }
     }
 

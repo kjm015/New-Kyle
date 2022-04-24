@@ -94,7 +94,7 @@ class StoryCommand(private val generator: StoryService) : Command() {
             generator.getAllStoryComponents().sortedBy {
                 it.category
             }.forEachIndexed { i: Int, storyEntry: StoryEntry ->
-                event.reply("${i + 1}. ${storyEntry.category.capitalize()} by ${storyEntry.author}: \"${storyEntry.text}\"")
+                event.reply("${i + 1}. ${storyEntry.category.replaceFirstChar { it.uppercase() }} by ${storyEntry.author}: \"${storyEntry.text}\"")
             }
 
             event.replySuccess("\nThat's all I've got.")
