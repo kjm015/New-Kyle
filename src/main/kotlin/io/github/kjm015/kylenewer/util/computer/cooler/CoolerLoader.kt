@@ -20,8 +20,8 @@ class CoolerLoader(private val repository: CoolerRepository) : ApplicationRunner
     }
 
     private fun retrieveFromFile(): List<CPUCooler> {
-        val file = ResourceUtils.getFile("classpath:computer/coolers.json")
-        val list = mapper.readValue(file, CoolerList::class.java)
+        val url = ResourceUtils.getURL("classpath:computer/coolers.json")
+        val list = mapper.readValue(url, CoolerList::class.java)
         return list.coolers
     }
 }

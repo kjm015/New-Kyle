@@ -20,8 +20,8 @@ class GPULoader(private val gpuRepository: GPURepository) : ApplicationRunner {
     }
 
     private fun retrieveCardsFromFile(): List<GraphicsCard> {
-        val file = ResourceUtils.getFile("classpath:computer/gpu.json")
-        val list = mapper.readValue(file, CardList::class.java)
+        val url = ResourceUtils.getURL("classpath:computer/gpu.json")
+        val list = mapper.readValue(url, CardList::class.java)
         return list.cards
     }
 }

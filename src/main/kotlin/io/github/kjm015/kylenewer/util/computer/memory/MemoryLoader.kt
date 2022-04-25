@@ -20,8 +20,8 @@ class MemoryLoader(private val repository: MemoryRepository) : ApplicationRunner
     }
 
     private fun retrieveFromFile(): List<MemoryKit> {
-        val file = ResourceUtils.getFile("classpath:computer/ram.json")
-        val list = mapper.readValue(file, MemoryList::class.java)
+        val url = ResourceUtils.getURL("classpath:computer/ram.json")
+        val list = mapper.readValue(url, MemoryList::class.java)
         return list.ram
     }
 }

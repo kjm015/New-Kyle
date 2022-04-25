@@ -20,8 +20,8 @@ class MotherboardLoader(private val repository: MotherboardRepository) : Applica
     }
 
     private fun retrieveFromFile(): List<Motherboard> {
-        val file = ResourceUtils.getFile("classpath:computer/motherboards.json")
-        val list = mapper.readValue(file, MotherboardList::class.java)
+        val url = ResourceUtils.getURL("classpath:computer/motherboards.json")
+        val list = mapper.readValue(url, MotherboardList::class.java)
         return list.motherboards
     }
 
