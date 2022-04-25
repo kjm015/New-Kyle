@@ -1,81 +1,15 @@
 {
   "ram": [
     {
-      "manufacturer": "Patriot",
-      "name": "Viper",
-      "memoryGeneration": "DDR4",
-      "speed": 3000,
-      "casLatency": 16,
-      "hasRGB": false,
-      "moduleCount": 2,
-      "moduleCapacityGB": 4,
-      "price": 39.99
-    },
-    {
-      "manufacturer": "ADATA",
-      "name": "XPG Z1",
+      "manufacturer": "Silicon Power",
+      "name": "Value Gaming",
       "memoryGeneration": "DDR4",
       "speed": 3000,
       "casLatency": 16,
       "hasRGB": false,
       "moduleCount": 2,
       "moduleCapacityGB": 8,
-      "price": 58.99
-    },
-    {
-      "manufacturer": "Team",
-      "name": "T-FORCE DARK Z",
-      "memoryGeneration": "DDR4",
-      "speed": 3200,
-      "casLatency": 16,
-      "hasRGB": false,
-      "moduleCount": 2,
-      "moduleCapacityGB": 8,
-      "price": 59.99
-    },
-    {
-      "manufacturer": "Patriot",
-      "name": "Viper 4 Blackout",
-      "memoryGeneration": "DDR4",
-      "speed": 3200,
-      "casLatency": 16,
-      "hasRGB": false,
-      "moduleCount": 2,
-      "moduleCapacityGB": 8,
-      "price": 67.98
-    },
-    {
-      "manufacturer": "G.Skill",
-      "name": "Ripjaws V",
-      "memoryGeneration": "DDR4",
-      "speed": 3200,
-      "casLatency": 18,
-      "hasRGB": false,
-      "moduleCount": 2,
-      "moduleCapacityGB": 8,
-      "price": 69.98
-    },
-    {
-      "manufacturer": "Crucial",
-      "name": "Ballistix",
-      "memoryGeneration": "DDR4",
-      "speed": 3600,
-      "casLatency": 16,
-      "hasRGB": false,
-      "moduleCount": 2,
-      "moduleCapacityGB": 8,
-      "price": 84.99
-    },
-    {
-      "manufacturer": "Crucial",
-      "name": "Ballistix RGB",
-      "memoryGeneration": "DDR4",
-      "speed": 3600,
-      "casLatency": 16,
-      "hasRGB": true,
-      "moduleCount": 2,
-      "moduleCapacityGB": 8,
-      "price": 97.73
+      "price": 53.97
     },
     {
       "manufacturer": "Team",
@@ -85,8 +19,52 @@
       "casLatency": 16,
       "hasRGB": false,
       "moduleCount": 2,
-      "moduleCapacityGB": 16,
-      "price": 120.99
+      "moduleCapacityGB": 8,
+      "price": 59.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Ripjaws V",
+      "memoryGeneration": "DDR4",
+      "speed": 3200,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 8,
+      "price": 64.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Ripjaws V",
+      "memoryGeneration": "DDR4",
+      "speed": 3600,
+      "casLatency": 18,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 8,
+      "price": 64.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Ripjaws V",
+      "memoryGeneration": "DDR4",
+      "speed": 3600,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 8,
+      "price": 82.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Trident Z RGB",
+      "memoryGeneration": "DDR4",
+      "speed": 3600,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 8,
+      "price": 109.99
     },
     {
       "manufacturer": "G.Skill",
@@ -97,7 +75,7 @@
       "hasRGB": false,
       "moduleCount": 2,
       "moduleCapacityGB": 16,
-      "price": 127.99
+      "price": 118.99
     },
     {
       "manufacturer": "G.Skill",
@@ -108,18 +86,18 @@
       "hasRGB": true,
       "moduleCount": 2,
       "moduleCapacityGB": 16,
-      "price": 149.99
+      "price": 139.99
     },
     {
-      "manufacturer": "Crucial",
-      "name": "Ballistix",
+      "manufacturer": "Corsair",
+      "name": "Vengeance LPX",
       "memoryGeneration": "DDR4",
       "speed": 3600,
       "casLatency": 16,
       "hasRGB": false,
       "moduleCount": 2,
       "moduleCapacityGB": 16,
-      "price": 154.99
+      "price": 155.99
     },
     {
       "manufacturer": "G.Skill",
@@ -130,7 +108,7 @@
       "hasRGB": false,
       "moduleCount": 2,
       "moduleCapacityGB": 16,
-      "price": 169.99
+      "price": 159.99
     },
     {
       "manufacturer": "G.Skill",
@@ -141,7 +119,7 @@
       "hasRGB": true,
       "moduleCount": 2,
       "moduleCapacityGB": 16,
-      "price": 189.99
+      "price": 184.99
     },
     {
       "manufacturer": "G.Skill",
@@ -152,7 +130,7 @@
       "hasRGB": true,
       "moduleCount": 4,
       "moduleCapacityGB": 8,
-      "price": 239.99
+      "price": 194.99
     },
     {
       "manufacturer": "G.Skill",
@@ -163,7 +141,7 @@
       "hasRGB": false,
       "moduleCount": 2,
       "moduleCapacityGB": 16,
-      "price": 249.99
+      "price": 264.99
     },
     {
       "manufacturer": "G.Skill",
@@ -174,7 +152,7 @@
       "hasRGB": false,
       "moduleCount": 4,
       "moduleCapacityGB": 16,
-      "price": 259.99
+      "price": 234.99
     },
     {
       "manufacturer": "G.Skill",
@@ -185,7 +163,7 @@
       "hasRGB": false,
       "moduleCount": 2,
       "moduleCapacityGB": 32,
-      "price": 309.99
+      "price": 299.99
     },
     {
       "manufacturer": "G.Skill",
@@ -196,7 +174,7 @@
       "hasRGB": true,
       "moduleCount": 4,
       "moduleCapacityGB": 16,
-      "price": 409.99
+      "price": 389.99
     },
     {
       "manufacturer": "G.Skill",
@@ -207,7 +185,7 @@
       "hasRGB": false,
       "moduleCount": 4,
       "moduleCapacityGB": 32,
-      "price": 569.99
+      "price": 539.99
     },
     {
       "manufacturer": "G.Skill",
@@ -218,7 +196,7 @@
       "hasRGB": true,
       "moduleCount": 4,
       "moduleCapacityGB": 32,
-      "price": 619.99
+      "price": 549.99
     },
     {
       "manufacturer": "G.Skill",
@@ -229,29 +207,84 @@
       "hasRGB": true,
       "moduleCount": 4,
       "moduleCapacityGB": 32,
-      "price": 998.00
+      "price": 684.99
     },
     {
       "manufacturer": "G.Skill",
-      "name": "Trident Z RGB",
+      "name": "Trident Z Neo",
       "memoryGeneration": "DDR4",
       "speed": 3200,
       "casLatency": 16,
       "hasRGB": true,
       "moduleCount": 8,
       "moduleCapacityGB": 32,
-      "price": 1189.99
+      "price": 1169.99
     },
     {
       "manufacturer": "G.Skill",
-      "name": "Ripjaws V",
+      "name": "Trident Z Royal",
       "memoryGeneration": "DDR4",
       "speed": 3600,
       "casLatency": 16,
       "hasRGB": false,
       "moduleCount": 8,
       "moduleCapacityGB": 32,
-      "price": 1399.99
+      "price": 1539.99
+    },
+    {
+      "manufacturer": "Corsair",
+      "name": "Vengeance",
+      "memoryGeneration": "DDR5",
+      "speed": 5200,
+      "casLatency": 40,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 16,
+      "price": 259.99
+    },
+    {
+      "manufacturer": "Corsair",
+      "name": "Vengeance",
+      "memoryGeneration": "DDR5",
+      "speed": 5200,
+      "casLatency": 40,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 16,
+      "price": 259.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Trident Z5",
+      "memoryGeneration": "DDR5",
+      "speed": 6000,
+      "casLatency": 40,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 16,
+      "price": 329.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Trident Z5",
+      "memoryGeneration": "DDR5",
+      "speed": 6000,
+      "casLatency": 36,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 16,
+      "price": 339.99
+    },
+    {
+      "manufacturer": "Corsair",
+      "name": "Dominator Platinum",
+      "memoryGeneration": "DDR5",
+      "speed": 6200,
+      "casLatency": 36,
+      "hasRGB": true,
+      "moduleCount": 2,
+      "moduleCapacityGB": 16,
+      "price": 404.99
     }
   ]
 }

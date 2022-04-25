@@ -1,22 +1,22 @@
 {
   "cases": [
     {
-      "name": "MATREXX 30",
+      "name": "MATREXX 40",
       "manufacturer": "Deepcool",
       "formFactor": "MATX",
       "psuFormFactor": "ATX",
-      "maxRadiatorSupport": 120,
-      "maxGPULength": 250,
-      "price": 39.99
+      "maxRadiatorSupport": 280,
+      "maxGPULength": 320,
+      "price": 50.99
     },
     {
-      "name": "MasterBox Q300L",
+      "name": "MasterBox NR400",
       "manufacturer": "Cooler Master",
       "formFactor": "MATX",
       "psuFormFactor": "ATX",
       "maxRadiatorSupport": 240,
-      "maxGPULength": 360,
-      "price": 49.99
+      "maxGPULength": 346,
+      "price": 64.99
     },
     {
       "name": "Eclipse P200A Performance",
@@ -25,7 +25,7 @@
       "psuFormFactor": "ATX",
       "maxRadiatorSupport": 280,
       "maxGPULength": 335,
-      "price": 54.99
+      "price": 79.99
     },
     {
       "name": "Eclipse P300A",
@@ -34,7 +34,7 @@
       "psuFormFactor": "ATX",
       "maxRadiatorSupport": 240,
       "maxGPULength": 335,
-      "price": 59.99
+      "price": 79.99
     },
     {
       "name": "Eclipse P200A DRGB",
@@ -61,7 +61,7 @@
       "psuFormFactor": "ATX",
       "maxRadiatorSupport": 280,
       "maxGPULength": 400,
-      "price": 79.98
+      "price": 89.99
     },
     {
       "name": "Eclipse P400A Digital",

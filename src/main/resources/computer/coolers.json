@@ -1,6 +1,20 @@
 {
   "coolers": [
     {
+      "manufacturer": "Intel",
+      "name": "Stock Cooler",
+      "isLiquidCooler": false,
+      "radiatorSize": 0,
+      "fanSize": 80,
+      "fanCount": 1,
+      "hasRGB": false,
+      "height": 40,
+      "supportedSockets": [
+        "LGA-1700"
+      ],
+      "price": 0.00
+    },
+    {
       "manufacturer": "Cooler Master",
       "name": "Wraith Stealth",
       "isLiquidCooler": false,
@@ -75,7 +89,8 @@
         "LGA-1151",
         "LGA-1200",
         "LGA-2011",
-        "LGA-2066"
+        "LGA-2066",
+        "LGA-1700"
       ],
       "price": 25.99
     },
@@ -112,7 +127,8 @@
         "LGA-1151",
         "LGA-1200",
         "LGA-2011",
-        "LGA-2066"
+        "LGA-2066",
+        "LGA-1700"
       ],
       "price": 35.99
     },
@@ -132,7 +148,8 @@
         "LGA-1151",
         "LGA-1200",
         "LGA-2011",
-        "LGA-2066"
+        "LGA-2066",
+        "LGA-1700"
       ],
       "price": 39.99
     },
@@ -151,7 +168,8 @@
         "LGA-1151",
         "LGA-1200",
         "LGA-2011",
-        "LGA-2066"
+        "LGA-2066",
+        "LGA-1700"
       ],
       "price": 49.95
     },
@@ -225,7 +243,8 @@
         "LGA-1151",
         "LGA-1200",
         "LGA-2011",
-        "LGA-2066"
+        "LGA-2066",
+        "LGA-1700"
       ],
       "price": 84.90
     },
@@ -337,7 +356,8 @@
         "LGA-1151",
         "LGA-1200",
         "LGA-2011",
-        "LGA-2066"
+        "LGA-2066",
+        "LGA-1700"
       ],
       "price": 124.99
     },
@@ -428,6 +448,30 @@
         "sWRX8"
       ],
       "price": 229.99
+    },
+    {
+      "manufacturer": "Corsair",
+      "name": "H150i Elite LCD",
+      "isLiquidCooler": true,
+      "radiatorSize": 360,
+      "fanSize": 120,
+      "fanCount": 3,
+      "hasRGB": true,
+      "height": 0,
+      "supportedSockets": [
+        "AM3+",
+        "AM4",
+        "LGA-1150",
+        "LGA-1151",
+        "LGA-1200",
+        "LGA-2011",
+        "LGA-2066",
+        "LGA-1700",
+        "sTR4",
+        "sTRX4",
+        "sWRX8"
+      ],
+      "price": 289.99
     }
   ]
 }

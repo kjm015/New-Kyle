@@ -1,6 +1,136 @@
 {
   "motherboards": [
     {
+      "manufacturer": "Asus",
+      "chipSet": "H610",
+      "modelName": "Prime H610M-E DDR4",
+      "socket": "LGA-1700",
+      "formFactor": "MATX",
+      "memorySlots": 2,
+      "maxMemoryLimitGB": 64,
+      "maxMemorySpeed": 3200,
+      "memoryType": "DDR4",
+      "wifiType": 0,
+      "price": 99.99
+    },
+    {
+      "manufacturer": "Gigabyte",
+      "chipSet": "B660",
+      "modelName": "B660M DS3H DDR4",
+      "socket": "LGA-1700",
+      "formFactor": "MATX",
+      "memorySlots": 4,
+      "maxMemoryLimitGB": 128,
+      "maxMemorySpeed": 5333,
+      "memoryType": "DDR4",
+      "wifiType": 0,
+      "price": 119.99
+    },
+    {
+      "manufacturer": "Asus",
+      "chipSet": "B660",
+      "modelName": "Prime B660-Plus DDR4",
+      "socket": "LGA-1700",
+      "formFactor": "ATX",
+      "memorySlots": 4,
+      "maxMemoryLimitGB": 128,
+      "maxMemorySpeed": 5066,
+      "memoryType": "DDR4",
+      "wifiType": 0,
+      "price": 139.99
+    },
+    {
+      "manufacturer": "MSI",
+      "chipSet": "Z690",
+      "modelName": "Pro Z690-A DDR4",
+      "socket": "LGA-1700",
+      "formFactor": "ATX",
+      "memorySlots": 4,
+      "maxMemoryLimitGB": 128,
+      "maxMemorySpeed": 5200,
+      "memoryType": "DDR4",
+      "wifiType": 0,
+      "price": 199.99
+    },
+    {
+      "manufacturer": "Gigabyte",
+      "chipSet": "Z690",
+      "modelName": "Z690 Aorus Elite AX DDR4",
+      "socket": "LGA-1700",
+      "formFactor": "ATX",
+      "memorySlots": 4,
+      "maxMemoryLimitGB": 128,
+      "maxMemorySpeed": 5333,
+      "memoryType": "DDR4",
+      "wifiType": 6,
+      "price": 239.24
+    },
+    {
+      "manufacturer": "MSI",
+      "chipSet": "Z690",
+      "modelName": "Pro Z690-A WiFi",
+      "socket": "LGA-1700",
+      "formFactor": "ATX",
+      "memorySlots": 4,
+      "maxMemoryLimitGB": 128,
+      "maxMemorySpeed": 6400,
+      "memoryType": "DDR5",
+      "wifiType": 6,
+      "price": 249.99
+    },
+    {
+      "manufacturer": "Gigabyte",
+      "chipSet": "Z690",
+      "modelName": "Z690 Aorus Ultra",
+      "socket": "LGA-1700",
+      "formFactor": "ATX",
+      "memorySlots": 4,
+      "maxMemoryLimitGB": 128,
+      "maxMemorySpeed": 6200,
+      "memoryType": "DDR5",
+      "wifiType": 6,
+      "price": 349.99
+    },
+    {
+      "manufacturer": "Gigabyte",
+      "chipSet": "Z690",
+      "modelName": "Z690 Aorus Master",
+      "socket": "LGA-1700",
+      "formFactor": "ATX",
+      "memorySlots": 4,
+      "maxMemoryLimitGB": 128,
+      "maxMemorySpeed": 6200,
+      "memoryType": "DDR5",
+      "wifiType": 6,
+      "price": 449.99
+    },
+    {
+      "manufacturer": "Gigabyte",
+      "chipSet": "Z690",
+      "modelName": "Z690 Aorus Tachyon",
+      "socket": "LGA-1700",
+      "formFactor": "EATX",
+      "memorySlots": 2,
+      "maxMemoryLimitGB": 64,
+      "maxMemorySpeed": 6600,
+      "memoryType": "DDR5",
+      "wifiType": 6,
+      "price": 537.99
+    },
+    {
+      "manufacturer": "Asus",
+      "chipSet": "Z690",
+      "modelName": "ROG Maximus Z690 Apex",
+      "socket": "LGA-1700",
+      "formFactor": "ATX",
+      "memorySlots": 2,
+      "maxMemoryLimitGB": 64,
+      "maxMemorySpeed": 6600,
+      "memoryType": "DDR5",
+      "wifiType": 6,
+      "price": 867.99
+    },
+    {
       "manufacturer": "Gigabyte",
       "chipSet": "A520",
       "modelName": "A520M S2H",
@@ -40,9 +170,22 @@
       "price": 81.99
     },
     {
+      "manufacturer": "ASRock",
+      "chipSet": "B550",
+      "modelName": "B550 Pro4",
+      "socket": "AM4",
+      "formFactor": "ATX",
+      "memorySlots": 4,
+      "maxMemoryLimitGB": 128,
+      "maxMemorySpeed": 4533,
+      "memoryType": "DDR4",
+      "wifiType": 0,
+      "price": 104.99
+    },
+    {
       "manufacturer": "Gigabyte",
       "chipSet": "B550",
-      "modelName": "B550M DS3H",
+      "modelName": "B550M Aorus Elite",
       "socket": "AM4",
       "formFactor": "MATX",
       "memorySlots": 4,
@@ -50,33 +193,20 @@
       "maxMemorySpeed": 4600,
       "memoryType": "DDR4",
       "wifiType": 0,
-      "price": 99.99
+      "price": 129.83
     },
     {
-      "manufacturer": "MSI",
+      "manufacturer": "Gigabyte",
       "chipSet": "B550",
-      "modelName": "MAG B550M Bazooka",
+      "modelName": "B550 Gaming X V2",
       "socket": "AM4",
-      "formFactor": "MATX",
+      "formFactor": "ATX",
       "memorySlots": 4,
       "maxMemoryLimitGB": 128,
-      "maxMemorySpeed": 4400,
+      "maxMemorySpeed": 4733,
       "memoryType": "DDR4",
       "wifiType": 0,
-      "price": 109.99
-    },
-    {
-      "manufacturer": "MSI",
-      "chipSet": "B550",
-      "modelName": "MAG B550M Bazooka",
-      "socket": "AM4",
-      "formFactor": "MATX",
-      "memorySlots": 4,
-      "maxMemoryLimitGB": 128,
-      "maxMemorySpeed": 4400,
-      "memoryType": "DDR4",
-      "wifiType": 0,
-      "price": 109.99
+      "price": 129.99
     },
     {
       "manufacturer": "MSI",
@@ -89,7 +219,7 @@
       "maxMemorySpeed": 4400,
       "memoryType": "DDR4",
       "wifiType": 0,
-      "price": 119.99
+      "price": 133.99
     },
     {
       "manufacturer": "MSI",
@@ -105,9 +235,22 @@
       "price": 139.99
     },
     {
+      "manufacturer": "Asus",
+      "chipSet": "X570",
+      "modelName": "Prime X570-P",
+      "socket": "AM4",
+      "formFactor": "ATX",
+      "memorySlots": 4,
+      "maxMemoryLimitGB": 128,
+      "maxMemorySpeed": 4400,
+      "memoryType": "DDR4",
+      "wifiType": 0,
+      "price": 150.85
+    },
+    {
       "manufacturer": "Gigabyte",
       "chipSet": "B550",
-      "modelName": "B550 Gaming X V2",
+      "modelName": "B550 Aorus Elite V2",
       "socket": "AM4",
       "formFactor": "ATX",
       "memorySlots": 4,
@@ -115,25 +258,12 @@
       "maxMemorySpeed": 4733,
       "memoryType": "DDR4",
       "wifiType": 0,
-      "price": 149.99
+      "price": 162.99
     },
     {
       "manufacturer": "MSI",
       "chipSet": "B550",
-      "modelName": "MAG B550 Tomahawk",
-      "socket": "AM4",
-      "formFactor": "ATX",
-      "memorySlots": 4,
-      "maxMemoryLimitGB": 128,
-      "maxMemorySpeed": 4866,
-      "memoryType": "DDR4",
-      "wifiType": 0,
-      "price": 159.99
-    },
-    {
-      "manufacturer": "MSI",
-      "chipSet": "B550",
-      "modelName": "MPG B550I Gaming Edge WiFi Mini",
+      "modelName": "MPG B550I Gaming Edge MAX WiFi",
       "socket": "AM4",
       "formFactor": "ITX",
       "memorySlots": 2,
@@ -141,7 +271,7 @@
       "maxMemorySpeed": 4600,
       "memoryType": "DDR4",
       "wifiType": 0,
-      "price": 179.99
+      "price": 199.99
     },
     {
       "manufacturer": "Gigabyte",
@@ -154,20 +284,20 @@
       "maxMemorySpeed": 4733,
       "memoryType": "DDR4",
       "wifiType": 6,
-      "price": 189.99
+      "price": 179.50
     },
     {
-      "manufacturer": "Asus",
+      "manufacturer": "Gigabyte",
       "chipSet": "X570",
-      "modelName": "TUF X570-Plus WiFi",
+      "modelName": "X570 Aorus Elite WiFi",
       "socket": "AM4",
       "formFactor": "ATX",
       "memorySlots": 4,
       "maxMemoryLimitGB": 128,
-      "maxMemorySpeed": 4400,
+      "maxMemorySpeed": 4000,
       "memoryType": "DDR4",
       "wifiType": 5,
-      "price": 195.99
+      "price": 189.99
     },
     {
       "manufacturer": "Gigabyte",
@@ -180,7 +310,7 @@
       "maxMemorySpeed": 4000,
       "memoryType": "DDR4",
       "wifiType": 0,
-      "price": 199.99
+      "price": 179.95
     },
     {
       "manufacturer": "Gigabyte",
@@ -193,20 +323,46 @@
       "maxMemorySpeed": 4400,
       "memoryType": "DDR4",
       "wifiType": 6,
-      "price": 218.80
+      "price": 229.99
     },
     {
-      "manufacturer": "Gigabyte",
+      "manufacturer": "MSI",
       "chipSet": "X570",
-      "modelName": "X570 Aorus Pro WiFi",
+      "modelName": "MAG X570S Tomahawk MAX WiFi",
       "socket": "AM4",
       "formFactor": "ATX",
       "memorySlots": 4,
       "maxMemoryLimitGB": 128,
-      "maxMemorySpeed": 4400,
+      "maxMemorySpeed": 5100,
       "memoryType": "DDR4",
       "wifiType": 6,
-      "price": 244.99
+      "price": 239.99
+    },
+    {
+      "manufacturer": "Gigabyte",
+      "chipSet": "X570",
+      "modelName": "X570SI Aorus Pro AX",
+      "socket": "AM4",
+      "formFactor": "ITX",
+      "memorySlots": 2,
+      "maxMemoryLimitGB": 64,
+      "maxMemorySpeed": 5200,
+      "memoryType": "DDR4",
+      "wifiType": 6,
+      "price": 239.99
+    },
+    {
+      "manufacturer": "Gigabyte",
+      "chipSet": "X570",
+      "modelName": "X570S Aorus Elite AX",
+      "socket": "AM4",
+      "formFactor": "ATX",
+      "memorySlots": 4,
+      "maxMemoryLimitGB": 128,
+      "maxMemorySpeed": 5400,
+      "memoryType": "DDR4",
+      "wifiType": 6,
+      "price": 249.99
     },
     {
       "manufacturer": "Gigabyte",
@@ -224,19 +380,6 @@
     {
       "manufacturer": "Gigabyte",
       "chipSet": "X570",
-      "modelName": "X570 Aorus Master",
-      "socket": "AM4",
-      "formFactor": "ATX",
-      "memorySlots": 4,
-      "maxMemoryLimitGB": 128,
-      "maxMemorySpeed": 4400,
-      "memoryType": "DDR4",
-      "wifiType": 6,
-      "price": 359.99
-    },
-    {
-      "manufacturer": "Gigabyte",
-      "chipSet": "X570",
       "modelName": "X570S Aorus Master",
       "socket": "AM4",
       "formFactor": "ATX",
@@ -245,7 +388,33 @@
       "maxMemorySpeed": 5200,
       "memoryType": "DDR4",
       "wifiType": 6,
-      "price": 389.99
+      "price": 344.99
+    },
+    {
+      "manufacturer": "MSI",
+      "chipSet": "X570",
+      "modelName": "MEG X570S ACE MAX",
+      "socket": "AM4",
+      "formFactor": "ATX",
+      "memorySlots": 4,
+      "maxMemoryLimitGB": 128,
+      "maxMemorySpeed": 5100,
+      "memoryType": "DDR4",
+      "wifiType": 6,
+      "price": 449.99
+    },
+    {
+      "manufacturer": "EVGA",
+      "chipSet": "X570",
+      "modelName": "X570 DARK",
+      "socket": "AM4",
+      "formFactor": "EATX",
+      "memorySlots": 4,
+      "maxMemoryLimitGB": 128,
+      "maxMemorySpeed": 4800,
+      "memoryType": "DDR4",
+      "wifiType": 6,
+      "price": 599.99
     },
     {
       "manufacturer": "Gigabyte",

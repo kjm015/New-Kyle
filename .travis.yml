@@ -1,1 +1,7 @@
+os: linux            # optional, this is default
+dist: focal          # or bionic | xenial | trusty | precise with xenial as default
 language: java
+jdk: openjdk17       # Java compatability is set to 12, so use openjdk13 or openjdk17
+cache:
+  directories:
+  - $HOME/.gradle    # Speed up gradle builds
