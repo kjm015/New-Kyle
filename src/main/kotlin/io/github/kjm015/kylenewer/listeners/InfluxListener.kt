@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory
  * Eventually, this class should implement a message template service for its
  * messages, as this allows for a greater variety of messages.
  *
- * TODO: Implement templates for outgoing messages
  *
  * @author kjm015
  * @since 01/11/2019

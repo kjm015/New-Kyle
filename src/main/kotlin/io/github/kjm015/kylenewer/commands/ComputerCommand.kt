@@ -23,14 +23,16 @@ class ComputerCommand(private val computerService: ComputerService) : Command() 
     }
 
     override fun execute(event: CommandEvent) {
+        val rando = Random.nextDouble(750.00, 2500.00)
         val budget = if (event.args.isBlank()) {
-            Random.nextDouble(750.00, 2500.00)
+            rando
         } else {
             try {
                 event.args.toDouble()
             } catch (e: Exception) {
                 log.error("User attempted to input invalid budget value -> $e")
-                800.00
+                event.replyError("That's not a valid number! Here's my best guess at your budget...")
+                rando
             }
         }
 

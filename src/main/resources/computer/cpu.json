@@ -1,48 +1,109 @@
 {
   "processors": [
     {
-      "company": "AMD",
-      "name": "Athlon 3000G",
+      "company": "Intel",
+      "name": "Pentium Gold G7400",
       "coreCount": 2,
       "threadCount": 4,
-      "lithography": 14,
-      "socket": "AM4",
+      "lithography": 10,
+      "socket": "LGA-1700",
       "includesCooler": true,
-      "includedCoolerName": "AMD Low-profile cooler",
-      "price": 69.99
+      "includedCoolerName": "Intel Stock Cooler",
+      "price": 74.98
     },
     {
-      "company": "AMD",
-      "name": "Ryzen 3 3300X",
+      "company": "Intel",
+      "name": "Core i3-12100F",
       "coreCount": 4,
       "threadCount": 8,
-      "lithography": 7,
-      "socket": "AM4",
+      "lithography": 10,
+      "socket": "LGA-1700",
       "includesCooler": true,
-      "includedCoolerName": "Wraith Stealth",
-      "price": 119.99
+      "includedCoolerName": "Intel Stock Cooler",
+      "price": 107.99
     },
     {
-      "company": "AMD",
-      "name": "Ryzen 7 3700X",
-      "coreCount": 8,
+      "company": "Intel",
+      "name": "Core i5-12400",
+      "coreCount": 6,
+      "threadCount": 12,
+      "lithography": 10,
+      "socket": "LGA-1700",
+      "includesCooler": true,
+      "includedCoolerName": "Intel Stock Cooler",
+      "price": 159.99
+    },
+    {
+      "company": "Intel",
+      "name": "Core i5-12600K",
+      "coreCount": 10,
       "threadCount": 16,
-      "lithography": 7,
-      "socket": "AM4",
-      "includesCooler": true,
-      "includedCoolerName": "Wraith Prism",
-      "price": 219.99
+      "lithography": 10,
+      "socket": "LGA-1700",
+      "includesCooler": false,
+      "price": 249.99
+    },
+    {
+      "company": "Intel",
+      "name": "Core i5-12700K",
+      "coreCount": 12,
+      "threadCount": 20,
+      "lithography": 10,
+      "socket": "LGA-1700",
+      "includesCooler": false,
+      "price": 349.99
+    },
+    {
+      "company": "Intel",
+      "name": "Core i5-12900K",
+      "coreCount": 16,
+      "threadCount": 24,
+      "lithography": 10,
+      "socket": "LGA-1700",
+      "includesCooler": false,
+      "price": 549.99
+    },
+    {
+      "company": "Intel",
+      "name": "Core i5-12900KS",
+      "coreCount": 16,
+      "threadCount": 24,
+      "lithography": 10,
+      "socket": "LGA-1700",
+      "includesCooler": false,
+      "price": 749.99
     },
     {
       "company": "AMD",
-      "name": "Ryzen 5 5600G",
+      "name": "Ryzen 5 5500",
       "coreCount": 6,
       "threadCount": 12,
       "lithography": 7,
       "socket": "AM4",
       "includesCooler": true,
       "includedCoolerName": "Wraith Stealth",
-      "price": 259.99
+      "price": 149.99
+    },
+    {
+      "company": "AMD",
+      "name": "Ryzen 7 5700X",
+      "coreCount": 8,
+      "threadCount": 16,
+      "lithography": 7,
+      "socket": "AM4",
+      "includesCooler": false,
+      "price": 279.99
+    },
+    {
+      "company": "AMD",
+      "name": "Ryzen 5 5600",
+      "coreCount": 6,
+      "threadCount": 12,
+      "lithography": 7,
+      "socket": "AM4",
+      "includesCooler": true,
+      "includedCoolerName": "Wraith Stealth",
+      "price": 179.99
     },
     {
       "company": "AMD",
@@ -53,7 +114,7 @@
       "socket": "AM4",
       "includesCooler": true,
       "includedCoolerName": "Wraith Stealth",
-      "price": 269.99
+      "price": 209.99
     },
     {
       "company": "AMD",
@@ -64,7 +125,7 @@
       "socket": "AM4",
       "includesCooler": true,
       "includedCoolerName": "Wraith Stealth",
-      "price": 359.99
+      "price": 249.99
     },
     {
       "company": "AMD",
@@ -75,18 +136,7 @@
       "socket": "AM4",
       "includesCooler": false,
       "includedCoolerName": "",
-      "price": 369.99
-    },
-    {
-      "company": "AMD",
-      "name": "Ryzen 9 3900X",
-      "coreCount": 12,
-      "threadCount": 24,
-      "lithography": 7,
-      "socket": "AM4",
-      "includesCooler": true,
-      "includedCoolerName": "Wraith Prism",
-      "price": 379.99
+      "price": 319.99
     },
     {
       "company": "AMD",
@@ -97,7 +147,7 @@
       "socket": "AM4",
       "includesCooler": false,
       "includedCoolerName": "",
-      "price": 499.99
+      "price": 379.99
     },
     {
       "company": "AMD",
@@ -108,7 +158,7 @@
       "socket": "AM4",
       "includesCooler": false,
       "includedCoolerName": "",
-      "price": 749.99
+      "price": 559.99
     },
     {
       "company": "AMD",
