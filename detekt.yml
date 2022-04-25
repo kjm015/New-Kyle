@@ -1,0 +1,137 @@
+# Based on examples from:
+# - https://detekt.dev/docs/introduction/configurations/
+# - https://github.com/codefactor-io/default-configs/blob/master/detekt.yml
+# - https://github.com/detekt/detekt/blob/main/config/detekt/detekt.yml
+
+build:
+  maxIssues: 10 # break the build if more than ten weighted issues are found
+  weights:
+    complexity: 2 # every rule of the complexity rule set should count as if two issues were found...
+    LongParameterList: 1 # ...with the exception of the LongParameterList rule.
+    comments: 0 # comment rules are just a nice to know?!
+
+processors:
+  active: false
+
+console-reports:
+  active: false
+
+comments:
+  active: false
+
+complexity:
+  active: true
+  ComplexMethod:
+    active: true
+    threshold: 0
+
+empty-blocks:
+  active: true
+  EmptyCatchBlock:
+    active: true
+  EmptyClassBlock:
+    active: true
+  EmptyDefaultConstructor:
+    active: false
+  EmptyDoWhileBlock:
+    active: true
+  EmptyElseBlock:
+    active: true
+  EmptyFinallyBlock:
+    active: true
+  EmptyForBlock:
+    active: true
+  EmptyFunctionBlock:
+    active: true
+    ignoreOverridden: true
+  EmptyIfBlock:
+    active: false
+  EmptyInitBlock:
+    active: true
+  EmptyKtFile:
+    active: true
+  EmptySecondaryConstructor:
+    active: true
+  EmptyWhenBlock:
+    active: true
+  EmptyWhileBlock:
+    active: true
+
+exceptions:
+  active: true
+  ReturnFromFinally:
+    active: true
+
+formatting:
+  active: true
+  NoTrailingSpaces:
+    active: true
+    autoCorrect: true
+
+naming:
+  active: false
+
+performance:
+  active: true
+  ArrayPrimitive:
+    active: true
+  ForEachOnRange:
+    active: true
+    excludes: "**/test/**,**/androidTest/**,**/*.Test.kt,**/*.Spec.kt,**/*.Spek.kt"
+  SpreadOperator:
+    active: false
+    excludes: "**/test/**,**/androidTest/**,**/*.Test.kt,**/*.Spec.kt,**/*.Spek.kt"
+  UnnecessaryTemporaryInstantiation:
+    active: true
+
+potential-bugs:
+  active: true
+  DuplicateCaseInWhenExpression:
+    active: true
+  EqualsAlwaysReturnsTrueOrFalse:
+    active: true
+  EqualsWithHashCodeExist:
+    active: true
+  ExplicitGarbageCollectionCall:
+    active: true
+  InvalidRange:
+    active: true
+  IteratorHasNextCallsNextMethod:
+    active: true
+  IteratorNotThrowingNoSuchElementException:
+    active: false
+  UnconditionalJumpStatementInLoop:
+    active: true
+  UnreachableCode:
+    active: true
+  UselessPostfixExpression:
+    active: true
+  WrongEqualsTypeParameter:
+    active: true
+
+style:
+  active: true
+  ForbiddenComment:
+    active: true
+    values:
+      #- 'TODO:'
+      - 'FIXME:'
+      - 'STOPSHIP:'
+      #- '@author'
+      - '@requiresTypeResolution'
+  TrailingWhitespace:
+    active: false
+  UnnecessaryApply:
+    active: false
+  UnnecessaryInheritance:
+    active: true
+  UnnecessaryLet:
+    active: true
+  UnnecessaryParentheses:
+    active: true
+  UnusedPrivateClass:
+    active: true
+
+coroutines:
+  RedundantSuspendModifier:
+    active: true
