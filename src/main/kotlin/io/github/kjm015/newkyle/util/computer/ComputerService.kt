@@ -34,8 +34,8 @@ class ComputerService(
         val mobBudget = budget * 0.13
         val ramBudget = budget * 0.08
         val casBudget = budget * 0.10
-        val psuBudget = budget * 0.08
-        val stoBudget = budget * 0.07
+        val psuBudget = budget * 0.07
+        val stoBudget = budget * 0.08
 
         var cpu = findBestCPU(cpuBudget)
         val mob = findBestMotherboard(cpu, mobBudget)
@@ -49,6 +49,9 @@ class ComputerService(
 
         var cost = cpu.price + mob.price + gpu.price + ram.price + case.price + psu.price + storage.first().price
         var remainingBudget = budget - cost
+
+        if (remainingBudget < 0)
+            remainingBudget = 1.0
 
         val cooler = findBestCooler(mob, case, cpu, remainingBudget)
 
@@ -73,19 +76,19 @@ class ComputerService(
     private fun findBestCPU(budget: Double): CPU {
         return cpuRepository.findAll().filter {
             it.price <= budget
-        }.maxByOrNull { it.price }!!
+        }.maxByOrNull { it.price } ?: findCheapestCPU()
     }
 
     private fun findBestMotherboard(cpu: CPU, budget: Double): Motherboard {
         return motherboardRepository.findAll().filter {
             it.socket == cpu.socket && it.price <= budget
-        }.maxByOrNull { it.price }!!
+        }.maxByOrNull { it.price } ?: findCheapestMotherboardForCPU(cpu)
     }
 
     private fun findBestRAM(motherboard: Motherboard, budget: Double): MemoryKit {
         return memoryRepository.findAll().filter {
             it.price <= budget && it.moduleCount * it.moduleCapacityGB < motherboard.maxMemoryLimitGB && it.speed <= motherboard.maxMemorySpeed
-        }.maxByOrNull { it.price }!!
+        }.maxByOrNull { it.price } ?: findCheapestRAMForBoard(motherboard)
     }
 
     private fun findBestGPU(budget: Double): GraphicsCard {
@@ -127,5 +130,14 @@ class ComputerService(
                 supportedSockets = arrayListOf(),
                 price = 0.00
             )
+    }
+
+    private fun findCheapestCPU(): CPU = cpuRepository.findAll().minByOrNull { it.price }!!
+
+    private fun findCheapestMotherboardForCPU(cpu: CPU): Motherboard =
+        motherboardRepository.findAllBySocket(cpu.socket).minByOrNull { it.price }!!
+
+    private fun findCheapestRAMForBoard(motherboard: Motherboard): MemoryKit {
+        return memoryRepository.findAllByMemoryGeneration(motherboard.memoryType).minByOrNull { it.price }!!
     }
 }
