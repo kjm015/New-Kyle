@@ -1,0 +1,28 @@
+{
+  "BMW": [
+    {
+      "make": "BMW",
+      "model": "m240i",
+      "trim": "xDrive M performance",
+      "price": 57995
+    },
+    {
+      "make": "",
+      "model": "",
+      "trim": "",
+      "price":
+    },
+    {
+      "make": "",
+      "model": "",
+      "trim": "",
+      "price":
+    },
+    {
+      "make": "",
+      "model": "",
+      "trim": "",
+      "price":
+    }
+  ]
+}
