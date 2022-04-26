@@ -33,8 +33,8 @@ class ComputerService(
     fun buildComputer(budget: Double = 900.00, requester: String = "Someone"): Computer {
         val cpuBudget = budget * 0.17
         val gpuBudget = budget * 0.40
-        val mobBudget = budget * 0.13
-        val ramBudget = budget * 0.08
+        val mobBudget = budget * 0.12
+        val ramBudget = budget * 0.09
         val casBudget = budget * 0.10
         val psuBudget = budget * 0.07
         val stoBudget = budget * 0.08
@@ -89,7 +89,7 @@ class ComputerService(
 
     private fun findBestRAM(motherboard: Motherboard, budget: Double): MemoryKit {
         return memoryRepository.findAll().filter {
-            it.price <= budget && it.moduleCount * it.moduleCapacityGB < motherboard.maxMemoryLimitGB && it.speed <= motherboard.maxMemorySpeed
+            it.price <= budget && it.moduleCount * it.moduleCapacityGB < motherboard.maxMemoryLimitGB && it.speed <= motherboard.maxMemorySpeed && it.memoryGeneration == motherboard.memoryType
         }.maxByOrNull { it.price } ?: findCheapestRAMForBoard(motherboard)
     }
 
