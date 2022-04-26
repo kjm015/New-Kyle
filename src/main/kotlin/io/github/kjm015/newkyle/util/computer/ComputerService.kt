@@ -33,7 +33,7 @@ class ComputerService(
         val gpuBudget = budget * 0.37
         val mobBudget = budget * 0.13
         val ramBudget = budget * 0.08
-        val casBudget = budget * 0.07
+        val casBudget = budget * 0.10
         val psuBudget = budget * 0.08
         val stoBudget = budget * 0.07
 
@@ -55,14 +55,6 @@ class ComputerService(
         remainingBudget -= cooler.price
         cost += cooler.price
 
-//        cpu = cpuRepository.findAllByPriceLessThan(cpuBudget + remainingBudget).filter { it.socket == mob.socket }
-//            .maxByOrNull { it.price }!!
-
-        if (remainingBudget > stoBudget) {
-            gpu = gpuRepository.findAllByPriceLessThan(gpuBudget + remainingBudget).maxByOrNull { it.price }!!
-            storage.add(storageRepository.findAll().filter { it.price < remainingBudget }.maxByOrNull { it.price }!!)
-        }
-
         return Computer(
             cpu = cpu,
             gpu = gpu,
@@ -81,15 +73,13 @@ class ComputerService(
     private fun findBestCPU(budget: Double): CPU {
         return cpuRepository.findAll().filter {
             it.price <= budget
-        }.maxByOrNull { it.price } ?: cpuRepository.findAll().minByOrNull { it.price }!!
+        }.maxByOrNull { it.price }!!
     }
 
     private fun findBestMotherboard(cpu: CPU, budget: Double): Motherboard {
         return motherboardRepository.findAll().filter {
             it.socket == cpu.socket && it.price <= budget
-        }.maxByOrNull { it.price } ?: motherboardRepository.findAll().filter {
-            it.socket == cpu.socket && it.price <= budget
-        }.minByOrNull { it.price }!!
+        }.maxByOrNull { it.price }!!
     }
 
     private fun findBestRAM(motherboard: Motherboard, budget: Double): MemoryKit {
@@ -101,7 +91,7 @@ class ComputerService(
     private fun findBestGPU(budget: Double): GraphicsCard {
         return gpuRepository.findAll().filter {
             it.price <= budget
-        }.maxByOrNull { it.price } ?: gpuRepository.findAll().minByOrNull { it.price }!!
+        }.maxByOrNull { it.price }!!
     }
 
     private fun findBestCase(motherboard: Motherboard, gpu: GraphicsCard, budget: Double): ComputerCase {
