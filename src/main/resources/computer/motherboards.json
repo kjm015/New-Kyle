@@ -131,9 +131,22 @@
       "price": 867.99
     },
     {
+      "manufacturer": "MSI",
+      "chipSet": "A520",
+      "modelName": "A520M-A Pro",
+      "socket": "AM4",
+      "formFactor": "MATX",
+      "memorySlots": 2,
+      "maxMemoryLimitGB": 64,
+      "maxMemorySpeed": 4600,
+      "memoryType": "DDR4",
+      "wifiType": 0,
+      "price": 59.99
+    },
+    {
       "manufacturer": "Gigabyte",
       "chipSet": "A520",
-      "modelName": "A520M S2H",
+      "modelName": "A520M DS3H",
       "socket": "AM4",
       "formFactor": "MATX",
       "memorySlots": 2,
@@ -141,7 +154,7 @@
       "maxMemorySpeed": 5000,
       "memoryType": "DDR4",
       "wifiType": 0,
-      "price": 64.54
+      "price": 68.10
     },
     {
       "manufacturer": "Gigabyte",
@@ -157,17 +170,17 @@
       "price": 79.98
     },
     {
-      "manufacturer": "MSI",
+      "manufacturer": "Gigabyte",
       "chipSet": "A520",
-      "modelName": "MAG A520M Vector WiFi",
+      "modelName": "A520M Aorus Elite",
       "socket": "AM4",
       "formFactor": "MATX",
-      "memorySlots": 2,
-      "maxMemoryLimitGB": 64,
-      "maxMemorySpeed": 4600,
+      "memorySlots": 4,
+      "maxMemoryLimitGB": 128,
+      "maxMemorySpeed": 4733,
       "memoryType": "DDR4",
-      "wifiType": 5,
-      "price": 81.99
+      "wifiType": 0,
+      "price": 84.99
     },
     {
       "manufacturer": "ASRock",

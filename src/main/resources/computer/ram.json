@@ -1,6 +1,17 @@
 {
   "ram": [
     {
+      "manufacturer": "Patriot",
+      "name": "Viper Blackout",
+      "memoryGeneration": "DDR4",
+      "speed": 3000,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 4,
+      "price": 39.99
+    },
+    {
       "manufacturer": "Silicon Power",
       "name": "Value Gaming",
       "memoryGeneration": "DDR4",

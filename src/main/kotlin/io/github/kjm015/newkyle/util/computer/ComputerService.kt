@@ -11,8 +11,10 @@ import io.github.kjm015.newkyle.util.computer.gpu.GraphicsCard
 import io.github.kjm015.newkyle.util.computer.memory.MemoryKit
 import io.github.kjm015.newkyle.util.computer.memory.MemoryRepository
 import io.github.kjm015.newkyle.util.computer.motherboard.Motherboard
+import io.github.kjm015.newkyle.util.computer.motherboard.MotherboardFormFactor
 import io.github.kjm015.newkyle.util.computer.motherboard.MotherboardRepository
 import io.github.kjm015.newkyle.util.computer.psu.PowerSupply
+import io.github.kjm015.newkyle.util.computer.psu.PowerSupplyFormFactor
 import io.github.kjm015.newkyle.util.computer.psu.PowerSupplyRepository
 import io.github.kjm015.newkyle.util.computer.storage.StorageRepository
 import org.springframework.stereotype.Service
@@ -29,8 +31,8 @@ class ComputerService(
     private val storageRepository: StorageRepository
 ) {
     fun buildComputer(budget: Double = 900.00, requester: String = "Someone"): Computer {
-        val cpuBudget = budget * 0.20
-        val gpuBudget = budget * 0.37
+        val cpuBudget = budget * 0.17
+        val gpuBudget = budget * 0.40
         val mobBudget = budget * 0.13
         val ramBudget = budget * 0.08
         val casBudget = budget * 0.10
@@ -94,19 +96,19 @@ class ComputerService(
     private fun findBestGPU(budget: Double): GraphicsCard {
         return gpuRepository.findAll().filter {
             it.price <= budget
-        }.maxByOrNull { it.price }!!
+        }.maxByOrNull { it.price } ?: findCheapestGPU()
     }
 
     private fun findBestCase(motherboard: Motherboard, gpu: GraphicsCard, budget: Double): ComputerCase {
         return caseRepository.findAll().filter {
             it.price <= budget && it.formFactor == motherboard.formFactor && it.maxGPULength >= gpu.length
-        }.maxByOrNull { it.price }!!
+        }.maxByOrNull { it.price } ?: findCheapestCaseForFormFactor(motherboard.formFactor)
     }
 
     private fun findBestPSU(case: ComputerCase, budget: Double): PowerSupply {
         return powerSupplyRepository.findAll().filter {
             it.price <= budget && it.formFactor == case.psuFormFactor
-        }.maxByOrNull { it.price }!!
+        }.maxByOrNull { it.price } ?: findCheapestPSUForFormFactor(case.psuFormFactor)
     }
 
     private fun findBestCooler(motherboard: Motherboard, case: ComputerCase, cpu: CPU, budget: Double): CPUCooler {
@@ -139,5 +141,17 @@ class ComputerService(
 
     private fun findCheapestRAMForBoard(motherboard: Motherboard): MemoryKit {
         return memoryRepository.findAllByMemoryGeneration(motherboard.memoryType).minByOrNull { it.price }!!
+    }
+
+    private fun findCheapestCaseForFormFactor(formFactor: MotherboardFormFactor): ComputerCase {
+        return caseRepository.findAllByFormFactor(formFactor).minByOrNull { it.price }!!
+    }
+
+    private fun findCheapestGPU(): GraphicsCard {
+        return gpuRepository.findAll().minByOrNull { it.price }!!
+    }
+
+    private fun findCheapestPSUForFormFactor(formFactor: PowerSupplyFormFactor): PowerSupply {
+        return powerSupplyRepository.findAllByFormFactor(formFactor).minByOrNull { it.price }!!
     }
 }

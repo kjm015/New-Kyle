@@ -1,6 +1,15 @@
 {
   "powerSupplies": [
     {
+      "manufacturer": "Thermaltake",
+      "name": "Smart Series 430W",
+      "wattage": 420,
+      "modularity": "NONE",
+      "efficiency": "WHITE",
+      "formFactor": "ATX",
+      "price": 29.99
+    },
+    {
       "manufacturer": "EVGA",
       "name": "500 BQ",
       "wattage": 500,
