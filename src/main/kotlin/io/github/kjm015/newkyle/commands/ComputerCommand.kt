@@ -40,7 +40,7 @@ class ComputerCommand(private val computerService: ComputerService) : Command() 
             val computer = computerService.buildComputer(budget, event.author.name)
             event.replySuccess(computer.specList())
         } catch (e: Exception) {
-            log.error("Failed to create PC for user \"${event.author.name}\" -> $e")
+            log.error("Failed to create PC for user \"${event.author.name}\" -> ${e.stackTraceToString()}")
             event.replyError("Sorry, it seems you can't afford that right about now!")
         }
     }

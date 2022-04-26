@@ -91,15 +91,6 @@
       "price": 99.90
     },
     {
-      "name": "TU150",
-      "manufacturer": "Lian Li",
-      "formFactor": "ITX",
-      "psuFormFactor": "SFX",
-      "maxRadiatorSupport": 120,
-      "maxGPULength": 320,
-      "price": 99.99
-    },
-    {
       "name": "Meshify 2 Compact TG",
       "manufacturer": "Fractal Design",
       "formFactor": "ATX",
@@ -116,15 +107,6 @@
       "maxRadiatorSupport": 360,
       "maxGPULength": 410,
       "price": 119.00
-    },
-    {
-      "name": "O11 Dynamic Mini",
-      "manufacturer": "Lian Li",
-      "formFactor": "ATX",
-      "psuFormFactor": "SFX",
-      "maxRadiatorSupport": 360,
-      "maxGPULength": 370,
-      "price": 119.99
     },
     {
       "name": "Eclipse P500A",
