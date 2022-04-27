@@ -16,6 +16,7 @@ import io.github.kjm015.newkyle.util.computer.motherboard.MotherboardRepository
 import io.github.kjm015.newkyle.util.computer.psu.PowerSupply
 import io.github.kjm015.newkyle.util.computer.psu.PowerSupplyFormFactor
 import io.github.kjm015.newkyle.util.computer.psu.PowerSupplyRepository
+import io.github.kjm015.newkyle.util.computer.storage.Storage
 import io.github.kjm015.newkyle.util.computer.storage.StorageRepository
 import org.springframework.stereotype.Service
 
@@ -32,8 +33,8 @@ class ComputerService(
 ) {
     fun buildComputer(budget: Double = 900.00, requester: String = "Someone"): Computer {
         val cpuBudget = budget * 0.17
-        val gpuBudget = budget * 0.40
-        val mobBudget = budget * 0.12
+        val gpuBudget = budget * 0.39
+        val mobBudget = budget * 0.13
         val ramBudget = budget * 0.09
         val casBudget = budget * 0.10
         val psuBudget = budget * 0.07
@@ -42,12 +43,12 @@ class ComputerService(
         var cpu = findBestCPU(cpuBudget)
         val mob = findBestMotherboard(cpu, mobBudget)
         val ram = findBestRAM(mob, ramBudget)
-        var gpu = findBestGPU(gpuBudget)
+        var gpu = findBestGPU(gpuBudget, cpu)
         val case = findBestCase(mob, gpu, casBudget)
         val psu = findBestPSU(case, psuBudget)
 
         val storage =
-            arrayListOf(storageRepository.findAll().filter { it.price <= stoBudget }.maxByOrNull { it.price }!!)
+            arrayListOf(storageRepository.findAll().filter { it.price <= stoBudget }.maxByOrNull { it.price } ?: findCheapestStorage())
 
         var cost = cpu.price + mob.price + gpu.price + ram.price + case.price + psu.price + storage.first().price
         var remainingBudget = budget - cost
@@ -59,6 +60,12 @@ class ComputerService(
 
         remainingBudget -= cooler.price
         cost += cooler.price
+
+        if (remainingBudget > 75) {
+            val sto = findBestStorageForBudget(remainingBudget)
+            storage.add(sto)
+            cost += sto.price
+        }
 
         return Computer(
             cpu = cpu,
@@ -93,10 +100,10 @@ class ComputerService(
         }.maxByOrNull { it.price } ?: findCheapestRAMForBoard(motherboard)
     }
 
-    private fun findBestGPU(budget: Double): GraphicsCard {
+    private fun findBestGPU(budget: Double, cpu: CPU): GraphicsCard {
         return gpuRepository.findAll().filter {
             it.price <= budget
-        }.maxByOrNull { it.price } ?: findCheapestGPU()
+        }.maxByOrNull { it.price } ?: findCheapestGPU(cpu)
     }
 
     private fun findBestCase(motherboard: Motherboard, gpu: GraphicsCard, budget: Double): ComputerCase {
@@ -134,6 +141,10 @@ class ComputerService(
             )
     }
 
+    private fun findBestStorageForBudget(budget: Double): Storage {
+        return storageRepository.findAll().filter { it.price <= budget }.maxByOrNull { it.price } ?: findCheapestStorage()
+    }
+
     private fun findCheapestCPU(): CPU = cpuRepository.findAll().minByOrNull { it.price }!!
 
     private fun findCheapestMotherboardForCPU(cpu: CPU): Motherboard =
@@ -147,11 +158,18 @@ class ComputerService(
         return caseRepository.findAllByFormFactor(formFactor).minByOrNull { it.price }!!
     }
 
-    private fun findCheapestGPU(): GraphicsCard {
-        return gpuRepository.findAll().minByOrNull { it.price }!!
+    private fun findCheapestGPU(cpu: CPU): GraphicsCard {
+        return if (cpu.integratedGraphics != null)
+                GraphicsCard(manufacturer = cpu.company, productName = cpu.integratedGraphics, price = 0.00)
+            else
+                gpuRepository.findAll().minByOrNull { it.price }!!
     }
 
     private fun findCheapestPSUForFormFactor(formFactor: PowerSupplyFormFactor): PowerSupply {
         return powerSupplyRepository.findAllByFormFactor(formFactor).minByOrNull { it.price }!!
+    }
+
+    private fun findCheapestStorage(): Storage {
+        return storageRepository.findAll().minByOrNull { it.price }!!
     }
 }

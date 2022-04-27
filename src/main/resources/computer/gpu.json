@@ -1,19 +1,6 @@
 {
   "cards": [
     {
-      "manufacturer": "Asus",
-      "productName": "Phoenix OC GT 1030",
-      "chipset": "AMD Radeon RX 6400",
-      "coreClock": 1278,
-      "boostClock": 1531,
-      "memoryGB": 2,
-      "memoryType": "GDDR5",
-      "length": 184,
-      "tdp": 75,
-      "fanCount": 1,
-      "price": 119.99
-    },
-    {
       "manufacturer": "Sapphire",
       "productName": "Pulse RX 6400",
       "chipset": "AMD Radeon RX 6400",

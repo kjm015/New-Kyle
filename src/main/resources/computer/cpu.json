@@ -7,6 +7,7 @@
       "threadCount": 2,
       "lithography": 10,
       "socket": "LGA-1700",
+      "integratedGraphics": "UHD Graphics 710",
       "includesCooler": true,
       "includedCoolerName": "Intel Stock Cooler",
       "price": 54.99
@@ -18,6 +19,7 @@
       "threadCount": 4,
       "lithography": 10,
       "socket": "LGA-1700",
+      "integratedGraphics": "UHD Graphics 710",
       "includesCooler": true,
       "includedCoolerName": "Intel Stock Cooler",
       "price": 74.98
@@ -40,6 +42,7 @@
       "threadCount": 12,
       "lithography": 10,
       "socket": "LGA-1700",
+      "integratedGraphics": "UHD Graphics 730",
       "includesCooler": true,
       "includedCoolerName": "Intel Stock Cooler",
       "price": 159.99
@@ -51,6 +54,7 @@
       "threadCount": 16,
       "lithography": 10,
       "socket": "LGA-1700",
+      "integratedGraphics": "UHD Graphics 770",
       "includesCooler": false,
       "price": 249.99
     },
@@ -61,6 +65,7 @@
       "threadCount": 20,
       "lithography": 10,
       "socket": "LGA-1700",
+      "integratedGraphics": "UHD Graphics 770",
       "includesCooler": false,
       "price": 349.99
     },
@@ -71,6 +76,7 @@
       "threadCount": 24,
       "lithography": 10,
       "socket": "LGA-1700",
+      "integratedGraphics": "UHD Graphics 770",
       "includesCooler": false,
       "price": 549.99
     },
@@ -81,6 +87,7 @@
       "threadCount": 24,
       "lithography": 10,
       "socket": "LGA-1700",
+      "integratedGraphics": "UHD Graphics 770",
       "includesCooler": false,
       "price": 749.99
     },
@@ -134,6 +141,7 @@
       "threadCount": 16,
       "lithography": 7,
       "socket": "AM4",
+      "integratedGraphics": "Radeon Vega 8",
       "includesCooler": true,
       "includedCoolerName": "Wraith Stealth",
       "price": 249.99

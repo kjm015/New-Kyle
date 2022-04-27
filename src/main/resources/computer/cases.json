@@ -1,6 +1,15 @@
 {
   "cases": [
     {
+      "name": "RANGER-M",
+      "manufacturer": "Rosewill",
+      "formFactor": "MATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 0,
+      "maxGPULength": 305,
+      "price": 44.99
+    },
+    {
       "name": "MATREXX 40",
       "manufacturer": "Deepcool",
       "formFactor": "MATX",
