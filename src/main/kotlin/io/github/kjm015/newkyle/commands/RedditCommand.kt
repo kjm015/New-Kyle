@@ -14,12 +14,14 @@ class RedditCommand(private val redditService: RedditService) : Command() {
 
     init {
         this.name = "reddit"
+        this.aliases = arrayOf("subreddit", "sub")
         this.help = "Kyle will look something up on Reddit"
         this.guildOnly = false
         this.arguments = "<subreddit_name>"
     }
 
     override fun execute(event: CommandEvent) {
+        event.message.channel.sendTyping().queue()
         if (event.args.isBlank()) {
             event.replyError("You have to provide a subreddit name!")
         } else {
