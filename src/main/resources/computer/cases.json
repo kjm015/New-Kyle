@@ -10,13 +10,13 @@
       "price": 44.99
     },
     {
-      "name": "MATREXX 40",
-      "manufacturer": "Deepcool",
+      "name": "MasterBox Q300L",
+      "manufacturer": "Cooler Master",
       "formFactor": "MATX",
       "psuFormFactor": "ATX",
-      "maxRadiatorSupport": 280,
-      "maxGPULength": 320,
-      "price": 50.99
+      "maxRadiatorSupport": 240,
+      "maxGPULength": 360,
+      "price": 49.99
     },
     {
       "name": "MasterBox NR400",
@@ -181,6 +181,15 @@
       "price": 169.99
     },
     {
+      "name": "PC-O11 Dynamic EVO",
+      "manufacturer": "Lian Li",
+      "formFactor": "ATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 360,
+      "maxGPULength": 422,
+      "price": 189.99
+    },
+    {
       "name": "Meshify 2 XL",
       "manufacturer": "Fractal Design",
       "formFactor": "EATX",
@@ -215,6 +224,24 @@
       "maxRadiatorSupport": 480,
       "maxGPULength": 450,
       "price": 269.99
+    },
+    {
+      "name": "iCUE 5000T RGB",
+      "manufacturer": "Corsair",
+      "formFactor": "ATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 360,
+      "maxGPULength": 400,
+      "price": 399.99
+    },
+    {
+      "name": "Cosmos C700M",
+      "manufacturer": "Corsair",
+      "formFactor": "EATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 420,
+      "maxGPULength": 490,
+      "price": 599.99
     }
   ]
 }

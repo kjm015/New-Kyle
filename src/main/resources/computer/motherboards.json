@@ -430,82 +430,17 @@
       "price": 599.99
     },
     {
-      "manufacturer": "Gigabyte",
+      "manufacturer": "Asus",
       "chipSet": "TRX40",
-      "modelName": "TRX40 Aorus Pro WiFi",
-      "socket": "sTRX4",
-      "formFactor": "ATX",
-      "memorySlots": 8,
-      "maxMemoryLimitGB": 256,
-      "maxMemorySpeed": 4400,
-      "memoryType": "DDR4",
-      "wifiType": 6,
-      "price": 399.99
-    },
-    {
-      "manufacturer": "MSI",
-      "chipSet": "TRX40",
-      "modelName": "TRX40 Pro WiFi",
+      "modelName": "Prime TRX40-Pro",
       "socket": "sTRX4",
       "formFactor": "ATX",
       "memorySlots": 8,
       "maxMemoryLimitGB": 256,
       "maxMemorySpeed": 4666,
       "memoryType": "DDR4",
-      "wifiType": 6,
-      "price": 469.99
-    },
-    {
-      "manufacturer": "Gigabyte",
-      "chipSet": "TRX40",
-      "modelName": "TRX40 Aorus Master",
-      "socket": "sTRX4",
-      "formFactor": "EATX",
-      "memorySlots": 8,
-      "maxMemoryLimitGB": 256,
-      "maxMemorySpeed": 4400,
-      "memoryType": "DDR4",
-      "wifiType": 6,
-      "price": 499.99
-    },
-    {
-      "manufacturer": "Gigabyte",
-      "chipSet": "X570",
-      "modelName": "X570 Aorus Xtreme",
-      "socket": "AM4",
-      "formFactor": "EATX",
-      "memorySlots": 4,
-      "maxMemoryLimitGB": 128,
-      "maxMemorySpeed": 4400,
-      "memoryType": "DDR4",
-      "wifiType": 6,
-      "price": 692.99
-    },
-    {
-      "manufacturer": "Gigabyte",
-      "chipSet": "TRX40",
-      "modelName": "TRX40 Designare",
-      "socket": "sTRX4",
-      "formFactor": "EATX",
-      "memorySlots": 8,
-      "maxMemoryLimitGB": 256,
-      "maxMemorySpeed": 4400,
-      "memoryType": "DDR4",
-      "wifiType": 6,
-      "price": 698.99
-    },
-    {
-      "manufacturer": "Gigabyte",
-      "chipSet": "TRX40",
-      "modelName": "TRX40 Aorus Xtreme",
-      "socket": "sTRX4",
-      "formFactor": "EATX",
-      "memorySlots": 8,
-      "maxMemoryLimitGB": 256,
-      "maxMemorySpeed": 4400,
-      "memoryType": "DDR4",
-      "wifiType": 6,
-      "price": 849.99
+      "wifiType": 0,
+      "price": 399.99
     },
     {
       "manufacturer": "Asus",
@@ -518,20 +453,7 @@
       "maxMemorySpeed": 3200,
       "memoryType": "DDR4",
       "wifiType": 6,
-      "price": 849.99
-    },
-    {
-      "manufacturer": "Asus",
-      "chipSet": "TRX40",
-      "modelName": "ROG Zenith II Extreme Alpha",
-      "socket": "sTRX4",
-      "formFactor": "EATX",
-      "memorySlots": 8,
-      "maxMemoryLimitGB": 256,
-      "maxMemorySpeed": 4600,
-      "memoryType": "DDR4",
-      "wifiType": 6,
-      "price": 899.99
+      "price": 929.99
     }
   ]
 }

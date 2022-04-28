@@ -28,19 +28,6 @@
     },
     {
       "manufacturer": "EVGA",
-      "productName": "RTX 3050 XC Black",
-      "chipset": "Nvidia GeForce RTX 3050",
-      "coreClock": 1552,
-      "boostClock": 1845,
-      "memoryGB": 8,
-      "memoryType": "GDDR6",
-      "length": 242,
-      "tdp": 130,
-      "fanCount": 2,
-      "price": 249.99
-    },
-    {
-      "manufacturer": "EVGA",
       "productName": "RTX 3050 XC",
       "chipset": "Nvidia GeForce RTX 3050",
       "coreClock": 1552,
@@ -53,40 +40,27 @@
       "price": 299.99
     },
     {
-      "manufacturer": "Gigabyte",
-      "productName": "RTX 3060 Eagle",
-      "chipset": "Nvidia GeForce RTX 3060",
-      "coreClock": 1320,
-      "boostClock": 1777,
-      "memoryGB": 12,
-      "memoryType": "GDDR6",
-      "length": 242,
-      "tdp": 170,
-      "fanCount": 2,
-      "price": 329.99
-    },
-    {
-      "manufacturer": "EVGA",
-      "productName": "RTX 3060 XC Black",
-      "chipset": "Nvidia GeForce RTX 3060",
-      "coreClock": 1320,
-      "boostClock": 1882,
-      "memoryGB": 12,
-      "memoryType": "GDDR6",
-      "length": 202,
-      "tdp": 170,
-      "fanCount": 2,
-      "price": 369.99
-    },
-    {
-      "manufacturer": "Sapphire",
-      "productName": "Pulse RX 6600 XT",
-      "chipset": "AMD Radeon RX 6600 XT",
-      "coreClock": 2000,
-      "boostClock": 2593,
+      "manufacturer": "ASRock",
+      "productName": "RX 6600 Challenger D",
+      "chipset": "AMD Radeon RX 6600",
+      "coreClock": 1626,
+      "boostClock": 2491,
       "memoryGB": 8,
       "memoryType": "GDDR6",
-      "length": 240,
+      "length": 269,
+      "tdp": 132,
+      "fanCount": 2,
+      "price": 335.99
+    },
+    {
+      "manufacturer": "MSI",
+      "productName": "RX 6600 XT Mech OC",
+      "chipset": "AMD Radeon RX 6600 XT",
+      "coreClock": 2033,
+      "boostClock": 2602,
+      "memoryGB": 8,
+      "memoryType": "GDDR6",
+      "length": 235,
       "tdp": 160,
       "fanCount": 2,
       "price": 379.99
@@ -130,7 +104,6 @@
       "fanCount": 3,
       "price": 489.99
     },
-
     {
       "manufacturer": "AMD",
       "productName": "RX 6700 XT Reference Model",
@@ -143,6 +116,19 @@
       "tdp": 230,
       "fanCount": 2,
       "price": 479.99
+    },
+    {
+      "manufacturer": "Sapphire",
+      "productName": "Pulse RX 6700 XT",
+      "chipset": "AMD Radeon RX 6700 XT",
+      "coreClock": 2321,
+      "boostClock": 2581,
+      "memoryGB": 12,
+      "memoryType": "GDDR6",
+      "length": 260,
+      "tdp": 230,
+      "fanCount": 2,
+      "price": 549.99
     },
     {
       "manufacturer": "EVGA",
@@ -195,6 +181,32 @@
       "tdp": 290,
       "fanCount": 3,
       "price": 759.99
+    },
+    {
+      "manufacturer": "Sapphire",
+      "productName": "Pulse RX 6800",
+      "chipset": "AMD Radeon RX 6800",
+      "coreClock": 1800,
+      "boostClock": 2170,
+      "memoryGB": 16,
+      "memoryType": "GDDR6",
+      "length": 313,
+      "tdp": 250,
+      "fanCount": 3,
+      "price": 819.99
+    },
+    {
+      "manufacturer": "Sapphire",
+      "productName": "Pulse RX 6800 XT",
+      "chipset": "AMD Radeon RX 6800 XT",
+      "coreClock": 1875,
+      "boostClock": 2310,
+      "memoryGB": 16,
+      "memoryType": "GDDR6",
+      "length": 313,
+      "tdp": 300,
+      "fanCount": 3,
+      "price": 848.99
     },
     {
       "manufacturer": "EVGA",
@@ -260,6 +272,19 @@
       "tdp": 350,
       "fanCount": 3,
       "price": 1279.99
+    },
+    {
+      "manufacturer": "Gigabyte",
+      "productName": "RTX 3080 Ti Aorus Master",
+      "chipset": "Nvidia GeForce RTX 3080 Ti",
+      "coreClock": 1365,
+      "boostClock": 1770,
+      "memoryGB": 12,
+      "memoryType": "GDDR6X",
+      "length": 319,
+      "tdp": 350,
+      "fanCount": 3,
+      "price": 1449.99
     },
     {
       "manufacturer": "EVGA",

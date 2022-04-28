@@ -170,6 +170,17 @@
     },
     {
       "company": "AMD",
+      "name": "Ryzen 7 5800X3D",
+      "coreCount": 8,
+      "threadCount": 16,
+      "lithography": 7,
+      "socket": "AM4",
+      "includesCooler": false,
+      "includedCoolerName": "",
+      "price": 449.99
+    },
+    {
+      "company": "AMD",
       "name": "Ryzen 9 5950X",
       "coreCount": 16,
       "threadCount": 32,
