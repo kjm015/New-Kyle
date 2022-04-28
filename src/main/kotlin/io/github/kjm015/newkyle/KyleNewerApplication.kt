@@ -30,19 +30,20 @@ import org.springframework.context.annotation.Bean
  */
 @SpringBootApplication
 class KyleNewerApplication(
-        private val settings: DiscordSettings,
-        private val redditSettings: RedditSettings,
-        private val storyCommand: StoryCommand,
-        private val fetchCommand: FetchCommand,
-        private val adviceCommand: AdviceCommand,
-        private val dieCommand: DieCommand,
-        private val rageCommand: RageCommand,
-        private val judgeCommand: JudgeCommand,
-        private val rambleCommand: RambleCommand,
-        private val suckCommand: SuckCommand,
-        private val quoteCommand: QuoteCommand,
-        private val lyricsCommand: LyricsCommand,
-        private val computerCommand: ComputerCommand
+    private val settings: DiscordSettings,
+    private val redditSettings: RedditSettings,
+    private val storyCommand: StoryCommand,
+    private val fetchCommand: FetchCommand,
+    private val adviceCommand: AdviceCommand,
+    private val dieCommand: DieCommand,
+    private val rageCommand: RageCommand,
+    private val judgeCommand: JudgeCommand,
+    private val rambleCommand: RambleCommand,
+    private val suckCommand: SuckCommand,
+    private val quoteCommand: QuoteCommand,
+    private val lyricsCommand: LyricsCommand,
+    private val computerCommand: ComputerCommand,
+    private val redditCommand: RedditCommand
 ) {
 
     @Bean
@@ -60,18 +61,19 @@ class KyleNewerApplication(
 
         // Add the commands to the running pool (Add yours here!)
         builder.addCommands(
-                rageCommand,
-                adviceCommand,
-                fetchCommand,
-                judgeCommand,
-                suckCommand,
-                rambleCommand,
-                quoteCommand,
-                storyCommand,
-                lyricsCommand,
-                dieCommand,
-                computerCommand,
-                EchoCommand()
+            rageCommand,
+            adviceCommand,
+            fetchCommand,
+            judgeCommand,
+            suckCommand,
+            rambleCommand,
+            quoteCommand,
+            storyCommand,
+            lyricsCommand,
+            dieCommand,
+            computerCommand,
+            redditCommand,
+            EchoCommand()
         )
 
         // Set the owner of the bot (set in properties)
@@ -81,16 +83,8 @@ class KyleNewerApplication(
         val client = builder.build()
 
         // Build the bot with the given settings and listeners
-        return JDABuilder.createDefault(token).addEventListeners(client, MessageListener(), ExodusListener(), InfluxListener()).build()
-    }
-
-    @Bean
-    fun reddit(): Reddit4J {
-        val client = Reddit4J.rateLimited()
-            .setClientId(redditSettings.appId).setClientSecret(redditSettings.secret)
-            .setUserAgent(UserAgentBuilder().appname("New Kyle").author("Dude Bro").version("1.0"))
-        client.userlessConnect()
-        return client
+        return JDABuilder.createDefault(token)
+            .addEventListeners(client, MessageListener(), ExodusListener(), InfluxListener()).build()
     }
 }
 
