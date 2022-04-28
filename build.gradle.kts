@@ -23,6 +23,7 @@ version = "0.0.2-SNAPSHOT"
 repositories {
     mavenCentral()
     jcenter()
+    maven { url = uri("https://jitpack.io") }
 }
 
 dependencies {
@@ -45,6 +46,7 @@ dependencies {
     implementation("commons-io:commons-io:20030203.000550")
     implementation("org.apache.httpcomponents:httpclient:4.5.13")
     implementation("junit:junit:4.13.2")
+    implementation("com.github.masecla22:Reddit4J:master-SNAPSHOT")
 
     // Spring Test dependencies
     testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")

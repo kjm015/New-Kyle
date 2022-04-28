@@ -3,14 +3,18 @@ package io.github.kjm015.newkyle
 import com.jagrosh.jdautilities.command.CommandClientBuilder
 import io.github.kjm015.newkyle.commands.*
 import io.github.kjm015.newkyle.config.DiscordSettings
+import io.github.kjm015.newkyle.config.RedditSettings
 import io.github.kjm015.newkyle.listeners.ExodusListener
 import io.github.kjm015.newkyle.listeners.InfluxListener
 import io.github.kjm015.newkyle.listeners.MessageListener
+import masecla.reddit4j.client.Reddit4J
+import masecla.reddit4j.client.UserAgentBuilder
 import net.dv8tion.jda.api.JDA
 import net.dv8tion.jda.api.JDABuilder
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.annotation.Bean
+
 
 /**
  * Alright, this is the important file.
@@ -27,6 +31,7 @@ import org.springframework.context.annotation.Bean
 @SpringBootApplication
 class KyleNewerApplication(
         private val settings: DiscordSettings,
+        private val redditSettings: RedditSettings,
         private val storyCommand: StoryCommand,
         private val fetchCommand: FetchCommand,
         private val adviceCommand: AdviceCommand,
@@ -79,6 +84,14 @@ class KyleNewerApplication(
         return JDABuilder.createDefault(token).addEventListeners(client, MessageListener(), ExodusListener(), InfluxListener()).build()
     }
 
+    @Bean
+    fun reddit(): Reddit4J {
+        val client = Reddit4J.rateLimited()
+            .setClientId(redditSettings.appId).setClientSecret(redditSettings.secret)
+            .setUserAgent(UserAgentBuilder().appname("New Kyle").author("Dude Bro").version("1.0"))
+        client.userlessConnect()
+        return client
+    }
 }
 
 fun main(args: Array<String>) {
