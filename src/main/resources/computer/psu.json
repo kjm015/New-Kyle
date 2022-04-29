@@ -10,49 +10,31 @@
       "price": 29.99
     },
     {
-      "manufacturer": "EVGA",
-      "name": "500 BQ",
-      "wattage": 500,
-      "modularity": "SEMI",
-      "efficiency": "BRONZE",
-      "formFactor": "ATX",
-      "price": 34.99
-    },
-    {
-      "manufacturer": "EVGA",
-      "name": "600 BQ",
-      "wattage": 600,
-      "modularity": "SEMI",
+      "manufacturer": "Corsair",
+      "name": "CV 550",
+      "wattage": 550,
+      "modularity": "NONE",
       "efficiency": "BRONZE",
       "formFactor": "ATX",
       "price": 44.99
     },
     {
-      "manufacturer": "EVGA",
-      "name": "650 BQ",
-      "wattage": 650,
-      "modularity": "SEMI",
-      "efficiency": "BRONZE",
-      "formFactor": "ATX",
-      "price": 49.95
-    },
-    {
-      "manufacturer": "EVGA",
-      "name": "BR 700",
-      "wattage": 700,
+      "manufacturer": "Corsair",
+      "name": "CV 750",
+      "wattage": 750,
       "modularity": "NONE",
       "efficiency": "BRONZE",
       "formFactor": "ATX",
-      "price": 59.38
+      "price": 59.99
     },
     {
       "manufacturer": "EVGA",
-      "name": "750 BQ",
-      "wattage": 750,
-      "modularity": "SEMI",
-      "efficiency": "BRONZE",
+      "name": "650 GA",
+      "wattage": 650,
+      "modularity": "FULL",
+      "efficiency": "GOLD",
       "formFactor": "ATX",
-      "price": 64.98
+      "price": 79.98
     },
     {
       "manufacturer": "EVGA",
@@ -61,16 +43,7 @@
       "modularity": "FULL",
       "efficiency": "GOLD",
       "formFactor": "ATX",
-      "price": 74.98
-    },
-    {
-      "manufacturer": "EVGA",
-      "name": "750 GQ",
-      "wattage": 750,
-      "modularity": "SEMI",
-      "efficiency": "GOLD",
-      "formFactor": "ATX",
-      "price": 79.99
+      "price": 82.99
     },
     {
       "manufacturer": "NZXT",
