@@ -7,8 +7,6 @@ import io.github.kjm015.newkyle.config.RedditSettings
 import io.github.kjm015.newkyle.listeners.ExodusListener
 import io.github.kjm015.newkyle.listeners.InfluxListener
 import io.github.kjm015.newkyle.listeners.MessageListener
-import masecla.reddit4j.client.Reddit4J
-import masecla.reddit4j.client.UserAgentBuilder
 import net.dv8tion.jda.api.JDA
 import net.dv8tion.jda.api.JDABuilder
 import org.springframework.boot.SpringApplication
