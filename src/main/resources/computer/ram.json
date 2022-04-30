@@ -1,6 +1,17 @@
 {
   "ram": [
     {
+      "manufacturer": "Patriot",
+      "name": "Viper Blackout",
+      "memoryGeneration": "DDR4",
+      "speed": 3000,
+      "casLatency": 16,
+      "hasRGB": false,
+      "moduleCount": 2,
+      "moduleCapacityGB": 4,
+      "price": 39.99
+    },
+    {
       "manufacturer": "Silicon Power",
       "name": "Value Gaming",
       "memoryGeneration": "DDR4",
@@ -133,26 +144,26 @@
       "price": 194.99
     },
     {
-      "manufacturer": "G.Skill",
-      "name": "Ripjaws V",
+      "manufacturer": "Patriot",
+      "name": "Viper 4 Blackout",
       "memoryGeneration": "DDR4",
-      "speed": 4000,
+      "speed": 3200,
       "casLatency": 16,
       "hasRGB": false,
       "moduleCount": 2,
-      "moduleCapacityGB": 16,
-      "price": 264.99
+      "moduleCapacityGB": 32,
+      "price": 234.99
     },
     {
       "manufacturer": "G.Skill",
       "name": "Ripjaws V",
       "memoryGeneration": "DDR4",
-      "speed": 3200,
-      "casLatency": 16,
+      "speed": 3600,
+      "casLatency": 18,
       "hasRGB": false,
-      "moduleCount": 4,
-      "moduleCapacityGB": 16,
-      "price": 234.99
+      "moduleCount": 2,
+      "moduleCapacityGB": 32,
+      "price": 259.99
     },
     {
       "manufacturer": "G.Skill",
@@ -164,6 +175,17 @@
       "moduleCount": 2,
       "moduleCapacityGB": 32,
       "price": 299.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Trident Z Royal",
+      "memoryGeneration": "DDR4",
+      "speed": 3600,
+      "casLatency": 16,
+      "hasRGB": true,
+      "moduleCount": 2,
+      "moduleCapacityGB": 32,
+      "price": 359.99
     },
     {
       "manufacturer": "G.Skill",
@@ -285,6 +307,17 @@
       "moduleCount": 2,
       "moduleCapacityGB": 16,
       "price": 404.99
+    },
+    {
+      "manufacturer": "G.Skill",
+      "name": "Trident Z5 RGB",
+      "memoryGeneration": "DDR5",
+      "speed": 6400,
+      "casLatency": 32,
+      "hasRGB": true,
+      "moduleCount": 2,
+      "moduleCapacityGB": 16,
+      "price": 449.99
     }
   ]
 }
