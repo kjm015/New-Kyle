@@ -9,24 +9,20 @@ import java.time.Instant
 import java.util.*
 
 @Service
-class RedditService(private val redditSettings: RedditSettings) {
+class RedditService(redditSettings: RedditSettings) {
 
     private val redditClient: Reddit4J
 
     init {
-        redditClient = connectToRedditClient()
-    }
-
-    fun getSubreddit(subredditName: String): RedditSubreddit {
-        return redditClient.getSubreddit(subredditName)
-    }
-
-    private fun connectToRedditClient(): Reddit4J {
         val client = Reddit4J.rateLimited()
             .setClientId(redditSettings.appId).setClientSecret(redditSettings.secret)
             .setUserAgent(UserAgentBuilder().appname("New Kyle").author("kjm015").version("1.0"))
         client.userlessConnect()
-        return client
+        redditClient = client
+    }
+
+    fun getSubreddit(subredditName: String): RedditSubreddit {
+        return redditClient.getSubreddit(subredditName)
     }
 }
 
