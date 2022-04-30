@@ -3,7 +3,6 @@ package io.github.kjm015.newkyle
 import com.jagrosh.jdautilities.command.CommandClientBuilder
 import io.github.kjm015.newkyle.commands.*
 import io.github.kjm015.newkyle.config.DiscordSettings
-import io.github.kjm015.newkyle.config.RedditSettings
 import io.github.kjm015.newkyle.listeners.ExodusListener
 import io.github.kjm015.newkyle.listeners.InfluxListener
 import io.github.kjm015.newkyle.listeners.MessageListener
@@ -29,7 +28,6 @@ import org.springframework.context.annotation.Bean
 @SpringBootApplication
 class KyleNewerApplication(
     private val settings: DiscordSettings,
-    private val redditSettings: RedditSettings,
     private val storyCommand: StoryCommand,
     private val fetchCommand: FetchCommand,
     private val adviceCommand: AdviceCommand,
