@@ -1,7 +1,7 @@
 package io.github.kjm015.newkyle.util.computer.cpu
 
-import net.minidev.json.annotate.JsonIgnore
 import javax.persistence.*
+import net.minidev.json.annotate.JsonIgnore
 
 @Entity
 data class CPU(
@@ -10,7 +10,6 @@ data class CPU(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true)
     var id: Long = -1L,
-
     val company: String = "Unknown",
     val name: String = "CPU",
     val coreCount: Int = -1,
@@ -20,10 +19,9 @@ data class CPU(
     val integratedGraphics: String? = null,
     val includesCooler: Boolean = false,
     val includedCoolerName: String? = null,
-
     var price: Double = 0.0
 )
 
 class CPUList {
-    var processors: List<CPU> = listOf()
+  var processors: List<CPU> = listOf()
 }

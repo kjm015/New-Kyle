@@ -8,14 +8,11 @@ import javax.persistence.Id
 @Entity
 class StoryEntry {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long = -1L
+  @Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long = -1L
 
-    var category: String = "none"
+  var category: String = "none"
 
-    var text: String = ""
+  var text: String = ""
 
-    var author: String = "Unknown"
-
+  var author: String = "Unknown"
 }

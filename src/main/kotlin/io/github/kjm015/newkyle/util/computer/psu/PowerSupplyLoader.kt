@@ -8,19 +8,19 @@ import org.springframework.util.ResourceUtils
 
 @Component
 class PowerSupplyLoader(private val repository: PowerSupplyRepository) : ApplicationRunner {
-    private val mapper = ObjectMapper()
+  private val mapper = ObjectMapper()
 
-    override fun run(args: ApplicationArguments) {
-        retrieveFromFile().forEach {
-            if (!repository.existsByName(it.name)) {
-                repository.save(it)
-            }
-        }
+  override fun run(args: ApplicationArguments) {
+    retrieveFromFile().forEach {
+      if (!repository.existsByName(it.name)) {
+        repository.save(it)
+      }
     }
+  }
 
-    private fun retrieveFromFile(): List<PowerSupply> {
-        val url = ResourceUtils.getURL("classpath:computer/psu.json")
-        val list = mapper.readValue(url, PSUList::class.java)
-        return list.powerSupplies
-    }
+  private fun retrieveFromFile(): List<PowerSupply> {
+    val url = ResourceUtils.getURL("classpath:computer/psu.json")
+    val list = mapper.readValue(url, PSUList::class.java)
+    return list.powerSupplies
+  }
 }

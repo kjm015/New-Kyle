@@ -7,6 +7,6 @@ import org.springframework.transaction.annotation.Transactional
 @Repository
 @Transactional
 interface GPURepository : CrudRepository<GraphicsCard, Long> {
-    fun existsByProductName(productName: String): Boolean
-    fun findAllByPriceLessThan(price: Double): List<GraphicsCard>
+  fun existsByProductName(productName: String): Boolean
+  fun findAllByPriceLessThan(price: Double): List<GraphicsCard>
 }

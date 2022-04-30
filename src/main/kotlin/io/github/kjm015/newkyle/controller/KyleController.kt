@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class KyleController {
 
-    /**
-     * Tell the world hello! This is currently the placeholder home page.
-     *
-     * @return a pleasant greeting
-     */
-    @GetMapping(path = ["/", "/hello"])
-    @ResponseStatus(HttpStatus.OK)
-    fun sayHello(): String = "Hello, world!"
+  /**
+   * Tell the world hello! This is currently the placeholder home page.
+   *
+   * @return a pleasant greeting
+   */
+  @GetMapping(path = ["/", "/hello"])
+  @ResponseStatus(HttpStatus.OK)
+  fun sayHello(): String = "Hello, world!"
 }

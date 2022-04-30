@@ -18,12 +18,11 @@ import org.springframework.context.annotation.PropertySource
 @PropertySource("classpath:discord.properties")
 class DiscordSettings {
 
-    var oauth: String? = null
+  var oauth: String? = null
 
-    var game: String = "War Thunder"
+  var game: String = "War Thunder"
 
-    var owner: String? = null
+  var owner: String? = null
 
-    var prefix: String = "Hey Kyle,"
-
+  var prefix: String = "Hey Kyle,"
 }

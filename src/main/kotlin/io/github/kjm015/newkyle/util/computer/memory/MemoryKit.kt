@@ -10,7 +10,6 @@ data class MemoryKit(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true)
     var id: Long = -1L,
-
     val manufacturer: String = "Unknown",
     val name: String = "RAM",
     val memoryGeneration: MemoryGeneration = MemoryGeneration.UNKNOWN,
@@ -23,9 +22,14 @@ data class MemoryKit(
 )
 
 enum class MemoryGeneration {
-    DDR, DDR2, DDR3, DDR4, DDR5, UNKNOWN
+  DDR,
+  DDR2,
+  DDR3,
+  DDR4,
+  DDR5,
+  UNKNOWN
 }
 
 class MemoryList {
-    var ram: List<MemoryKit> = listOf()
+  var ram: List<MemoryKit> = listOf()
 }

@@ -9,7 +9,5 @@ import org.springframework.test.context.junit4.SpringRunner
 @SpringBootTest
 class KyleNewerApplicationTests {
 
-    @Test
-    fun contextLoads() {}
-
+  @Test fun contextLoads() {}
 }

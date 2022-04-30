@@ -2,8 +2,8 @@ package io.github.kjm015.newkyle.util.computer.compcase
 
 import io.github.kjm015.newkyle.util.computer.motherboard.MotherboardFormFactor
 import io.github.kjm015.newkyle.util.computer.psu.PowerSupplyFormFactor
-import net.minidev.json.annotate.JsonIgnore
 import javax.persistence.*
+import net.minidev.json.annotate.JsonIgnore
 
 @Entity
 data class ComputerCase(
@@ -12,7 +12,6 @@ data class ComputerCase(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true)
     var id: Long = -1L,
-
     var name: String = "Case",
     var manufacturer: String = "Unknown",
     var formFactor: MotherboardFormFactor = MotherboardFormFactor.UNKNOWN,
@@ -23,5 +22,5 @@ data class ComputerCase(
 )
 
 class CaseList {
-    var cases: List<ComputerCase> = listOf()
+  var cases: List<ComputerCase> = listOf()
 }

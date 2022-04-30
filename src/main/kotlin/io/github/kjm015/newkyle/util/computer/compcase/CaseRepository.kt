@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional
 @Repository
 @Transactional
 interface CaseRepository : CrudRepository<ComputerCase, Long> {
-    fun existsByName(name: String): Boolean
-    fun findAllByPriceLessThan(price: Double): List<ComputerCase>
-    fun findAllByFormFactor(formFactor: MotherboardFormFactor): List<ComputerCase>
+  fun existsByName(name: String): Boolean
+  fun findAllByPriceLessThan(price: Double): List<ComputerCase>
+  fun findAllByFormFactor(formFactor: MotherboardFormFactor): List<ComputerCase>
 }

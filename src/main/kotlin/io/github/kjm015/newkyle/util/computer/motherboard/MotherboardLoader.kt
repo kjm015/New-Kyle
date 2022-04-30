@@ -9,20 +9,19 @@ import org.springframework.util.ResourceUtils
 @Component
 class MotherboardLoader(private val repository: MotherboardRepository) : ApplicationRunner {
 
-    private val mapper = ObjectMapper()
+  private val mapper = ObjectMapper()
 
-    override fun run(args: ApplicationArguments) {
-        retrieveFromFile().forEach {
-            if (!repository.existsByModelName(it.modelName)) {
-                repository.save(it)
-            }
-        }
+  override fun run(args: ApplicationArguments) {
+    retrieveFromFile().forEach {
+      if (!repository.existsByModelName(it.modelName)) {
+        repository.save(it)
+      }
     }
+  }
 
-    private fun retrieveFromFile(): List<Motherboard> {
-        val url = ResourceUtils.getURL("classpath:computer/motherboards.json")
-        val list = mapper.readValue(url, MotherboardList::class.java)
-        return list.motherboards
-    }
-
+  private fun retrieveFromFile(): List<Motherboard> {
+    val url = ResourceUtils.getURL("classpath:computer/motherboards.json")
+    val list = mapper.readValue(url, MotherboardList::class.java)
+    return list.motherboards
+  }
 }

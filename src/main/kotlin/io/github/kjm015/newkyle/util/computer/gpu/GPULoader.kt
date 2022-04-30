@@ -9,19 +9,19 @@ import org.springframework.util.ResourceUtils
 @Component
 class GPULoader(private val gpuRepository: GPURepository) : ApplicationRunner {
 
-    private val mapper = ObjectMapper()
+  private val mapper = ObjectMapper()
 
-    override fun run(args: ApplicationArguments) {
-        retrieveCardsFromFile().forEach {
-            if (!gpuRepository.existsByProductName(it.productName)) {
-                gpuRepository.save(it)
-            }
-        }
+  override fun run(args: ApplicationArguments) {
+    retrieveCardsFromFile().forEach {
+      if (!gpuRepository.existsByProductName(it.productName)) {
+        gpuRepository.save(it)
+      }
     }
+  }
 
-    private fun retrieveCardsFromFile(): List<GraphicsCard> {
-        val url = ResourceUtils.getURL("classpath:computer/gpu.json")
-        val list = mapper.readValue(url, CardList::class.java)
-        return list.cards
-    }
+  private fun retrieveCardsFromFile(): List<GraphicsCard> {
+    val url = ResourceUtils.getURL("classpath:computer/gpu.json")
+    val list = mapper.readValue(url, CardList::class.java)
+    return list.cards
+  }
 }

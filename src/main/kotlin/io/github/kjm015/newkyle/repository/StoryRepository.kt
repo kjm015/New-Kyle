@@ -7,6 +7,6 @@ import org.springframework.transaction.annotation.Transactional
 @Repository
 @Transactional
 interface StoryRepository : CrudRepository<StoryEntry, Long> {
-    fun findAllByCategory(category: String): List<StoryEntry>
-    fun findAllByAuthor(author: String): List<StoryEntry>
+  fun findAllByCategory(category: String): List<StoryEntry>
+  fun findAllByAuthor(author: String): List<StoryEntry>
 }

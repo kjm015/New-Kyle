@@ -9,19 +9,19 @@ import org.springframework.util.ResourceUtils
 @Component
 class StorageLoader(private val repository: StorageRepository) : ApplicationRunner {
 
-    private val mapper = ObjectMapper()
+  private val mapper = ObjectMapper()
 
-    override fun run(args: ApplicationArguments) {
-        loadFromFile().forEach {
-            if (!repository.existsByName(it.name)) {
-                repository.save(it)
-            }
-        }
+  override fun run(args: ApplicationArguments) {
+    loadFromFile().forEach {
+      if (!repository.existsByName(it.name)) {
+        repository.save(it)
+      }
     }
+  }
 
-    private fun loadFromFile(): List<Storage> {
-        val url = ResourceUtils.getURL("classpath:computer/ssd.json")
-        val list = mapper.readValue(url, StorageList::class.java)
-        return list.drives
-    }
+  private fun loadFromFile(): List<Storage> {
+    val url = ResourceUtils.getURL("classpath:computer/ssd.json")
+    val list = mapper.readValue(url, StorageList::class.java)
+    return list.drives
+  }
 }

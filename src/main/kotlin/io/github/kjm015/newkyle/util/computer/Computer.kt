@@ -21,10 +21,10 @@ data class Computer(
     var memory: MemoryKit,
     var cooler: CPUCooler,
     var storage: ArrayList<Storage> = arrayListOf(),
-
     var price: Double = 0.0
 ) {
-    fun specList() = """ 
+  fun specList() =
+      """ 
         `--------------------------
         $name Specifications
         --------------------------

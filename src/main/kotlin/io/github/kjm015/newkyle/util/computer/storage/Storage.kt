@@ -12,10 +12,8 @@ data class Storage(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true)
     val id: Long = -1L,
-
     val manufacturer: String = "Unknown",
     val name: String = "Storage",
-
     val capacityGB: Long = -1,
     val formFactor: String = "Unknown",
     val boardInterface: String = "Unknown",
@@ -23,12 +21,11 @@ data class Storage(
     val pcieGeneration: Int = -1,
     val maxReadSpeedMBps: Long = 0,
     val maxWriteSpeedMBps: Long = 0,
-
     var price: Double = 0.0
 ) {
-    fun productName(): String = "$manufacturer $name"
+  fun productName(): String = "$manufacturer $name"
 }
 
 class StorageList {
-    var drives: List<Storage> = listOf()
+  var drives: List<Storage> = listOf()
 }
