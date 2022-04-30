@@ -1,6 +1,7 @@
 package io.github.kjm015.newkyle.commands
 
 import com.jagrosh.jdautilities.command.Command
+import masecla.reddit4j.exceptions.AuthenticationException
 import com.jagrosh.jdautilities.command.CommandEvent
 import io.github.kjm015.newkyle.service.RedditService
 import io.github.kjm015.newkyle.service.customDescription
@@ -31,8 +32,11 @@ class RedditCommand(private val redditService: RedditService) : Command() {
                     event.replySuccess(sub.iconImage)
                 Thread.sleep(100)
                 event.replySuccess(sub.customDescription())
+            } catch (e: AuthenticationException) {
+                log.error("Reddit4J client could not connect to Reddit API -> ${e.stackTraceToString()}")
+                event.replyError("Dang, something went wrong!")
             } catch (e: Exception) {
-                log.error("Error fetching subreddit from service: " + e.stackTraceToString())
+                log.error("Error fetching subreddit from service -> ${e.stackTraceToString()}")
                 event.replyError("I couldn't find any subreddits with that name.")
             }
         }
