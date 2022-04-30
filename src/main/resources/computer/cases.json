@@ -1,13 +1,22 @@
 {
   "cases": [
     {
-      "name": "MATREXX 40",
-      "manufacturer": "Deepcool",
+      "name": "RANGER-M",
+      "manufacturer": "Rosewill",
       "formFactor": "MATX",
       "psuFormFactor": "ATX",
-      "maxRadiatorSupport": 280,
-      "maxGPULength": 320,
-      "price": 50.99
+      "maxRadiatorSupport": 0,
+      "maxGPULength": 305,
+      "price": 44.99
+    },
+    {
+      "name": "MasterBox Q300L",
+      "manufacturer": "Cooler Master",
+      "formFactor": "MATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 240,
+      "maxGPULength": 360,
+      "price": 49.99
     },
     {
       "name": "MasterBox NR400",
@@ -43,7 +52,7 @@
       "psuFormFactor": "ATX",
       "maxRadiatorSupport": 280,
       "maxGPULength": 335,
-      "price": 69.99
+      "price": 89.99
     },
     {
       "name": "MasterBox MB311L",
@@ -64,13 +73,22 @@
       "price": 89.99
     },
     {
+      "name": "H510 Flow",
+      "manufacturer": "NZXT",
+      "formFactor": "ATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 280,
+      "maxGPULength": 360,
+      "price": 89.99
+    },
+    {
       "name": "Eclipse P400A Digital",
       "manufacturer": "Phanteks",
       "formFactor": "ATX",
       "psuFormFactor": "ATX",
       "maxRadiatorSupport": 360,
       "maxGPULength": 420,
-      "price": 84.99
+      "price": 106.99
     },
     {
       "name": "4000D Airflow",
@@ -79,7 +97,7 @@
       "psuFormFactor": "ATX",
       "maxRadiatorSupport": 360,
       "maxGPULength": 360,
-      "price": 94.99
+      "price": 104.99
     },
     {
       "name": "Pure Base 500DX",
@@ -88,16 +106,7 @@
       "psuFormFactor": "ATX",
       "maxRadiatorSupport": 360,
       "maxGPULength": 369,
-      "price": 99.90
-    },
-    {
-      "name": "TU150",
-      "manufacturer": "Lian Li",
-      "formFactor": "ITX",
-      "psuFormFactor": "SFX",
-      "maxRadiatorSupport": 120,
-      "maxGPULength": 320,
-      "price": 99.99
+      "price": 107.99
     },
     {
       "name": "Meshify 2 Compact TG",
@@ -106,7 +115,7 @@
       "psuFormFactor": "ATX",
       "maxRadiatorSupport": 360,
       "maxGPULength": 341,
-      "price": 109.99
+      "price": 139.99
     },
     {
       "name": "MasterCase H500 ARGB",
@@ -115,15 +124,15 @@
       "psuFormFactor": "ATX",
       "maxRadiatorSupport": 360,
       "maxGPULength": 410,
-      "price": 119.00
+      "price": 129.99
     },
     {
-      "name": "O11 Dynamic Mini",
-      "manufacturer": "Lian Li",
-      "formFactor": "ATX",
-      "psuFormFactor": "SFX",
-      "maxRadiatorSupport": 360,
-      "maxGPULength": 370,
+      "name": "Torrent Nano",
+      "manufacturer": "Fractal Design",
+      "formFactor": "ITX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 240,
+      "maxGPULength": 335,
       "price": 119.99
     },
     {
@@ -133,7 +142,25 @@
       "psuFormFactor": "ATX",
       "maxRadiatorSupport": 420,
       "maxGPULength": 435,
-      "price": 133.56
+      "price": 149.99
+    },
+    {
+      "name": "Torrent Nano RGB",
+      "manufacturer": "Fractal Design",
+      "formFactor": "ITX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 240,
+      "maxGPULength": 335,
+      "price": 139.99
+    },
+    {
+      "name": "Torrent Compact",
+      "manufacturer": "Fractal Design",
+      "formFactor": "ATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 360,
+      "maxGPULength": 330,
+      "price": 149.99
     },
     {
       "name": "Meshify 2",
@@ -142,7 +169,7 @@
       "psuFormFactor": "ATX",
       "maxRadiatorSupport": 420,
       "maxGPULength": 467,
-      "price": 146.76
+      "price": 159.99
     },
     {
       "name": "PC-O11 Dynamic",
@@ -151,7 +178,16 @@
       "psuFormFactor": "ATX",
       "maxRadiatorSupport": 360,
       "maxGPULength": 420,
-      "price": 149.99
+      "price": 169.99
+    },
+    {
+      "name": "PC-O11 Dynamic EVO",
+      "manufacturer": "Lian Li",
+      "formFactor": "ATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 360,
+      "maxGPULength": 422,
+      "price": 189.99
     },
     {
       "name": "Meshify 2 XL",
@@ -160,7 +196,25 @@
       "psuFormFactor": "ATX",
       "maxRadiatorSupport": 480,
       "maxGPULength": 549,
-      "price": 179.99
+      "price": 204.99
+    },
+    {
+      "name": "Torrent",
+      "manufacturer": "Fractal Design",
+      "formFactor": "EATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 420,
+      "maxGPULength": 461,
+      "price": 189.99
+    },
+    {
+      "name": "Torrent RGB",
+      "manufacturer": "Fractal Design",
+      "formFactor": "EATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 420,
+      "maxGPULength": 461,
+      "price": 229.99
     },
     {
       "name": "7000D Airflow",
@@ -169,7 +223,25 @@
       "psuFormFactor": "ATX",
       "maxRadiatorSupport": 480,
       "maxGPULength": 450,
-      "price": 259.99
+      "price": 269.99
+    },
+    {
+      "name": "iCUE 5000T RGB",
+      "manufacturer": "Corsair",
+      "formFactor": "ATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 360,
+      "maxGPULength": 400,
+      "price": 399.99
+    },
+    {
+      "name": "Cosmos C700M",
+      "manufacturer": "Corsair",
+      "formFactor": "EATX",
+      "psuFormFactor": "ATX",
+      "maxRadiatorSupport": 420,
+      "maxGPULength": 490,
+      "price": 599.99
     }
   ]
 }
