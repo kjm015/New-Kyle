@@ -32,10 +32,10 @@ class WarThunderStats {
                 AB Wins             | ${arcadeStats.wins}
                 AB Deaths           | ${arcadeStats.deaths}
                 AB Missions         | ${arcadeStats.missions}
-                AB Win Ratio        | ${arcadeStats.winRate} 
+                AB Win Ratio        | ${arcadeStats.winRate}%
                 AB Kills per Battle | ${arcadeStats.killsPerBattle}
                 AB Kill/Death Ratio | ${arcadeStats.killDeathRatio}
-                AB Average Lifetime | ${arcadeStats.lifetime}
+                AB Average Lifetime | ${arcadeStats.lifetime} minutes
                 --------------------------------------
                 [Stats as of $lastStat]
             ```
