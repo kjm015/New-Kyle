@@ -5,6 +5,8 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer
+import org.springframework.http.client.SimpleClientHttpRequestFactory
+import org.springframework.web.client.RestTemplate
 
 /**
  * This has something to do with the way that the Discord settings relate to Spring beans.
@@ -21,6 +23,17 @@ class SpringConfiguration {
     @Bean
     fun propertyConfigInDev(): PropertySourcesPlaceholderConfigurer {
         return PropertySourcesPlaceholderConfigurer()
+    }
+
+    @Bean
+    fun restTemplate(): RestTemplate {
+        val restTemplate = RestTemplate()
+
+        val requestFactory = SimpleClientHttpRequestFactory()
+        requestFactory.setBufferRequestBody(false)
+        restTemplate.requestFactory = requestFactory
+
+        return restTemplate
     }
 
     @Bean
