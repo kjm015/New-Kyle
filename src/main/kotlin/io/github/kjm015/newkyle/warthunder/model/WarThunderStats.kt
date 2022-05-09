@@ -38,6 +38,7 @@ class WarThunderStats {
                 AB Average Lifetime | ${arcadeStats.lifetime} minutes
                 --------------------------------------
                 [Stats as of $lastStat]
+                Source: https://thunderskill.com/en/stat/$nick
             ```
         """.trimIndent()
     }

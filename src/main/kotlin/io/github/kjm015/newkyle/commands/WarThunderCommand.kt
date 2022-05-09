@@ -30,6 +30,7 @@ class WarThunderCommand(private val warThunderService: WarThunderService) : Comm
         } catch (e: Exception) {
             log.error("Could not fetch player from WT Service -> \n${e.stackTraceToString()}")
             event.replyError("Sorry, I couldn't find any stats for that player!")
+            event.reply("You can try generating their profile on https://thunderskill.com/en")
         }
     }
 }
