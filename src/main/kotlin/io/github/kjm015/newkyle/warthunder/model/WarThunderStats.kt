@@ -23,19 +23,23 @@ class WarThunderStats {
 
     fun displayStats(): String {
         return """
+            https://thunderskill.com/userbars/k/j/$nick/en-1-combined-a.png
             ```
                 --------------------------------------
                 $nick's War Thunder stats
+                Rank - $rank
                 --------------------------------------
-                Rank                | $rank
-                AB Efficiency       | ${arcadeStats.efficiency}%
-                AB Wins             | ${arcadeStats.wins}
-                AB Deaths           | ${arcadeStats.deaths}
-                AB Missions         | ${arcadeStats.missions}
-                AB Win Ratio        | ${arcadeStats.winRate}%
-                AB Kills per Battle | ${arcadeStats.killsPerBattle}
-                AB Kill/Death Ratio | ${arcadeStats.killDeathRatio}
-                AB Average Lifetime | ${arcadeStats.lifetime} minutes
+                Arcade Battles
+                --------------------------------------
+                Efficiency         | ${arcadeStats.efficiency}%
+                Wins               | ${arcadeStats.wins}
+                Aircraft Destroyed | ${(arcadeStats.missions * arcadeStats.airKillsPerBattle).toULong()}
+                Deaths             | ${arcadeStats.deaths}
+                Missions           | ${arcadeStats.missions}
+                Win Ratio          | ${arcadeStats.winRate}%
+                Kills per Battle   | ${arcadeStats.airKillsPerBattle}
+                Kill/Death Ratio   | ${arcadeStats.killDeathRatio}
+                Average Lifetime   | ${arcadeStats.lifetime} minutes
                 --------------------------------------
                 [Stats as of $lastStat]
                 Source: https://thunderskill.com/en/stat/$nick

@@ -69,7 +69,7 @@ class WarThunderGameStats {
     @JsonProperty("prev_kd_ground")
     var previousGroundKillDeathRatio: Double = -0.0
 
-    var lifetime: Double = -0.0
+    var lifetime: Long = 0L
 
     @JsonProperty("prev_lifetime")
     var previousLifetime: Double = -0.0
