@@ -40,6 +40,7 @@ class WarThunderStats {
                 [Stats as of $lastStat]
                 Source: https://thunderskill.com/en/stat/$nick
             ```
+            Full profile: https://warthunder.com/en/community/userinfo?nick=$nick
         """.trimIndent()
     }
 }
