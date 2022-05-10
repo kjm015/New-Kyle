@@ -51,6 +51,8 @@ class MessageGenerator {
 
     fun tips() = templates.tips.random()
 
+    fun prefaces() = templates.prefaces.random()
+
     /**
      * This method formats the judgement util to be sent to a specific user. The judgement
      * is put together using pieces from MessageGenerator given these preset formats.
