@@ -1,11 +1,8 @@
 package io.github.kjm015.newkyle.util
 
-import io.github.kjm015.newkyle.repository.StoryEntry
 import io.github.kjm015.newkyle.repository.StoryRepository
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.util.*
-import kotlin.NoSuchElementException
 import kotlin.collections.ArrayList
 
 
@@ -18,10 +15,7 @@ import kotlin.collections.ArrayList
  * @since 01/20/2019
  */
 @Service
-class StoryService {
-
-    @Autowired
-    private lateinit var storyRepository: StoryRepository
+class StoryService(private val storyRepository: StoryRepository) {
 
     fun story(): String {
         val builder = StringBuilder()
@@ -35,28 +29,6 @@ class StoryService {
             builder.append(snark())
 
         return builder.toString()
-    }
-
-    @Throws(NoSuchElementException::class)
-    fun customStory(): String {
-        val sb = java.lang.StringBuilder()
-        sb.append("${storyRepository.findAllByCategory(category = "setup").random().text}, ")
-        sb.append("${storyRepository.findAllByCategory(category = "antagonism").random().text}. ")
-        sb.append("${storyRepository.findAllByCategory(category = "retort").random().text}. ")
-        sb.append("${storyRepository.findAllByCategory(category = "affirmation").random().text}. ")
-        sb.append(storyRepository.findAllByCategory(category = "snark").random().text)
-
-        return sb.toString()
-    }
-
-    fun storeStoryComponent(category: String, text: String, author: String): StoryEntry {
-        val storyEntry = StoryEntry()
-
-        storyEntry.category = category
-        storyEntry.text = text
-        storyEntry.author = author
-
-        return storyRepository.save(storyEntry)
     }
 
     fun getAllStoryComponents() = storyRepository.findAll().toList()

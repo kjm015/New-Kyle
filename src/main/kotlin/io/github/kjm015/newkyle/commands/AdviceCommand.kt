@@ -2,6 +2,7 @@ package io.github.kjm015.newkyle.commands
 
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
+import io.github.kjm015.newkyle.util.MessageGenerator
 import net.dv8tion.jda.api.entities.ChannelType
 import org.springframework.stereotype.Component
 import java.util.*
@@ -14,7 +15,7 @@ import java.util.*
  * @since 7/26/2018
  */
 @Component
-class AdviceCommand : Command() {
+class AdviceCommand(private val messageGenerator: MessageGenerator) : Command() {
 
     // Required constructor for every command
     init {
@@ -36,9 +37,9 @@ class AdviceCommand : Command() {
      * @param event - The instance of the command that got called
      */
     override fun execute(event: CommandEvent) = if (event.isFromType(ChannelType.TEXT)) {
-        event.reply("${event.member.asMention} ${openings.random()} ${tips.random()}")
+        event.reply("${event.member.asMention} ${openings.random()} ${messageGenerator.tips()}")
     } else {
-        event.reply("${openings.random()} ${tips.random()}")
+        event.reply("${openings.random()} ${messageGenerator.tips()}")
     }
 
 
@@ -71,32 +72,4 @@ class AdviceCommand : Command() {
             add("Don't ask why, but")
         }
     }
-
-    // List of tips that Kyle will give to the sender
-    private val tips = object : ArrayList<String>() {
-        init {
-            add("sometimes we just need some genocide.")
-            add("realistic battles are the best and you know it.")
-            add("what happened in Katrina was some rough shit.")
-            add("I'm tired, been at lacrosse practice all fucking day.")
-            add("I may not have an explanation for that. Don't look at me.")
-            add("Gaijin is the worst fucking company. Fuck the Russians.")
-            add("tanks are better than planes, obviously.")
-            add("that's what we call \"no bueno\"")
-            add("I need food. Be back in a bit.")
-            add("I just had the worst fucking day at work.")
-            add("nothing's worse than having your son be an invalid.")
-            add("we should seriously considering murdering them. Just saying.")
-            add("I am not a fucking drag queen.")
-            add("something about the Jews.")
-            add("you should show them footage of the Allies during WWII.")
-            add("I gotta piss real quick.")
-            add("my daughter is a fucking horse now.")
-            add("my second concubine is pregnant again.")
-            add("you don't need to be a Sayyid. It's stupid.")
-            add("I may have just become king of Scandinavia.")
-            add("I may have just been assassinated by my vassals.")
-        }
-    }
-
 }
