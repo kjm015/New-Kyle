@@ -79,6 +79,19 @@
       "price": 389.99
     },
     {
+      "manufacturer": "Gigabyte",
+      "productName": "Eagle RX 6650 XT",
+      "chipset": "AMD Radeon RX 6650 XT",
+      "coreClock": 2055,
+      "boostClock": 2635,
+      "memoryGB": 8,
+      "memoryType": "GDDR6",
+      "length": 282,
+      "tdp": 176,
+      "fanCount": 3,
+      "price": 409.99
+    },
+    {
       "manufacturer": "EVGA",
       "productName": "RTX 3060 Ti XC",
       "chipset": "Nvidia GeForce RTX 3060 Ti",
@@ -118,16 +131,16 @@
       "price": 479.99
     },
     {
-      "manufacturer": "Sapphire",
-      "productName": "Pulse RX 6700 XT",
-      "chipset": "AMD Radeon RX 6700 XT",
-      "coreClock": 2321,
-      "boostClock": 2581,
+      "manufacturer": "Gigabyte",
+      "productName": "RX 6750 XT Gaming OC",
+      "chipset": "AMD Radeon RX 6750 XT",
+      "coreClock": 2283,
+      "boostClock": 2623,
       "memoryGB": 12,
       "memoryType": "GDDR6",
-      "length": 260,
-      "tdp": 230,
-      "fanCount": 2,
+      "length": 281,
+      "tdp": 250,
+      "fanCount": 3,
       "price": 549.99
     },
     {

@@ -18,10 +18,8 @@ import org.springframework.stereotype.Component
 @Component
 class StoryCommand(private val generator: StoryService) : Command() {
 
-    private val log = LoggerFactory.getLogger(this.javaClass)
-
     init {
-        this.name = "content"
+        this.name = "story"
         this.aliases = arrayOf("tale", "fable")
         this.help = "Kyle will tell you a story about a recent occurrence in his life."
         this.guildOnly = false

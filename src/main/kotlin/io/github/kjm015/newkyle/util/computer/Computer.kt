@@ -33,7 +33,7 @@ data class Computer(
         Motherboard  | ${motherboard.manufacturer} ${motherboard.modelName} ($${motherboard.price})
         Memory       | ${memory.manufacturer} ${memory.name} ${memory.moduleCount}x ${memory.moduleCapacityGB}GB ${memory.memoryGeneration}-${memory.speed} CL${memory.casLatency} ($${memory.price})
         Storage      | ${storage.map { it.productName() }} ($${storage.sumOf { it.price }})
-        GPU          | ${gpu.manufacturer} ${gpu.productName} ($${gpu.price})
+        GPU          | ${gpu.manufacturer} ${gpu.productName} ${gpu.memoryGB}G ($${gpu.price})
         Case         | ${case.manufacturer} ${case.name} ($${case.price})
         Power Supply | ${powerSupply.manufacturer} ${powerSupply.name} ($${powerSupply.price})
         --------------------------
