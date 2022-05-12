@@ -2,7 +2,6 @@ package io.github.kjm015.newkyle.commands
 
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
-import io.github.kjm015.newkyle.repository.StoryEntry
 import io.github.kjm015.newkyle.util.StoryService
 import org.springframework.stereotype.Component
 
@@ -24,19 +23,6 @@ class StoryCommand(private val generator: StoryService) : Command() {
 
   override fun execute(event: CommandEvent) {
     event.channel.sendTyping().queue()
-    when {
-      event.args.startsWith(prefix = "get", ignoreCase = true) -> {
-        event.reply("Let me check what I've got...\n")
-        generator.getAllStoryComponents().sortedBy {
-          it.category
-        }.forEachIndexed { i: Int, storyEntry: StoryEntry ->
-          event.reply("${i + 1}. ${storyEntry.category.replaceFirstChar { it.uppercase() }} by ${storyEntry.author}: \"${storyEntry.text}\"")
-        }
-
-        event.replySuccess("\nThat's all I've got.")
-      }
-
-      else -> event.reply(generator.story())
-    }
+    event.reply(generator.story())
   }
 }

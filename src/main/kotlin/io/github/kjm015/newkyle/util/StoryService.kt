@@ -1,7 +1,6 @@
 package io.github.kjm015.newkyle.util
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import io.github.kjm015.newkyle.repository.StoryRepository
 import org.springframework.stereotype.Service
 import org.springframework.util.ResourceUtils
 import java.util.*
@@ -14,7 +13,7 @@ import java.util.*
  * @since 01/20/2019
  */
 @Service
-class StoryService(private val storyRepository: StoryRepository) {
+class StoryService {
 
   private val storyElements: StoryElements
   private val randy = Random()
@@ -37,7 +36,4 @@ class StoryService(private val storyRepository: StoryRepository) {
 
     return builder.toString()
   }
-
-  fun getAllStoryComponents() = storyRepository.findAll().toList()
-
 }
