@@ -21,7 +21,7 @@ class StoryCommand(private val generator: StoryService) : Command() {
     private val log = LoggerFactory.getLogger(this.javaClass)
 
     init {
-        this.name = "story"
+        this.name = "content"
         this.aliases = arrayOf("tale", "fable")
         this.help = "Kyle will tell you a story about a recent occurrence in his life."
         this.guildOnly = false

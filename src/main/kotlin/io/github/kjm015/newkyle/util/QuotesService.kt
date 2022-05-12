@@ -15,7 +15,7 @@ class QuotesService {
     private val quoteList: List<Quote>
 
     init {
-        val url = ResourceUtils.getURL("classpath:story/quotes.json")
+        val url = ResourceUtils.getURL("classpath:content/quotes.json")
         quoteList = ObjectMapper().readValue(url, QuoteList::class.java).quoteList
     }
 

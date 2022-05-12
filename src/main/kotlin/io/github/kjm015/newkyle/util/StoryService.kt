@@ -20,7 +20,7 @@ class StoryService(private val storyRepository: StoryRepository) {
   private val randy = Random()
 
   init {
-    val url = ResourceUtils.getURL("classpath:story/stories.json")
+    val url = ResourceUtils.getURL("classpath:content/stories.json")
     storyElements = ObjectMapper().readValue(url, StoryElements::class.java)
   }
 
@@ -32,7 +32,7 @@ class StoryService(private val storyRepository: StoryRepository) {
         .append(storyElements.replies.random())
         .append(storyElements.affirmations.random())
 
-    if (randy.nextBoolean())
+    if (randy.nextBoolean() || randy.nextBoolean())
       builder.append(storyElements.flourishes.random())
 
     return builder.toString()
