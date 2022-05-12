@@ -3,7 +3,6 @@ package io.github.kjm015.newkyle.util
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.stereotype.Component
 import org.springframework.util.ResourceUtils
-import java.util.*
 
 /**
  * This class generates pulls quotes from a JSON file
