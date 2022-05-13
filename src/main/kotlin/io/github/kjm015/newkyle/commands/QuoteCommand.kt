@@ -2,7 +2,9 @@ package io.github.kjm015.newkyle.commands
 
 import com.jagrosh.jdautilities.command.Command
 import com.jagrosh.jdautilities.command.CommandEvent
-import io.github.kjm015.newkyle.util.QuotesGenerator
+import io.github.kjm015.newkyle.util.QuotesService
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 
 /**
@@ -14,7 +16,9 @@ import org.springframework.stereotype.Component
  * @since 1/20/2019
  */
 @Component
-class QuoteCommand(private val quotes: QuotesGenerator) : Command() {
+class QuoteCommand(private val quotes: QuotesService) : Command() {
+
+    private val log: Logger = LoggerFactory.getLogger(this.javaClass)
 
     init {
         this.name = "quote"
@@ -25,12 +29,17 @@ class QuoteCommand(private val quotes: QuotesGenerator) : Command() {
     }
 
     override fun execute(event: CommandEvent) {
-        if (event.args.contains("Skyrim", ignoreCase = true)) {
-            event.reply(quotes.getSkyrimQuote())
-        } else if (event.args.contains("Rolf", ignoreCase = true) || event.args.contains("edd", ignoreCase = true)) {
-            event.reply(quotes.getRolfQuote())
-        } else if (event.args.isEmpty()) {
-            event.reply("I can't think of anything off the top of my head...")
+        event.channel.sendTyping().queue()
+
+        try {
+            if (event.args.isNotEmpty()) {
+                event.replySuccess(quotes.getQuoteFromSource(event.args).displayString())
+            } else {
+                event.replySuccess(quotes.getRandomQuote().displayString())
+            }
+        } catch (e: Exception) {
+            log.error("Could not get quote from quote service ->\n${e.stackTraceToString()}")
+            event.replyError("I can't think of anything off the top of my head...")
         }
     }
 }

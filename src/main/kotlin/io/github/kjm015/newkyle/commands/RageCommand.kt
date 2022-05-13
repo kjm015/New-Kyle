@@ -32,7 +32,7 @@ class RageCommand(private val generator: MessageGenerator) : Command() {
      * @since 7/26/2018
      */
     public override fun execute(event: CommandEvent) {
-        event.reply("${generator.intent()} ${generator.openers()} the ${generator.exclamations()} out of ${generator.targets()}")
+        event.reply("${generator.openers()} ${generator.intent()} the ${generator.exclamations()} out of ${generator.targets()}")
         event.reply(generator.closer())
     }
 }
