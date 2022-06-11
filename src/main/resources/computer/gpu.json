@@ -14,6 +14,19 @@
       "price": 159.99
     },
     {
+      "manufacturer": "XFX",
+      "productName": "RX 6500 XT Speedster QICK 210",
+      "chipset": "AMD Radeon RX 6500 XT",
+      "coreClock": 2420,
+      "boostClock": 2685,
+      "memoryGB": 4,
+      "memoryType": "GDDR6",
+      "length": 232,
+      "tdp": 130,
+      "fanCount": 2,
+      "price": 199.99
+    },
+    {
       "manufacturer": "Sapphire",
       "productName": "Pulse RX 6500 XT",
       "chipset": "AMD Radeon RX 6500 XT",

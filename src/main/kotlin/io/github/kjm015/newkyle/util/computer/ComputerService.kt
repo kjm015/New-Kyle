@@ -64,7 +64,7 @@ class ComputerService(
         var cooler = findBestCooler(mob, case, cpu, remainingBudget)
         remainingBudget -= cooler.price
 
-        log.info("Computer Service - Budget set as $budget, with $remainingBudget remaining.")
+        log.info("Computer Service - Budget set as $$budget, with $$remainingBudget remaining.")
 
         if (remainingBudget > 50) {
             val sto = findBestStorageForBudget(remainingBudget)
@@ -81,7 +81,7 @@ class ComputerService(
 
         } else if (remainingBudget > 1) {
             val newPrice = remainingBudget + cooler.price
-            log.info("Computer Service - Attempting to find a new cooler with budget of $newPrice")
+            log.info("Computer Service - Attempting to find a new cooler with budget of $$newPrice")
             cooler = findBestCooler(mob, case, cpu, newPrice)
             cost += cooler.price
         }

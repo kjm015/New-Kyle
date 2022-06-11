@@ -93,6 +93,17 @@
     },
     {
       "company": "AMD",
+      "name": "Ryzen 5 4500",
+      "coreCount": 6,
+      "threadCount": 12,
+      "lithography": 7,
+      "socket": "AM4",
+      "includesCooler": true,
+      "includedCoolerName": "Wraith Stealth",
+      "price": 118.99
+    },
+    {
+      "company": "AMD",
       "name": "Ryzen 5 5500",
       "coreCount": 6,
       "threadCount": 12,
